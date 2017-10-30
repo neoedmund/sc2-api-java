@@ -1,0 +1,10 @@
+{ /* neoebuild script */
+baseDir:"."
+prjs:[
+ ["sc2-protobuf-java", "." , { dep:[  ]  cp:[ "lib/guava-23.0.jar" "lib/gson-2.8.2.jar" ] /* main:"main-class-name" */}]
+ /* other projects */
+]
+destDir:"dist"
+target:8
+source:8
+}
