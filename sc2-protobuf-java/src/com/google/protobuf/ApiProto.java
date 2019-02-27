@@ -47,7 +47,7 @@ public final class ApiProto {
       "rce_context\030\005 \001(\0132\036.google.protobuf.Sour" +
       "ceContext\022&\n\006mixins\030\006 \003(\0132\026.google.proto" +
       "buf.Mixin\022\'\n\006syntax\030\007 \001(\0162\027.google.proto" +
-      "buf.Syntax\"\325\001\n\006Method\022\014\n\004name\030\001 \001(\t\022\030\n\020r",
+      "buf.Syntax\"\325\001\n\006Method\022\014\n\004name\030\001 \001(\t\022\030\n\020r" +
       "equest_type_url\030\002 \001(\t\022\031\n\021request_streami" +
       "ng\030\003 \001(\010\022\031\n\021response_type_url\030\004 \001(\t\022\032\n\022r" +
       "esponse_streaming\030\005 \001(\010\022(\n\007options\030\006 \003(\013" +

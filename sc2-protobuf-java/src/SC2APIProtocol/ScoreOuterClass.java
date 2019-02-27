@@ -84,6 +84,9 @@ public final class ScoreOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -95,15 +98,9 @@ public final class ScoreOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 48: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.ScoreOuterClass.Score.ScoreType value = SC2APIProtocol.ScoreOuterClass.Score.ScoreType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(6, rawValue);
@@ -131,6 +128,13 @@ public final class ScoreOuterClass {
               bitField0_ |= 0x00000004;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -148,6 +152,7 @@ public final class ScoreOuterClass {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_Score_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_Score_fieldAccessorTable
@@ -274,6 +279,7 @@ public final class ScoreOuterClass {
      * <code>optional .SC2APIProtocol.Score.ScoreType score_type = 6;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.Score.ScoreType getScoreType() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.ScoreOuterClass.Score.ScoreType result = SC2APIProtocol.ScoreOuterClass.Score.ScoreType.valueOf(scoreType_);
       return result == null ? SC2APIProtocol.ScoreOuterClass.Score.ScoreType.Curriculum : result;
     }
@@ -323,6 +329,7 @@ public final class ScoreOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -332,6 +339,7 @@ public final class ScoreOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -346,6 +354,7 @@ public final class ScoreOuterClass {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -491,6 +500,7 @@ public final class ScoreOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -498,6 +508,7 @@ public final class ScoreOuterClass {
     public static Builder newBuilder(SC2APIProtocol.ScoreOuterClass.Score prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -521,6 +532,7 @@ public final class ScoreOuterClass {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_Score_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_Score_fieldAccessorTable
@@ -544,6 +556,7 @@ public final class ScoreOuterClass {
           getScoreDetailsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         scoreType_ = 1;
@@ -559,15 +572,18 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_Score_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.Score getDefaultInstanceForType() {
         return SC2APIProtocol.ScoreOuterClass.Score.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.Score build() {
         SC2APIProtocol.ScoreOuterClass.Score result = buildPartial();
         if (!result.isInitialized()) {
@@ -576,6 +592,7 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.Score buildPartial() {
         SC2APIProtocol.ScoreOuterClass.Score result = new SC2APIProtocol.ScoreOuterClass.Score(this);
         int from_bitField0_ = bitField0_;
@@ -601,32 +618,39 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.ScoreOuterClass.Score) {
           return mergeFrom((SC2APIProtocol.ScoreOuterClass.Score)other);
@@ -652,10 +676,12 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -686,6 +712,7 @@ public final class ScoreOuterClass {
        * <code>optional .SC2APIProtocol.Score.ScoreType score_type = 6;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.Score.ScoreType getScoreType() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.ScoreOuterClass.Score.ScoreType result = SC2APIProtocol.ScoreOuterClass.Score.ScoreType.valueOf(scoreType_);
         return result == null ? SC2APIProtocol.ScoreOuterClass.Score.ScoreType.Curriculum : result;
       }
@@ -876,11 +903,13 @@ public final class ScoreOuterClass {
         }
         return scoreDetailsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -902,11 +931,12 @@ public final class ScoreOuterClass {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Score>
         PARSER = new com.google.protobuf.AbstractParser<Score>() {
+      @java.lang.Override
       public Score parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Score(input, extensionRegistry);
+        return new Score(input, extensionRegistry);
       }
     };
 
@@ -919,6 +949,7 @@ public final class ScoreOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.ScoreOuterClass.Score getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1012,6 +1043,9 @@ public final class ScoreOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1023,13 +1057,6 @@ public final class ScoreOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
               bitField0_ |= 0x00000001;
               none_ = input.readFloat();
@@ -1055,6 +1082,13 @@ public final class ScoreOuterClass {
               upgrade_ = input.readFloat();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1072,6 +1106,7 @@ public final class ScoreOuterClass {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_CategoryScoreDetails_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_CategoryScoreDetails_fieldAccessorTable
@@ -1164,6 +1199,7 @@ public final class ScoreOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1173,6 +1209,7 @@ public final class ScoreOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1193,6 +1230,7 @@ public final class ScoreOuterClass {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1380,6 +1418,7 @@ public final class ScoreOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1387,6 +1426,7 @@ public final class ScoreOuterClass {
     public static Builder newBuilder(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1410,6 +1450,7 @@ public final class ScoreOuterClass {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_CategoryScoreDetails_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_CategoryScoreDetails_fieldAccessorTable
@@ -1432,6 +1473,7 @@ public final class ScoreOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         none_ = 0F;
@@ -1447,15 +1489,18 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_CategoryScoreDetails_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getDefaultInstanceForType() {
         return SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails build() {
         SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails result = buildPartial();
         if (!result.isInitialized()) {
@@ -1464,6 +1509,7 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails buildPartial() {
         SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails result = new SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails(this);
         int from_bitField0_ = bitField0_;
@@ -1493,32 +1539,39 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails) {
           return mergeFrom((SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails)other);
@@ -1550,10 +1603,12 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1748,11 +1803,13 @@ public final class ScoreOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1774,11 +1831,12 @@ public final class ScoreOuterClass {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<CategoryScoreDetails>
         PARSER = new com.google.protobuf.AbstractParser<CategoryScoreDetails>() {
+      @java.lang.Override
       public CategoryScoreDetails parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CategoryScoreDetails(input, extensionRegistry);
+        return new CategoryScoreDetails(input, extensionRegistry);
       }
     };
 
@@ -1791,6 +1849,7 @@ public final class ScoreOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1856,6 +1915,9 @@ public final class ScoreOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1867,13 +1929,6 @@ public final class ScoreOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
               bitField0_ |= 0x00000001;
               life_ = input.readFloat();
@@ -1887,6 +1942,13 @@ public final class ScoreOuterClass {
             case 29: {
               bitField0_ |= 0x00000004;
               energy_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1906,6 +1968,7 @@ public final class ScoreOuterClass {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_VitalScoreDetails_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_VitalScoreDetails_fieldAccessorTable
@@ -1960,6 +2023,7 @@ public final class ScoreOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1969,6 +2033,7 @@ public final class ScoreOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1983,6 +2048,7 @@ public final class ScoreOuterClass {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2138,6 +2204,7 @@ public final class ScoreOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2145,6 +2212,7 @@ public final class ScoreOuterClass {
     public static Builder newBuilder(SC2APIProtocol.ScoreOuterClass.VitalScoreDetails prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2168,6 +2236,7 @@ public final class ScoreOuterClass {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_VitalScoreDetails_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_VitalScoreDetails_fieldAccessorTable
@@ -2190,6 +2259,7 @@ public final class ScoreOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         life_ = 0F;
@@ -2201,15 +2271,18 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_VitalScoreDetails_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.VitalScoreDetails getDefaultInstanceForType() {
         return SC2APIProtocol.ScoreOuterClass.VitalScoreDetails.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.VitalScoreDetails build() {
         SC2APIProtocol.ScoreOuterClass.VitalScoreDetails result = buildPartial();
         if (!result.isInitialized()) {
@@ -2218,6 +2291,7 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.VitalScoreDetails buildPartial() {
         SC2APIProtocol.ScoreOuterClass.VitalScoreDetails result = new SC2APIProtocol.ScoreOuterClass.VitalScoreDetails(this);
         int from_bitField0_ = bitField0_;
@@ -2239,32 +2313,39 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.ScoreOuterClass.VitalScoreDetails) {
           return mergeFrom((SC2APIProtocol.ScoreOuterClass.VitalScoreDetails)other);
@@ -2290,10 +2371,12 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2408,11 +2491,13 @@ public final class ScoreOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2434,11 +2519,12 @@ public final class ScoreOuterClass {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<VitalScoreDetails>
         PARSER = new com.google.protobuf.AbstractParser<VitalScoreDetails>() {
+      @java.lang.Override
       public VitalScoreDetails parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VitalScoreDetails(input, extensionRegistry);
+        return new VitalScoreDetails(input, extensionRegistry);
       }
     };
 
@@ -2451,6 +2537,7 @@ public final class ScoreOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.ScoreOuterClass.VitalScoreDetails getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2463,7 +2550,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_production_time = 1;</code>
@@ -2471,7 +2558,7 @@ public final class ScoreOuterClass {
     boolean hasIdleProductionTime();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_production_time = 1;</code>
@@ -2480,7 +2567,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_worker_time = 2;</code>
@@ -2488,7 +2575,7 @@ public final class ScoreOuterClass {
     boolean hasIdleWorkerTime();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_worker_time = 2;</code>
@@ -2497,7 +2584,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+     * Sum of minerals and vespene spent on completed units.
      * </pre>
      *
      * <code>optional float total_value_units = 3;</code>
@@ -2505,7 +2592,7 @@ public final class ScoreOuterClass {
     boolean hasTotalValueUnits();
     /**
      * <pre>
-     * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+     * Sum of minerals and vespene spent on completed units.
      * </pre>
      *
      * <code>optional float total_value_units = 3;</code>
@@ -2513,18 +2600,25 @@ public final class ScoreOuterClass {
     float getTotalValueUnits();
 
     /**
+     * <pre>
+     * Sum of minerals and vespene spent on completed structures.
+     * </pre>
+     *
      * <code>optional float total_value_structures = 4;</code>
      */
     boolean hasTotalValueStructures();
     /**
+     * <pre>
+     * Sum of minerals and vespene spent on completed structures.
+     * </pre>
+     *
      * <code>optional float total_value_structures = 4;</code>
      */
     float getTotalValueStructures();
 
     /**
      * <pre>
-     * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-     * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+     * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
      * </pre>
      *
      * <code>optional float killed_value_units = 5;</code>
@@ -2532,8 +2626,7 @@ public final class ScoreOuterClass {
     boolean hasKilledValueUnits();
     /**
      * <pre>
-     * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-     * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+     * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
      * </pre>
      *
      * <code>optional float killed_value_units = 5;</code>
@@ -2541,188 +2634,352 @@ public final class ScoreOuterClass {
     float getKilledValueUnits();
 
     /**
+     * <pre>
+     * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+     * </pre>
+     *
      * <code>optional float killed_value_structures = 6;</code>
      */
     boolean hasKilledValueStructures();
     /**
+     * <pre>
+     * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+     * </pre>
+     *
      * <code>optional float killed_value_structures = 6;</code>
      */
     float getKilledValueStructures();
 
     /**
+     * <pre>
+     * Sum of minerals collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_minerals = 7;</code>
      */
     boolean hasCollectedMinerals();
     /**
+     * <pre>
+     * Sum of minerals collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_minerals = 7;</code>
      */
     float getCollectedMinerals();
 
     /**
+     * <pre>
+     * Sum of vespene collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_vespene = 8;</code>
      */
     boolean hasCollectedVespene();
     /**
+     * <pre>
+     * Sum of vespene collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_vespene = 8;</code>
      */
     float getCollectedVespene();
 
     /**
+     * <pre>
+     * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_minerals = 9;</code>
      */
     boolean hasCollectionRateMinerals();
     /**
+     * <pre>
+     * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_minerals = 9;</code>
      */
     float getCollectionRateMinerals();
 
     /**
+     * <pre>
+     * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_vespene = 10;</code>
      */
     boolean hasCollectionRateVespene();
     /**
+     * <pre>
+     * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_vespene = 10;</code>
      */
     float getCollectionRateVespene();
 
     /**
+     * <pre>
+     * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+     * </pre>
+     *
      * <code>optional float spent_minerals = 11;</code>
      */
     boolean hasSpentMinerals();
     /**
+     * <pre>
+     * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+     * </pre>
+     *
      * <code>optional float spent_minerals = 11;</code>
      */
     float getSpentMinerals();
 
     /**
+     * <pre>
+     * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+     * </pre>
+     *
      * <code>optional float spent_vespene = 12;</code>
      */
     boolean hasSpentVespene();
     /**
+     * <pre>
+     * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+     * </pre>
+     *
      * <code>optional float spent_vespene = 12;</code>
      */
     float getSpentVespene();
 
     /**
+     * <pre>
+     * Sum of food, or supply, utilized in the categories above.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
      */
     boolean hasFoodUsed();
     /**
+     * <pre>
+     * Sum of food, or supply, utilized in the categories above.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFoodUsed();
     /**
+     * <pre>
+     * Sum of food, or supply, utilized in the categories above.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFoodUsedOrBuilder();
 
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in minerals.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
      */
     boolean hasKilledMinerals();
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in minerals.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getKilledMinerals();
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in minerals.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getKilledMineralsOrBuilder();
 
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in vespene.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
      */
     boolean hasKilledVespene();
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in vespene.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getKilledVespene();
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in vespene.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getKilledVespeneOrBuilder();
 
     /**
+     * <pre>
+     *  Sum of lost minerals for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
      */
     boolean hasLostMinerals();
     /**
+     * <pre>
+     *  Sum of lost minerals for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getLostMinerals();
     /**
+     * <pre>
+     *  Sum of lost minerals for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getLostMineralsOrBuilder();
 
     /**
+     * <pre>
+     * Sum of lost vespene for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
      */
     boolean hasLostVespene();
     /**
+     * <pre>
+     * Sum of lost vespene for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getLostVespene();
     /**
+     * <pre>
+     * Sum of lost vespene for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getLostVespeneOrBuilder();
 
     /**
+     * <pre>
+     * Sum of the lost minerals via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
      */
     boolean hasFriendlyFireMinerals();
     /**
+     * <pre>
+     * Sum of the lost minerals via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFriendlyFireMinerals();
     /**
+     * <pre>
+     * Sum of the lost minerals via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFriendlyFireMineralsOrBuilder();
 
     /**
+     * <pre>
+     * Sum of the lost vespene via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
      */
     boolean hasFriendlyFireVespene();
     /**
+     * <pre>
+     * Sum of the lost vespene via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFriendlyFireVespene();
     /**
+     * <pre>
+     * Sum of the lost vespene via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFriendlyFireVespeneOrBuilder();
 
     /**
+     * <pre>
+     * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
      */
     boolean hasUsedMinerals();
     /**
+     * <pre>
+     * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getUsedMinerals();
     /**
+     * <pre>
+     * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getUsedMineralsOrBuilder();
 
     /**
+     * <pre>
+     * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
      */
     boolean hasUsedVespene();
     /**
+     * <pre>
+     * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getUsedVespene();
     /**
+     * <pre>
+     * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
      */
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getUsedVespeneOrBuilder();
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -2730,7 +2987,7 @@ public final class ScoreOuterClass {
     boolean hasTotalUsedMinerals();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -2738,7 +2995,7 @@ public final class ScoreOuterClass {
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getTotalUsedMinerals();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -2747,7 +3004,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -2755,7 +3012,7 @@ public final class ScoreOuterClass {
     boolean hasTotalUsedVespene();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -2763,7 +3020,7 @@ public final class ScoreOuterClass {
     SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getTotalUsedVespene();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -2772,7 +3029,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage dealt to the player's opponent for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -2780,7 +3037,7 @@ public final class ScoreOuterClass {
     boolean hasTotalDamageDealt();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage dealt to the player's opponent for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -2788,7 +3045,7 @@ public final class ScoreOuterClass {
     SC2APIProtocol.ScoreOuterClass.VitalScoreDetails getTotalDamageDealt();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage dealt to the player's opponent for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -2797,7 +3054,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage taken by the player for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -2805,7 +3062,7 @@ public final class ScoreOuterClass {
     boolean hasTotalDamageTaken();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage taken by the player for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -2813,7 +3070,7 @@ public final class ScoreOuterClass {
     SC2APIProtocol.ScoreOuterClass.VitalScoreDetails getTotalDamageTaken();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage taken by the player for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -2822,7 +3079,7 @@ public final class ScoreOuterClass {
 
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -2830,7 +3087,7 @@ public final class ScoreOuterClass {
     boolean hasTotalHealed();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -2838,7 +3095,7 @@ public final class ScoreOuterClass {
     SC2APIProtocol.ScoreOuterClass.VitalScoreDetails getTotalHealed();
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -2882,6 +3139,9 @@ public final class ScoreOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2893,13 +3153,6 @@ public final class ScoreOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
               bitField0_ |= 0x00000001;
               idleProductionTime_ = input.readFloat();
@@ -3142,6 +3395,13 @@ public final class ScoreOuterClass {
               bitField0_ |= 0x02000000;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3159,6 +3419,7 @@ public final class ScoreOuterClass {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_ScoreDetails_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_ScoreDetails_fieldAccessorTable
@@ -3171,7 +3432,7 @@ public final class ScoreOuterClass {
     private float idleProductionTime_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_production_time = 1;</code>
@@ -3181,7 +3442,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_production_time = 1;</code>
@@ -3194,7 +3455,7 @@ public final class ScoreOuterClass {
     private float idleWorkerTime_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_worker_time = 2;</code>
@@ -3204,7 +3465,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
      * </pre>
      *
      * <code>optional float idle_worker_time = 2;</code>
@@ -3217,7 +3478,7 @@ public final class ScoreOuterClass {
     private float totalValueUnits_;
     /**
      * <pre>
-     * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+     * Sum of minerals and vespene spent on completed units.
      * </pre>
      *
      * <code>optional float total_value_units = 3;</code>
@@ -3227,7 +3488,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+     * Sum of minerals and vespene spent on completed units.
      * </pre>
      *
      * <code>optional float total_value_units = 3;</code>
@@ -3239,12 +3500,20 @@ public final class ScoreOuterClass {
     public static final int TOTAL_VALUE_STRUCTURES_FIELD_NUMBER = 4;
     private float totalValueStructures_;
     /**
+     * <pre>
+     * Sum of minerals and vespene spent on completed structures.
+     * </pre>
+     *
      * <code>optional float total_value_structures = 4;</code>
      */
     public boolean hasTotalValueStructures() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
+     * <pre>
+     * Sum of minerals and vespene spent on completed structures.
+     * </pre>
+     *
      * <code>optional float total_value_structures = 4;</code>
      */
     public float getTotalValueStructures() {
@@ -3255,8 +3524,7 @@ public final class ScoreOuterClass {
     private float killedValueUnits_;
     /**
      * <pre>
-     * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-     * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+     * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
      * </pre>
      *
      * <code>optional float killed_value_units = 5;</code>
@@ -3266,8 +3534,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-     * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+     * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
      * </pre>
      *
      * <code>optional float killed_value_units = 5;</code>
@@ -3279,12 +3546,20 @@ public final class ScoreOuterClass {
     public static final int KILLED_VALUE_STRUCTURES_FIELD_NUMBER = 6;
     private float killedValueStructures_;
     /**
+     * <pre>
+     * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+     * </pre>
+     *
      * <code>optional float killed_value_structures = 6;</code>
      */
     public boolean hasKilledValueStructures() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
+     * <pre>
+     * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+     * </pre>
+     *
      * <code>optional float killed_value_structures = 6;</code>
      */
     public float getKilledValueStructures() {
@@ -3294,12 +3569,20 @@ public final class ScoreOuterClass {
     public static final int COLLECTED_MINERALS_FIELD_NUMBER = 7;
     private float collectedMinerals_;
     /**
+     * <pre>
+     * Sum of minerals collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_minerals = 7;</code>
      */
     public boolean hasCollectedMinerals() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
+     * <pre>
+     * Sum of minerals collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_minerals = 7;</code>
      */
     public float getCollectedMinerals() {
@@ -3309,12 +3592,20 @@ public final class ScoreOuterClass {
     public static final int COLLECTED_VESPENE_FIELD_NUMBER = 8;
     private float collectedVespene_;
     /**
+     * <pre>
+     * Sum of vespene collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_vespene = 8;</code>
      */
     public boolean hasCollectedVespene() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
+     * <pre>
+     * Sum of vespene collected by the player.
+     * </pre>
+     *
      * <code>optional float collected_vespene = 8;</code>
      */
     public float getCollectedVespene() {
@@ -3324,12 +3615,20 @@ public final class ScoreOuterClass {
     public static final int COLLECTION_RATE_MINERALS_FIELD_NUMBER = 9;
     private float collectionRateMinerals_;
     /**
+     * <pre>
+     * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_minerals = 9;</code>
      */
     public boolean hasCollectionRateMinerals() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
+     * <pre>
+     * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_minerals = 9;</code>
      */
     public float getCollectionRateMinerals() {
@@ -3339,12 +3638,20 @@ public final class ScoreOuterClass {
     public static final int COLLECTION_RATE_VESPENE_FIELD_NUMBER = 10;
     private float collectionRateVespene_;
     /**
+     * <pre>
+     * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_vespene = 10;</code>
      */
     public boolean hasCollectionRateVespene() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
+     * <pre>
+     * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+     * </pre>
+     *
      * <code>optional float collection_rate_vespene = 10;</code>
      */
     public float getCollectionRateVespene() {
@@ -3354,12 +3661,20 @@ public final class ScoreOuterClass {
     public static final int SPENT_MINERALS_FIELD_NUMBER = 11;
     private float spentMinerals_;
     /**
+     * <pre>
+     * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+     * </pre>
+     *
      * <code>optional float spent_minerals = 11;</code>
      */
     public boolean hasSpentMinerals() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
+     * <pre>
+     * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+     * </pre>
+     *
      * <code>optional float spent_minerals = 11;</code>
      */
     public float getSpentMinerals() {
@@ -3369,12 +3684,20 @@ public final class ScoreOuterClass {
     public static final int SPENT_VESPENE_FIELD_NUMBER = 12;
     private float spentVespene_;
     /**
+     * <pre>
+     * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+     * </pre>
+     *
      * <code>optional float spent_vespene = 12;</code>
      */
     public boolean hasSpentVespene() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
+     * <pre>
+     * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+     * </pre>
+     *
      * <code>optional float spent_vespene = 12;</code>
      */
     public float getSpentVespene() {
@@ -3384,18 +3707,30 @@ public final class ScoreOuterClass {
     public static final int FOOD_USED_FIELD_NUMBER = 13;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails foodUsed_;
     /**
+     * <pre>
+     * Sum of food, or supply, utilized in the categories above.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
      */
     public boolean hasFoodUsed() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
+     * <pre>
+     * Sum of food, or supply, utilized in the categories above.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFoodUsed() {
       return foodUsed_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : foodUsed_;
     }
     /**
+     * <pre>
+     * Sum of food, or supply, utilized in the categories above.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFoodUsedOrBuilder() {
@@ -3405,18 +3740,30 @@ public final class ScoreOuterClass {
     public static final int KILLED_MINERALS_FIELD_NUMBER = 14;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails killedMinerals_;
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in minerals.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
      */
     public boolean hasKilledMinerals() {
       return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in minerals.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getKilledMinerals() {
       return killedMinerals_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : killedMinerals_;
     }
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in minerals.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getKilledMineralsOrBuilder() {
@@ -3426,18 +3773,30 @@ public final class ScoreOuterClass {
     public static final int KILLED_VESPENE_FIELD_NUMBER = 15;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails killedVespene_;
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in vespene.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
      */
     public boolean hasKilledVespene() {
       return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in vespene.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getKilledVespene() {
       return killedVespene_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : killedVespene_;
     }
     /**
+     * <pre>
+     * Sum of enemies catagories destroyed in vespene.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getKilledVespeneOrBuilder() {
@@ -3447,18 +3806,30 @@ public final class ScoreOuterClass {
     public static final int LOST_MINERALS_FIELD_NUMBER = 16;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails lostMinerals_;
     /**
+     * <pre>
+     *  Sum of lost minerals for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
      */
     public boolean hasLostMinerals() {
       return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
+     * <pre>
+     *  Sum of lost minerals for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getLostMinerals() {
       return lostMinerals_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : lostMinerals_;
     }
     /**
+     * <pre>
+     *  Sum of lost minerals for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getLostMineralsOrBuilder() {
@@ -3468,18 +3839,30 @@ public final class ScoreOuterClass {
     public static final int LOST_VESPENE_FIELD_NUMBER = 17;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails lostVespene_;
     /**
+     * <pre>
+     * Sum of lost vespene for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
      */
     public boolean hasLostVespene() {
       return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
+     * <pre>
+     * Sum of lost vespene for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getLostVespene() {
       return lostVespene_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : lostVespene_;
     }
     /**
+     * <pre>
+     * Sum of lost vespene for the player in each category.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getLostVespeneOrBuilder() {
@@ -3489,18 +3872,30 @@ public final class ScoreOuterClass {
     public static final int FRIENDLY_FIRE_MINERALS_FIELD_NUMBER = 18;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails friendlyFireMinerals_;
     /**
+     * <pre>
+     * Sum of the lost minerals via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
      */
     public boolean hasFriendlyFireMinerals() {
       return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
+     * <pre>
+     * Sum of the lost minerals via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFriendlyFireMinerals() {
       return friendlyFireMinerals_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : friendlyFireMinerals_;
     }
     /**
+     * <pre>
+     * Sum of the lost minerals via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFriendlyFireMineralsOrBuilder() {
@@ -3510,18 +3905,30 @@ public final class ScoreOuterClass {
     public static final int FRIENDLY_FIRE_VESPENE_FIELD_NUMBER = 19;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails friendlyFireVespene_;
     /**
+     * <pre>
+     * Sum of the lost vespene via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
      */
     public boolean hasFriendlyFireVespene() {
       return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     /**
+     * <pre>
+     * Sum of the lost vespene via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFriendlyFireVespene() {
       return friendlyFireVespene_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : friendlyFireVespene_;
     }
     /**
+     * <pre>
+     * Sum of the lost vespene via destroying the players own units/buildings.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFriendlyFireVespeneOrBuilder() {
@@ -3531,18 +3938,30 @@ public final class ScoreOuterClass {
     public static final int USED_MINERALS_FIELD_NUMBER = 20;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails usedMinerals_;
     /**
+     * <pre>
+     * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
      */
     public boolean hasUsedMinerals() {
       return ((bitField0_ & 0x00080000) == 0x00080000);
     }
     /**
+     * <pre>
+     * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getUsedMinerals() {
       return usedMinerals_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : usedMinerals_;
     }
     /**
+     * <pre>
+     * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getUsedMineralsOrBuilder() {
@@ -3552,18 +3971,30 @@ public final class ScoreOuterClass {
     public static final int USED_VESPENE_FIELD_NUMBER = 21;
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails usedVespene_;
     /**
+     * <pre>
+     * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
      */
     public boolean hasUsedVespene() {
       return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     /**
+     * <pre>
+     * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getUsedVespene() {
       return usedVespene_ == null ? SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.getDefaultInstance() : usedVespene_;
     }
     /**
+     * <pre>
+     * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+     * </pre>
+     *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
      */
     public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getUsedVespeneOrBuilder() {
@@ -3574,7 +4005,7 @@ public final class ScoreOuterClass {
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails totalUsedMinerals_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -3584,7 +4015,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -3594,7 +4025,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -3607,7 +4038,7 @@ public final class ScoreOuterClass {
     private SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails totalUsedVespene_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -3617,7 +4048,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -3627,7 +4058,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -3640,7 +4071,7 @@ public final class ScoreOuterClass {
     private SC2APIProtocol.ScoreOuterClass.VitalScoreDetails totalDamageDealt_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage dealt to the player's opponent for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -3650,7 +4081,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage dealt to the player's opponent for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -3660,7 +4091,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage dealt to the player's opponent for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -3673,7 +4104,7 @@ public final class ScoreOuterClass {
     private SC2APIProtocol.ScoreOuterClass.VitalScoreDetails totalDamageTaken_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage taken by the player for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -3683,7 +4114,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage taken by the player for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -3693,7 +4124,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of damage taken by the player for each category.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -3706,7 +4137,7 @@ public final class ScoreOuterClass {
     private SC2APIProtocol.ScoreOuterClass.VitalScoreDetails totalHealed_;
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -3716,7 +4147,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -3726,7 +4157,7 @@ public final class ScoreOuterClass {
     }
     /**
      * <pre>
-     * Interesting as a delta
+     * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
      * </pre>
      *
      * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -3736,6 +4167,7 @@ public final class ScoreOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3745,6 +4177,7 @@ public final class ScoreOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3828,6 +4261,7 @@ public final class ScoreOuterClass {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4309,6 +4743,7 @@ public final class ScoreOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4316,6 +4751,7 @@ public final class ScoreOuterClass {
     public static Builder newBuilder(SC2APIProtocol.ScoreOuterClass.ScoreDetails prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4339,6 +4775,7 @@ public final class ScoreOuterClass {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_ScoreDetails_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_ScoreDetails_fieldAccessorTable
@@ -4375,6 +4812,7 @@ public final class ScoreOuterClass {
           getTotalHealedFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         idleProductionTime_ = 0F;
@@ -4488,15 +4926,18 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.ScoreOuterClass.internal_static_SC2APIProtocol_ScoreDetails_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.ScoreDetails getDefaultInstanceForType() {
         return SC2APIProtocol.ScoreOuterClass.ScoreDetails.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.ScoreDetails build() {
         SC2APIProtocol.ScoreOuterClass.ScoreDetails result = buildPartial();
         if (!result.isInitialized()) {
@@ -4505,6 +4946,7 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.ScoreOuterClass.ScoreDetails buildPartial() {
         SC2APIProtocol.ScoreOuterClass.ScoreDetails result = new SC2APIProtocol.ScoreOuterClass.ScoreDetails(this);
         int from_bitField0_ = bitField0_;
@@ -4674,32 +5116,39 @@ public final class ScoreOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.ScoreOuterClass.ScoreDetails) {
           return mergeFrom((SC2APIProtocol.ScoreOuterClass.ScoreDetails)other);
@@ -4794,10 +5243,12 @@ public final class ScoreOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4820,7 +5271,7 @@ public final class ScoreOuterClass {
       private float idleProductionTime_ ;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_production_time = 1;</code>
@@ -4830,7 +5281,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_production_time = 1;</code>
@@ -4840,7 +5291,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_production_time = 1;</code>
@@ -4853,7 +5304,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any available structure able to produce a unit is not. The time stacks, as in, three idle barracks will increase idle_production_time three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_production_time = 1;</code>
@@ -4868,7 +5319,7 @@ public final class ScoreOuterClass {
       private float idleWorkerTime_ ;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_worker_time = 2;</code>
@@ -4878,7 +5329,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_worker_time = 2;</code>
@@ -4888,7 +5339,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_worker_time = 2;</code>
@@ -4901,7 +5352,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of time any worker is not mining. Note a worker building is not idle and three idle workers will increase this value three times quicker than just one.
        * </pre>
        *
        * <code>optional float idle_worker_time = 2;</code>
@@ -4916,7 +5367,7 @@ public final class ScoreOuterClass {
       private float totalValueUnits_ ;
       /**
        * <pre>
-       * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+       * Sum of minerals and vespene spent on completed units.
        * </pre>
        *
        * <code>optional float total_value_units = 3;</code>
@@ -4926,7 +5377,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+       * Sum of minerals and vespene spent on completed units.
        * </pre>
        *
        * <code>optional float total_value_units = 3;</code>
@@ -4936,7 +5387,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+       * Sum of minerals and vespene spent on completed units.
        * </pre>
        *
        * <code>optional float total_value_units = 3;</code>
@@ -4949,7 +5400,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Note the "total_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
+       * Sum of minerals and vespene spent on completed units.
        * </pre>
        *
        * <code>optional float total_value_units = 3;</code>
@@ -4963,18 +5414,30 @@ public final class ScoreOuterClass {
 
       private float totalValueStructures_ ;
       /**
+       * <pre>
+       * Sum of minerals and vespene spent on completed structures.
+       * </pre>
+       *
        * <code>optional float total_value_structures = 4;</code>
        */
       public boolean hasTotalValueStructures() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
+       * <pre>
+       * Sum of minerals and vespene spent on completed structures.
+       * </pre>
+       *
        * <code>optional float total_value_structures = 4;</code>
        */
       public float getTotalValueStructures() {
         return totalValueStructures_;
       }
       /**
+       * <pre>
+       * Sum of minerals and vespene spent on completed structures.
+       * </pre>
+       *
        * <code>optional float total_value_structures = 4;</code>
        */
       public Builder setTotalValueStructures(float value) {
@@ -4984,6 +5447,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of minerals and vespene spent on completed structures.
+       * </pre>
+       *
        * <code>optional float total_value_structures = 4;</code>
        */
       public Builder clearTotalValueStructures() {
@@ -4996,8 +5463,7 @@ public final class ScoreOuterClass {
       private float killedValueUnits_ ;
       /**
        * <pre>
-       * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-       * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+       * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
        * </pre>
        *
        * <code>optional float killed_value_units = 5;</code>
@@ -5007,8 +5473,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-       * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+       * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
        * </pre>
        *
        * <code>optional float killed_value_units = 5;</code>
@@ -5018,8 +5483,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-       * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+       * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
        * </pre>
        *
        * <code>optional float killed_value_units = 5;</code>
@@ -5032,8 +5496,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Note the "killed_value" fields are a combination of minerals, vespene and a human designer guess. Maybe useful as a delta.
-       * The weighting of the combination and the human designer guess is different (not symmetric) with the "total_value" fields!
+       * Sum of minerals and vespene of units, belonging to the opponent, that the player has destroyed.
        * </pre>
        *
        * <code>optional float killed_value_units = 5;</code>
@@ -5047,18 +5510,30 @@ public final class ScoreOuterClass {
 
       private float killedValueStructures_ ;
       /**
+       * <pre>
+       * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+       * </pre>
+       *
        * <code>optional float killed_value_structures = 6;</code>
        */
       public boolean hasKilledValueStructures() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
+       * <pre>
+       * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+       * </pre>
+       *
        * <code>optional float killed_value_structures = 6;</code>
        */
       public float getKilledValueStructures() {
         return killedValueStructures_;
       }
       /**
+       * <pre>
+       * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+       * </pre>
+       *
        * <code>optional float killed_value_structures = 6;</code>
        */
       public Builder setKilledValueStructures(float value) {
@@ -5068,6 +5543,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of minerals and vespene of structures, belonging to the opponent, that the player has destroyed.
+       * </pre>
+       *
        * <code>optional float killed_value_structures = 6;</code>
        */
       public Builder clearKilledValueStructures() {
@@ -5079,18 +5558,30 @@ public final class ScoreOuterClass {
 
       private float collectedMinerals_ ;
       /**
+       * <pre>
+       * Sum of minerals collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_minerals = 7;</code>
        */
       public boolean hasCollectedMinerals() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
+       * <pre>
+       * Sum of minerals collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_minerals = 7;</code>
        */
       public float getCollectedMinerals() {
         return collectedMinerals_;
       }
       /**
+       * <pre>
+       * Sum of minerals collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_minerals = 7;</code>
        */
       public Builder setCollectedMinerals(float value) {
@@ -5100,6 +5591,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of minerals collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_minerals = 7;</code>
        */
       public Builder clearCollectedMinerals() {
@@ -5111,18 +5606,30 @@ public final class ScoreOuterClass {
 
       private float collectedVespene_ ;
       /**
+       * <pre>
+       * Sum of vespene collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_vespene = 8;</code>
        */
       public boolean hasCollectedVespene() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
+       * <pre>
+       * Sum of vespene collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_vespene = 8;</code>
        */
       public float getCollectedVespene() {
         return collectedVespene_;
       }
       /**
+       * <pre>
+       * Sum of vespene collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_vespene = 8;</code>
        */
       public Builder setCollectedVespene(float value) {
@@ -5132,6 +5639,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of vespene collected by the player.
+       * </pre>
+       *
        * <code>optional float collected_vespene = 8;</code>
        */
       public Builder clearCollectedVespene() {
@@ -5143,18 +5654,30 @@ public final class ScoreOuterClass {
 
       private float collectionRateMinerals_ ;
       /**
+       * <pre>
+       * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_minerals = 9;</code>
        */
       public boolean hasCollectionRateMinerals() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
+       * <pre>
+       * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_minerals = 9;</code>
        */
       public float getCollectionRateMinerals() {
         return collectionRateMinerals_;
       }
       /**
+       * <pre>
+       * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_minerals = 9;</code>
        */
       public Builder setCollectionRateMinerals(float value) {
@@ -5164,6 +5687,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Estimated income of minerals over the next minute based on the players current income. The unit is minerals per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_minerals = 9;</code>
        */
       public Builder clearCollectionRateMinerals() {
@@ -5175,18 +5702,30 @@ public final class ScoreOuterClass {
 
       private float collectionRateVespene_ ;
       /**
+       * <pre>
+       * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_vespene = 10;</code>
        */
       public boolean hasCollectionRateVespene() {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
+       * <pre>
+       * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_vespene = 10;</code>
        */
       public float getCollectionRateVespene() {
         return collectionRateVespene_;
       }
       /**
+       * <pre>
+       * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_vespene = 10;</code>
        */
       public Builder setCollectionRateVespene(float value) {
@@ -5196,6 +5735,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Estimated income of vespene over the next minute based on the players current income. The unit is vespene per minute.
+       * </pre>
+       *
        * <code>optional float collection_rate_vespene = 10;</code>
        */
       public Builder clearCollectionRateVespene() {
@@ -5207,18 +5750,30 @@ public final class ScoreOuterClass {
 
       private float spentMinerals_ ;
       /**
+       * <pre>
+       * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+       * </pre>
+       *
        * <code>optional float spent_minerals = 11;</code>
        */
       public boolean hasSpentMinerals() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
+       * <pre>
+       * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+       * </pre>
+       *
        * <code>optional float spent_minerals = 11;</code>
        */
       public float getSpentMinerals() {
         return spentMinerals_;
       }
       /**
+       * <pre>
+       * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+       * </pre>
+       *
        * <code>optional float spent_minerals = 11;</code>
        */
       public Builder setSpentMinerals(float value) {
@@ -5228,6 +5783,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of spent minerals at the moment it is spent. For example, this number is incremented by 50 the moment an scv is queued in a command center.  It is decremented by 50 if that unit is canceled.
+       * </pre>
+       *
        * <code>optional float spent_minerals = 11;</code>
        */
       public Builder clearSpentMinerals() {
@@ -5239,18 +5798,30 @@ public final class ScoreOuterClass {
 
       private float spentVespene_ ;
       /**
+       * <pre>
+       * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+       * </pre>
+       *
        * <code>optional float spent_vespene = 12;</code>
        */
       public boolean hasSpentVespene() {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
+       * <pre>
+       * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+       * </pre>
+       *
        * <code>optional float spent_vespene = 12;</code>
        */
       public float getSpentVespene() {
         return spentVespene_;
       }
       /**
+       * <pre>
+       * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+       * </pre>
+       *
        * <code>optional float spent_vespene = 12;</code>
        */
       public Builder setSpentVespene(float value) {
@@ -5260,6 +5831,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of spent vespene at the moment it is spent. For example, this number is incremented by 50 when a reaper is queued but decremented by 50 if it is canceled.
+       * </pre>
+       *
        * <code>optional float spent_vespene = 12;</code>
        */
       public Builder clearSpentVespene() {
@@ -5273,12 +5848,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> foodUsedBuilder_;
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public boolean hasFoodUsed() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFoodUsed() {
@@ -5289,6 +5872,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public Builder setFoodUsed(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5305,6 +5892,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public Builder setFoodUsed(
@@ -5319,6 +5910,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public Builder mergeFoodUsed(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5339,6 +5934,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public Builder clearFoodUsed() {
@@ -5352,6 +5951,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getFoodUsedBuilder() {
@@ -5360,6 +5963,10 @@ public final class ScoreOuterClass {
         return getFoodUsedFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFoodUsedOrBuilder() {
@@ -5371,6 +5978,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of food, or supply, utilized in the categories above.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails food_used = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5391,12 +6002,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> killedMineralsBuilder_;
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public boolean hasKilledMinerals() {
         return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getKilledMinerals() {
@@ -5407,6 +6026,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public Builder setKilledMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5423,6 +6046,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public Builder setKilledMinerals(
@@ -5437,6 +6064,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public Builder mergeKilledMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5457,6 +6088,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public Builder clearKilledMinerals() {
@@ -5470,6 +6105,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getKilledMineralsBuilder() {
@@ -5478,6 +6117,10 @@ public final class ScoreOuterClass {
         return getKilledMineralsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getKilledMineralsOrBuilder() {
@@ -5489,6 +6132,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in minerals.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_minerals = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5509,12 +6156,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> killedVespeneBuilder_;
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public boolean hasKilledVespene() {
         return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getKilledVespene() {
@@ -5525,6 +6180,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public Builder setKilledVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5541,6 +6200,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public Builder setKilledVespene(
@@ -5555,6 +6218,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public Builder mergeKilledVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5575,6 +6242,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public Builder clearKilledVespene() {
@@ -5588,6 +6259,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getKilledVespeneBuilder() {
@@ -5596,6 +6271,10 @@ public final class ScoreOuterClass {
         return getKilledVespeneFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getKilledVespeneOrBuilder() {
@@ -5607,6 +6286,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of enemies catagories destroyed in vespene.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails killed_vespene = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5627,12 +6310,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> lostMineralsBuilder_;
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public boolean hasLostMinerals() {
         return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getLostMinerals() {
@@ -5643,6 +6334,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public Builder setLostMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5659,6 +6354,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public Builder setLostMinerals(
@@ -5673,6 +6372,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public Builder mergeLostMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5693,6 +6396,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public Builder clearLostMinerals() {
@@ -5706,6 +6413,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getLostMineralsBuilder() {
@@ -5714,6 +6425,10 @@ public final class ScoreOuterClass {
         return getLostMineralsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getLostMineralsOrBuilder() {
@@ -5725,6 +6440,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       *  Sum of lost minerals for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_minerals = 16;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5745,12 +6464,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> lostVespeneBuilder_;
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public boolean hasLostVespene() {
         return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getLostVespene() {
@@ -5761,6 +6488,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public Builder setLostVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5777,6 +6508,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public Builder setLostVespene(
@@ -5791,6 +6526,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public Builder mergeLostVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5811,6 +6550,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public Builder clearLostVespene() {
@@ -5824,6 +6567,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getLostVespeneBuilder() {
@@ -5832,6 +6579,10 @@ public final class ScoreOuterClass {
         return getLostVespeneFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getLostVespeneOrBuilder() {
@@ -5843,6 +6594,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of lost vespene for the player in each category.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails lost_vespene = 17;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5863,12 +6618,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> friendlyFireMineralsBuilder_;
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public boolean hasFriendlyFireMinerals() {
         return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFriendlyFireMinerals() {
@@ -5879,6 +6642,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public Builder setFriendlyFireMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5895,6 +6662,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public Builder setFriendlyFireMinerals(
@@ -5909,6 +6680,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public Builder mergeFriendlyFireMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -5929,6 +6704,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public Builder clearFriendlyFireMinerals() {
@@ -5942,6 +6721,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getFriendlyFireMineralsBuilder() {
@@ -5950,6 +6733,10 @@ public final class ScoreOuterClass {
         return getFriendlyFireMineralsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFriendlyFireMineralsOrBuilder() {
@@ -5961,6 +6748,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of the lost minerals via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_minerals = 18;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5981,12 +6772,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> friendlyFireVespeneBuilder_;
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public boolean hasFriendlyFireVespene() {
         return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getFriendlyFireVespene() {
@@ -5997,6 +6796,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public Builder setFriendlyFireVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -6013,6 +6816,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public Builder setFriendlyFireVespene(
@@ -6027,6 +6834,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public Builder mergeFriendlyFireVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -6047,6 +6858,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public Builder clearFriendlyFireVespene() {
@@ -6060,6 +6875,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getFriendlyFireVespeneBuilder() {
@@ -6068,6 +6887,10 @@ public final class ScoreOuterClass {
         return getFriendlyFireVespeneFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getFriendlyFireVespeneOrBuilder() {
@@ -6079,6 +6902,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of the lost vespene via destroying the players own units/buildings.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails friendly_fire_vespene = 19;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6099,12 +6926,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> usedMineralsBuilder_;
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public boolean hasUsedMinerals() {
         return ((bitField0_ & 0x00080000) == 0x00080000);
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getUsedMinerals() {
@@ -6115,6 +6950,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public Builder setUsedMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -6131,6 +6970,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public Builder setUsedMinerals(
@@ -6145,6 +6988,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public Builder mergeUsedMinerals(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -6165,6 +7012,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public Builder clearUsedMinerals() {
@@ -6178,6 +7029,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getUsedMineralsBuilder() {
@@ -6186,6 +7041,10 @@ public final class ScoreOuterClass {
         return getUsedMineralsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getUsedMineralsOrBuilder() {
@@ -6197,6 +7056,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of used minerals for the player in each category for each existing unit or upgrade. Therefore if a unit died worth 50 mierals this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_minerals = 20;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6217,12 +7080,20 @@ public final class ScoreOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> usedVespeneBuilder_;
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public boolean hasUsedVespene() {
         return ((bitField0_ & 0x00100000) == 0x00100000);
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails getUsedVespene() {
@@ -6233,6 +7104,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public Builder setUsedVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -6249,6 +7124,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public Builder setUsedVespene(
@@ -6263,6 +7142,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public Builder mergeUsedVespene(SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails value) {
@@ -6283,6 +7166,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public Builder clearUsedVespene() {
@@ -6296,6 +7183,10 @@ public final class ScoreOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder getUsedVespeneBuilder() {
@@ -6304,6 +7195,10 @@ public final class ScoreOuterClass {
         return getUsedVespeneFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       public SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder getUsedVespeneOrBuilder() {
@@ -6315,6 +7210,10 @@ public final class ScoreOuterClass {
         }
       }
       /**
+       * <pre>
+       * Sum of used vespene for the player in each category. Therefore if a unit died worth 50 vespene this number will be decremented by 50.
+       * </pre>
+       *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails used_vespene = 21;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6336,7 +7235,7 @@ public final class ScoreOuterClass {
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> totalUsedMineralsBuilder_;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6346,7 +7245,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6360,7 +7259,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6380,7 +7279,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6398,7 +7297,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6422,7 +7321,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6439,7 +7338,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6451,7 +7350,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6466,7 +7365,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used minerals throughout the entire game for each category. Unliked used_minerals, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_minerals = 22;</code>
@@ -6490,7 +7389,7 @@ public final class ScoreOuterClass {
           SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.CategoryScoreDetailsOrBuilder> totalUsedVespeneBuilder_;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6500,7 +7399,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6514,7 +7413,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6534,7 +7433,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6552,7 +7451,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6576,7 +7475,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6593,7 +7492,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6605,7 +7504,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6620,7 +7519,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of used vespene throughout the entire game for each category. Unliked used_vespene, this value is never decremented.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.CategoryScoreDetails total_used_vespene = 23;</code>
@@ -6644,7 +7543,7 @@ public final class ScoreOuterClass {
           SC2APIProtocol.ScoreOuterClass.VitalScoreDetails, SC2APIProtocol.ScoreOuterClass.VitalScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.VitalScoreDetailsOrBuilder> totalDamageDealtBuilder_;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6654,7 +7553,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6668,7 +7567,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6688,7 +7587,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6706,7 +7605,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6730,7 +7629,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6747,7 +7646,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6759,7 +7658,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6774,7 +7673,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage dealt to the player's opponent for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_dealt = 24;</code>
@@ -6798,7 +7697,7 @@ public final class ScoreOuterClass {
           SC2APIProtocol.ScoreOuterClass.VitalScoreDetails, SC2APIProtocol.ScoreOuterClass.VitalScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.VitalScoreDetailsOrBuilder> totalDamageTakenBuilder_;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6808,7 +7707,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6822,7 +7721,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6842,7 +7741,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6860,7 +7759,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6884,7 +7783,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6901,7 +7800,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6913,7 +7812,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6928,7 +7827,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of damage taken by the player for each category.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_damage_taken = 25;</code>
@@ -6952,7 +7851,7 @@ public final class ScoreOuterClass {
           SC2APIProtocol.ScoreOuterClass.VitalScoreDetails, SC2APIProtocol.ScoreOuterClass.VitalScoreDetails.Builder, SC2APIProtocol.ScoreOuterClass.VitalScoreDetailsOrBuilder> totalHealedBuilder_;
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -6962,7 +7861,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -6976,7 +7875,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -6996,7 +7895,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -7014,7 +7913,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -7038,7 +7937,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -7055,7 +7954,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -7067,7 +7966,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -7082,7 +7981,7 @@ public final class ScoreOuterClass {
       }
       /**
        * <pre>
-       * Interesting as a delta
+       * Sum of health healed by the player. Note that technology can be healed (by queens) or repaired (by scvs).
        * </pre>
        *
        * <code>optional .SC2APIProtocol.VitalScoreDetails total_healed = 26;</code>
@@ -7100,11 +7999,13 @@ public final class ScoreOuterClass {
         }
         return totalHealedBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7126,11 +8027,12 @@ public final class ScoreOuterClass {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ScoreDetails>
         PARSER = new com.google.protobuf.AbstractParser<ScoreDetails>() {
+      @java.lang.Override
       public ScoreDetails parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ScoreDetails(input, extensionRegistry);
+        return new ScoreDetails(input, extensionRegistry);
       }
     };
 
@@ -7143,6 +8045,7 @@ public final class ScoreOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.ScoreOuterClass.ScoreDetails getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7187,7 +8090,7 @@ public final class ScoreOuterClass {
       "s\022\014\n\004none\030\001 \001(\002\022\014\n\004army\030\002 \001(\002\022\017\n\007economy" +
       "\030\003 \001(\002\022\022\n\ntechnology\030\004 \001(\002\022\017\n\007upgrade\030\005 " +
       "\001(\002\"B\n\021VitalScoreDetails\022\014\n\004life\030\001 \001(\002\022\017" +
-      "\n\007shields\030\002 \001(\002\022\016\n\006energy\030\003 \001(\002\"\326\t\n\014Scor",
+      "\n\007shields\030\002 \001(\002\022\016\n\006energy\030\003 \001(\002\"\326\t\n\014Scor" +
       "eDetails\022\034\n\024idle_production_time\030\001 \001(\002\022\030" +
       "\n\020idle_worker_time\030\002 \001(\002\022\031\n\021total_value_" +
       "units\030\003 \001(\002\022\036\n\026total_value_structures\030\004 " +
@@ -7197,7 +8100,7 @@ public final class ScoreOuterClass {
       " \n\030collection_rate_minerals\030\t \001(\002\022\037\n\027col" +
       "lection_rate_vespene\030\n \001(\002\022\026\n\016spent_mine" +
       "rals\030\013 \001(\002\022\025\n\rspent_vespene\030\014 \001(\002\0227\n\tfoo" +
-      "d_used\030\r \001(\0132$.SC2APIProtocol.CategorySc",
+      "d_used\030\r \001(\0132$.SC2APIProtocol.CategorySc" +
       "oreDetails\022=\n\017killed_minerals\030\016 \001(\0132$.SC" +
       "2APIProtocol.CategoryScoreDetails\022<\n\016kil" +
       "led_vespene\030\017 \001(\0132$.SC2APIProtocol.Categ" +
@@ -7207,7 +8110,7 @@ public final class ScoreOuterClass {
       "goryScoreDetails\022D\n\026friendly_fire_minera" +
       "ls\030\022 \001(\0132$.SC2APIProtocol.CategoryScoreD" +
       "etails\022C\n\025friendly_fire_vespene\030\023 \001(\0132$." +
-      "SC2APIProtocol.CategoryScoreDetails\022;\n\ru",
+      "SC2APIProtocol.CategoryScoreDetails\022;\n\ru" +
       "sed_minerals\030\024 \001(\0132$.SC2APIProtocol.Cate" +
       "goryScoreDetails\022:\n\014used_vespene\030\025 \001(\0132$" +
       ".SC2APIProtocol.CategoryScoreDetails\022A\n\023" +
@@ -7217,7 +8120,7 @@ public final class ScoreOuterClass {
       "reDetails\022=\n\022total_damage_dealt\030\030 \001(\0132!." +
       "SC2APIProtocol.VitalScoreDetails\022=\n\022tota" +
       "l_damage_taken\030\031 \001(\0132!.SC2APIProtocol.Vi" +
-      "talScoreDetails\0227\n\014total_healed\030\032 \001(\0132!.",
+      "talScoreDetails\0227\n\014total_healed\030\032 \001(\0132!." +
       "SC2APIProtocol.VitalScoreDetails"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

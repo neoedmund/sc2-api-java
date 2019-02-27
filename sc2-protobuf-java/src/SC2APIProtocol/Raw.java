@@ -251,6 +251,14 @@ public final class Raw {
   public enum CloakState
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Under the fog, so unknown whether it's cloaked or not.
+     * </pre>
+     *
+     * <code>CloakedUnknown = 0;</code>
+     */
+    CloakedUnknown(0),
+    /**
      * <code>Cloaked = 1;</code>
      */
     Cloaked(1),
@@ -262,8 +270,20 @@ public final class Raw {
      * <code>NotCloaked = 3;</code>
      */
     NotCloaked(3),
+    /**
+     * <code>CloakedAllied = 4;</code>
+     */
+    CloakedAllied(4),
     ;
 
+    /**
+     * <pre>
+     * Under the fog, so unknown whether it's cloaked or not.
+     * </pre>
+     *
+     * <code>CloakedUnknown = 0;</code>
+     */
+    public static final int CloakedUnknown_VALUE = 0;
     /**
      * <code>Cloaked = 1;</code>
      */
@@ -276,6 +296,10 @@ public final class Raw {
      * <code>NotCloaked = 3;</code>
      */
     public static final int NotCloaked_VALUE = 3;
+    /**
+     * <code>CloakedAllied = 4;</code>
+     */
+    public static final int CloakedAllied_VALUE = 4;
 
 
     public final int getNumber() {
@@ -292,9 +316,11 @@ public final class Raw {
 
     public static CloakState forNumber(int value) {
       switch (value) {
+        case 0: return CloakedUnknown;
         case 1: return Cloaked;
         case 2: return CloakedDetected;
         case 3: return NotCloaked;
+        case 4: return CloakedAllied;
         default: return null;
       }
     }
@@ -543,6 +569,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -554,13 +583,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.Size2DI.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -635,6 +657,13 @@ public final class Raw {
                   input.readMessage(SC2APIProtocol.Common.Point2D.PARSER, extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -655,6 +684,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_StartRaw_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_StartRaw_fieldAccessorTable
@@ -884,6 +914,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -893,6 +924,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -916,6 +948,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1098,6 +1131,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1105,6 +1139,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.StartRaw prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1128,6 +1163,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_StartRaw_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_StartRaw_fieldAccessorTable
@@ -1156,6 +1192,7 @@ public final class Raw {
           getStartLocationsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (mapSizeBuilder_ == null) {
@@ -1197,15 +1234,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_StartRaw_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.StartRaw getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.StartRaw.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.StartRaw build() {
         SC2APIProtocol.Raw.StartRaw result = buildPartial();
         if (!result.isInitialized()) {
@@ -1214,6 +1254,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.StartRaw buildPartial() {
         SC2APIProtocol.Raw.StartRaw result = new SC2APIProtocol.Raw.StartRaw(this);
         int from_bitField0_ = bitField0_;
@@ -1272,32 +1313,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.StartRaw) {
           return mergeFrom((SC2APIProtocol.Raw.StartRaw)other);
@@ -1355,10 +1403,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2459,11 +2509,13 @@ public final class Raw {
         }
         return startLocationsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2485,11 +2537,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<StartRaw>
         PARSER = new com.google.protobuf.AbstractParser<StartRaw>() {
+      @java.lang.Override
       public StartRaw parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StartRaw(input, extensionRegistry);
+        return new StartRaw(input, extensionRegistry);
       }
     };
 
@@ -2502,6 +2555,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.StartRaw getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2638,6 +2692,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2649,13 +2706,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Raw.PlayerRaw.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2713,6 +2763,13 @@ public final class Raw {
                   input.readMessage(SC2APIProtocol.Raw.Effect.PARSER, extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2736,6 +2793,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ObservationRaw_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ObservationRaw_fieldAccessorTable
@@ -2890,6 +2948,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2899,6 +2958,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2919,6 +2979,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3085,6 +3146,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3092,6 +3154,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.ObservationRaw prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3115,6 +3178,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ObservationRaw_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ObservationRaw_fieldAccessorTable
@@ -3142,6 +3206,7 @@ public final class Raw {
           getEffectsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (playerBuilder_ == null) {
@@ -3177,15 +3242,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ObservationRaw_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ObservationRaw getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.ObservationRaw.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ObservationRaw build() {
         SC2APIProtocol.Raw.ObservationRaw result = buildPartial();
         if (!result.isInitialized()) {
@@ -3194,6 +3262,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ObservationRaw buildPartial() {
         SC2APIProtocol.Raw.ObservationRaw result = new SC2APIProtocol.Raw.ObservationRaw(this);
         int from_bitField0_ = bitField0_;
@@ -3245,32 +3314,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.ObservationRaw) {
           return mergeFrom((SC2APIProtocol.Raw.ObservationRaw)other);
@@ -3348,10 +3424,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4240,11 +4318,13 @@ public final class Raw {
         }
         return effectsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4266,11 +4346,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ObservationRaw>
         PARSER = new com.google.protobuf.AbstractParser<ObservationRaw>() {
+      @java.lang.Override
       public ObservationRaw parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ObservationRaw(input, extensionRegistry);
+        return new ObservationRaw(input, extensionRegistry);
       }
     };
 
@@ -4283,6 +4364,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.ObservationRaw getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4351,6 +4433,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4362,13 +4447,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.Point.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4392,6 +4470,13 @@ public final class Raw {
               tag_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4409,6 +4494,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PowerSource_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PowerSource_fieldAccessorTable
@@ -4469,6 +4555,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4478,6 +4565,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4492,6 +4580,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4642,6 +4731,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4649,6 +4739,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.PowerSource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4672,6 +4763,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PowerSource_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PowerSource_fieldAccessorTable
@@ -4695,6 +4787,7 @@ public final class Raw {
           getPosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (posBuilder_ == null) {
@@ -4710,15 +4803,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PowerSource_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PowerSource getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.PowerSource.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PowerSource build() {
         SC2APIProtocol.Raw.PowerSource result = buildPartial();
         if (!result.isInitialized()) {
@@ -4727,6 +4823,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PowerSource buildPartial() {
         SC2APIProtocol.Raw.PowerSource result = new SC2APIProtocol.Raw.PowerSource(this);
         int from_bitField0_ = bitField0_;
@@ -4752,32 +4849,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.PowerSource) {
           return mergeFrom((SC2APIProtocol.Raw.PowerSource)other);
@@ -4803,10 +4907,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5007,11 +5113,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5033,11 +5141,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PowerSource>
         PARSER = new com.google.protobuf.AbstractParser<PowerSource>() {
+      @java.lang.Override
       public PowerSource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PowerSource(input, extensionRegistry);
+        return new PowerSource(input, extensionRegistry);
       }
     };
 
@@ -5050,6 +5159,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.PowerSource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5149,6 +5259,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5160,13 +5273,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 powerSources_ = new java.util.ArrayList<SC2APIProtocol.Raw.PowerSource>();
@@ -5210,6 +5316,13 @@ public final class Raw {
               input.popLimit(limit);
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5233,6 +5346,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PlayerRaw_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PlayerRaw_fieldAccessorTable
@@ -5332,6 +5446,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5341,6 +5456,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < powerSources_.size(); i++) {
@@ -5355,6 +5471,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5500,6 +5617,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5507,6 +5625,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.PlayerRaw prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5530,6 +5649,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PlayerRaw_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PlayerRaw_fieldAccessorTable
@@ -5554,6 +5674,7 @@ public final class Raw {
           getCameraFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (powerSourcesBuilder_ == null) {
@@ -5573,15 +5694,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PlayerRaw_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PlayerRaw getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.PlayerRaw.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PlayerRaw build() {
         SC2APIProtocol.Raw.PlayerRaw result = buildPartial();
         if (!result.isInitialized()) {
@@ -5590,6 +5714,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PlayerRaw buildPartial() {
         SC2APIProtocol.Raw.PlayerRaw result = new SC2APIProtocol.Raw.PlayerRaw(this);
         int from_bitField0_ = bitField0_;
@@ -5621,32 +5746,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.PlayerRaw) {
           return mergeFrom((SC2APIProtocol.Raw.PlayerRaw)other);
@@ -5702,10 +5834,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6176,11 +6310,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6202,11 +6338,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerRaw>
         PARSER = new com.google.protobuf.AbstractParser<PlayerRaw>() {
+      @java.lang.Override
       public PlayerRaw parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerRaw(input, extensionRegistry);
+        return new PlayerRaw(input, extensionRegistry);
       }
     };
 
@@ -6219,6 +6356,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.PlayerRaw getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6306,6 +6444,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6317,13 +6458,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readUInt32();
@@ -6353,6 +6487,13 @@ public final class Raw {
               progress_ = input.readFloat();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6370,6 +6511,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_UnitOrder_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_UnitOrder_fieldAccessorTable
@@ -6498,6 +6640,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6507,6 +6650,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6525,6 +6669,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6698,6 +6843,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6705,6 +6851,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.UnitOrder prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6728,6 +6875,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_UnitOrder_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_UnitOrder_fieldAccessorTable
@@ -6750,6 +6898,7 @@ public final class Raw {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = 0;
@@ -6761,15 +6910,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_UnitOrder_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.UnitOrder getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.UnitOrder.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.UnitOrder build() {
         SC2APIProtocol.Raw.UnitOrder result = buildPartial();
         if (!result.isInitialized()) {
@@ -6778,6 +6930,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.UnitOrder buildPartial() {
         SC2APIProtocol.Raw.UnitOrder result = new SC2APIProtocol.Raw.UnitOrder(this);
         int from_bitField0_ = bitField0_;
@@ -6806,32 +6959,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.UnitOrder) {
           return mergeFrom((SC2APIProtocol.Raw.UnitOrder)other);
@@ -6867,10 +7027,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7156,11 +7318,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7182,11 +7346,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<UnitOrder>
         PARSER = new com.google.protobuf.AbstractParser<UnitOrder>() {
+      @java.lang.Override
       public UnitOrder parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UnitOrder(input, extensionRegistry);
+        return new UnitOrder(input, extensionRegistry);
       }
     };
 
@@ -7199,6 +7364,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.UnitOrder getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7314,6 +7480,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7325,13 +7494,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               tag_ = input.readUInt64();
@@ -7372,6 +7534,13 @@ public final class Raw {
               energyMax_ = input.readFloat();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7389,6 +7558,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PassengerUnit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PassengerUnit_fieldAccessorTable
@@ -7518,6 +7688,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7527,6 +7698,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7556,6 +7728,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7786,6 +7959,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7793,6 +7967,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.PassengerUnit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7816,6 +7991,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PassengerUnit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PassengerUnit_fieldAccessorTable
@@ -7838,6 +8014,7 @@ public final class Raw {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         tag_ = 0L;
@@ -7859,15 +8036,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_PassengerUnit_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PassengerUnit getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.PassengerUnit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PassengerUnit build() {
         SC2APIProtocol.Raw.PassengerUnit result = buildPartial();
         if (!result.isInitialized()) {
@@ -7876,6 +8056,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.PassengerUnit buildPartial() {
         SC2APIProtocol.Raw.PassengerUnit result = new SC2APIProtocol.Raw.PassengerUnit(this);
         int from_bitField0_ = bitField0_;
@@ -7917,32 +8098,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.PassengerUnit) {
           return mergeFrom((SC2APIProtocol.Raw.PassengerUnit)other);
@@ -7983,10 +8171,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8261,11 +8451,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8287,11 +8479,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PassengerUnit>
         PARSER = new com.google.protobuf.AbstractParser<PassengerUnit>() {
+      @java.lang.Override
       public PassengerUnit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PassengerUnit(input, extensionRegistry);
+        return new PassengerUnit(input, extensionRegistry);
       }
     };
 
@@ -8304,6 +8497,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.PassengerUnit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8433,6 +8627,19 @@ public final class Raw {
     SC2APIProtocol.Raw.CloakState getCloak();
 
     /**
+     * <code>repeated uint32 buff_ids = 27;</code>
+     */
+    java.util.List<java.lang.Integer> getBuffIdsList();
+    /**
+     * <code>repeated uint32 buff_ids = 27;</code>
+     */
+    int getBuffIdsCount();
+    /**
+     * <code>repeated uint32 buff_ids = 27;</code>
+     */
+    int getBuffIds(int index);
+
+    /**
      * <code>optional float detect_range = 31;</code>
      */
     boolean hasDetectRange();
@@ -8501,6 +8708,23 @@ public final class Raw {
      * <code>optional bool is_powered = 35;</code>
      */
     boolean getIsPowered();
+
+    /**
+     * <pre>
+     * Building is training/researching (ie animated).
+     * </pre>
+     *
+     * <code>optional bool is_active = 39;</code>
+     */
+    boolean hasIsActive();
+    /**
+     * <pre>
+     * Building is training/researching (ie animated).
+     * </pre>
+     *
+     * <code>optional bool is_active = 39;</code>
+     */
+    boolean getIsActive();
 
     /**
      * <pre>
@@ -8602,6 +8826,23 @@ public final class Raw {
 
     /**
      * <pre>
+     * Unit is your own or detected as a hallucination.
+     * </pre>
+     *
+     * <code>optional bool is_hallucination = 38;</code>
+     */
+    boolean hasIsHallucination();
+    /**
+     * <pre>
+     * Unit is your own or detected as a hallucination.
+     * </pre>
+     *
+     * <code>optional bool is_hallucination = 38;</code>
+     */
+    boolean getIsHallucination();
+
+    /**
+     * <pre>
      * Not populated for enemies
      * </pre>
      *
@@ -8696,31 +8937,6 @@ public final class Raw {
     int getCargoSpaceMax();
 
     /**
-     * <pre>
-     * TODO: Should this be populated for enemies?
-     * </pre>
-     *
-     * <code>repeated uint32 buff_ids = 27;</code>
-     */
-    java.util.List<java.lang.Integer> getBuffIdsList();
-    /**
-     * <pre>
-     * TODO: Should this be populated for enemies?
-     * </pre>
-     *
-     * <code>repeated uint32 buff_ids = 27;</code>
-     */
-    int getBuffIdsCount();
-    /**
-     * <pre>
-     * TODO: Should this be populated for enemies?
-     * </pre>
-     *
-     * <code>repeated uint32 buff_ids = 27;</code>
-     */
-    int getBuffIds(int index);
-
-    /**
      * <code>optional int32 assigned_harvesters = 28;</code>
      */
     boolean hasAssignedHarvesters();
@@ -8777,13 +8993,15 @@ public final class Raw {
       facing_ = 0F;
       radius_ = 0F;
       buildProgress_ = 0F;
-      cloak_ = 1;
+      cloak_ = 0;
+      buffIds_ = java.util.Collections.emptyList();
       detectRange_ = 0F;
       radarRange_ = 0F;
       isSelected_ = false;
       isOnScreen_ = false;
       isBlip_ = false;
       isPowered_ = false;
+      isActive_ = false;
       health_ = 0F;
       healthMax_ = 0F;
       shield_ = 0F;
@@ -8794,12 +9012,12 @@ public final class Raw {
       vespeneContents_ = 0;
       isFlying_ = false;
       isBurrowed_ = false;
+      isHallucination_ = false;
       orders_ = java.util.Collections.emptyList();
       addOnTag_ = 0L;
       passengers_ = java.util.Collections.emptyList();
       cargoSpaceTaken_ = 0;
       cargoSpaceMax_ = 0;
-      buffIds_ = java.util.Collections.emptyList();
       assignedHarvesters_ = 0;
       idealHarvesters_ = 0;
       weaponCooldown_ = 0F;
@@ -8816,6 +9034,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -8828,15 +9049,9 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Raw.DisplayType value = SC2APIProtocol.Raw.DisplayType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -8848,6 +9063,7 @@ public final class Raw {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Raw.Alliance value = SC2APIProtocol.Raw.Alliance.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
@@ -8902,6 +9118,7 @@ public final class Raw {
             }
             case 80: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Raw.CloakState value = SC2APIProtocol.Raw.CloakState.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(10, rawValue);
@@ -8927,82 +9144,82 @@ public final class Raw {
               break;
             }
             case 117: {
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00020000;
               health_ = input.readFloat();
               break;
             }
             case 125: {
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00040000;
               healthMax_ = input.readFloat();
               break;
             }
             case 133: {
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00080000;
               shield_ = input.readFloat();
               break;
             }
             case 141: {
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00200000;
               energy_ = input.readFloat();
               break;
             }
             case 144: {
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00800000;
               mineralContents_ = input.readInt32();
               break;
             }
             case 152: {
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x01000000;
               vespeneContents_ = input.readInt32();
               break;
             }
             case 160: {
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x02000000;
               isFlying_ = input.readBool();
               break;
             }
             case 168: {
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x04000000;
               isBurrowed_ = input.readBool();
               break;
             }
             case 178: {
-              if (!((mutable_bitField0_ & 0x04000000) == 0x04000000)) {
+              if (!((mutable_bitField0_ & 0x20000000) == 0x20000000)) {
                 orders_ = new java.util.ArrayList<SC2APIProtocol.Raw.UnitOrder>();
-                mutable_bitField0_ |= 0x04000000;
+                mutable_bitField0_ |= 0x20000000;
               }
               orders_.add(
                   input.readMessage(SC2APIProtocol.Raw.UnitOrder.PARSER, extensionRegistry));
               break;
             }
             case 184: {
-              bitField0_ |= 0x04000000;
+              bitField0_ |= 0x10000000;
               addOnTag_ = input.readUInt64();
               break;
             }
             case 194: {
-              if (!((mutable_bitField0_ & 0x10000000) == 0x10000000)) {
+              if (!((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
                 passengers_ = new java.util.ArrayList<SC2APIProtocol.Raw.PassengerUnit>();
-                mutable_bitField0_ |= 0x10000000;
+                mutable_bitField0_ |= 0x80000000;
               }
               passengers_.add(
                   input.readMessage(SC2APIProtocol.Raw.PassengerUnit.PARSER, extensionRegistry));
               break;
             }
             case 200: {
-              bitField0_ |= 0x08000000;
+              bitField0_ |= 0x20000000;
               cargoSpaceTaken_ = input.readInt32();
               break;
             }
             case 208: {
-              bitField0_ |= 0x10000000;
+              bitField0_ |= 0x40000000;
               cargoSpaceMax_ = input.readInt32();
               break;
             }
             case 216: {
-              if (!((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 buffIds_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x80000000;
+                mutable_bitField0_ |= 0x00000400;
               }
               buffIds_.add(input.readUInt32());
               break;
@@ -9010,9 +9227,9 @@ public final class Raw {
             case 218: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x80000000) == 0x80000000) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400) && input.getBytesUntilLimit() > 0) {
                 buffIds_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x80000000;
+                mutable_bitField0_ |= 0x00000400;
               }
               while (input.getBytesUntilLimit() > 0) {
                 buffIds_.add(input.readUInt32());
@@ -9021,17 +9238,17 @@ public final class Raw {
               break;
             }
             case 224: {
-              bitField0_ |= 0x20000000;
+              bitField0_ |= 0x80000000;
               assignedHarvesters_ = input.readInt32();
               break;
             }
             case 232: {
-              bitField0_ |= 0x40000000;
+              bitField1_ |= 0x00000001;
               idealHarvesters_ = input.readInt32();
               break;
             }
             case 245: {
-              bitField0_ |= 0x80000000;
+              bitField1_ |= 0x00000002;
               weaponCooldown_ = input.readFloat();
               break;
             }
@@ -9046,7 +9263,7 @@ public final class Raw {
               break;
             }
             case 272: {
-              bitField1_ |= 0x00000001;
+              bitField1_ |= 0x00000004;
               engagedTargetTag_ = input.readUInt64();
               break;
             }
@@ -9056,13 +9273,30 @@ public final class Raw {
               break;
             }
             case 293: {
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00100000;
               shieldMax_ = input.readFloat();
               break;
             }
             case 301: {
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00400000;
               energyMax_ = input.readFloat();
+              break;
+            }
+            case 304: {
+              bitField0_ |= 0x08000000;
+              isHallucination_ = input.readBool();
+              break;
+            }
+            case 312: {
+              bitField0_ |= 0x00010000;
+              isActive_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9073,13 +9307,13 @@ public final class Raw {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x04000000) == 0x04000000)) {
+        if (((mutable_bitField0_ & 0x20000000) == 0x20000000)) {
           orders_ = java.util.Collections.unmodifiableList(orders_);
         }
-        if (((mutable_bitField0_ & 0x10000000) == 0x10000000)) {
+        if (((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
           passengers_ = java.util.Collections.unmodifiableList(passengers_);
         }
-        if (((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           buffIds_ = java.util.Collections.unmodifiableList(buffIds_);
         }
         this.unknownFields = unknownFields.build();
@@ -9091,6 +9325,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Unit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Unit_fieldAccessorTable
@@ -9120,6 +9355,7 @@ public final class Raw {
      * <code>optional .SC2APIProtocol.DisplayType display_type = 1;</code>
      */
     public SC2APIProtocol.Raw.DisplayType getDisplayType() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Raw.DisplayType result = SC2APIProtocol.Raw.DisplayType.valueOf(displayType_);
       return result == null ? SC2APIProtocol.Raw.DisplayType.Visible : result;
     }
@@ -9136,6 +9372,7 @@ public final class Raw {
      * <code>optional .SC2APIProtocol.Alliance alliance = 2;</code>
      */
     public SC2APIProtocol.Raw.Alliance getAlliance() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Raw.Alliance result = SC2APIProtocol.Raw.Alliance.valueOf(alliance_);
       return result == null ? SC2APIProtocol.Raw.Alliance.Self : result;
     }
@@ -9279,8 +9516,31 @@ public final class Raw {
      * <code>optional .SC2APIProtocol.CloakState cloak = 10;</code>
      */
     public SC2APIProtocol.Raw.CloakState getCloak() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Raw.CloakState result = SC2APIProtocol.Raw.CloakState.valueOf(cloak_);
-      return result == null ? SC2APIProtocol.Raw.CloakState.Cloaked : result;
+      return result == null ? SC2APIProtocol.Raw.CloakState.CloakedUnknown : result;
+    }
+
+    public static final int BUFF_IDS_FIELD_NUMBER = 27;
+    private java.util.List<java.lang.Integer> buffIds_;
+    /**
+     * <code>repeated uint32 buff_ids = 27;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getBuffIdsList() {
+      return buffIds_;
+    }
+    /**
+     * <code>repeated uint32 buff_ids = 27;</code>
+     */
+    public int getBuffIdsCount() {
+      return buffIds_.size();
+    }
+    /**
+     * <code>repeated uint32 buff_ids = 27;</code>
+     */
+    public int getBuffIds(int index) {
+      return buffIds_.get(index);
     }
 
     public static final int DETECT_RANGE_FIELD_NUMBER = 31;
@@ -9389,6 +9649,29 @@ public final class Raw {
       return isPowered_;
     }
 
+    public static final int IS_ACTIVE_FIELD_NUMBER = 39;
+    private boolean isActive_;
+    /**
+     * <pre>
+     * Building is training/researching (ie animated).
+     * </pre>
+     *
+     * <code>optional bool is_active = 39;</code>
+     */
+    public boolean hasIsActive() {
+      return ((bitField0_ & 0x00010000) == 0x00010000);
+    }
+    /**
+     * <pre>
+     * Building is training/researching (ie animated).
+     * </pre>
+     *
+     * <code>optional bool is_active = 39;</code>
+     */
+    public boolean getIsActive() {
+      return isActive_;
+    }
+
     public static final int HEALTH_FIELD_NUMBER = 14;
     private float health_;
     /**
@@ -9399,7 +9682,7 @@ public final class Raw {
      * <code>optional float health = 14;</code>
      */
     public boolean hasHealth() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <pre>
@@ -9418,7 +9701,7 @@ public final class Raw {
      * <code>optional float health_max = 15;</code>
      */
     public boolean hasHealthMax() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
+      return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     /**
      * <code>optional float health_max = 15;</code>
@@ -9433,7 +9716,7 @@ public final class Raw {
      * <code>optional float shield = 16;</code>
      */
     public boolean hasShield() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
+      return ((bitField0_ & 0x00080000) == 0x00080000);
     }
     /**
      * <code>optional float shield = 16;</code>
@@ -9448,7 +9731,7 @@ public final class Raw {
      * <code>optional float shield_max = 36;</code>
      */
     public boolean hasShieldMax() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
+      return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     /**
      * <code>optional float shield_max = 36;</code>
@@ -9463,7 +9746,7 @@ public final class Raw {
      * <code>optional float energy = 17;</code>
      */
     public boolean hasEnergy() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x00200000) == 0x00200000);
     }
     /**
      * <code>optional float energy = 17;</code>
@@ -9478,7 +9761,7 @@ public final class Raw {
      * <code>optional float energy_max = 37;</code>
      */
     public boolean hasEnergyMax() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
+      return ((bitField0_ & 0x00400000) == 0x00400000);
     }
     /**
      * <code>optional float energy_max = 37;</code>
@@ -9493,7 +9776,7 @@ public final class Raw {
      * <code>optional int32 mineral_contents = 18;</code>
      */
     public boolean hasMineralContents() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
+      return ((bitField0_ & 0x00800000) == 0x00800000);
     }
     /**
      * <code>optional int32 mineral_contents = 18;</code>
@@ -9508,7 +9791,7 @@ public final class Raw {
      * <code>optional int32 vespene_contents = 19;</code>
      */
     public boolean hasVespeneContents() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
+      return ((bitField0_ & 0x01000000) == 0x01000000);
     }
     /**
      * <code>optional int32 vespene_contents = 19;</code>
@@ -9523,7 +9806,7 @@ public final class Raw {
      * <code>optional bool is_flying = 20;</code>
      */
     public boolean hasIsFlying() {
-      return ((bitField0_ & 0x01000000) == 0x01000000);
+      return ((bitField0_ & 0x02000000) == 0x02000000);
     }
     /**
      * <code>optional bool is_flying = 20;</code>
@@ -9538,13 +9821,36 @@ public final class Raw {
      * <code>optional bool is_burrowed = 21;</code>
      */
     public boolean hasIsBurrowed() {
-      return ((bitField0_ & 0x02000000) == 0x02000000);
+      return ((bitField0_ & 0x04000000) == 0x04000000);
     }
     /**
      * <code>optional bool is_burrowed = 21;</code>
      */
     public boolean getIsBurrowed() {
       return isBurrowed_;
+    }
+
+    public static final int IS_HALLUCINATION_FIELD_NUMBER = 38;
+    private boolean isHallucination_;
+    /**
+     * <pre>
+     * Unit is your own or detected as a hallucination.
+     * </pre>
+     *
+     * <code>optional bool is_hallucination = 38;</code>
+     */
+    public boolean hasIsHallucination() {
+      return ((bitField0_ & 0x08000000) == 0x08000000);
+    }
+    /**
+     * <pre>
+     * Unit is your own or detected as a hallucination.
+     * </pre>
+     *
+     * <code>optional bool is_hallucination = 38;</code>
+     */
+    public boolean getIsHallucination() {
+      return isHallucination_;
     }
 
     public static final int ORDERS_FIELD_NUMBER = 22;
@@ -9608,7 +9914,7 @@ public final class Raw {
      * <code>optional uint64 add_on_tag = 23;</code>
      */
     public boolean hasAddOnTag() {
-      return ((bitField0_ & 0x04000000) == 0x04000000);
+      return ((bitField0_ & 0x10000000) == 0x10000000);
     }
     /**
      * <code>optional uint64 add_on_tag = 23;</code>
@@ -9658,7 +9964,7 @@ public final class Raw {
      * <code>optional int32 cargo_space_taken = 25;</code>
      */
     public boolean hasCargoSpaceTaken() {
-      return ((bitField0_ & 0x08000000) == 0x08000000);
+      return ((bitField0_ & 0x20000000) == 0x20000000);
     }
     /**
      * <code>optional int32 cargo_space_taken = 25;</code>
@@ -9673,7 +9979,7 @@ public final class Raw {
      * <code>optional int32 cargo_space_max = 26;</code>
      */
     public boolean hasCargoSpaceMax() {
-      return ((bitField0_ & 0x10000000) == 0x10000000);
+      return ((bitField0_ & 0x40000000) == 0x40000000);
     }
     /**
      * <code>optional int32 cargo_space_max = 26;</code>
@@ -9682,47 +9988,13 @@ public final class Raw {
       return cargoSpaceMax_;
     }
 
-    public static final int BUFF_IDS_FIELD_NUMBER = 27;
-    private java.util.List<java.lang.Integer> buffIds_;
-    /**
-     * <pre>
-     * TODO: Should this be populated for enemies?
-     * </pre>
-     *
-     * <code>repeated uint32 buff_ids = 27;</code>
-     */
-    public java.util.List<java.lang.Integer>
-        getBuffIdsList() {
-      return buffIds_;
-    }
-    /**
-     * <pre>
-     * TODO: Should this be populated for enemies?
-     * </pre>
-     *
-     * <code>repeated uint32 buff_ids = 27;</code>
-     */
-    public int getBuffIdsCount() {
-      return buffIds_.size();
-    }
-    /**
-     * <pre>
-     * TODO: Should this be populated for enemies?
-     * </pre>
-     *
-     * <code>repeated uint32 buff_ids = 27;</code>
-     */
-    public int getBuffIds(int index) {
-      return buffIds_.get(index);
-    }
-
     public static final int ASSIGNED_HARVESTERS_FIELD_NUMBER = 28;
     private int assignedHarvesters_;
     /**
      * <code>optional int32 assigned_harvesters = 28;</code>
      */
     public boolean hasAssignedHarvesters() {
-      return ((bitField0_ & 0x20000000) == 0x20000000);
+      return ((bitField0_ & 0x80000000) == 0x80000000);
     }
     /**
      * <code>optional int32 assigned_harvesters = 28;</code>
@@ -9737,7 +10009,7 @@ public final class Raw {
      * <code>optional int32 ideal_harvesters = 29;</code>
      */
     public boolean hasIdealHarvesters() {
-      return ((bitField0_ & 0x40000000) == 0x40000000);
+      return ((bitField1_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>optional int32 ideal_harvesters = 29;</code>
@@ -9752,7 +10024,7 @@ public final class Raw {
      * <code>optional float weapon_cooldown = 30;</code>
      */
     public boolean hasWeaponCooldown() {
-      return ((bitField0_ & 0x80000000) == 0x80000000);
+      return ((bitField1_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional float weapon_cooldown = 30;</code>
@@ -9767,7 +10039,7 @@ public final class Raw {
      * <code>optional uint64 engaged_target_tag = 34;</code>
      */
     public boolean hasEngagedTargetTag() {
-      return ((bitField1_ & 0x00000001) == 0x00000001);
+      return ((bitField1_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional uint64 engaged_target_tag = 34;</code>
@@ -9777,6 +10049,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9786,6 +10059,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9827,55 +10101,55 @@ public final class Raw {
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeBool(13, isBlip_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeFloat(14, health_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         output.writeFloat(15, healthMax_);
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
         output.writeFloat(16, shield_);
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
         output.writeFloat(17, energy_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         output.writeInt32(18, mineralContents_);
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
         output.writeInt32(19, vespeneContents_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         output.writeBool(20, isFlying_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         output.writeBool(21, isBurrowed_);
       }
       for (int i = 0; i < orders_.size(); i++) {
         output.writeMessage(22, orders_.get(i));
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         output.writeUInt64(23, addOnTag_);
       }
       for (int i = 0; i < passengers_.size(); i++) {
         output.writeMessage(24, passengers_.get(i));
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
         output.writeInt32(25, cargoSpaceTaken_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
         output.writeInt32(26, cargoSpaceMax_);
       }
       for (int i = 0; i < buffIds_.size(); i++) {
         output.writeUInt32(27, buffIds_.get(i));
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
         output.writeInt32(28, assignedHarvesters_);
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(29, idealHarvesters_);
       }
-      if (((bitField0_ & 0x80000000) == 0x80000000)) {
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(30, weaponCooldown_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
@@ -9884,21 +10158,28 @@ public final class Raw {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeFloat(32, radarRange_);
       }
-      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         output.writeUInt64(34, engagedTargetTag_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeBool(35, isPowered_);
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
         output.writeFloat(36, shieldMax_);
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
         output.writeFloat(37, energyMax_);
+      }
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+        output.writeBool(38, isHallucination_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        output.writeBool(39, isActive_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9956,35 +10237,35 @@ public final class Raw {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isBlip_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(14, health_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(15, healthMax_);
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(16, shield_);
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(17, energy_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, mineralContents_);
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(19, vespeneContents_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(20, isFlying_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(21, isBurrowed_);
       }
@@ -9992,7 +10273,7 @@ public final class Raw {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, orders_.get(i));
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(23, addOnTag_);
       }
@@ -10000,11 +10281,11 @@ public final class Raw {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(24, passengers_.get(i));
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(25, cargoSpaceTaken_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(26, cargoSpaceMax_);
       }
@@ -10017,15 +10298,15 @@ public final class Raw {
         size += dataSize;
         size += 2 * getBuffIdsList().size();
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(28, assignedHarvesters_);
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(29, idealHarvesters_);
       }
-      if (((bitField0_ & 0x80000000) == 0x80000000)) {
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(30, weaponCooldown_);
       }
@@ -10037,7 +10318,7 @@ public final class Raw {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(32, radarRange_);
       }
-      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(34, engagedTargetTag_);
       }
@@ -10045,13 +10326,21 @@ public final class Raw {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(35, isPowered_);
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(36, shieldMax_);
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(37, energyMax_);
+      }
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(38, isHallucination_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(39, isActive_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10122,6 +10411,8 @@ public final class Raw {
       if (hasCloak()) {
         result = result && cloak_ == other.cloak_;
       }
+      result = result && getBuffIdsList()
+          .equals(other.getBuffIdsList());
       result = result && (hasDetectRange() == other.hasDetectRange());
       if (hasDetectRange()) {
         result = result && (
@@ -10155,6 +10446,11 @@ public final class Raw {
       if (hasIsPowered()) {
         result = result && (getIsPowered()
             == other.getIsPowered());
+      }
+      result = result && (hasIsActive() == other.hasIsActive());
+      if (hasIsActive()) {
+        result = result && (getIsActive()
+            == other.getIsActive());
       }
       result = result && (hasHealth() == other.hasHealth());
       if (hasHealth()) {
@@ -10218,6 +10514,11 @@ public final class Raw {
         result = result && (getIsBurrowed()
             == other.getIsBurrowed());
       }
+      result = result && (hasIsHallucination() == other.hasIsHallucination());
+      if (hasIsHallucination()) {
+        result = result && (getIsHallucination()
+            == other.getIsHallucination());
+      }
       result = result && getOrdersList()
           .equals(other.getOrdersList());
       result = result && (hasAddOnTag() == other.hasAddOnTag());
@@ -10237,8 +10538,6 @@ public final class Raw {
         result = result && (getCargoSpaceMax()
             == other.getCargoSpaceMax());
       }
-      result = result && getBuffIdsList()
-          .equals(other.getBuffIdsList());
       result = result && (hasAssignedHarvesters() == other.hasAssignedHarvesters());
       if (hasAssignedHarvesters()) {
         result = result && (getAssignedHarvesters()
@@ -10316,6 +10615,10 @@ public final class Raw {
         hash = (37 * hash) + CLOAK_FIELD_NUMBER;
         hash = (53 * hash) + cloak_;
       }
+      if (getBuffIdsCount() > 0) {
+        hash = (37 * hash) + BUFF_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getBuffIdsList().hashCode();
+      }
       if (hasDetectRange()) {
         hash = (37 * hash) + DETECT_RANGE_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
@@ -10345,6 +10648,11 @@ public final class Raw {
         hash = (37 * hash) + IS_POWERED_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsPowered());
+      }
+      if (hasIsActive()) {
+        hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsActive());
       }
       if (hasHealth()) {
         hash = (37 * hash) + HEALTH_FIELD_NUMBER;
@@ -10394,6 +10702,11 @@ public final class Raw {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsBurrowed());
       }
+      if (hasIsHallucination()) {
+        hash = (37 * hash) + IS_HALLUCINATION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsHallucination());
+      }
       if (getOrdersCount() > 0) {
         hash = (37 * hash) + ORDERS_FIELD_NUMBER;
         hash = (53 * hash) + getOrdersList().hashCode();
@@ -10414,10 +10727,6 @@ public final class Raw {
       if (hasCargoSpaceMax()) {
         hash = (37 * hash) + CARGO_SPACE_MAX_FIELD_NUMBER;
         hash = (53 * hash) + getCargoSpaceMax();
-      }
-      if (getBuffIdsCount() > 0) {
-        hash = (37 * hash) + BUFF_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getBuffIdsList().hashCode();
       }
       if (hasAssignedHarvesters()) {
         hash = (37 * hash) + ASSIGNED_HARVESTERS_FIELD_NUMBER;
@@ -10512,6 +10821,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10519,6 +10829,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.Unit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10542,6 +10853,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Unit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Unit_fieldAccessorTable
@@ -10567,6 +10879,7 @@ public final class Raw {
           getPassengersFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         displayType_ = 1;
@@ -10591,80 +10904,87 @@ public final class Raw {
         bitField0_ = (bitField0_ & ~0x00000080);
         buildProgress_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000100);
-        cloak_ = 1;
+        cloak_ = 0;
         bitField0_ = (bitField0_ & ~0x00000200);
-        detectRange_ = 0F;
+        buffIds_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000400);
-        radarRange_ = 0F;
+        detectRange_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000800);
-        isSelected_ = false;
+        radarRange_ = 0F;
         bitField0_ = (bitField0_ & ~0x00001000);
-        isOnScreen_ = false;
+        isSelected_ = false;
         bitField0_ = (bitField0_ & ~0x00002000);
-        isBlip_ = false;
+        isOnScreen_ = false;
         bitField0_ = (bitField0_ & ~0x00004000);
-        isPowered_ = false;
+        isBlip_ = false;
         bitField0_ = (bitField0_ & ~0x00008000);
-        health_ = 0F;
+        isPowered_ = false;
         bitField0_ = (bitField0_ & ~0x00010000);
-        healthMax_ = 0F;
+        isActive_ = false;
         bitField0_ = (bitField0_ & ~0x00020000);
-        shield_ = 0F;
+        health_ = 0F;
         bitField0_ = (bitField0_ & ~0x00040000);
-        shieldMax_ = 0F;
+        healthMax_ = 0F;
         bitField0_ = (bitField0_ & ~0x00080000);
-        energy_ = 0F;
+        shield_ = 0F;
         bitField0_ = (bitField0_ & ~0x00100000);
-        energyMax_ = 0F;
+        shieldMax_ = 0F;
         bitField0_ = (bitField0_ & ~0x00200000);
-        mineralContents_ = 0;
+        energy_ = 0F;
         bitField0_ = (bitField0_ & ~0x00400000);
-        vespeneContents_ = 0;
+        energyMax_ = 0F;
         bitField0_ = (bitField0_ & ~0x00800000);
-        isFlying_ = false;
+        mineralContents_ = 0;
         bitField0_ = (bitField0_ & ~0x01000000);
-        isBurrowed_ = false;
+        vespeneContents_ = 0;
         bitField0_ = (bitField0_ & ~0x02000000);
+        isFlying_ = false;
+        bitField0_ = (bitField0_ & ~0x04000000);
+        isBurrowed_ = false;
+        bitField0_ = (bitField0_ & ~0x08000000);
+        isHallucination_ = false;
+        bitField0_ = (bitField0_ & ~0x10000000);
         if (ordersBuilder_ == null) {
           orders_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
         } else {
           ordersBuilder_.clear();
         }
         addOnTag_ = 0L;
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         if (passengersBuilder_ == null) {
           passengers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x10000000);
+          bitField0_ = (bitField0_ & ~0x80000000);
         } else {
           passengersBuilder_.clear();
         }
         cargoSpaceTaken_ = 0;
-        bitField0_ = (bitField0_ & ~0x20000000);
-        cargoSpaceMax_ = 0;
-        bitField0_ = (bitField0_ & ~0x40000000);
-        buffIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
-        assignedHarvesters_ = 0;
         bitField1_ = (bitField1_ & ~0x00000001);
-        idealHarvesters_ = 0;
+        cargoSpaceMax_ = 0;
         bitField1_ = (bitField1_ & ~0x00000002);
-        weaponCooldown_ = 0F;
+        assignedHarvesters_ = 0;
         bitField1_ = (bitField1_ & ~0x00000004);
-        engagedTargetTag_ = 0L;
+        idealHarvesters_ = 0;
         bitField1_ = (bitField1_ & ~0x00000008);
+        weaponCooldown_ = 0F;
+        bitField1_ = (bitField1_ & ~0x00000010);
+        engagedTargetTag_ = 0L;
+        bitField1_ = (bitField1_ & ~0x00000020);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Unit_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Unit getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.Unit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Unit build() {
         SC2APIProtocol.Raw.Unit result = buildPartial();
         if (!result.isInitialized()) {
@@ -10673,6 +10993,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Unit buildPartial() {
         SC2APIProtocol.Raw.Unit result = new SC2APIProtocol.Raw.Unit(this);
         int from_bitField0_ = bitField0_;
@@ -10723,119 +11044,127 @@ public final class Raw {
           to_bitField0_ |= 0x00000200;
         }
         result.cloak_ = cloak_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          buffIds_ = java.util.Collections.unmodifiableList(buffIds_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.buffIds_ = buffIds_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000400;
         }
         result.detectRange_ = detectRange_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000800;
         }
         result.radarRange_ = radarRange_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00001000;
         }
         result.isSelected_ = isSelected_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00002000;
         }
         result.isOnScreen_ = isOnScreen_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00004000;
         }
         result.isBlip_ = isBlip_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00008000;
         }
         result.isPowered_ = isPowered_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00010000;
         }
-        result.health_ = health_;
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+        result.isActive_ = isActive_;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
           to_bitField0_ |= 0x00020000;
         }
-        result.healthMax_ = healthMax_;
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+        result.health_ = health_;
+        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
           to_bitField0_ |= 0x00040000;
         }
-        result.shield_ = shield_;
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+        result.healthMax_ = healthMax_;
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
           to_bitField0_ |= 0x00080000;
         }
-        result.shieldMax_ = shieldMax_;
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+        result.shield_ = shield_;
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
           to_bitField0_ |= 0x00100000;
         }
-        result.energy_ = energy_;
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+        result.shieldMax_ = shieldMax_;
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
           to_bitField0_ |= 0x00200000;
         }
-        result.energyMax_ = energyMax_;
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+        result.energy_ = energy_;
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
           to_bitField0_ |= 0x00400000;
         }
-        result.mineralContents_ = mineralContents_;
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+        result.energyMax_ = energyMax_;
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
           to_bitField0_ |= 0x00800000;
         }
-        result.vespeneContents_ = vespeneContents_;
-        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+        result.mineralContents_ = mineralContents_;
+        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
           to_bitField0_ |= 0x01000000;
         }
-        result.isFlying_ = isFlying_;
-        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
+        result.vespeneContents_ = vespeneContents_;
+        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
           to_bitField0_ |= 0x02000000;
         }
+        result.isFlying_ = isFlying_;
+        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+          to_bitField0_ |= 0x04000000;
+        }
         result.isBurrowed_ = isBurrowed_;
+        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
+          to_bitField0_ |= 0x08000000;
+        }
+        result.isHallucination_ = isHallucination_;
         if (ordersBuilder_ == null) {
-          if (((bitField0_ & 0x04000000) == 0x04000000)) {
+          if (((bitField0_ & 0x20000000) == 0x20000000)) {
             orders_ = java.util.Collections.unmodifiableList(orders_);
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           }
           result.orders_ = orders_;
         } else {
           result.orders_ = ordersBuilder_.build();
         }
-        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
-          to_bitField0_ |= 0x04000000;
+        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
+          to_bitField0_ |= 0x10000000;
         }
         result.addOnTag_ = addOnTag_;
         if (passengersBuilder_ == null) {
-          if (((bitField0_ & 0x10000000) == 0x10000000)) {
+          if (((bitField0_ & 0x80000000) == 0x80000000)) {
             passengers_ = java.util.Collections.unmodifiableList(passengers_);
-            bitField0_ = (bitField0_ & ~0x10000000);
+            bitField0_ = (bitField0_ & ~0x80000000);
           }
           result.passengers_ = passengers_;
         } else {
           result.passengers_ = passengersBuilder_.build();
         }
-        if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
-          to_bitField0_ |= 0x08000000;
-        }
-        result.cargoSpaceTaken_ = cargoSpaceTaken_;
-        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
-          to_bitField0_ |= 0x10000000;
-        }
-        result.cargoSpaceMax_ = cargoSpaceMax_;
-        if (((bitField0_ & 0x80000000) == 0x80000000)) {
-          buffIds_ = java.util.Collections.unmodifiableList(buffIds_);
-          bitField0_ = (bitField0_ & ~0x80000000);
-        }
-        result.buffIds_ = buffIds_;
         if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x20000000;
         }
-        result.assignedHarvesters_ = assignedHarvesters_;
+        result.cargoSpaceTaken_ = cargoSpaceTaken_;
         if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x40000000;
         }
-        result.idealHarvesters_ = idealHarvesters_;
+        result.cargoSpaceMax_ = cargoSpaceMax_;
         if (((from_bitField1_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x80000000;
         }
-        result.weaponCooldown_ = weaponCooldown_;
+        result.assignedHarvesters_ = assignedHarvesters_;
         if (((from_bitField1_ & 0x00000008) == 0x00000008)) {
           to_bitField1_ |= 0x00000001;
+        }
+        result.idealHarvesters_ = idealHarvesters_;
+        if (((from_bitField1_ & 0x00000010) == 0x00000010)) {
+          to_bitField1_ |= 0x00000002;
+        }
+        result.weaponCooldown_ = weaponCooldown_;
+        if (((from_bitField1_ & 0x00000020) == 0x00000020)) {
+          to_bitField1_ |= 0x00000004;
         }
         result.engagedTargetTag_ = engagedTargetTag_;
         result.bitField0_ = to_bitField0_;
@@ -10844,32 +11173,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.Unit) {
           return mergeFrom((SC2APIProtocol.Raw.Unit)other);
@@ -10911,6 +11247,16 @@ public final class Raw {
         if (other.hasCloak()) {
           setCloak(other.getCloak());
         }
+        if (!other.buffIds_.isEmpty()) {
+          if (buffIds_.isEmpty()) {
+            buffIds_ = other.buffIds_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureBuffIdsIsMutable();
+            buffIds_.addAll(other.buffIds_);
+          }
+          onChanged();
+        }
         if (other.hasDetectRange()) {
           setDetectRange(other.getDetectRange());
         }
@@ -10928,6 +11274,9 @@ public final class Raw {
         }
         if (other.hasIsPowered()) {
           setIsPowered(other.getIsPowered());
+        }
+        if (other.hasIsActive()) {
+          setIsActive(other.getIsActive());
         }
         if (other.hasHealth()) {
           setHealth(other.getHealth());
@@ -10959,11 +11308,14 @@ public final class Raw {
         if (other.hasIsBurrowed()) {
           setIsBurrowed(other.getIsBurrowed());
         }
+        if (other.hasIsHallucination()) {
+          setIsHallucination(other.getIsHallucination());
+        }
         if (ordersBuilder_ == null) {
           if (!other.orders_.isEmpty()) {
             if (orders_.isEmpty()) {
               orders_ = other.orders_;
-              bitField0_ = (bitField0_ & ~0x04000000);
+              bitField0_ = (bitField0_ & ~0x20000000);
             } else {
               ensureOrdersIsMutable();
               orders_.addAll(other.orders_);
@@ -10976,7 +11328,7 @@ public final class Raw {
               ordersBuilder_.dispose();
               ordersBuilder_ = null;
               orders_ = other.orders_;
-              bitField0_ = (bitField0_ & ~0x04000000);
+              bitField0_ = (bitField0_ & ~0x20000000);
               ordersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOrdersFieldBuilder() : null;
@@ -10992,7 +11344,7 @@ public final class Raw {
           if (!other.passengers_.isEmpty()) {
             if (passengers_.isEmpty()) {
               passengers_ = other.passengers_;
-              bitField0_ = (bitField0_ & ~0x10000000);
+              bitField0_ = (bitField0_ & ~0x80000000);
             } else {
               ensurePassengersIsMutable();
               passengers_.addAll(other.passengers_);
@@ -11005,7 +11357,7 @@ public final class Raw {
               passengersBuilder_.dispose();
               passengersBuilder_ = null;
               passengers_ = other.passengers_;
-              bitField0_ = (bitField0_ & ~0x10000000);
+              bitField0_ = (bitField0_ & ~0x80000000);
               passengersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPassengersFieldBuilder() : null;
@@ -11019,16 +11371,6 @@ public final class Raw {
         }
         if (other.hasCargoSpaceMax()) {
           setCargoSpaceMax(other.getCargoSpaceMax());
-        }
-        if (!other.buffIds_.isEmpty()) {
-          if (buffIds_.isEmpty()) {
-            buffIds_ = other.buffIds_;
-            bitField0_ = (bitField0_ & ~0x80000000);
-          } else {
-            ensureBuffIdsIsMutable();
-            buffIds_.addAll(other.buffIds_);
-          }
-          onChanged();
         }
         if (other.hasAssignedHarvesters()) {
           setAssignedHarvesters(other.getAssignedHarvesters());
@@ -11047,10 +11389,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11090,6 +11434,7 @@ public final class Raw {
        * <code>optional .SC2APIProtocol.DisplayType display_type = 1;</code>
        */
       public SC2APIProtocol.Raw.DisplayType getDisplayType() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Raw.DisplayType result = SC2APIProtocol.Raw.DisplayType.valueOf(displayType_);
         return result == null ? SC2APIProtocol.Raw.DisplayType.Visible : result;
       }
@@ -11134,6 +11479,7 @@ public final class Raw {
        * <code>optional .SC2APIProtocol.Alliance alliance = 2;</code>
        */
       public SC2APIProtocol.Raw.Alliance getAlliance() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Raw.Alliance result = SC2APIProtocol.Raw.Alliance.valueOf(alliance_);
         return result == null ? SC2APIProtocol.Raw.Alliance.Self : result;
       }
@@ -11501,7 +11847,7 @@ public final class Raw {
         return this;
       }
 
-      private int cloak_ = 1;
+      private int cloak_ = 0;
       /**
        * <code>optional .SC2APIProtocol.CloakState cloak = 10;</code>
        */
@@ -11512,8 +11858,9 @@ public final class Raw {
        * <code>optional .SC2APIProtocol.CloakState cloak = 10;</code>
        */
       public SC2APIProtocol.Raw.CloakState getCloak() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Raw.CloakState result = SC2APIProtocol.Raw.CloakState.valueOf(cloak_);
-        return result == null ? SC2APIProtocol.Raw.CloakState.Cloaked : result;
+        return result == null ? SC2APIProtocol.Raw.CloakState.CloakedUnknown : result;
       }
       /**
        * <code>optional .SC2APIProtocol.CloakState cloak = 10;</code>
@@ -11532,7 +11879,73 @@ public final class Raw {
        */
       public Builder clearCloak() {
         bitField0_ = (bitField0_ & ~0x00000200);
-        cloak_ = 1;
+        cloak_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> buffIds_ = java.util.Collections.emptyList();
+      private void ensureBuffIdsIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          buffIds_ = new java.util.ArrayList<java.lang.Integer>(buffIds_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getBuffIdsList() {
+        return java.util.Collections.unmodifiableList(buffIds_);
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public int getBuffIdsCount() {
+        return buffIds_.size();
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public int getBuffIds(int index) {
+        return buffIds_.get(index);
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public Builder setBuffIds(
+          int index, int value) {
+        ensureBuffIdsIsMutable();
+        buffIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public Builder addBuffIds(int value) {
+        ensureBuffIdsIsMutable();
+        buffIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public Builder addAllBuffIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureBuffIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, buffIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 buff_ids = 27;</code>
+       */
+      public Builder clearBuffIds() {
+        buffIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -11542,7 +11955,7 @@ public final class Raw {
        * <code>optional float detect_range = 31;</code>
        */
       public boolean hasDetectRange() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>optional float detect_range = 31;</code>
@@ -11554,7 +11967,7 @@ public final class Raw {
        * <code>optional float detect_range = 31;</code>
        */
       public Builder setDetectRange(float value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         detectRange_ = value;
         onChanged();
         return this;
@@ -11563,7 +11976,7 @@ public final class Raw {
        * <code>optional float detect_range = 31;</code>
        */
       public Builder clearDetectRange() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         detectRange_ = 0F;
         onChanged();
         return this;
@@ -11574,7 +11987,7 @@ public final class Raw {
        * <code>optional float radar_range = 32;</code>
        */
       public boolean hasRadarRange() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional float radar_range = 32;</code>
@@ -11586,7 +11999,7 @@ public final class Raw {
        * <code>optional float radar_range = 32;</code>
        */
       public Builder setRadarRange(float value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         radarRange_ = value;
         onChanged();
         return this;
@@ -11595,7 +12008,7 @@ public final class Raw {
        * <code>optional float radar_range = 32;</code>
        */
       public Builder clearRadarRange() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         radarRange_ = 0F;
         onChanged();
         return this;
@@ -11606,7 +12019,7 @@ public final class Raw {
        * <code>optional bool is_selected = 11;</code>
        */
       public boolean hasIsSelected() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional bool is_selected = 11;</code>
@@ -11618,7 +12031,7 @@ public final class Raw {
        * <code>optional bool is_selected = 11;</code>
        */
       public Builder setIsSelected(boolean value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         isSelected_ = value;
         onChanged();
         return this;
@@ -11627,7 +12040,7 @@ public final class Raw {
        * <code>optional bool is_selected = 11;</code>
        */
       public Builder clearIsSelected() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         isSelected_ = false;
         onChanged();
         return this;
@@ -11642,7 +12055,7 @@ public final class Raw {
        * <code>optional bool is_on_screen = 12;</code>
        */
       public boolean hasIsOnScreen() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <pre>
@@ -11662,7 +12075,7 @@ public final class Raw {
        * <code>optional bool is_on_screen = 12;</code>
        */
       public Builder setIsOnScreen(boolean value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         isOnScreen_ = value;
         onChanged();
         return this;
@@ -11675,7 +12088,7 @@ public final class Raw {
        * <code>optional bool is_on_screen = 12;</code>
        */
       public Builder clearIsOnScreen() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         isOnScreen_ = false;
         onChanged();
         return this;
@@ -11690,7 +12103,7 @@ public final class Raw {
        * <code>optional bool is_blip = 13;</code>
        */
       public boolean hasIsBlip() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <pre>
@@ -11710,7 +12123,7 @@ public final class Raw {
        * <code>optional bool is_blip = 13;</code>
        */
       public Builder setIsBlip(boolean value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         isBlip_ = value;
         onChanged();
         return this;
@@ -11723,7 +12136,7 @@ public final class Raw {
        * <code>optional bool is_blip = 13;</code>
        */
       public Builder clearIsBlip() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         isBlip_ = false;
         onChanged();
         return this;
@@ -11734,7 +12147,7 @@ public final class Raw {
        * <code>optional bool is_powered = 35;</code>
        */
       public boolean hasIsPowered() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <code>optional bool is_powered = 35;</code>
@@ -11746,7 +12159,7 @@ public final class Raw {
        * <code>optional bool is_powered = 35;</code>
        */
       public Builder setIsPowered(boolean value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         isPowered_ = value;
         onChanged();
         return this;
@@ -11755,8 +12168,56 @@ public final class Raw {
        * <code>optional bool is_powered = 35;</code>
        */
       public Builder clearIsPowered() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         isPowered_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isActive_ ;
+      /**
+       * <pre>
+       * Building is training/researching (ie animated).
+       * </pre>
+       *
+       * <code>optional bool is_active = 39;</code>
+       */
+      public boolean hasIsActive() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <pre>
+       * Building is training/researching (ie animated).
+       * </pre>
+       *
+       * <code>optional bool is_active = 39;</code>
+       */
+      public boolean getIsActive() {
+        return isActive_;
+      }
+      /**
+       * <pre>
+       * Building is training/researching (ie animated).
+       * </pre>
+       *
+       * <code>optional bool is_active = 39;</code>
+       */
+      public Builder setIsActive(boolean value) {
+        bitField0_ |= 0x00020000;
+        isActive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Building is training/researching (ie animated).
+       * </pre>
+       *
+       * <code>optional bool is_active = 39;</code>
+       */
+      public Builder clearIsActive() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        isActive_ = false;
         onChanged();
         return this;
       }
@@ -11770,7 +12231,7 @@ public final class Raw {
        * <code>optional float health = 14;</code>
        */
       public boolean hasHealth() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
        * <pre>
@@ -11790,7 +12251,7 @@ public final class Raw {
        * <code>optional float health = 14;</code>
        */
       public Builder setHealth(float value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         health_ = value;
         onChanged();
         return this;
@@ -11803,7 +12264,7 @@ public final class Raw {
        * <code>optional float health = 14;</code>
        */
       public Builder clearHealth() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         health_ = 0F;
         onChanged();
         return this;
@@ -11814,7 +12275,7 @@ public final class Raw {
        * <code>optional float health_max = 15;</code>
        */
       public boolean hasHealthMax() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00080000) == 0x00080000);
       }
       /**
        * <code>optional float health_max = 15;</code>
@@ -11826,7 +12287,7 @@ public final class Raw {
        * <code>optional float health_max = 15;</code>
        */
       public Builder setHealthMax(float value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         healthMax_ = value;
         onChanged();
         return this;
@@ -11835,7 +12296,7 @@ public final class Raw {
        * <code>optional float health_max = 15;</code>
        */
       public Builder clearHealthMax() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         healthMax_ = 0F;
         onChanged();
         return this;
@@ -11846,7 +12307,7 @@ public final class Raw {
        * <code>optional float shield = 16;</code>
        */
       public boolean hasShield() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00100000) == 0x00100000);
       }
       /**
        * <code>optional float shield = 16;</code>
@@ -11858,7 +12319,7 @@ public final class Raw {
        * <code>optional float shield = 16;</code>
        */
       public Builder setShield(float value) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         shield_ = value;
         onChanged();
         return this;
@@ -11867,7 +12328,7 @@ public final class Raw {
        * <code>optional float shield = 16;</code>
        */
       public Builder clearShield() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         shield_ = 0F;
         onChanged();
         return this;
@@ -11878,7 +12339,7 @@ public final class Raw {
        * <code>optional float shield_max = 36;</code>
        */
       public boolean hasShieldMax() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00200000) == 0x00200000);
       }
       /**
        * <code>optional float shield_max = 36;</code>
@@ -11890,7 +12351,7 @@ public final class Raw {
        * <code>optional float shield_max = 36;</code>
        */
       public Builder setShieldMax(float value) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         shieldMax_ = value;
         onChanged();
         return this;
@@ -11899,7 +12360,7 @@ public final class Raw {
        * <code>optional float shield_max = 36;</code>
        */
       public Builder clearShieldMax() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         shieldMax_ = 0F;
         onChanged();
         return this;
@@ -11910,7 +12371,7 @@ public final class Raw {
        * <code>optional float energy = 17;</code>
        */
       public boolean hasEnergy() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x00400000) == 0x00400000);
       }
       /**
        * <code>optional float energy = 17;</code>
@@ -11922,7 +12383,7 @@ public final class Raw {
        * <code>optional float energy = 17;</code>
        */
       public Builder setEnergy(float value) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         energy_ = value;
         onChanged();
         return this;
@@ -11931,7 +12392,7 @@ public final class Raw {
        * <code>optional float energy = 17;</code>
        */
       public Builder clearEnergy() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         energy_ = 0F;
         onChanged();
         return this;
@@ -11942,7 +12403,7 @@ public final class Raw {
        * <code>optional float energy_max = 37;</code>
        */
       public boolean hasEnergyMax() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x00800000) == 0x00800000);
       }
       /**
        * <code>optional float energy_max = 37;</code>
@@ -11954,7 +12415,7 @@ public final class Raw {
        * <code>optional float energy_max = 37;</code>
        */
       public Builder setEnergyMax(float value) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         energyMax_ = value;
         onChanged();
         return this;
@@ -11963,7 +12424,7 @@ public final class Raw {
        * <code>optional float energy_max = 37;</code>
        */
       public Builder clearEnergyMax() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         energyMax_ = 0F;
         onChanged();
         return this;
@@ -11974,7 +12435,7 @@ public final class Raw {
        * <code>optional int32 mineral_contents = 18;</code>
        */
       public boolean hasMineralContents() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       /**
        * <code>optional int32 mineral_contents = 18;</code>
@@ -11986,7 +12447,7 @@ public final class Raw {
        * <code>optional int32 mineral_contents = 18;</code>
        */
       public Builder setMineralContents(int value) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
         mineralContents_ = value;
         onChanged();
         return this;
@@ -11995,7 +12456,7 @@ public final class Raw {
        * <code>optional int32 mineral_contents = 18;</code>
        */
       public Builder clearMineralContents() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         mineralContents_ = 0;
         onChanged();
         return this;
@@ -12006,7 +12467,7 @@ public final class Raw {
        * <code>optional int32 vespene_contents = 19;</code>
        */
       public boolean hasVespeneContents() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       /**
        * <code>optional int32 vespene_contents = 19;</code>
@@ -12018,7 +12479,7 @@ public final class Raw {
        * <code>optional int32 vespene_contents = 19;</code>
        */
       public Builder setVespeneContents(int value) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         vespeneContents_ = value;
         onChanged();
         return this;
@@ -12027,7 +12488,7 @@ public final class Raw {
        * <code>optional int32 vespene_contents = 19;</code>
        */
       public Builder clearVespeneContents() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         vespeneContents_ = 0;
         onChanged();
         return this;
@@ -12038,7 +12499,7 @@ public final class Raw {
        * <code>optional bool is_flying = 20;</code>
        */
       public boolean hasIsFlying() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
+        return ((bitField0_ & 0x04000000) == 0x04000000);
       }
       /**
        * <code>optional bool is_flying = 20;</code>
@@ -12050,7 +12511,7 @@ public final class Raw {
        * <code>optional bool is_flying = 20;</code>
        */
       public Builder setIsFlying(boolean value) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
         isFlying_ = value;
         onChanged();
         return this;
@@ -12059,7 +12520,7 @@ public final class Raw {
        * <code>optional bool is_flying = 20;</code>
        */
       public Builder clearIsFlying() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         isFlying_ = false;
         onChanged();
         return this;
@@ -12070,7 +12531,7 @@ public final class Raw {
        * <code>optional bool is_burrowed = 21;</code>
        */
       public boolean hasIsBurrowed() {
-        return ((bitField0_ & 0x02000000) == 0x02000000);
+        return ((bitField0_ & 0x08000000) == 0x08000000);
       }
       /**
        * <code>optional bool is_burrowed = 21;</code>
@@ -12082,7 +12543,7 @@ public final class Raw {
        * <code>optional bool is_burrowed = 21;</code>
        */
       public Builder setIsBurrowed(boolean value) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x08000000;
         isBurrowed_ = value;
         onChanged();
         return this;
@@ -12091,8 +12552,56 @@ public final class Raw {
        * <code>optional bool is_burrowed = 21;</code>
        */
       public Builder clearIsBurrowed() {
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         isBurrowed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isHallucination_ ;
+      /**
+       * <pre>
+       * Unit is your own or detected as a hallucination.
+       * </pre>
+       *
+       * <code>optional bool is_hallucination = 38;</code>
+       */
+      public boolean hasIsHallucination() {
+        return ((bitField0_ & 0x10000000) == 0x10000000);
+      }
+      /**
+       * <pre>
+       * Unit is your own or detected as a hallucination.
+       * </pre>
+       *
+       * <code>optional bool is_hallucination = 38;</code>
+       */
+      public boolean getIsHallucination() {
+        return isHallucination_;
+      }
+      /**
+       * <pre>
+       * Unit is your own or detected as a hallucination.
+       * </pre>
+       *
+       * <code>optional bool is_hallucination = 38;</code>
+       */
+      public Builder setIsHallucination(boolean value) {
+        bitField0_ |= 0x10000000;
+        isHallucination_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unit is your own or detected as a hallucination.
+       * </pre>
+       *
+       * <code>optional bool is_hallucination = 38;</code>
+       */
+      public Builder clearIsHallucination() {
+        bitField0_ = (bitField0_ & ~0x10000000);
+        isHallucination_ = false;
         onChanged();
         return this;
       }
@@ -12100,9 +12609,9 @@ public final class Raw {
       private java.util.List<SC2APIProtocol.Raw.UnitOrder> orders_ =
         java.util.Collections.emptyList();
       private void ensureOrdersIsMutable() {
-        if (!((bitField0_ & 0x04000000) == 0x04000000)) {
+        if (!((bitField0_ & 0x20000000) == 0x20000000)) {
           orders_ = new java.util.ArrayList<SC2APIProtocol.Raw.UnitOrder>(orders_);
-          bitField0_ |= 0x04000000;
+          bitField0_ |= 0x20000000;
          }
       }
 
@@ -12296,7 +12805,7 @@ public final class Raw {
       public Builder clearOrders() {
         if (ordersBuilder_ == null) {
           orders_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
           onChanged();
         } else {
           ordersBuilder_.clear();
@@ -12401,7 +12910,7 @@ public final class Raw {
           ordersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               SC2APIProtocol.Raw.UnitOrder, SC2APIProtocol.Raw.UnitOrder.Builder, SC2APIProtocol.Raw.UnitOrderOrBuilder>(
                   orders_,
-                  ((bitField0_ & 0x04000000) == 0x04000000),
+                  ((bitField0_ & 0x20000000) == 0x20000000),
                   getParentForChildren(),
                   isClean());
           orders_ = null;
@@ -12414,7 +12923,7 @@ public final class Raw {
        * <code>optional uint64 add_on_tag = 23;</code>
        */
       public boolean hasAddOnTag() {
-        return ((bitField0_ & 0x08000000) == 0x08000000);
+        return ((bitField0_ & 0x40000000) == 0x40000000);
       }
       /**
        * <code>optional uint64 add_on_tag = 23;</code>
@@ -12426,7 +12935,7 @@ public final class Raw {
        * <code>optional uint64 add_on_tag = 23;</code>
        */
       public Builder setAddOnTag(long value) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x40000000;
         addOnTag_ = value;
         onChanged();
         return this;
@@ -12435,7 +12944,7 @@ public final class Raw {
        * <code>optional uint64 add_on_tag = 23;</code>
        */
       public Builder clearAddOnTag() {
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         addOnTag_ = 0L;
         onChanged();
         return this;
@@ -12444,9 +12953,9 @@ public final class Raw {
       private java.util.List<SC2APIProtocol.Raw.PassengerUnit> passengers_ =
         java.util.Collections.emptyList();
       private void ensurePassengersIsMutable() {
-        if (!((bitField0_ & 0x10000000) == 0x10000000)) {
+        if (!((bitField0_ & 0x80000000) == 0x80000000)) {
           passengers_ = new java.util.ArrayList<SC2APIProtocol.Raw.PassengerUnit>(passengers_);
-          bitField0_ |= 0x10000000;
+          bitField0_ |= 0x80000000;
          }
       }
 
@@ -12596,7 +13105,7 @@ public final class Raw {
       public Builder clearPassengers() {
         if (passengersBuilder_ == null) {
           passengers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x10000000);
+          bitField0_ = (bitField0_ & ~0x80000000);
           onChanged();
         } else {
           passengersBuilder_.clear();
@@ -12673,7 +13182,7 @@ public final class Raw {
           passengersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               SC2APIProtocol.Raw.PassengerUnit, SC2APIProtocol.Raw.PassengerUnit.Builder, SC2APIProtocol.Raw.PassengerUnitOrBuilder>(
                   passengers_,
-                  ((bitField0_ & 0x10000000) == 0x10000000),
+                  ((bitField0_ & 0x80000000) == 0x80000000),
                   getParentForChildren(),
                   isClean());
           passengers_ = null;
@@ -12686,7 +13195,7 @@ public final class Raw {
        * <code>optional int32 cargo_space_taken = 25;</code>
        */
       public boolean hasCargoSpaceTaken() {
-        return ((bitField0_ & 0x20000000) == 0x20000000);
+        return ((bitField1_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>optional int32 cargo_space_taken = 25;</code>
@@ -12698,7 +13207,7 @@ public final class Raw {
        * <code>optional int32 cargo_space_taken = 25;</code>
        */
       public Builder setCargoSpaceTaken(int value) {
-        bitField0_ |= 0x20000000;
+        bitField1_ |= 0x00000001;
         cargoSpaceTaken_ = value;
         onChanged();
         return this;
@@ -12707,7 +13216,7 @@ public final class Raw {
        * <code>optional int32 cargo_space_taken = 25;</code>
        */
       public Builder clearCargoSpaceTaken() {
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField1_ = (bitField1_ & ~0x00000001);
         cargoSpaceTaken_ = 0;
         onChanged();
         return this;
@@ -12718,7 +13227,7 @@ public final class Raw {
        * <code>optional int32 cargo_space_max = 26;</code>
        */
       public boolean hasCargoSpaceMax() {
-        return ((bitField0_ & 0x40000000) == 0x40000000);
+        return ((bitField1_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional int32 cargo_space_max = 26;</code>
@@ -12730,7 +13239,7 @@ public final class Raw {
        * <code>optional int32 cargo_space_max = 26;</code>
        */
       public Builder setCargoSpaceMax(int value) {
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000002;
         cargoSpaceMax_ = value;
         onChanged();
         return this;
@@ -12739,102 +13248,8 @@ public final class Raw {
        * <code>optional int32 cargo_space_max = 26;</code>
        */
       public Builder clearCargoSpaceMax() {
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField1_ = (bitField1_ & ~0x00000002);
         cargoSpaceMax_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<java.lang.Integer> buffIds_ = java.util.Collections.emptyList();
-      private void ensureBuffIdsIsMutable() {
-        if (!((bitField0_ & 0x80000000) == 0x80000000)) {
-          buffIds_ = new java.util.ArrayList<java.lang.Integer>(buffIds_);
-          bitField0_ |= 0x80000000;
-         }
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public java.util.List<java.lang.Integer>
-          getBuffIdsList() {
-        return java.util.Collections.unmodifiableList(buffIds_);
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public int getBuffIdsCount() {
-        return buffIds_.size();
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public int getBuffIds(int index) {
-        return buffIds_.get(index);
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public Builder setBuffIds(
-          int index, int value) {
-        ensureBuffIdsIsMutable();
-        buffIds_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public Builder addBuffIds(int value) {
-        ensureBuffIdsIsMutable();
-        buffIds_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public Builder addAllBuffIds(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureBuffIdsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, buffIds_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO: Should this be populated for enemies?
-       * </pre>
-       *
-       * <code>repeated uint32 buff_ids = 27;</code>
-       */
-      public Builder clearBuffIds() {
-        buffIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
         onChanged();
         return this;
       }
@@ -12844,7 +13259,7 @@ public final class Raw {
        * <code>optional int32 assigned_harvesters = 28;</code>
        */
       public boolean hasAssignedHarvesters() {
-        return ((bitField1_ & 0x00000001) == 0x00000001);
+        return ((bitField1_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional int32 assigned_harvesters = 28;</code>
@@ -12856,7 +13271,7 @@ public final class Raw {
        * <code>optional int32 assigned_harvesters = 28;</code>
        */
       public Builder setAssignedHarvesters(int value) {
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000004;
         assignedHarvesters_ = value;
         onChanged();
         return this;
@@ -12865,7 +13280,7 @@ public final class Raw {
        * <code>optional int32 assigned_harvesters = 28;</code>
        */
       public Builder clearAssignedHarvesters() {
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x00000004);
         assignedHarvesters_ = 0;
         onChanged();
         return this;
@@ -12876,7 +13291,7 @@ public final class Raw {
        * <code>optional int32 ideal_harvesters = 29;</code>
        */
       public boolean hasIdealHarvesters() {
-        return ((bitField1_ & 0x00000002) == 0x00000002);
+        return ((bitField1_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional int32 ideal_harvesters = 29;</code>
@@ -12888,7 +13303,7 @@ public final class Raw {
        * <code>optional int32 ideal_harvesters = 29;</code>
        */
       public Builder setIdealHarvesters(int value) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000008;
         idealHarvesters_ = value;
         onChanged();
         return this;
@@ -12897,7 +13312,7 @@ public final class Raw {
        * <code>optional int32 ideal_harvesters = 29;</code>
        */
       public Builder clearIdealHarvesters() {
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField1_ = (bitField1_ & ~0x00000008);
         idealHarvesters_ = 0;
         onChanged();
         return this;
@@ -12908,7 +13323,7 @@ public final class Raw {
        * <code>optional float weapon_cooldown = 30;</code>
        */
       public boolean hasWeaponCooldown() {
-        return ((bitField1_ & 0x00000004) == 0x00000004);
+        return ((bitField1_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional float weapon_cooldown = 30;</code>
@@ -12920,7 +13335,7 @@ public final class Raw {
        * <code>optional float weapon_cooldown = 30;</code>
        */
       public Builder setWeaponCooldown(float value) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000010;
         weaponCooldown_ = value;
         onChanged();
         return this;
@@ -12929,7 +13344,7 @@ public final class Raw {
        * <code>optional float weapon_cooldown = 30;</code>
        */
       public Builder clearWeaponCooldown() {
-        bitField1_ = (bitField1_ & ~0x00000004);
+        bitField1_ = (bitField1_ & ~0x00000010);
         weaponCooldown_ = 0F;
         onChanged();
         return this;
@@ -12940,7 +13355,7 @@ public final class Raw {
        * <code>optional uint64 engaged_target_tag = 34;</code>
        */
       public boolean hasEngagedTargetTag() {
-        return ((bitField1_ & 0x00000008) == 0x00000008);
+        return ((bitField1_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional uint64 engaged_target_tag = 34;</code>
@@ -12952,7 +13367,7 @@ public final class Raw {
        * <code>optional uint64 engaged_target_tag = 34;</code>
        */
       public Builder setEngagedTargetTag(long value) {
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000020;
         engagedTargetTag_ = value;
         onChanged();
         return this;
@@ -12961,16 +13376,18 @@ public final class Raw {
        * <code>optional uint64 engaged_target_tag = 34;</code>
        */
       public Builder clearEngagedTargetTag() {
-        bitField1_ = (bitField1_ & ~0x00000008);
+        bitField1_ = (bitField1_ & ~0x00000020);
         engagedTargetTag_ = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12992,11 +13409,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Unit>
         PARSER = new com.google.protobuf.AbstractParser<Unit>() {
+      @java.lang.Override
       public Unit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Unit(input, extensionRegistry);
+        return new Unit(input, extensionRegistry);
       }
     };
 
@@ -13009,6 +13427,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.Unit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13094,6 +13513,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13105,13 +13527,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13138,6 +13553,13 @@ public final class Raw {
               bitField0_ |= 0x00000002;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -13155,6 +13577,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_MapState_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_MapState_fieldAccessorTable
@@ -13230,6 +13653,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -13239,6 +13663,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13250,6 +13675,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13383,6 +13809,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13390,6 +13817,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.MapState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13413,6 +13841,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_MapState_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_MapState_fieldAccessorTable
@@ -13437,6 +13866,7 @@ public final class Raw {
           getCreepFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (visibilityBuilder_ == null) {
@@ -13454,15 +13884,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_MapState_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.MapState getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.MapState.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.MapState build() {
         SC2APIProtocol.Raw.MapState result = buildPartial();
         if (!result.isInitialized()) {
@@ -13471,6 +13904,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.MapState buildPartial() {
         SC2APIProtocol.Raw.MapState result = new SC2APIProtocol.Raw.MapState(this);
         int from_bitField0_ = bitField0_;
@@ -13496,32 +13930,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.MapState) {
           return mergeFrom((SC2APIProtocol.Raw.MapState)other);
@@ -13544,10 +13985,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13874,11 +14317,13 @@ public final class Raw {
         }
         return creepBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13900,11 +14345,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<MapState>
         PARSER = new com.google.protobuf.AbstractParser<MapState>() {
+      @java.lang.Override
       public MapState parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MapState(input, extensionRegistry);
+        return new MapState(input, extensionRegistry);
       }
     };
 
@@ -13917,6 +14363,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.MapState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13966,6 +14413,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13977,13 +14427,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 deadUnits_ = new java.util.ArrayList<java.lang.Long>();
@@ -14003,6 +14446,13 @@ public final class Raw {
                 deadUnits_.add(input.readUInt64());
               }
               input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -14025,6 +14475,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Event_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Event_fieldAccessorTable
@@ -14055,6 +14506,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -14064,6 +14516,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < deadUnits_.size(); i++) {
@@ -14072,6 +14525,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -14194,6 +14648,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -14201,6 +14656,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.Event prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -14224,6 +14680,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Event_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Event_fieldAccessorTable
@@ -14246,6 +14703,7 @@ public final class Raw {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         deadUnits_ = java.util.Collections.emptyList();
@@ -14253,15 +14711,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Event_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Event getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.Event.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Event build() {
         SC2APIProtocol.Raw.Event result = buildPartial();
         if (!result.isInitialized()) {
@@ -14270,6 +14731,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Event buildPartial() {
         SC2APIProtocol.Raw.Event result = new SC2APIProtocol.Raw.Event(this);
         int from_bitField0_ = bitField0_;
@@ -14282,32 +14744,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.Event) {
           return mergeFrom((SC2APIProtocol.Raw.Event)other);
@@ -14334,10 +14803,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14422,11 +14893,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -14448,11 +14921,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Event>
         PARSER = new com.google.protobuf.AbstractParser<Event>() {
+      @java.lang.Override
       public Event parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Event(input, extensionRegistry);
+        return new Event(input, extensionRegistry);
       }
     };
 
@@ -14465,6 +14939,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.Event getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -14527,6 +15002,33 @@ public final class Raw {
      */
     SC2APIProtocol.Common.Point2DOrBuilder getPosOrBuilder(
         int index);
+
+    /**
+     * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+     */
+    boolean hasAlliance();
+    /**
+     * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+     */
+    SC2APIProtocol.Raw.Alliance getAlliance();
+
+    /**
+     * <code>optional int32 owner = 4;</code>
+     */
+    boolean hasOwner();
+    /**
+     * <code>optional int32 owner = 4;</code>
+     */
+    int getOwner();
+
+    /**
+     * <code>optional float radius = 5;</code>
+     */
+    boolean hasRadius();
+    /**
+     * <code>optional float radius = 5;</code>
+     */
+    float getRadius();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.Effect}
@@ -14543,6 +15045,9 @@ public final class Raw {
     private Effect() {
       effectId_ = 0;
       pos_ = java.util.Collections.emptyList();
+      alliance_ = 1;
+      owner_ = 0;
+      radius_ = 0F;
     }
 
     @java.lang.Override
@@ -14555,6 +15060,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -14566,13 +15074,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               effectId_ = input.readUInt32();
@@ -14585,6 +15086,35 @@ public final class Raw {
               }
               pos_.add(
                   input.readMessage(SC2APIProtocol.Common.Point2D.PARSER, extensionRegistry));
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              SC2APIProtocol.Raw.Alliance value = SC2APIProtocol.Raw.Alliance.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                alliance_ = rawValue;
+              }
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              owner_ = input.readInt32();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000008;
+              radius_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -14607,6 +15137,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Effect_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Effect_fieldAccessorTable
@@ -14685,7 +15216,55 @@ public final class Raw {
       return pos_.get(index);
     }
 
+    public static final int ALLIANCE_FIELD_NUMBER = 3;
+    private int alliance_;
+    /**
+     * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+     */
+    public boolean hasAlliance() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+     */
+    public SC2APIProtocol.Raw.Alliance getAlliance() {
+      @SuppressWarnings("deprecation")
+      SC2APIProtocol.Raw.Alliance result = SC2APIProtocol.Raw.Alliance.valueOf(alliance_);
+      return result == null ? SC2APIProtocol.Raw.Alliance.Self : result;
+    }
+
+    public static final int OWNER_FIELD_NUMBER = 4;
+    private int owner_;
+    /**
+     * <code>optional int32 owner = 4;</code>
+     */
+    public boolean hasOwner() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 owner = 4;</code>
+     */
+    public int getOwner() {
+      return owner_;
+    }
+
+    public static final int RADIUS_FIELD_NUMBER = 5;
+    private float radius_;
+    /**
+     * <code>optional float radius = 5;</code>
+     */
+    public boolean hasRadius() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional float radius = 5;</code>
+     */
+    public float getRadius() {
+      return radius_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -14695,6 +15274,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14703,9 +15283,19 @@ public final class Raw {
       for (int i = 0; i < pos_.size(); i++) {
         output.writeMessage(2, pos_.get(i));
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeEnum(3, alliance_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(4, owner_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeFloat(5, radius_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -14718,6 +15308,18 @@ public final class Raw {
       for (int i = 0; i < pos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, pos_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, alliance_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, owner_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, radius_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14742,6 +15344,22 @@ public final class Raw {
       }
       result = result && getPosList()
           .equals(other.getPosList());
+      result = result && (hasAlliance() == other.hasAlliance());
+      if (hasAlliance()) {
+        result = result && alliance_ == other.alliance_;
+      }
+      result = result && (hasOwner() == other.hasOwner());
+      if (hasOwner()) {
+        result = result && (getOwner()
+            == other.getOwner());
+      }
+      result = result && (hasRadius() == other.hasRadius());
+      if (hasRadius()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getRadius())
+            == java.lang.Float.floatToIntBits(
+                other.getRadius()));
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -14760,6 +15378,19 @@ public final class Raw {
       if (getPosCount() > 0) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPosList().hashCode();
+      }
+      if (hasAlliance()) {
+        hash = (37 * hash) + ALLIANCE_FIELD_NUMBER;
+        hash = (53 * hash) + alliance_;
+      }
+      if (hasOwner()) {
+        hash = (37 * hash) + OWNER_FIELD_NUMBER;
+        hash = (53 * hash) + getOwner();
+      }
+      if (hasRadius()) {
+        hash = (37 * hash) + RADIUS_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getRadius());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -14836,6 +15467,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -14843,6 +15475,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.Effect prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -14866,6 +15499,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Effect_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Effect_fieldAccessorTable
@@ -14889,6 +15523,7 @@ public final class Raw {
           getPosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         effectId_ = 0;
@@ -14899,18 +15534,27 @@ public final class Raw {
         } else {
           posBuilder_.clear();
         }
+        alliance_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        owner_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        radius_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_Effect_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Effect getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.Effect.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Effect build() {
         SC2APIProtocol.Raw.Effect result = buildPartial();
         if (!result.isInitialized()) {
@@ -14919,6 +15563,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.Effect buildPartial() {
         SC2APIProtocol.Raw.Effect result = new SC2APIProtocol.Raw.Effect(this);
         int from_bitField0_ = bitField0_;
@@ -14936,37 +15581,56 @@ public final class Raw {
         } else {
           result.pos_ = posBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.alliance_ = alliance_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.owner_ = owner_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.radius_ = radius_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.Effect) {
           return mergeFrom((SC2APIProtocol.Raw.Effect)other);
@@ -15007,15 +15671,26 @@ public final class Raw {
             }
           }
         }
+        if (other.hasAlliance()) {
+          setAlliance(other.getAlliance());
+        }
+        if (other.hasOwner()) {
+          setOwner(other.getOwner());
+        }
+        if (other.hasRadius()) {
+          setRadius(other.getRadius());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15378,11 +16053,114 @@ public final class Raw {
         }
         return posBuilder_;
       }
+
+      private int alliance_ = 1;
+      /**
+       * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+       */
+      public boolean hasAlliance() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+       */
+      public SC2APIProtocol.Raw.Alliance getAlliance() {
+        @SuppressWarnings("deprecation")
+        SC2APIProtocol.Raw.Alliance result = SC2APIProtocol.Raw.Alliance.valueOf(alliance_);
+        return result == null ? SC2APIProtocol.Raw.Alliance.Self : result;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+       */
+      public Builder setAlliance(SC2APIProtocol.Raw.Alliance value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        alliance_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Alliance alliance = 3;</code>
+       */
+      public Builder clearAlliance() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        alliance_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private int owner_ ;
+      /**
+       * <code>optional int32 owner = 4;</code>
+       */
+      public boolean hasOwner() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 owner = 4;</code>
+       */
+      public int getOwner() {
+        return owner_;
+      }
+      /**
+       * <code>optional int32 owner = 4;</code>
+       */
+      public Builder setOwner(int value) {
+        bitField0_ |= 0x00000008;
+        owner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 owner = 4;</code>
+       */
+      public Builder clearOwner() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        owner_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float radius_ ;
+      /**
+       * <code>optional float radius = 5;</code>
+       */
+      public boolean hasRadius() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional float radius = 5;</code>
+       */
+      public float getRadius() {
+        return radius_;
+      }
+      /**
+       * <code>optional float radius = 5;</code>
+       */
+      public Builder setRadius(float value) {
+        bitField0_ |= 0x00000010;
+        radius_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional float radius = 5;</code>
+       */
+      public Builder clearRadius() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        radius_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -15404,11 +16182,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Effect>
         PARSER = new com.google.protobuf.AbstractParser<Effect>() {
+      @java.lang.Override
       public Effect parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Effect(input, extensionRegistry);
+        return new Effect(input, extensionRegistry);
       }
     };
 
@@ -15421,6 +16200,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.Effect getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -15497,6 +16277,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15508,13 +16291,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Raw.ActionRawUnitCommand.Builder subBuilder = null;
               if (actionCase_ == 1) {
@@ -15557,6 +16333,13 @@ public final class Raw {
               actionCase_ = 3;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -15574,6 +16357,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRaw_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRaw_fieldAccessorTable
@@ -15701,6 +16485,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -15710,6 +16495,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (actionCase_ == 1) {
@@ -15724,6 +16510,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -15878,6 +16665,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -15885,6 +16673,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.ActionRaw prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -15908,6 +16697,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRaw_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRaw_fieldAccessorTable
@@ -15930,6 +16720,7 @@ public final class Raw {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         actionCase_ = 0;
@@ -15937,15 +16728,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRaw_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRaw getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.ActionRaw.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRaw build() {
         SC2APIProtocol.Raw.ActionRaw result = buildPartial();
         if (!result.isInitialized()) {
@@ -15954,6 +16748,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRaw buildPartial() {
         SC2APIProtocol.Raw.ActionRaw result = new SC2APIProtocol.Raw.ActionRaw(this);
         int from_bitField0_ = bitField0_;
@@ -15985,32 +16780,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.ActionRaw) {
           return mergeFrom((SC2APIProtocol.Raw.ActionRaw)other);
@@ -16044,10 +16846,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16489,11 +17293,13 @@ public final class Raw {
         onChanged();;
         return toggleAutocastBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -16515,11 +17321,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionRaw>
         PARSER = new com.google.protobuf.AbstractParser<ActionRaw>() {
+      @java.lang.Override
       public ActionRaw parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionRaw(input, extensionRegistry);
+        return new ActionRaw(input, extensionRegistry);
       }
     };
 
@@ -16532,6 +17339,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.ActionRaw getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -16625,6 +17433,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -16636,13 +17447,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readInt32();
@@ -16693,6 +17497,13 @@ public final class Raw {
               queueCommand_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -16713,6 +17524,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawUnitCommand_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawUnitCommand_fieldAccessorTable
@@ -16855,6 +17667,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -16864,6 +17677,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -16885,6 +17699,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -17071,6 +17886,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17078,6 +17894,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.ActionRawUnitCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17101,6 +17918,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawUnitCommand_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawUnitCommand_fieldAccessorTable
@@ -17123,6 +17941,7 @@ public final class Raw {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = 0;
@@ -17136,15 +17955,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawUnitCommand_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawUnitCommand getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.ActionRawUnitCommand.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawUnitCommand build() {
         SC2APIProtocol.Raw.ActionRawUnitCommand result = buildPartial();
         if (!result.isInitialized()) {
@@ -17153,6 +17975,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawUnitCommand buildPartial() {
         SC2APIProtocol.Raw.ActionRawUnitCommand result = new SC2APIProtocol.Raw.ActionRawUnitCommand(this);
         int from_bitField0_ = bitField0_;
@@ -17186,32 +18009,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.ActionRawUnitCommand) {
           return mergeFrom((SC2APIProtocol.Raw.ActionRawUnitCommand)other);
@@ -17257,10 +18087,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17596,11 +18428,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -17622,11 +18456,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionRawUnitCommand>
         PARSER = new com.google.protobuf.AbstractParser<ActionRawUnitCommand>() {
+      @java.lang.Override
       public ActionRawUnitCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionRawUnitCommand(input, extensionRegistry);
+        return new ActionRawUnitCommand(input, extensionRegistry);
       }
     };
 
@@ -17639,6 +18474,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.ActionRawUnitCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -17687,6 +18523,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -17698,13 +18537,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.Point.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17716,6 +18548,13 @@ public final class Raw {
                 centerWorldSpace_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000001;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -17735,6 +18574,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawCameraMove_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawCameraMove_fieldAccessorTable
@@ -17765,6 +18605,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -17774,6 +18615,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17782,6 +18624,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -17902,6 +18745,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17909,6 +18753,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.ActionRawCameraMove prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17932,6 +18777,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawCameraMove_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawCameraMove_fieldAccessorTable
@@ -17955,6 +18801,7 @@ public final class Raw {
           getCenterWorldSpaceFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (centerWorldSpaceBuilder_ == null) {
@@ -17966,15 +18813,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawCameraMove_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawCameraMove getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.ActionRawCameraMove.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawCameraMove build() {
         SC2APIProtocol.Raw.ActionRawCameraMove result = buildPartial();
         if (!result.isInitialized()) {
@@ -17983,6 +18833,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawCameraMove buildPartial() {
         SC2APIProtocol.Raw.ActionRawCameraMove result = new SC2APIProtocol.Raw.ActionRawCameraMove(this);
         int from_bitField0_ = bitField0_;
@@ -18000,32 +18851,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.ActionRawCameraMove) {
           return mergeFrom((SC2APIProtocol.Raw.ActionRawCameraMove)other);
@@ -18045,10 +18903,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18185,11 +19045,13 @@ public final class Raw {
         }
         return centerWorldSpaceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18211,11 +19073,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionRawCameraMove>
         PARSER = new com.google.protobuf.AbstractParser<ActionRawCameraMove>() {
+      @java.lang.Override
       public ActionRawCameraMove parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionRawCameraMove(input, extensionRegistry);
+        return new ActionRawCameraMove(input, extensionRegistry);
       }
     };
 
@@ -18228,6 +19091,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.ActionRawCameraMove getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18287,6 +19151,9 @@ public final class Raw {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -18298,13 +19165,6 @@ public final class Raw {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readInt32();
@@ -18331,6 +19191,13 @@ public final class Raw {
               input.popLimit(limit);
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -18351,6 +19218,7 @@ public final class Raw {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawToggleAutocast_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawToggleAutocast_fieldAccessorTable
@@ -18397,6 +19265,7 @@ public final class Raw {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -18406,6 +19275,7 @@ public final class Raw {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18417,6 +19287,7 @@ public final class Raw {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -18552,6 +19423,7 @@ public final class Raw {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -18559,6 +19431,7 @@ public final class Raw {
     public static Builder newBuilder(SC2APIProtocol.Raw.ActionRawToggleAutocast prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -18582,6 +19455,7 @@ public final class Raw {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawToggleAutocast_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawToggleAutocast_fieldAccessorTable
@@ -18604,6 +19478,7 @@ public final class Raw {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = 0;
@@ -18613,15 +19488,18 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Raw.internal_static_SC2APIProtocol_ActionRawToggleAutocast_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawToggleAutocast getDefaultInstanceForType() {
         return SC2APIProtocol.Raw.ActionRawToggleAutocast.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawToggleAutocast build() {
         SC2APIProtocol.Raw.ActionRawToggleAutocast result = buildPartial();
         if (!result.isInitialized()) {
@@ -18630,6 +19508,7 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Raw.ActionRawToggleAutocast buildPartial() {
         SC2APIProtocol.Raw.ActionRawToggleAutocast result = new SC2APIProtocol.Raw.ActionRawToggleAutocast(this);
         int from_bitField0_ = bitField0_;
@@ -18648,32 +19527,39 @@ public final class Raw {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Raw.ActionRawToggleAutocast) {
           return mergeFrom((SC2APIProtocol.Raw.ActionRawToggleAutocast)other);
@@ -18703,10 +19589,12 @@ public final class Raw {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18823,11 +19711,13 @@ public final class Raw {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18849,11 +19739,12 @@ public final class Raw {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionRawToggleAutocast>
         PARSER = new com.google.protobuf.AbstractParser<ActionRawToggleAutocast>() {
+      @java.lang.Override
       public ActionRawToggleAutocast parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionRawToggleAutocast(input, extensionRegistry);
+        return new ActionRawToggleAutocast(input, extensionRegistry);
       }
     };
 
@@ -18866,6 +19757,7 @@ public final class Raw {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Raw.ActionRawToggleAutocast getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18960,7 +19852,7 @@ public final class Raw {
       "ment_grid\030\004 \001(\0132\031.SC2APIProtocol.ImageDa" +
       "ta\0221\n\rplayable_area\030\005 \001(\0132\032.SC2APIProtoc" +
       "ol.RectangleI\0220\n\017start_locations\030\006 \003(\0132\027" +
-      ".SC2APIProtocol.Point2D\"\334\001\n\016ObservationR",
+      ".SC2APIProtocol.Point2D\"\334\001\n\016ObservationR" +
       "aw\022)\n\006player\030\001 \001(\0132\031.SC2APIProtocol.Play" +
       "erRaw\022#\n\005units\030\002 \003(\0132\024.SC2APIProtocol.Un" +
       "it\022+\n\tmap_state\030\003 \001(\0132\030.SC2APIProtocol.M" +
@@ -18970,7 +19862,7 @@ public final class Raw {
       "APIProtocol.Point\022\016\n\006radius\030\002 \001(\002\022\013\n\003tag" +
       "\030\003 \001(\004\"{\n\tPlayerRaw\0222\n\rpower_sources\030\001 \003" +
       "(\0132\033.SC2APIProtocol.PowerSource\022%\n\006camer" +
-      "a\030\002 \001(\0132\025.SC2APIProtocol.Point\022\023\n\013upgrad",
+      "a\030\002 \001(\0132\025.SC2APIProtocol.Point\022\023\n\013upgrad" +
       "e_ids\030\003 \003(\r\"\217\001\n\tUnitOrder\022\022\n\nability_id\030" +
       "\001 \001(\r\0227\n\026target_world_space_pos\030\002 \001(\0132\025." +
       "SC2APIProtocol.PointH\000\022\031\n\017target_unit_ta" +
@@ -18978,53 +19870,57 @@ public final class Raw {
       "\n\rPassengerUnit\022\013\n\003tag\030\001 \001(\004\022\016\n\006health\030\002" +
       " \001(\002\022\022\n\nhealth_max\030\003 \001(\002\022\016\n\006shield\030\004 \001(\002" +
       "\022\022\n\nshield_max\030\007 \001(\002\022\016\n\006energy\030\005 \001(\002\022\022\n\n" +
-      "energy_max\030\010 \001(\002\022\021\n\tunit_type\030\006 \001(\r\"\202\007\n\004" +
+      "energy_max\030\010 \001(\002\022\021\n\tunit_type\030\006 \001(\r\"\257\007\n\004" +
       "Unit\0221\n\014display_type\030\001 \001(\0162\033.SC2APIProto" +
-      "col.DisplayType\022*\n\010alliance\030\002 \001(\0162\030.SC2A",
+      "col.DisplayType\022*\n\010alliance\030\002 \001(\0162\030.SC2A" +
       "PIProtocol.Alliance\022\013\n\003tag\030\003 \001(\004\022\021\n\tunit" +
       "_type\030\004 \001(\r\022\r\n\005owner\030\005 \001(\005\022\"\n\003pos\030\006 \001(\0132" +
       "\025.SC2APIProtocol.Point\022\016\n\006facing\030\007 \001(\002\022\016" +
       "\n\006radius\030\010 \001(\002\022\026\n\016build_progress\030\t \001(\002\022)" +
       "\n\005cloak\030\n \001(\0162\032.SC2APIProtocol.CloakStat" +
-      "e\022\024\n\014detect_range\030\037 \001(\002\022\023\n\013radar_range\030 " +
-      " \001(\002\022\023\n\013is_selected\030\013 \001(\010\022\024\n\014is_on_scree" +
-      "n\030\014 \001(\010\022\017\n\007is_blip\030\r \001(\010\022\022\n\nis_powered\030#" +
-      " \001(\010\022\016\n\006health\030\016 \001(\002\022\022\n\nhealth_max\030\017 \001(\002" +
-      "\022\016\n\006shield\030\020 \001(\002\022\022\n\nshield_max\030$ \001(\002\022\016\n\006",
-      "energy\030\021 \001(\002\022\022\n\nenergy_max\030% \001(\002\022\030\n\020mine" +
-      "ral_contents\030\022 \001(\005\022\030\n\020vespene_contents\030\023" +
-      " \001(\005\022\021\n\tis_flying\030\024 \001(\010\022\023\n\013is_burrowed\030\025" +
-      " \001(\010\022)\n\006orders\030\026 \003(\0132\031.SC2APIProtocol.Un" +
-      "itOrder\022\022\n\nadd_on_tag\030\027 \001(\004\0221\n\npassenger" +
-      "s\030\030 \003(\0132\035.SC2APIProtocol.PassengerUnit\022\031" +
-      "\n\021cargo_space_taken\030\031 \001(\005\022\027\n\017cargo_space" +
-      "_max\030\032 \001(\005\022\020\n\010buff_ids\030\033 \003(\r\022\033\n\023assigned" +
-      "_harvesters\030\034 \001(\005\022\030\n\020ideal_harvesters\030\035 " +
-      "\001(\005\022\027\n\017weapon_cooldown\030\036 \001(\002\022\032\n\022engaged_",
-      "target_tag\030\" \001(\004\"c\n\010MapState\022-\n\nvisibili" +
-      "ty\030\001 \001(\0132\031.SC2APIProtocol.ImageData\022(\n\005c" +
-      "reep\030\002 \001(\0132\031.SC2APIProtocol.ImageData\"\033\n" +
-      "\005Event\022\022\n\ndead_units\030\001 \003(\004\"A\n\006Effect\022\021\n\t" +
-      "effect_id\030\001 \001(\r\022$\n\003pos\030\002 \003(\0132\027.SC2APIPro" +
-      "tocol.Point2D\"\323\001\n\tActionRaw\022<\n\014unit_comm" +
-      "and\030\001 \001(\0132$.SC2APIProtocol.ActionRawUnit" +
-      "CommandH\000\022:\n\013camera_move\030\002 \001(\0132#.SC2APIP" +
-      "rotocol.ActionRawCameraMoveH\000\022B\n\017toggle_" +
-      "autocast\030\003 \001(\0132\'.SC2APIProtocol.ActionRa",
-      "wToggleAutocastH\000B\010\n\006action\"\264\001\n\024ActionRa" +
-      "wUnitCommand\022\022\n\nability_id\030\001 \001(\005\0229\n\026targ" +
-      "et_world_space_pos\030\002 \001(\0132\027.SC2APIProtoco" +
-      "l.Point2DH\000\022\031\n\017target_unit_tag\030\003 \001(\004H\000\022\021" +
-      "\n\tunit_tags\030\004 \003(\004\022\025\n\rqueue_command\030\005 \001(\010" +
-      "B\010\n\006target\"H\n\023ActionRawCameraMove\0221\n\022cen" +
-      "ter_world_space\030\001 \001(\0132\025.SC2APIProtocol.P" +
-      "oint\"@\n\027ActionRawToggleAutocast\022\022\n\nabili" +
-      "ty_id\030\001 \001(\005\022\021\n\tunit_tags\030\002 \003(\004*4\n\013Displa" +
-      "yType\022\013\n\007Visible\020\001\022\014\n\010Snapshot\020\002\022\n\n\006Hidd",
-      "en\020\003*6\n\010Alliance\022\010\n\004Self\020\001\022\010\n\004Ally\020\002\022\013\n\007" +
-      "Neutral\020\003\022\t\n\005Enemy\020\004*>\n\nCloakState\022\013\n\007Cl" +
-      "oaked\020\001\022\023\n\017CloakedDetected\020\002\022\016\n\nNotCloak" +
-      "ed\020\003"
+      "e\022\020\n\010buff_ids\030\033 \003(\r\022\024\n\014detect_range\030\037 \001(" +
+      "\002\022\023\n\013radar_range\030  \001(\002\022\023\n\013is_selected\030\013 " +
+      "\001(\010\022\024\n\014is_on_screen\030\014 \001(\010\022\017\n\007is_blip\030\r \001" +
+      "(\010\022\022\n\nis_powered\030# \001(\010\022\021\n\tis_active\030\' \001(" +
+      "\010\022\016\n\006health\030\016 \001(\002\022\022\n\nhealth_max\030\017 \001(\002\022\016\n" +
+      "\006shield\030\020 \001(\002\022\022\n\nshield_max\030$ \001(\002\022\016\n\006ene" +
+      "rgy\030\021 \001(\002\022\022\n\nenergy_max\030% \001(\002\022\030\n\020mineral" +
+      "_contents\030\022 \001(\005\022\030\n\020vespene_contents\030\023 \001(" +
+      "\005\022\021\n\tis_flying\030\024 \001(\010\022\023\n\013is_burrowed\030\025 \001(" +
+      "\010\022\030\n\020is_hallucination\030& \001(\010\022)\n\006orders\030\026 " +
+      "\003(\0132\031.SC2APIProtocol.UnitOrder\022\022\n\nadd_on" +
+      "_tag\030\027 \001(\004\0221\n\npassengers\030\030 \003(\0132\035.SC2APIP" +
+      "rotocol.PassengerUnit\022\031\n\021cargo_space_tak" +
+      "en\030\031 \001(\005\022\027\n\017cargo_space_max\030\032 \001(\005\022\033\n\023ass" +
+      "igned_harvesters\030\034 \001(\005\022\030\n\020ideal_harveste" +
+      "rs\030\035 \001(\005\022\027\n\017weapon_cooldown\030\036 \001(\002\022\032\n\022eng" +
+      "aged_target_tag\030\" \001(\004\"c\n\010MapState\022-\n\nvis" +
+      "ibility\030\001 \001(\0132\031.SC2APIProtocol.ImageData" +
+      "\022(\n\005creep\030\002 \001(\0132\031.SC2APIProtocol.ImageDa" +
+      "ta\"\033\n\005Event\022\022\n\ndead_units\030\001 \003(\004\"\214\001\n\006Effe" +
+      "ct\022\021\n\teffect_id\030\001 \001(\r\022$\n\003pos\030\002 \003(\0132\027.SC2" +
+      "APIProtocol.Point2D\022*\n\010alliance\030\003 \001(\0162\030." +
+      "SC2APIProtocol.Alliance\022\r\n\005owner\030\004 \001(\005\022\016" +
+      "\n\006radius\030\005 \001(\002\"\323\001\n\tActionRaw\022<\n\014unit_com" +
+      "mand\030\001 \001(\0132$.SC2APIProtocol.ActionRawUni" +
+      "tCommandH\000\022:\n\013camera_move\030\002 \001(\0132#.SC2API" +
+      "Protocol.ActionRawCameraMoveH\000\022B\n\017toggle" +
+      "_autocast\030\003 \001(\0132\'.SC2APIProtocol.ActionR" +
+      "awToggleAutocastH\000B\010\n\006action\"\264\001\n\024ActionR" +
+      "awUnitCommand\022\022\n\nability_id\030\001 \001(\005\0229\n\026tar" +
+      "get_world_space_pos\030\002 \001(\0132\027.SC2APIProtoc" +
+      "ol.Point2DH\000\022\031\n\017target_unit_tag\030\003 \001(\004H\000\022" +
+      "\021\n\tunit_tags\030\004 \003(\004\022\025\n\rqueue_command\030\005 \001(" +
+      "\010B\010\n\006target\"H\n\023ActionRawCameraMove\0221\n\022ce" +
+      "nter_world_space\030\001 \001(\0132\025.SC2APIProtocol." +
+      "Point\"@\n\027ActionRawToggleAutocast\022\022\n\nabil" +
+      "ity_id\030\001 \001(\005\022\021\n\tunit_tags\030\002 \003(\004*4\n\013Displ" +
+      "ayType\022\013\n\007Visible\020\001\022\014\n\010Snapshot\020\002\022\n\n\006Hid" +
+      "den\020\003*6\n\010Alliance\022\010\n\004Self\020\001\022\010\n\004Ally\020\002\022\013\n" +
+      "\007Neutral\020\003\022\t\n\005Enemy\020\004*e\n\nCloakState\022\022\n\016C" +
+      "loakedUnknown\020\000\022\013\n\007Cloaked\020\001\022\023\n\017CloakedD" +
+      "etected\020\002\022\016\n\nNotCloaked\020\003\022\021\n\rCloakedAlli" +
+      "ed\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19080,7 +19976,7 @@ public final class Raw {
     internal_static_SC2APIProtocol_Unit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_Unit_descriptor,
-        new java.lang.String[] { "DisplayType", "Alliance", "Tag", "UnitType", "Owner", "Pos", "Facing", "Radius", "BuildProgress", "Cloak", "DetectRange", "RadarRange", "IsSelected", "IsOnScreen", "IsBlip", "IsPowered", "Health", "HealthMax", "Shield", "ShieldMax", "Energy", "EnergyMax", "MineralContents", "VespeneContents", "IsFlying", "IsBurrowed", "Orders", "AddOnTag", "Passengers", "CargoSpaceTaken", "CargoSpaceMax", "BuffIds", "AssignedHarvesters", "IdealHarvesters", "WeaponCooldown", "EngagedTargetTag", });
+        new java.lang.String[] { "DisplayType", "Alliance", "Tag", "UnitType", "Owner", "Pos", "Facing", "Radius", "BuildProgress", "Cloak", "BuffIds", "DetectRange", "RadarRange", "IsSelected", "IsOnScreen", "IsBlip", "IsPowered", "IsActive", "Health", "HealthMax", "Shield", "ShieldMax", "Energy", "EnergyMax", "MineralContents", "VespeneContents", "IsFlying", "IsBurrowed", "IsHallucination", "Orders", "AddOnTag", "Passengers", "CargoSpaceTaken", "CargoSpaceMax", "AssignedHarvesters", "IdealHarvesters", "WeaponCooldown", "EngagedTargetTag", });
     internal_static_SC2APIProtocol_MapState_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_SC2APIProtocol_MapState_fieldAccessorTable = new
@@ -19098,7 +19994,7 @@ public final class Raw {
     internal_static_SC2APIProtocol_Effect_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_Effect_descriptor,
-        new java.lang.String[] { "EffectId", "Pos", });
+        new java.lang.String[] { "EffectId", "Pos", "Alliance", "Owner", "Radius", });
     internal_static_SC2APIProtocol_ActionRaw_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_SC2APIProtocol_ActionRaw_fieldAccessorTable = new

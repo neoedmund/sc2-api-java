@@ -69,6 +69,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -80,13 +83,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Spatial.FeatureLayers.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -113,6 +109,13 @@ public final class Spatial {
               bitField0_ |= 0x00000002;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -130,6 +133,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationFeatureLayer_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationFeatureLayer_fieldAccessorTable
@@ -181,6 +185,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -190,6 +195,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -201,6 +207,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -334,6 +341,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -341,6 +349,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ObservationFeatureLayer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -364,6 +373,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationFeatureLayer_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationFeatureLayer_fieldAccessorTable
@@ -388,6 +398,7 @@ public final class Spatial {
           getMinimapRendersFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (rendersBuilder_ == null) {
@@ -405,15 +416,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationFeatureLayer_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ObservationFeatureLayer getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ObservationFeatureLayer.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ObservationFeatureLayer build() {
         SC2APIProtocol.Spatial.ObservationFeatureLayer result = buildPartial();
         if (!result.isInitialized()) {
@@ -422,6 +436,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ObservationFeatureLayer buildPartial() {
         SC2APIProtocol.Spatial.ObservationFeatureLayer result = new SC2APIProtocol.Spatial.ObservationFeatureLayer(this);
         int from_bitField0_ = bitField0_;
@@ -447,32 +462,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ObservationFeatureLayer) {
           return mergeFrom((SC2APIProtocol.Spatial.ObservationFeatureLayer)other);
@@ -495,10 +517,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -753,11 +777,13 @@ public final class Spatial {
         }
         return minimapRendersBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -779,11 +805,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ObservationFeatureLayer>
         PARSER = new com.google.protobuf.AbstractParser<ObservationFeatureLayer>() {
+      @java.lang.Override
       public ObservationFeatureLayer parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ObservationFeatureLayer(input, extensionRegistry);
+        return new ObservationFeatureLayer(input, extensionRegistry);
       }
     };
 
@@ -796,6 +823,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ObservationFeatureLayer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1230,6 +1258,131 @@ public final class Spatial {
      * <code>optional .SC2APIProtocol.ImageData effects = 20;</code>
      */
     SC2APIProtocol.Common.ImageDataOrBuilder getEffectsOrBuilder();
+
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a hallucination.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+     */
+    boolean hasHallucinations();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a hallucination.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+     */
+    SC2APIProtocol.Common.ImageData getHallucinations();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a hallucination.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+     */
+    SC2APIProtocol.Common.ImageDataOrBuilder getHallucinationsOrBuilder();
+
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+     */
+    boolean hasCloaked();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+     */
+    SC2APIProtocol.Common.ImageData getCloaked();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+     */
+    SC2APIProtocol.Common.ImageDataOrBuilder getCloakedOrBuilder();
+
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a blip.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+     */
+    boolean hasBlip();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a blip.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+     */
+    SC2APIProtocol.Common.ImageData getBlip();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a blip.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+     */
+    SC2APIProtocol.Common.ImageDataOrBuilder getBlipOrBuilder();
+
+    /**
+     * <pre>
+     * int32. One of the buffs applied to this unit. Extras are ignored.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+     */
+    boolean hasBuffs();
+    /**
+     * <pre>
+     * int32. One of the buffs applied to this unit. Extras are ignored.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+     */
+    SC2APIProtocol.Common.ImageData getBuffs();
+    /**
+     * <pre>
+     * int32. One of the buffs applied to this unit. Extras are ignored.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+     */
+    SC2APIProtocol.Common.ImageDataOrBuilder getBuffsOrBuilder();
+
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is active.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+     */
+    boolean hasActive();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is active.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+     */
+    SC2APIProtocol.Common.ImageData getActive();
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is active.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+     */
+    SC2APIProtocol.Common.ImageDataOrBuilder getActiveOrBuilder();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.FeatureLayers}
@@ -1256,6 +1409,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1267,13 +1423,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1495,6 +1644,78 @@ public final class Spatial {
               bitField0_ |= 0x00010000;
               break;
             }
+            case 170: {
+              SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
+              if (((bitField0_ & 0x00020000) == 0x00020000)) {
+                subBuilder = hallucinations_.toBuilder();
+              }
+              hallucinations_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hallucinations_);
+                hallucinations_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00020000;
+              break;
+            }
+            case 178: {
+              SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
+              if (((bitField0_ & 0x00040000) == 0x00040000)) {
+                subBuilder = cloaked_.toBuilder();
+              }
+              cloaked_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cloaked_);
+                cloaked_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00040000;
+              break;
+            }
+            case 186: {
+              SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
+              if (((bitField0_ & 0x00080000) == 0x00080000)) {
+                subBuilder = blip_.toBuilder();
+              }
+              blip_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(blip_);
+                blip_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00080000;
+              break;
+            }
+            case 194: {
+              SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
+              if (((bitField0_ & 0x00100000) == 0x00100000)) {
+                subBuilder = buffs_.toBuilder();
+              }
+              buffs_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(buffs_);
+                buffs_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00100000;
+              break;
+            }
+            case 202: {
+              SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
+              if (((bitField0_ & 0x00200000) == 0x00200000)) {
+                subBuilder = active_.toBuilder();
+              }
+              active_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(active_);
+                active_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00200000;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1512,6 +1733,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayers_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayers_fieldAccessorTable
@@ -2081,7 +2303,173 @@ public final class Spatial {
       return effects_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : effects_;
     }
 
+    public static final int HALLUCINATIONS_FIELD_NUMBER = 21;
+    private SC2APIProtocol.Common.ImageData hallucinations_;
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a hallucination.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+     */
+    public boolean hasHallucinations() {
+      return ((bitField0_ & 0x00020000) == 0x00020000);
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a hallucination.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+     */
+    public SC2APIProtocol.Common.ImageData getHallucinations() {
+      return hallucinations_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : hallucinations_;
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a hallucination.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+     */
+    public SC2APIProtocol.Common.ImageDataOrBuilder getHallucinationsOrBuilder() {
+      return hallucinations_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : hallucinations_;
+    }
+
+    public static final int CLOAKED_FIELD_NUMBER = 22;
+    private SC2APIProtocol.Common.ImageData cloaked_;
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+     */
+    public boolean hasCloaked() {
+      return ((bitField0_ & 0x00040000) == 0x00040000);
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+     */
+    public SC2APIProtocol.Common.ImageData getCloaked() {
+      return cloaked_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : cloaked_;
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+     */
+    public SC2APIProtocol.Common.ImageDataOrBuilder getCloakedOrBuilder() {
+      return cloaked_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : cloaked_;
+    }
+
+    public static final int BLIP_FIELD_NUMBER = 23;
+    private SC2APIProtocol.Common.ImageData blip_;
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a blip.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+     */
+    public boolean hasBlip() {
+      return ((bitField0_ & 0x00080000) == 0x00080000);
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a blip.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+     */
+    public SC2APIProtocol.Common.ImageData getBlip() {
+      return blip_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : blip_;
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is a blip.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+     */
+    public SC2APIProtocol.Common.ImageDataOrBuilder getBlipOrBuilder() {
+      return blip_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : blip_;
+    }
+
+    public static final int BUFFS_FIELD_NUMBER = 24;
+    private SC2APIProtocol.Common.ImageData buffs_;
+    /**
+     * <pre>
+     * int32. One of the buffs applied to this unit. Extras are ignored.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+     */
+    public boolean hasBuffs() {
+      return ((bitField0_ & 0x00100000) == 0x00100000);
+    }
+    /**
+     * <pre>
+     * int32. One of the buffs applied to this unit. Extras are ignored.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+     */
+    public SC2APIProtocol.Common.ImageData getBuffs() {
+      return buffs_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : buffs_;
+    }
+    /**
+     * <pre>
+     * int32. One of the buffs applied to this unit. Extras are ignored.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+     */
+    public SC2APIProtocol.Common.ImageDataOrBuilder getBuffsOrBuilder() {
+      return buffs_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : buffs_;
+    }
+
+    public static final int ACTIVE_FIELD_NUMBER = 25;
+    private SC2APIProtocol.Common.ImageData active_;
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is active.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+     */
+    public boolean hasActive() {
+      return ((bitField0_ & 0x00200000) == 0x00200000);
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is active.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+     */
+    public SC2APIProtocol.Common.ImageData getActive() {
+      return active_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : active_;
+    }
+    /**
+     * <pre>
+     * 1-bit. Whether the unit here is active.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+     */
+    public SC2APIProtocol.Common.ImageDataOrBuilder getActiveOrBuilder() {
+      return active_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : active_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2091,6 +2479,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2144,9 +2533,25 @@ public final class Spatial {
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeMessage(20, getEffects());
       }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        output.writeMessage(21, getHallucinations());
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        output.writeMessage(22, getCloaked());
+      }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        output.writeMessage(23, getBlip());
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeMessage(24, getBuffs());
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        output.writeMessage(25, getActive());
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2219,6 +2624,26 @@ public final class Spatial {
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(20, getEffects());
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, getHallucinations());
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, getCloaked());
+      }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(23, getBlip());
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(24, getBuffs());
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(25, getActive());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2321,6 +2746,31 @@ public final class Spatial {
         result = result && getEffects()
             .equals(other.getEffects());
       }
+      result = result && (hasHallucinations() == other.hasHallucinations());
+      if (hasHallucinations()) {
+        result = result && getHallucinations()
+            .equals(other.getHallucinations());
+      }
+      result = result && (hasCloaked() == other.hasCloaked());
+      if (hasCloaked()) {
+        result = result && getCloaked()
+            .equals(other.getCloaked());
+      }
+      result = result && (hasBlip() == other.hasBlip());
+      if (hasBlip()) {
+        result = result && getBlip()
+            .equals(other.getBlip());
+      }
+      result = result && (hasBuffs() == other.hasBuffs());
+      if (hasBuffs()) {
+        result = result && getBuffs()
+            .equals(other.getBuffs());
+      }
+      result = result && (hasActive() == other.hasActive());
+      if (hasActive()) {
+        result = result && getActive()
+            .equals(other.getActive());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2400,6 +2850,26 @@ public final class Spatial {
         hash = (37 * hash) + EFFECTS_FIELD_NUMBER;
         hash = (53 * hash) + getEffects().hashCode();
       }
+      if (hasHallucinations()) {
+        hash = (37 * hash) + HALLUCINATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getHallucinations().hashCode();
+      }
+      if (hasCloaked()) {
+        hash = (37 * hash) + CLOAKED_FIELD_NUMBER;
+        hash = (53 * hash) + getCloaked().hashCode();
+      }
+      if (hasBlip()) {
+        hash = (37 * hash) + BLIP_FIELD_NUMBER;
+        hash = (53 * hash) + getBlip().hashCode();
+      }
+      if (hasBuffs()) {
+        hash = (37 * hash) + BUFFS_FIELD_NUMBER;
+        hash = (53 * hash) + getBuffs().hashCode();
+      }
+      if (hasActive()) {
+        hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getActive().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2475,6 +2945,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2482,6 +2953,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.FeatureLayers prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2505,6 +2977,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayers_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayers_fieldAccessorTable
@@ -2542,8 +3015,14 @@ public final class Spatial {
           getUnitDensityAaFieldBuilder();
           getUnitDensityFieldBuilder();
           getEffectsFieldBuilder();
+          getHallucinationsFieldBuilder();
+          getCloakedFieldBuilder();
+          getBlipFieldBuilder();
+          getBuffsFieldBuilder();
+          getActiveFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (heightMapBuilder_ == null) {
@@ -2648,18 +3127,51 @@ public final class Spatial {
           effectsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00010000);
+        if (hallucinationsBuilder_ == null) {
+          hallucinations_ = null;
+        } else {
+          hallucinationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00020000);
+        if (cloakedBuilder_ == null) {
+          cloaked_ = null;
+        } else {
+          cloakedBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00040000);
+        if (blipBuilder_ == null) {
+          blip_ = null;
+        } else {
+          blipBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00080000);
+        if (buffsBuilder_ == null) {
+          buffs_ = null;
+        } else {
+          buffsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00100000);
+        if (activeBuilder_ == null) {
+          active_ = null;
+        } else {
+          activeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayers_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.FeatureLayers getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.FeatureLayers.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.FeatureLayers build() {
         SC2APIProtocol.Spatial.FeatureLayers result = buildPartial();
         if (!result.isInitialized()) {
@@ -2668,6 +3180,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.FeatureLayers buildPartial() {
         SC2APIProtocol.Spatial.FeatureLayers result = new SC2APIProtocol.Spatial.FeatureLayers(this);
         int from_bitField0_ = bitField0_;
@@ -2808,37 +3321,84 @@ public final class Spatial {
         } else {
           result.effects_ = effectsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00020000;
+        }
+        if (hallucinationsBuilder_ == null) {
+          result.hallucinations_ = hallucinations_;
+        } else {
+          result.hallucinations_ = hallucinationsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00040000;
+        }
+        if (cloakedBuilder_ == null) {
+          result.cloaked_ = cloaked_;
+        } else {
+          result.cloaked_ = cloakedBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+          to_bitField0_ |= 0x00080000;
+        }
+        if (blipBuilder_ == null) {
+          result.blip_ = blip_;
+        } else {
+          result.blip_ = blipBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        if (buffsBuilder_ == null) {
+          result.buffs_ = buffs_;
+        } else {
+          result.buffs_ = buffsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00200000;
+        }
+        if (activeBuilder_ == null) {
+          result.active_ = active_;
+        } else {
+          result.active_ = activeBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.FeatureLayers) {
           return mergeFrom((SC2APIProtocol.Spatial.FeatureLayers)other);
@@ -2901,15 +3461,32 @@ public final class Spatial {
         if (other.hasEffects()) {
           mergeEffects(other.getEffects());
         }
+        if (other.hasHallucinations()) {
+          mergeHallucinations(other.getHallucinations());
+        }
+        if (other.hasCloaked()) {
+          mergeCloaked(other.getCloaked());
+        }
+        if (other.hasBlip()) {
+          mergeBlip(other.getBlip());
+        }
+        if (other.hasBuffs()) {
+          mergeBuffs(other.getBuffs());
+        }
+        if (other.hasActive()) {
+          mergeActive(other.getActive());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5546,11 +6123,783 @@ public final class Spatial {
         }
         return effectsBuilder_;
       }
+
+      private SC2APIProtocol.Common.ImageData hallucinations_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> hallucinationsBuilder_;
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public boolean hasHallucinations() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public SC2APIProtocol.Common.ImageData getHallucinations() {
+        if (hallucinationsBuilder_ == null) {
+          return hallucinations_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : hallucinations_;
+        } else {
+          return hallucinationsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public Builder setHallucinations(SC2APIProtocol.Common.ImageData value) {
+        if (hallucinationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hallucinations_ = value;
+          onChanged();
+        } else {
+          hallucinationsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public Builder setHallucinations(
+          SC2APIProtocol.Common.ImageData.Builder builderForValue) {
+        if (hallucinationsBuilder_ == null) {
+          hallucinations_ = builderForValue.build();
+          onChanged();
+        } else {
+          hallucinationsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public Builder mergeHallucinations(SC2APIProtocol.Common.ImageData value) {
+        if (hallucinationsBuilder_ == null) {
+          if (((bitField0_ & 0x00020000) == 0x00020000) &&
+              hallucinations_ != null &&
+              hallucinations_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
+            hallucinations_ =
+              SC2APIProtocol.Common.ImageData.newBuilder(hallucinations_).mergeFrom(value).buildPartial();
+          } else {
+            hallucinations_ = value;
+          }
+          onChanged();
+        } else {
+          hallucinationsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public Builder clearHallucinations() {
+        if (hallucinationsBuilder_ == null) {
+          hallucinations_ = null;
+          onChanged();
+        } else {
+          hallucinationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00020000);
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public SC2APIProtocol.Common.ImageData.Builder getHallucinationsBuilder() {
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return getHallucinationsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      public SC2APIProtocol.Common.ImageDataOrBuilder getHallucinationsOrBuilder() {
+        if (hallucinationsBuilder_ != null) {
+          return hallucinationsBuilder_.getMessageOrBuilder();
+        } else {
+          return hallucinations_ == null ?
+              SC2APIProtocol.Common.ImageData.getDefaultInstance() : hallucinations_;
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a hallucination.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData hallucinations = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> 
+          getHallucinationsFieldBuilder() {
+        if (hallucinationsBuilder_ == null) {
+          hallucinationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder>(
+                  getHallucinations(),
+                  getParentForChildren(),
+                  isClean());
+          hallucinations_ = null;
+        }
+        return hallucinationsBuilder_;
+      }
+
+      private SC2APIProtocol.Common.ImageData cloaked_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> cloakedBuilder_;
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public boolean hasCloaked() {
+        return ((bitField0_ & 0x00040000) == 0x00040000);
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public SC2APIProtocol.Common.ImageData getCloaked() {
+        if (cloakedBuilder_ == null) {
+          return cloaked_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : cloaked_;
+        } else {
+          return cloakedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public Builder setCloaked(SC2APIProtocol.Common.ImageData value) {
+        if (cloakedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cloaked_ = value;
+          onChanged();
+        } else {
+          cloakedBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public Builder setCloaked(
+          SC2APIProtocol.Common.ImageData.Builder builderForValue) {
+        if (cloakedBuilder_ == null) {
+          cloaked_ = builderForValue.build();
+          onChanged();
+        } else {
+          cloakedBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public Builder mergeCloaked(SC2APIProtocol.Common.ImageData value) {
+        if (cloakedBuilder_ == null) {
+          if (((bitField0_ & 0x00040000) == 0x00040000) &&
+              cloaked_ != null &&
+              cloaked_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
+            cloaked_ =
+              SC2APIProtocol.Common.ImageData.newBuilder(cloaked_).mergeFrom(value).buildPartial();
+          } else {
+            cloaked_ = value;
+          }
+          onChanged();
+        } else {
+          cloakedBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public Builder clearCloaked() {
+        if (cloakedBuilder_ == null) {
+          cloaked_ = null;
+          onChanged();
+        } else {
+          cloakedBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00040000);
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public SC2APIProtocol.Common.ImageData.Builder getCloakedBuilder() {
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return getCloakedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      public SC2APIProtocol.Common.ImageDataOrBuilder getCloakedOrBuilder() {
+        if (cloakedBuilder_ != null) {
+          return cloakedBuilder_.getMessageOrBuilder();
+        } else {
+          return cloaked_ == null ?
+              SC2APIProtocol.Common.ImageData.getDefaultInstance() : cloaked_;
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is cloaked. Hidden units will show up too, but with less details in other layers.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData cloaked = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> 
+          getCloakedFieldBuilder() {
+        if (cloakedBuilder_ == null) {
+          cloakedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder>(
+                  getCloaked(),
+                  getParentForChildren(),
+                  isClean());
+          cloaked_ = null;
+        }
+        return cloakedBuilder_;
+      }
+
+      private SC2APIProtocol.Common.ImageData blip_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> blipBuilder_;
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public boolean hasBlip() {
+        return ((bitField0_ & 0x00080000) == 0x00080000);
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public SC2APIProtocol.Common.ImageData getBlip() {
+        if (blipBuilder_ == null) {
+          return blip_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : blip_;
+        } else {
+          return blipBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public Builder setBlip(SC2APIProtocol.Common.ImageData value) {
+        if (blipBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          blip_ = value;
+          onChanged();
+        } else {
+          blipBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public Builder setBlip(
+          SC2APIProtocol.Common.ImageData.Builder builderForValue) {
+        if (blipBuilder_ == null) {
+          blip_ = builderForValue.build();
+          onChanged();
+        } else {
+          blipBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public Builder mergeBlip(SC2APIProtocol.Common.ImageData value) {
+        if (blipBuilder_ == null) {
+          if (((bitField0_ & 0x00080000) == 0x00080000) &&
+              blip_ != null &&
+              blip_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
+            blip_ =
+              SC2APIProtocol.Common.ImageData.newBuilder(blip_).mergeFrom(value).buildPartial();
+          } else {
+            blip_ = value;
+          }
+          onChanged();
+        } else {
+          blipBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public Builder clearBlip() {
+        if (blipBuilder_ == null) {
+          blip_ = null;
+          onChanged();
+        } else {
+          blipBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00080000);
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public SC2APIProtocol.Common.ImageData.Builder getBlipBuilder() {
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return getBlipFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      public SC2APIProtocol.Common.ImageDataOrBuilder getBlipOrBuilder() {
+        if (blipBuilder_ != null) {
+          return blipBuilder_.getMessageOrBuilder();
+        } else {
+          return blip_ == null ?
+              SC2APIProtocol.Common.ImageData.getDefaultInstance() : blip_;
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is a blip.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData blip = 23;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> 
+          getBlipFieldBuilder() {
+        if (blipBuilder_ == null) {
+          blipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder>(
+                  getBlip(),
+                  getParentForChildren(),
+                  isClean());
+          blip_ = null;
+        }
+        return blipBuilder_;
+      }
+
+      private SC2APIProtocol.Common.ImageData buffs_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> buffsBuilder_;
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public boolean hasBuffs() {
+        return ((bitField0_ & 0x00100000) == 0x00100000);
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public SC2APIProtocol.Common.ImageData getBuffs() {
+        if (buffsBuilder_ == null) {
+          return buffs_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : buffs_;
+        } else {
+          return buffsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public Builder setBuffs(SC2APIProtocol.Common.ImageData value) {
+        if (buffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          buffs_ = value;
+          onChanged();
+        } else {
+          buffsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00100000;
+        return this;
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public Builder setBuffs(
+          SC2APIProtocol.Common.ImageData.Builder builderForValue) {
+        if (buffsBuilder_ == null) {
+          buffs_ = builderForValue.build();
+          onChanged();
+        } else {
+          buffsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00100000;
+        return this;
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public Builder mergeBuffs(SC2APIProtocol.Common.ImageData value) {
+        if (buffsBuilder_ == null) {
+          if (((bitField0_ & 0x00100000) == 0x00100000) &&
+              buffs_ != null &&
+              buffs_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
+            buffs_ =
+              SC2APIProtocol.Common.ImageData.newBuilder(buffs_).mergeFrom(value).buildPartial();
+          } else {
+            buffs_ = value;
+          }
+          onChanged();
+        } else {
+          buffsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00100000;
+        return this;
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public Builder clearBuffs() {
+        if (buffsBuilder_ == null) {
+          buffs_ = null;
+          onChanged();
+        } else {
+          buffsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00100000);
+        return this;
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public SC2APIProtocol.Common.ImageData.Builder getBuffsBuilder() {
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return getBuffsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      public SC2APIProtocol.Common.ImageDataOrBuilder getBuffsOrBuilder() {
+        if (buffsBuilder_ != null) {
+          return buffsBuilder_.getMessageOrBuilder();
+        } else {
+          return buffs_ == null ?
+              SC2APIProtocol.Common.ImageData.getDefaultInstance() : buffs_;
+        }
+      }
+      /**
+       * <pre>
+       * int32. One of the buffs applied to this unit. Extras are ignored.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData buffs = 24;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> 
+          getBuffsFieldBuilder() {
+        if (buffsBuilder_ == null) {
+          buffsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder>(
+                  getBuffs(),
+                  getParentForChildren(),
+                  isClean());
+          buffs_ = null;
+        }
+        return buffsBuilder_;
+      }
+
+      private SC2APIProtocol.Common.ImageData active_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> activeBuilder_;
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public boolean hasActive() {
+        return ((bitField0_ & 0x00200000) == 0x00200000);
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public SC2APIProtocol.Common.ImageData getActive() {
+        if (activeBuilder_ == null) {
+          return active_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : active_;
+        } else {
+          return activeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public Builder setActive(SC2APIProtocol.Common.ImageData value) {
+        if (activeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          active_ = value;
+          onChanged();
+        } else {
+          activeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00200000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public Builder setActive(
+          SC2APIProtocol.Common.ImageData.Builder builderForValue) {
+        if (activeBuilder_ == null) {
+          active_ = builderForValue.build();
+          onChanged();
+        } else {
+          activeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00200000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public Builder mergeActive(SC2APIProtocol.Common.ImageData value) {
+        if (activeBuilder_ == null) {
+          if (((bitField0_ & 0x00200000) == 0x00200000) &&
+              active_ != null &&
+              active_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
+            active_ =
+              SC2APIProtocol.Common.ImageData.newBuilder(active_).mergeFrom(value).buildPartial();
+          } else {
+            active_ = value;
+          }
+          onChanged();
+        } else {
+          activeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00200000;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public Builder clearActive() {
+        if (activeBuilder_ == null) {
+          active_ = null;
+          onChanged();
+        } else {
+          activeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00200000);
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public SC2APIProtocol.Common.ImageData.Builder getActiveBuilder() {
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return getActiveFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      public SC2APIProtocol.Common.ImageDataOrBuilder getActiveOrBuilder() {
+        if (activeBuilder_ != null) {
+          return activeBuilder_.getMessageOrBuilder();
+        } else {
+          return active_ == null ?
+              SC2APIProtocol.Common.ImageData.getDefaultInstance() : active_;
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Whether the unit here is active.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData active = 25;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> 
+          getActiveFieldBuilder() {
+        if (activeBuilder_ == null) {
+          activeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder>(
+                  getActive(),
+                  getParentForChildren(),
+                  isClean());
+          active_ = null;
+        }
+        return activeBuilder_;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5572,11 +6921,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<FeatureLayers>
         PARSER = new com.google.protobuf.AbstractParser<FeatureLayers>() {
+      @java.lang.Override
       public FeatureLayers parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FeatureLayers(input, extensionRegistry);
+        return new FeatureLayers(input, extensionRegistry);
       }
     };
 
@@ -5589,6 +6939,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.FeatureLayers getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5776,6 +7127,31 @@ public final class Spatial {
 
     /**
      * <pre>
+     * 1-bit. Shows 'UnitAttacked' alert location.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+     */
+    boolean hasAlerts();
+    /**
+     * <pre>
+     * 1-bit. Shows 'UnitAttacked' alert location.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+     */
+    SC2APIProtocol.Common.ImageData getAlerts();
+    /**
+     * <pre>
+     * 1-bit. Shows 'UnitAttacked' alert location.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+     */
+    SC2APIProtocol.Common.ImageDataOrBuilder getAlertsOrBuilder();
+
+    /**
+     * <pre>
      * Cheat layers. Only populated in replays.
      * </pre>
      *
@@ -5824,6 +7200,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5835,13 +7214,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5935,7 +7307,7 @@ public final class Spatial {
             }
             case 66: {
               SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
                 subBuilder = unitType_.toBuilder();
               }
               unitType_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
@@ -5943,7 +7315,27 @@ public final class Spatial {
                 subBuilder.mergeFrom(unitType_);
                 unitType_ = subBuilder.buildPartial();
               }
+              bitField0_ |= 0x00000100;
+              break;
+            }
+            case 74: {
+              SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                subBuilder = alerts_.toBuilder();
+              }
+              alerts_ = input.readMessage(SC2APIProtocol.Common.ImageData.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(alerts_);
+                alerts_ = subBuilder.buildPartial();
+              }
               bitField0_ |= 0x00000080;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5963,6 +7355,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayersMinimap_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayersMinimap_fieldAccessorTable
@@ -6202,6 +7595,39 @@ public final class Spatial {
       return selected_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : selected_;
     }
 
+    public static final int ALERTS_FIELD_NUMBER = 9;
+    private SC2APIProtocol.Common.ImageData alerts_;
+    /**
+     * <pre>
+     * 1-bit. Shows 'UnitAttacked' alert location.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+     */
+    public boolean hasAlerts() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <pre>
+     * 1-bit. Shows 'UnitAttacked' alert location.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+     */
+    public SC2APIProtocol.Common.ImageData getAlerts() {
+      return alerts_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : alerts_;
+    }
+    /**
+     * <pre>
+     * 1-bit. Shows 'UnitAttacked' alert location.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+     */
+    public SC2APIProtocol.Common.ImageDataOrBuilder getAlertsOrBuilder() {
+      return alerts_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : alerts_;
+    }
+
     public static final int UNIT_TYPE_FIELD_NUMBER = 8;
     private SC2APIProtocol.Common.ImageData unitType_;
     /**
@@ -6212,7 +7638,7 @@ public final class Spatial {
      * <code>optional .SC2APIProtocol.ImageData unit_type = 8;</code>
      */
     public boolean hasUnitType() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <pre>
@@ -6236,6 +7662,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6245,6 +7672,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6268,12 +7696,16 @@ public final class Spatial {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeMessage(7, getSelected());
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(8, getUnitType());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeMessage(9, getAlerts());
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6307,9 +7739,13 @@ public final class Spatial {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getSelected());
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getUnitType());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getAlerts());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6362,6 +7798,11 @@ public final class Spatial {
         result = result && getSelected()
             .equals(other.getSelected());
       }
+      result = result && (hasAlerts() == other.hasAlerts());
+      if (hasAlerts()) {
+        result = result && getAlerts()
+            .equals(other.getAlerts());
+      }
       result = result && (hasUnitType() == other.hasUnitType());
       if (hasUnitType()) {
         result = result && getUnitType()
@@ -6405,6 +7846,10 @@ public final class Spatial {
       if (hasSelected()) {
         hash = (37 * hash) + SELECTED_FIELD_NUMBER;
         hash = (53 * hash) + getSelected().hashCode();
+      }
+      if (hasAlerts()) {
+        hash = (37 * hash) + ALERTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAlerts().hashCode();
       }
       if (hasUnitType()) {
         hash = (37 * hash) + UNIT_TYPE_FIELD_NUMBER;
@@ -6485,6 +7930,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6492,6 +7938,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.FeatureLayersMinimap prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6515,6 +7962,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayersMinimap_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayersMinimap_fieldAccessorTable
@@ -6542,9 +7990,11 @@ public final class Spatial {
           getPlayerIdFieldBuilder();
           getPlayerRelativeFieldBuilder();
           getSelectedFieldBuilder();
+          getAlertsFieldBuilder();
           getUnitTypeFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (heightMapBuilder_ == null) {
@@ -6589,24 +8039,33 @@ public final class Spatial {
           selectedBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
+        if (alertsBuilder_ == null) {
+          alerts_ = null;
+        } else {
+          alertsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
         if (unitTypeBuilder_ == null) {
           unitType_ = null;
         } else {
           unitTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_FeatureLayersMinimap_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.FeatureLayersMinimap getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.FeatureLayersMinimap.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.FeatureLayersMinimap build() {
         SC2APIProtocol.Spatial.FeatureLayersMinimap result = buildPartial();
         if (!result.isInitialized()) {
@@ -6615,6 +8074,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.FeatureLayersMinimap buildPartial() {
         SC2APIProtocol.Spatial.FeatureLayersMinimap result = new SC2APIProtocol.Spatial.FeatureLayersMinimap(this);
         int from_bitField0_ = bitField0_;
@@ -6678,6 +8138,14 @@ public final class Spatial {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
+        if (alertsBuilder_ == null) {
+          result.alerts_ = alerts_;
+        } else {
+          result.alerts_ = alertsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
         if (unitTypeBuilder_ == null) {
           result.unitType_ = unitType_;
         } else {
@@ -6688,32 +8156,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.FeatureLayersMinimap) {
           return mergeFrom((SC2APIProtocol.Spatial.FeatureLayersMinimap)other);
@@ -6746,6 +8221,9 @@ public final class Spatial {
         if (other.hasSelected()) {
           mergeSelected(other.getSelected());
         }
+        if (other.hasAlerts()) {
+          mergeAlerts(other.getAlerts());
+        }
         if (other.hasUnitType()) {
           mergeUnitType(other.getUnitType());
         }
@@ -6754,10 +8232,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7855,6 +9335,160 @@ public final class Spatial {
         return selectedBuilder_;
       }
 
+      private SC2APIProtocol.Common.ImageData alerts_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> alertsBuilder_;
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public boolean hasAlerts() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public SC2APIProtocol.Common.ImageData getAlerts() {
+        if (alertsBuilder_ == null) {
+          return alerts_ == null ? SC2APIProtocol.Common.ImageData.getDefaultInstance() : alerts_;
+        } else {
+          return alertsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public Builder setAlerts(SC2APIProtocol.Common.ImageData value) {
+        if (alertsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          alerts_ = value;
+          onChanged();
+        } else {
+          alertsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public Builder setAlerts(
+          SC2APIProtocol.Common.ImageData.Builder builderForValue) {
+        if (alertsBuilder_ == null) {
+          alerts_ = builderForValue.build();
+          onChanged();
+        } else {
+          alertsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public Builder mergeAlerts(SC2APIProtocol.Common.ImageData value) {
+        if (alertsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+              alerts_ != null &&
+              alerts_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
+            alerts_ =
+              SC2APIProtocol.Common.ImageData.newBuilder(alerts_).mergeFrom(value).buildPartial();
+          } else {
+            alerts_ = value;
+          }
+          onChanged();
+        } else {
+          alertsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public Builder clearAlerts() {
+        if (alertsBuilder_ == null) {
+          alerts_ = null;
+          onChanged();
+        } else {
+          alertsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public SC2APIProtocol.Common.ImageData.Builder getAlertsBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getAlertsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      public SC2APIProtocol.Common.ImageDataOrBuilder getAlertsOrBuilder() {
+        if (alertsBuilder_ != null) {
+          return alertsBuilder_.getMessageOrBuilder();
+        } else {
+          return alerts_ == null ?
+              SC2APIProtocol.Common.ImageData.getDefaultInstance() : alerts_;
+        }
+      }
+      /**
+       * <pre>
+       * 1-bit. Shows 'UnitAttacked' alert location.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ImageData alerts = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> 
+          getAlertsFieldBuilder() {
+        if (alertsBuilder_ == null) {
+          alertsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder>(
+                  getAlerts(),
+                  getParentForChildren(),
+                  isClean());
+          alerts_ = null;
+        }
+        return alertsBuilder_;
+      }
+
       private SC2APIProtocol.Common.ImageData unitType_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.Common.ImageData, SC2APIProtocol.Common.ImageData.Builder, SC2APIProtocol.Common.ImageDataOrBuilder> unitTypeBuilder_;
@@ -7866,7 +9500,7 @@ public final class Spatial {
        * <code>optional .SC2APIProtocol.ImageData unit_type = 8;</code>
        */
       public boolean hasUnitType() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <pre>
@@ -7899,7 +9533,7 @@ public final class Spatial {
         } else {
           unitTypeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -7917,7 +9551,7 @@ public final class Spatial {
         } else {
           unitTypeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -7929,7 +9563,7 @@ public final class Spatial {
        */
       public Builder mergeUnitType(SC2APIProtocol.Common.ImageData value) {
         if (unitTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
               unitType_ != null &&
               unitType_ != SC2APIProtocol.Common.ImageData.getDefaultInstance()) {
             unitType_ =
@@ -7941,7 +9575,7 @@ public final class Spatial {
         } else {
           unitTypeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -7958,7 +9592,7 @@ public final class Spatial {
         } else {
           unitTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       /**
@@ -7969,7 +9603,7 @@ public final class Spatial {
        * <code>optional .SC2APIProtocol.ImageData unit_type = 8;</code>
        */
       public SC2APIProtocol.Common.ImageData.Builder getUnitTypeBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getUnitTypeFieldBuilder().getBuilder();
       }
@@ -8008,11 +9642,13 @@ public final class Spatial {
         }
         return unitTypeBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8034,11 +9670,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<FeatureLayersMinimap>
         PARSER = new com.google.protobuf.AbstractParser<FeatureLayersMinimap>() {
+      @java.lang.Override
       public FeatureLayersMinimap parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FeatureLayersMinimap(input, extensionRegistry);
+        return new FeatureLayersMinimap(input, extensionRegistry);
       }
     };
 
@@ -8051,6 +9688,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.FeatureLayersMinimap getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8112,6 +9750,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8123,13 +9764,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.ImageData.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8156,6 +9790,13 @@ public final class Spatial {
               bitField0_ |= 0x00000002;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8173,6 +9814,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationRender_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationRender_fieldAccessorTable
@@ -8224,6 +9866,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8233,6 +9876,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8244,6 +9888,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8377,6 +10022,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8384,6 +10030,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ObservationRender prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8407,6 +10054,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationRender_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationRender_fieldAccessorTable
@@ -8431,6 +10079,7 @@ public final class Spatial {
           getMinimapFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (mapBuilder_ == null) {
@@ -8448,15 +10097,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ObservationRender_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ObservationRender getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ObservationRender.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ObservationRender build() {
         SC2APIProtocol.Spatial.ObservationRender result = buildPartial();
         if (!result.isInitialized()) {
@@ -8465,6 +10117,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ObservationRender buildPartial() {
         SC2APIProtocol.Spatial.ObservationRender result = new SC2APIProtocol.Spatial.ObservationRender(this);
         int from_bitField0_ = bitField0_;
@@ -8490,32 +10143,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ObservationRender) {
           return mergeFrom((SC2APIProtocol.Spatial.ObservationRender)other);
@@ -8538,10 +10198,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8796,11 +10458,13 @@ public final class Spatial {
         }
         return minimapBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8822,11 +10486,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ObservationRender>
         PARSER = new com.google.protobuf.AbstractParser<ObservationRender>() {
+      @java.lang.Override
       public ObservationRender parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ObservationRender(input, extensionRegistry);
+        return new ObservationRender(input, extensionRegistry);
       }
     };
 
@@ -8839,6 +10504,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ObservationRender getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8928,6 +10594,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8939,13 +10608,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Spatial.ActionSpatialUnitCommand.Builder subBuilder = null;
               if (actionCase_ == 1) {
@@ -9002,6 +10664,13 @@ public final class Spatial {
               actionCase_ = 4;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9019,6 +10688,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatial_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatial_fieldAccessorTable
@@ -9174,6 +10844,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9183,6 +10854,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (actionCase_ == 1) {
@@ -9200,6 +10872,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9366,6 +11039,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9373,6 +11047,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ActionSpatial prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9396,6 +11071,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatial_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatial_fieldAccessorTable
@@ -9418,6 +11094,7 @@ public final class Spatial {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         actionCase_ = 0;
@@ -9425,15 +11102,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatial_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatial getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ActionSpatial.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatial build() {
         SC2APIProtocol.Spatial.ActionSpatial result = buildPartial();
         if (!result.isInitialized()) {
@@ -9442,6 +11122,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatial buildPartial() {
         SC2APIProtocol.Spatial.ActionSpatial result = new SC2APIProtocol.Spatial.ActionSpatial(this);
         int from_bitField0_ = bitField0_;
@@ -9480,32 +11161,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ActionSpatial) {
           return mergeFrom((SC2APIProtocol.Spatial.ActionSpatial)other);
@@ -9543,10 +11231,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10124,11 +11814,13 @@ public final class Spatial {
         onChanged();;
         return unitSelectionRectBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -10150,11 +11842,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionSpatial>
         PARSER = new com.google.protobuf.AbstractParser<ActionSpatial>() {
+      @java.lang.Override
       public ActionSpatial parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionSpatial(input, extensionRegistry);
+        return new ActionSpatial(input, extensionRegistry);
       }
     };
 
@@ -10167,6 +11860,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ActionSpatial getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10258,6 +11952,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10269,13 +11966,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readInt32();
@@ -10314,6 +12004,13 @@ public final class Spatial {
               queueCommand_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10331,6 +12028,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitCommand_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitCommand_fieldAccessorTable
@@ -10468,6 +12166,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10477,6 +12176,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10494,6 +12194,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10663,6 +12364,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10670,6 +12372,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ActionSpatialUnitCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10693,6 +12396,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitCommand_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitCommand_fieldAccessorTable
@@ -10715,6 +12419,7 @@ public final class Spatial {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = 0;
@@ -10726,15 +12431,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitCommand_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitCommand getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ActionSpatialUnitCommand.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitCommand build() {
         SC2APIProtocol.Spatial.ActionSpatialUnitCommand result = buildPartial();
         if (!result.isInitialized()) {
@@ -10743,6 +12451,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitCommand buildPartial() {
         SC2APIProtocol.Spatial.ActionSpatialUnitCommand result = new SC2APIProtocol.Spatial.ActionSpatialUnitCommand(this);
         int from_bitField0_ = bitField0_;
@@ -10775,32 +12484,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ActionSpatialUnitCommand) {
           return mergeFrom((SC2APIProtocol.Spatial.ActionSpatialUnitCommand)other);
@@ -10836,10 +12552,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11225,11 +12943,13 @@ public final class Spatial {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -11251,11 +12971,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionSpatialUnitCommand>
         PARSER = new com.google.protobuf.AbstractParser<ActionSpatialUnitCommand>() {
+      @java.lang.Override
       public ActionSpatialUnitCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionSpatialUnitCommand(input, extensionRegistry);
+        return new ActionSpatialUnitCommand(input, extensionRegistry);
       }
     };
 
@@ -11268,6 +12989,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ActionSpatialUnitCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11328,6 +13050,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11339,13 +13064,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.PointI.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11357,6 +13075,13 @@ public final class Spatial {
                 centerMinimap_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000001;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -11376,6 +13101,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialCameraMove_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialCameraMove_fieldAccessorTable
@@ -11418,6 +13144,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11427,6 +13154,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11435,6 +13163,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11555,6 +13284,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11562,6 +13292,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ActionSpatialCameraMove prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11585,6 +13316,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialCameraMove_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialCameraMove_fieldAccessorTable
@@ -11608,6 +13340,7 @@ public final class Spatial {
           getCenterMinimapFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (centerMinimapBuilder_ == null) {
@@ -11619,15 +13352,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialCameraMove_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialCameraMove getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ActionSpatialCameraMove.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialCameraMove build() {
         SC2APIProtocol.Spatial.ActionSpatialCameraMove result = buildPartial();
         if (!result.isInitialized()) {
@@ -11636,6 +13372,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialCameraMove buildPartial() {
         SC2APIProtocol.Spatial.ActionSpatialCameraMove result = new SC2APIProtocol.Spatial.ActionSpatialCameraMove(this);
         int from_bitField0_ = bitField0_;
@@ -11653,32 +13390,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ActionSpatialCameraMove) {
           return mergeFrom((SC2APIProtocol.Spatial.ActionSpatialCameraMove)other);
@@ -11698,10 +13442,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11874,11 +13620,13 @@ public final class Spatial {
         }
         return centerMinimapBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -11900,11 +13648,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionSpatialCameraMove>
         PARSER = new com.google.protobuf.AbstractParser<ActionSpatialCameraMove>() {
+      @java.lang.Override
       public ActionSpatialCameraMove parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionSpatialCameraMove(input, extensionRegistry);
+        return new ActionSpatialCameraMove(input, extensionRegistry);
       }
     };
 
@@ -11917,6 +13666,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ActionSpatialCameraMove getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11975,6 +13725,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11986,13 +13739,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.PointI.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12008,12 +13754,20 @@ public final class Spatial {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type value = SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
               } else {
                 bitField0_ |= 0x00000002;
                 type_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -12034,6 +13788,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionPoint_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionPoint_fieldAccessorTable
@@ -12215,11 +13970,13 @@ public final class Spatial {
      * <code>optional .SC2APIProtocol.ActionSpatialUnitSelectionPoint.Type type = 2;</code>
      */
     public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type getType() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type result = SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type.valueOf(type_);
       return result == null ? SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type.Select : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12229,6 +13986,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12240,6 +13998,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12372,6 +14131,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12379,6 +14139,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12402,6 +14163,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionPoint_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionPoint_fieldAccessorTable
@@ -12425,6 +14187,7 @@ public final class Spatial {
           getSelectionScreenCoordFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (selectionScreenCoordBuilder_ == null) {
@@ -12438,15 +14201,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionPoint_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint build() {
         SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint result = buildPartial();
         if (!result.isInitialized()) {
@@ -12455,6 +14221,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint buildPartial() {
         SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint result = new SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint(this);
         int from_bitField0_ = bitField0_;
@@ -12476,32 +14243,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint) {
           return mergeFrom((SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint)other);
@@ -12524,10 +14298,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12676,6 +14452,7 @@ public final class Spatial {
        * <code>optional .SC2APIProtocol.ActionSpatialUnitSelectionPoint.Type type = 2;</code>
        */
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type getType() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type result = SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type.valueOf(type_);
         return result == null ? SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint.Type.Select : result;
       }
@@ -12700,11 +14477,13 @@ public final class Spatial {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12726,11 +14505,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionSpatialUnitSelectionPoint>
         PARSER = new com.google.protobuf.AbstractParser<ActionSpatialUnitSelectionPoint>() {
+      @java.lang.Override
       public ActionSpatialUnitSelectionPoint parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionSpatialUnitSelectionPoint(input, extensionRegistry);
+        return new ActionSpatialUnitSelectionPoint(input, extensionRegistry);
       }
     };
 
@@ -12743,6 +14523,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionPoint getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12841,6 +14622,9 @@ public final class Spatial {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12852,13 +14636,6 @@ public final class Spatial {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 selectionScreenCoord_ = new java.util.ArrayList<SC2APIProtocol.Common.RectangleI>();
@@ -12871,6 +14648,13 @@ public final class Spatial {
             case 16: {
               bitField0_ |= 0x00000001;
               selectionAdd_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -12893,6 +14677,7 @@ public final class Spatial {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionRect_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionRect_fieldAccessorTable
@@ -12980,6 +14765,7 @@ public final class Spatial {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12989,6 +14775,7 @@ public final class Spatial {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < selectionScreenCoord_.size(); i++) {
@@ -13000,6 +14787,7 @@ public final class Spatial {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13131,6 +14919,7 @@ public final class Spatial {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13138,6 +14927,7 @@ public final class Spatial {
     public static Builder newBuilder(SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13161,6 +14951,7 @@ public final class Spatial {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionRect_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionRect_fieldAccessorTable
@@ -13184,6 +14975,7 @@ public final class Spatial {
           getSelectionScreenCoordFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (selectionScreenCoordBuilder_ == null) {
@@ -13197,15 +14989,18 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Spatial.internal_static_SC2APIProtocol_ActionSpatialUnitSelectionRect_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect getDefaultInstanceForType() {
         return SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect build() {
         SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect result = buildPartial();
         if (!result.isInitialized()) {
@@ -13214,6 +15009,7 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect buildPartial() {
         SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect result = new SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect(this);
         int from_bitField0_ = bitField0_;
@@ -13236,32 +15032,39 @@ public final class Spatial {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect) {
           return mergeFrom((SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect)other);
@@ -13307,10 +15110,12 @@ public final class Spatial {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13689,11 +15494,13 @@ public final class Spatial {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13715,11 +15522,12 @@ public final class Spatial {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionSpatialUnitSelectionRect>
         PARSER = new com.google.protobuf.AbstractParser<ActionSpatialUnitSelectionRect>() {
+      @java.lang.Override
       public ActionSpatialUnitSelectionRect parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionSpatialUnitSelectionRect(input, extensionRegistry);
+        return new ActionSpatialUnitSelectionRect(input, extensionRegistry);
       }
     };
 
@@ -13732,6 +15540,7 @@ public final class Spatial {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Spatial.ActionSpatialUnitSelectionRect getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13797,11 +15606,11 @@ public final class Spatial {
       "\210\001\n\027ObservationFeatureLayer\022.\n\007renders\030\001" +
       " \001(\0132\035.SC2APIProtocol.FeatureLayers\022=\n\017m" +
       "inimap_renders\030\002 \001(\0132$.SC2APIProtocol.Fe" +
-      "atureLayersMinimap\"\317\006\n\rFeatureLayers\022-\n\n" +
+      "atureLayersMinimap\"\254\010\n\rFeatureLayers\022-\n\n" +
       "height_map\030\001 \001(\0132\031.SC2APIProtocol.ImageD" +
       "ata\0221\n\016visibility_map\030\002 \001(\0132\031.SC2APIProt" +
       "ocol.ImageData\022(\n\005creep\030\003 \001(\0132\031.SC2APIPr" +
-      "otocol.ImageData\022(\n\005power\030\004 \001(\0132\031.SC2API",
+      "otocol.ImageData\022(\n\005power\030\004 \001(\0132\031.SC2API" +
       "Protocol.ImageData\022,\n\tplayer_id\030\005 \001(\0132\031." +
       "SC2APIProtocol.ImageData\022,\n\tunit_type\030\006 " +
       "\001(\0132\031.SC2APIProtocol.ImageData\022+\n\010select" +
@@ -13811,50 +15620,56 @@ public final class Spatial {
       ".SC2APIProtocol.ImageData\022.\n\013unit_energy" +
       "\030\t \001(\0132\031.SC2APIProtocol.ImageData\0224\n\021uni" +
       "t_energy_ratio\030\022 \001(\0132\031.SC2APIProtocol.Im" +
-      "ageData\022/\n\014unit_shields\030\n \001(\0132\031.SC2APIPr",
+      "ageData\022/\n\014unit_shields\030\n \001(\0132\031.SC2APIPr" +
       "otocol.ImageData\0225\n\022unit_shields_ratio\030\023" +
       " \001(\0132\031.SC2APIProtocol.ImageData\0222\n\017playe" +
       "r_relative\030\013 \001(\0132\031.SC2APIProtocol.ImageD" +
       "ata\0222\n\017unit_density_aa\030\016 \001(\0132\031.SC2APIPro" +
       "tocol.ImageData\022/\n\014unit_density\030\017 \001(\0132\031." +
       "SC2APIProtocol.ImageData\022*\n\007effects\030\024 \001(" +
-      "\0132\031.SC2APIProtocol.ImageData\"\212\003\n\024Feature" +
-      "LayersMinimap\022-\n\nheight_map\030\001 \001(\0132\031.SC2A" +
-      "PIProtocol.ImageData\0221\n\016visibility_map\030\002" +
-      " \001(\0132\031.SC2APIProtocol.ImageData\022(\n\005creep",
-      "\030\003 \001(\0132\031.SC2APIProtocol.ImageData\022)\n\006cam" +
-      "era\030\004 \001(\0132\031.SC2APIProtocol.ImageData\022,\n\t" +
-      "player_id\030\005 \001(\0132\031.SC2APIProtocol.ImageDa" +
-      "ta\0222\n\017player_relative\030\006 \001(\0132\031.SC2APIProt" +
-      "ocol.ImageData\022+\n\010selected\030\007 \001(\0132\031.SC2AP" +
-      "IProtocol.ImageData\022,\n\tunit_type\030\010 \001(\0132\031" +
-      ".SC2APIProtocol.ImageData\"g\n\021Observation" +
-      "Render\022&\n\003map\030\001 \001(\0132\031.SC2APIProtocol.Ima" +
-      "geData\022*\n\007minimap\030\002 \001(\0132\031.SC2APIProtocol" +
-      ".ImageData\"\273\002\n\rActionSpatial\022@\n\014unit_com",
-      "mand\030\001 \001(\0132(.SC2APIProtocol.ActionSpatia" +
-      "lUnitCommandH\000\022>\n\013camera_move\030\002 \001(\0132\'.SC" +
-      "2APIProtocol.ActionSpatialCameraMoveH\000\022O" +
-      "\n\024unit_selection_point\030\003 \001(\0132/.SC2APIPro" +
-      "tocol.ActionSpatialUnitSelectionPointH\000\022" +
-      "M\n\023unit_selection_rect\030\004 \001(\0132..SC2APIPro" +
-      "tocol.ActionSpatialUnitSelectionRectH\000B\010" +
-      "\n\006action\"\276\001\n\030ActionSpatialUnitCommand\022\022\n" +
-      "\nability_id\030\001 \001(\005\0225\n\023target_screen_coord" +
-      "\030\002 \001(\0132\026.SC2APIProtocol.PointIH\000\0226\n\024targ",
-      "et_minimap_coord\030\003 \001(\0132\026.SC2APIProtocol." +
-      "PointIH\000\022\025\n\rqueue_command\030\004 \001(\010B\010\n\006targe" +
-      "t\"I\n\027ActionSpatialCameraMove\022.\n\016center_m" +
-      "inimap\030\001 \001(\0132\026.SC2APIProtocol.PointI\"\332\001\n" +
-      "\037ActionSpatialUnitSelectionPoint\0226\n\026sele" +
-      "ction_screen_coord\030\001 \001(\0132\026.SC2APIProtoco" +
-      "l.PointI\022B\n\004type\030\002 \001(\01624.SC2APIProtocol." +
-      "ActionSpatialUnitSelectionPoint.Type\";\n\004" +
-      "Type\022\n\n\006Select\020\001\022\n\n\006Toggle\020\002\022\013\n\007AllType\020" +
-      "\003\022\016\n\nAddAllType\020\004\"s\n\036ActionSpatialUnitSe",
-      "lectionRect\022:\n\026selection_screen_coord\030\001 " +
-      "\003(\0132\032.SC2APIProtocol.RectangleI\022\025\n\rselec" +
-      "tion_add\030\002 \001(\010"
+      "\0132\031.SC2APIProtocol.ImageData\0221\n\016hallucin" +
+      "ations\030\025 \001(\0132\031.SC2APIProtocol.ImageData\022" +
+      "*\n\007cloaked\030\026 \001(\0132\031.SC2APIProtocol.ImageD" +
+      "ata\022\'\n\004blip\030\027 \001(\0132\031.SC2APIProtocol.Image" +
+      "Data\022(\n\005buffs\030\030 \001(\0132\031.SC2APIProtocol.Ima" +
+      "geData\022)\n\006active\030\031 \001(\0132\031.SC2APIProtocol." +
+      "ImageData\"\265\003\n\024FeatureLayersMinimap\022-\n\nhe" +
+      "ight_map\030\001 \001(\0132\031.SC2APIProtocol.ImageDat" +
+      "a\0221\n\016visibility_map\030\002 \001(\0132\031.SC2APIProtoc" +
+      "ol.ImageData\022(\n\005creep\030\003 \001(\0132\031.SC2APIProt" +
+      "ocol.ImageData\022)\n\006camera\030\004 \001(\0132\031.SC2APIP" +
+      "rotocol.ImageData\022,\n\tplayer_id\030\005 \001(\0132\031.S" +
+      "C2APIProtocol.ImageData\0222\n\017player_relati" +
+      "ve\030\006 \001(\0132\031.SC2APIProtocol.ImageData\022+\n\010s" +
+      "elected\030\007 \001(\0132\031.SC2APIProtocol.ImageData" +
+      "\022)\n\006alerts\030\t \001(\0132\031.SC2APIProtocol.ImageD" +
+      "ata\022,\n\tunit_type\030\010 \001(\0132\031.SC2APIProtocol." +
+      "ImageData\"g\n\021ObservationRender\022&\n\003map\030\001 " +
+      "\001(\0132\031.SC2APIProtocol.ImageData\022*\n\007minima" +
+      "p\030\002 \001(\0132\031.SC2APIProtocol.ImageData\"\273\002\n\rA" +
+      "ctionSpatial\022@\n\014unit_command\030\001 \001(\0132(.SC2" +
+      "APIProtocol.ActionSpatialUnitCommandH\000\022>" +
+      "\n\013camera_move\030\002 \001(\0132\'.SC2APIProtocol.Act" +
+      "ionSpatialCameraMoveH\000\022O\n\024unit_selection" +
+      "_point\030\003 \001(\0132/.SC2APIProtocol.ActionSpat" +
+      "ialUnitSelectionPointH\000\022M\n\023unit_selectio" +
+      "n_rect\030\004 \001(\0132..SC2APIProtocol.ActionSpat" +
+      "ialUnitSelectionRectH\000B\010\n\006action\"\276\001\n\030Act" +
+      "ionSpatialUnitCommand\022\022\n\nability_id\030\001 \001(" +
+      "\005\0225\n\023target_screen_coord\030\002 \001(\0132\026.SC2APIP" +
+      "rotocol.PointIH\000\0226\n\024target_minimap_coord" +
+      "\030\003 \001(\0132\026.SC2APIProtocol.PointIH\000\022\025\n\rqueu" +
+      "e_command\030\004 \001(\010B\010\n\006target\"I\n\027ActionSpati" +
+      "alCameraMove\022.\n\016center_minimap\030\001 \001(\0132\026.S" +
+      "C2APIProtocol.PointI\"\332\001\n\037ActionSpatialUn" +
+      "itSelectionPoint\0226\n\026selection_screen_coo" +
+      "rd\030\001 \001(\0132\026.SC2APIProtocol.PointI\022B\n\004type" +
+      "\030\002 \001(\01624.SC2APIProtocol.ActionSpatialUni" +
+      "tSelectionPoint.Type\";\n\004Type\022\n\n\006Select\020\001" +
+      "\022\n\n\006Toggle\020\002\022\013\n\007AllType\020\003\022\016\n\nAddAllType\020" +
+      "\004\"s\n\036ActionSpatialUnitSelectionRect\022:\n\026s" +
+      "election_screen_coord\030\001 \003(\0132\032.SC2APIProt" +
+      "ocol.RectangleI\022\025\n\rselection_add\030\002 \001(\010"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13880,13 +15695,13 @@ public final class Spatial {
     internal_static_SC2APIProtocol_FeatureLayers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_FeatureLayers_descriptor,
-        new java.lang.String[] { "HeightMap", "VisibilityMap", "Creep", "Power", "PlayerId", "UnitType", "Selected", "UnitHitPoints", "UnitHitPointsRatio", "UnitEnergy", "UnitEnergyRatio", "UnitShields", "UnitShieldsRatio", "PlayerRelative", "UnitDensityAa", "UnitDensity", "Effects", });
+        new java.lang.String[] { "HeightMap", "VisibilityMap", "Creep", "Power", "PlayerId", "UnitType", "Selected", "UnitHitPoints", "UnitHitPointsRatio", "UnitEnergy", "UnitEnergyRatio", "UnitShields", "UnitShieldsRatio", "PlayerRelative", "UnitDensityAa", "UnitDensity", "Effects", "Hallucinations", "Cloaked", "Blip", "Buffs", "Active", });
     internal_static_SC2APIProtocol_FeatureLayersMinimap_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_SC2APIProtocol_FeatureLayersMinimap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_FeatureLayersMinimap_descriptor,
-        new java.lang.String[] { "HeightMap", "VisibilityMap", "Creep", "Camera", "PlayerId", "PlayerRelative", "Selected", "UnitType", });
+        new java.lang.String[] { "HeightMap", "VisibilityMap", "Creep", "Camera", "PlayerId", "PlayerRelative", "Selected", "Alerts", "UnitType", });
     internal_static_SC2APIProtocol_ObservationRender_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_SC2APIProtocol_ObservationRender_fieldAccessorTable = new

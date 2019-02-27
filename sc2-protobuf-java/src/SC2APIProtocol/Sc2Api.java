@@ -467,6 +467,132 @@ public final class Sc2Api {
   }
 
   /**
+   * Protobuf enum {@code SC2APIProtocol.AIBuild}
+   */
+  public enum AIBuild
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>RandomBuild = 1;</code>
+     */
+    RandomBuild(1),
+    /**
+     * <code>Rush = 2;</code>
+     */
+    Rush(2),
+    /**
+     * <code>Timing = 3;</code>
+     */
+    Timing(3),
+    /**
+     * <code>Power = 4;</code>
+     */
+    Power(4),
+    /**
+     * <code>Macro = 5;</code>
+     */
+    Macro(5),
+    /**
+     * <code>Air = 6;</code>
+     */
+    Air(6),
+    ;
+
+    /**
+     * <code>RandomBuild = 1;</code>
+     */
+    public static final int RandomBuild_VALUE = 1;
+    /**
+     * <code>Rush = 2;</code>
+     */
+    public static final int Rush_VALUE = 2;
+    /**
+     * <code>Timing = 3;</code>
+     */
+    public static final int Timing_VALUE = 3;
+    /**
+     * <code>Power = 4;</code>
+     */
+    public static final int Power_VALUE = 4;
+    /**
+     * <code>Macro = 5;</code>
+     */
+    public static final int Macro_VALUE = 5;
+    /**
+     * <code>Air = 6;</code>
+     */
+    public static final int Air_VALUE = 6;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AIBuild valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AIBuild forNumber(int value) {
+      switch (value) {
+        case 1: return RandomBuild;
+        case 2: return Rush;
+        case 3: return Timing;
+        case 4: return Power;
+        case 5: return Macro;
+        case 6: return Air;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AIBuild>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AIBuild> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AIBuild>() {
+            public AIBuild findValueByNumber(int number) {
+              return AIBuild.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final AIBuild[] VALUES = values();
+
+    public static AIBuild valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AIBuild(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:SC2APIProtocol.AIBuild)
+  }
+
+  /**
    * Protobuf enum {@code SC2APIProtocol.Alert}
    */
   public enum Alert
@@ -533,7 +659,7 @@ public final class Sc2Api {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return SC2APIProtocol.Sc2Api.getDescriptor().getEnumTypes().get(3);
+      return SC2APIProtocol.Sc2Api.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final Alert[] VALUES = values();
@@ -641,7 +767,7 @@ public final class Sc2Api {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return SC2APIProtocol.Sc2Api.getDescriptor().getEnumTypes().get(4);
+      return SC2APIProtocol.Sc2Api.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final Result[] VALUES = values();
@@ -795,7 +921,7 @@ public final class Sc2Api {
 
     /**
      * <pre>
-     * Not implemented. Saves game to an in-memory bookmark.
+     * Saves game to an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -803,7 +929,7 @@ public final class Sc2Api {
     boolean hasQuickSave();
     /**
      * <pre>
-     * Not implemented. Saves game to an in-memory bookmark.
+     * Saves game to an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -811,7 +937,7 @@ public final class Sc2Api {
     SC2APIProtocol.Sc2Api.RequestQuickSave getQuickSave();
     /**
      * <pre>
-     * Not implemented. Saves game to an in-memory bookmark.
+     * Saves game to an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -820,7 +946,7 @@ public final class Sc2Api {
 
     /**
      * <pre>
-     * Not implemented. Loads from an in-memory bookmark.
+     * Loads from an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -828,7 +954,7 @@ public final class Sc2Api {
     boolean hasQuickLoad();
     /**
      * <pre>
-     * Not implemented. Loads from an in-memory bookmark.
+     * Loads from an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -836,7 +962,7 @@ public final class Sc2Api {
     SC2APIProtocol.Sc2Api.RequestQuickLoad getQuickLoad();
     /**
      * <pre>
-     * Not implemented. Loads from an in-memory bookmark.
+     * Loads from an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -920,7 +1046,7 @@ public final class Sc2Api {
 
     /**
      * <pre>
-     * Executes an action.
+     * Executes an action for a participant.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -928,7 +1054,7 @@ public final class Sc2Api {
     boolean hasAction();
     /**
      * <pre>
-     * Executes an action.
+     * Executes an action for a participant.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -936,12 +1062,37 @@ public final class Sc2Api {
     SC2APIProtocol.Sc2Api.RequestAction getAction();
     /**
      * <pre>
-     * Executes an action.
+     * Executes an action for a participant.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
      */
     SC2APIProtocol.Sc2Api.RequestActionOrBuilder getActionOrBuilder();
+
+    /**
+     * <pre>
+     * Executes an action for an observer.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+     */
+    boolean hasObsAction();
+    /**
+     * <pre>
+     * Executes an action for an observer.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+     */
+    SC2APIProtocol.Sc2Api.RequestObserverAction getObsAction();
+    /**
+     * <pre>
+     * Executes an action for an observer.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+     */
+    SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder getObsActionOrBuilder();
 
     /**
      * <pre>
@@ -1042,6 +1193,31 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.RequestSaveReplay save_replay = 15;</code>
      */
     SC2APIProtocol.Sc2Api.RequestSaveReplayOrBuilder getSaveReplayOrBuilder();
+
+    /**
+     * <pre>
+     * Execute a particular trigger through a string interface
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+     */
+    boolean hasMapCommand();
+    /**
+     * <pre>
+     * Execute a particular trigger through a string interface
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+     */
+    SC2APIProtocol.Sc2Api.RequestMapCommand getMapCommand();
+    /**
+     * <pre>
+     * Execute a particular trigger through a string interface
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+     */
+    SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder getMapCommandOrBuilder();
 
     /**
      * <pre>
@@ -1168,6 +1344,15 @@ public final class Sc2Api {
      */
     SC2APIProtocol.Sc2Api.RequestDebugOrBuilder getDebugOrBuilder();
 
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    int getId();
+
     public SC2APIProtocol.Sc2Api.Request.RequestCase getRequestCase();
   }
   /**
@@ -1183,6 +1368,7 @@ public final class Sc2Api {
       super(builder);
     }
     private Request() {
+      id_ = 0;
     }
 
     @java.lang.Override
@@ -1195,6 +1381,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1206,13 +1395,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Sc2Api.RequestCreateGame.Builder subBuilder = null;
               if (requestCase_ == 1) {
@@ -1493,6 +1675,46 @@ public final class Sc2Api {
               requestCase_ = 20;
               break;
             }
+            case 170: {
+              SC2APIProtocol.Sc2Api.RequestObserverAction.Builder subBuilder = null;
+              if (requestCase_ == 21) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.RequestObserverAction) request_).toBuilder();
+              }
+              request_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.RequestObserverAction.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.RequestObserverAction) request_);
+                request_ = subBuilder.buildPartial();
+              }
+              requestCase_ = 21;
+              break;
+            }
+            case 178: {
+              SC2APIProtocol.Sc2Api.RequestMapCommand.Builder subBuilder = null;
+              if (requestCase_ == 22) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.RequestMapCommand) request_).toBuilder();
+              }
+              request_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.RequestMapCommand.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.RequestMapCommand) request_);
+                request_ = subBuilder.buildPartial();
+              }
+              requestCase_ = 22;
+              break;
+            }
+            case 776: {
+              bitField0_ |= 0x00400000;
+              id_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1510,6 +1732,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Request_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Request_fieldAccessorTable
@@ -1533,10 +1756,12 @@ public final class Sc2Api {
       GAME_INFO(9),
       OBSERVATION(10),
       ACTION(11),
+      OBS_ACTION(21),
       STEP(12),
       DATA(13),
       QUERY(14),
       SAVE_REPLAY(15),
+      MAP_COMMAND(22),
       REPLAY_INFO(16),
       AVAILABLE_MAPS(17),
       SAVE_MAP(18),
@@ -1568,10 +1793,12 @@ public final class Sc2Api {
           case 9: return GAME_INFO;
           case 10: return OBSERVATION;
           case 11: return ACTION;
+          case 21: return OBS_ACTION;
           case 12: return STEP;
           case 13: return DATA;
           case 14: return QUERY;
           case 15: return SAVE_REPLAY;
+          case 22: return MAP_COMMAND;
           case 16: return REPLAY_INFO;
           case 17: return AVAILABLE_MAPS;
           case 18: return SAVE_MAP;
@@ -1785,7 +2012,7 @@ public final class Sc2Api {
     public static final int QUICK_SAVE_FIELD_NUMBER = 6;
     /**
      * <pre>
-     * Not implemented. Saves game to an in-memory bookmark.
+     * Saves game to an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -1795,7 +2022,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Not implemented. Saves game to an in-memory bookmark.
+     * Saves game to an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -1808,7 +2035,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Not implemented. Saves game to an in-memory bookmark.
+     * Saves game to an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -1823,7 +2050,7 @@ public final class Sc2Api {
     public static final int QUICK_LOAD_FIELD_NUMBER = 7;
     /**
      * <pre>
-     * Not implemented. Loads from an in-memory bookmark.
+     * Loads from an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -1833,7 +2060,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Not implemented. Loads from an in-memory bookmark.
+     * Loads from an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -1846,7 +2073,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Not implemented. Loads from an in-memory bookmark.
+     * Loads from an in-memory bookmark.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -1975,7 +2202,7 @@ public final class Sc2Api {
     public static final int ACTION_FIELD_NUMBER = 11;
     /**
      * <pre>
-     * Executes an action.
+     * Executes an action for a participant.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -1985,7 +2212,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Executes an action.
+     * Executes an action for a participant.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -1998,7 +2225,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Executes an action.
+     * Executes an action for a participant.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -2008,6 +2235,44 @@ public final class Sc2Api {
          return (SC2APIProtocol.Sc2Api.RequestAction) request_;
       }
       return SC2APIProtocol.Sc2Api.RequestAction.getDefaultInstance();
+    }
+
+    public static final int OBS_ACTION_FIELD_NUMBER = 21;
+    /**
+     * <pre>
+     * Executes an action for an observer.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+     */
+    public boolean hasObsAction() {
+      return requestCase_ == 21;
+    }
+    /**
+     * <pre>
+     * Executes an action for an observer.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+     */
+    public SC2APIProtocol.Sc2Api.RequestObserverAction getObsAction() {
+      if (requestCase_ == 21) {
+         return (SC2APIProtocol.Sc2Api.RequestObserverAction) request_;
+      }
+      return SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Executes an action for an observer.
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+     */
+    public SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder getObsActionOrBuilder() {
+      if (requestCase_ == 21) {
+         return (SC2APIProtocol.Sc2Api.RequestObserverAction) request_;
+      }
+      return SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
     }
 
     public static final int STEP_FIELD_NUMBER = 12;
@@ -2160,6 +2425,44 @@ public final class Sc2Api {
          return (SC2APIProtocol.Sc2Api.RequestSaveReplay) request_;
       }
       return SC2APIProtocol.Sc2Api.RequestSaveReplay.getDefaultInstance();
+    }
+
+    public static final int MAP_COMMAND_FIELD_NUMBER = 22;
+    /**
+     * <pre>
+     * Execute a particular trigger through a string interface
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+     */
+    public boolean hasMapCommand() {
+      return requestCase_ == 22;
+    }
+    /**
+     * <pre>
+     * Execute a particular trigger through a string interface
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+     */
+    public SC2APIProtocol.Sc2Api.RequestMapCommand getMapCommand() {
+      if (requestCase_ == 22) {
+         return (SC2APIProtocol.Sc2Api.RequestMapCommand) request_;
+      }
+      return SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Execute a particular trigger through a string interface
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+     */
+    public SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder getMapCommandOrBuilder() {
+      if (requestCase_ == 22) {
+         return (SC2APIProtocol.Sc2Api.RequestMapCommand) request_;
+      }
+      return SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
     }
 
     public static final int REPLAY_INFO_FIELD_NUMBER = 16;
@@ -2352,7 +2655,23 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.RequestDebug.getDefaultInstance();
     }
 
+    public static final int ID_FIELD_NUMBER = 97;
+    private int id_;
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00400000) == 0x00400000);
+    }
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2362,6 +2681,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (requestCase_ == 1) {
@@ -2424,9 +2744,19 @@ public final class Sc2Api {
       if (requestCase_ == 20) {
         output.writeMessage(20, (SC2APIProtocol.Sc2Api.RequestDebug) request_);
       }
+      if (requestCase_ == 21) {
+        output.writeMessage(21, (SC2APIProtocol.Sc2Api.RequestObserverAction) request_);
+      }
+      if (requestCase_ == 22) {
+        output.writeMessage(22, (SC2APIProtocol.Sc2Api.RequestMapCommand) request_);
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        output.writeUInt32(97, id_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2512,6 +2842,18 @@ public final class Sc2Api {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(20, (SC2APIProtocol.Sc2Api.RequestDebug) request_);
       }
+      if (requestCase_ == 21) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, (SC2APIProtocol.Sc2Api.RequestObserverAction) request_);
+      }
+      if (requestCase_ == 22) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, (SC2APIProtocol.Sc2Api.RequestMapCommand) request_);
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(97, id_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2528,6 +2870,11 @@ public final class Sc2Api {
       SC2APIProtocol.Sc2Api.Request other = (SC2APIProtocol.Sc2Api.Request) obj;
 
       boolean result = true;
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && (getId()
+            == other.getId());
+      }
       result = result && getRequestCase().equals(
           other.getRequestCase());
       if (!result) return false;
@@ -2576,6 +2923,10 @@ public final class Sc2Api {
           result = result && getAction()
               .equals(other.getAction());
           break;
+        case 21:
+          result = result && getObsAction()
+              .equals(other.getObsAction());
+          break;
         case 12:
           result = result && getStep()
               .equals(other.getStep());
@@ -2591,6 +2942,10 @@ public final class Sc2Api {
         case 15:
           result = result && getSaveReplay()
               .equals(other.getSaveReplay());
+          break;
+        case 22:
+          result = result && getMapCommand()
+              .equals(other.getMapCommand());
           break;
         case 16:
           result = result && getReplayInfo()
@@ -2626,6 +2981,10 @@ public final class Sc2Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+      }
       switch (requestCase_) {
         case 1:
           hash = (37 * hash) + CREATE_GAME_FIELD_NUMBER;
@@ -2671,6 +3030,10 @@ public final class Sc2Api {
           hash = (37 * hash) + ACTION_FIELD_NUMBER;
           hash = (53 * hash) + getAction().hashCode();
           break;
+        case 21:
+          hash = (37 * hash) + OBS_ACTION_FIELD_NUMBER;
+          hash = (53 * hash) + getObsAction().hashCode();
+          break;
         case 12:
           hash = (37 * hash) + STEP_FIELD_NUMBER;
           hash = (53 * hash) + getStep().hashCode();
@@ -2686,6 +3049,10 @@ public final class Sc2Api {
         case 15:
           hash = (37 * hash) + SAVE_REPLAY_FIELD_NUMBER;
           hash = (53 * hash) + getSaveReplay().hashCode();
+          break;
+        case 22:
+          hash = (37 * hash) + MAP_COMMAND_FIELD_NUMBER;
+          hash = (53 * hash) + getMapCommand().hashCode();
           break;
         case 16:
           hash = (37 * hash) + REPLAY_INFO_FIELD_NUMBER;
@@ -2785,6 +3152,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2792,6 +3160,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.Request prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2815,6 +3184,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Request_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Request_fieldAccessorTable
@@ -2837,22 +3207,28 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00400000);
         requestCase_ = 0;
         request_ = null;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Request_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Request getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.Request.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Request build() {
         SC2APIProtocol.Sc2Api.Request result = buildPartial();
         if (!result.isInitialized()) {
@@ -2861,6 +3237,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Request buildPartial() {
         SC2APIProtocol.Sc2Api.Request result = new SC2APIProtocol.Sc2Api.Request(this);
         int from_bitField0_ = bitField0_;
@@ -2942,6 +3319,13 @@ public final class Sc2Api {
             result.request_ = actionBuilder_.build();
           }
         }
+        if (requestCase_ == 21) {
+          if (obsActionBuilder_ == null) {
+            result.request_ = request_;
+          } else {
+            result.request_ = obsActionBuilder_.build();
+          }
+        }
         if (requestCase_ == 12) {
           if (stepBuilder_ == null) {
             result.request_ = request_;
@@ -2968,6 +3352,13 @@ public final class Sc2Api {
             result.request_ = request_;
           } else {
             result.request_ = saveReplayBuilder_.build();
+          }
+        }
+        if (requestCase_ == 22) {
+          if (mapCommandBuilder_ == null) {
+            result.request_ = request_;
+          } else {
+            result.request_ = mapCommandBuilder_.build();
           }
         }
         if (requestCase_ == 16) {
@@ -3005,38 +3396,49 @@ public final class Sc2Api {
             result.request_ = debugBuilder_.build();
           }
         }
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00400000;
+        }
+        result.id_ = id_;
         result.bitField0_ = to_bitField0_;
         result.requestCase_ = requestCase_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.Request) {
           return mergeFrom((SC2APIProtocol.Sc2Api.Request)other);
@@ -3048,6 +3450,9 @@ public final class Sc2Api {
 
       public Builder mergeFrom(SC2APIProtocol.Sc2Api.Request other) {
         if (other == SC2APIProtocol.Sc2Api.Request.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
         switch (other.getRequestCase()) {
           case CREATE_GAME: {
             mergeCreateGame(other.getCreateGame());
@@ -3093,6 +3498,10 @@ public final class Sc2Api {
             mergeAction(other.getAction());
             break;
           }
+          case OBS_ACTION: {
+            mergeObsAction(other.getObsAction());
+            break;
+          }
           case STEP: {
             mergeStep(other.getStep());
             break;
@@ -3107,6 +3516,10 @@ public final class Sc2Api {
           }
           case SAVE_REPLAY: {
             mergeSaveReplay(other.getSaveReplay());
+            break;
+          }
+          case MAP_COMMAND: {
+            mergeMapCommand(other.getMapCommand());
             break;
           }
           case REPLAY_INFO: {
@@ -3138,10 +3551,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4040,7 +4455,7 @@ public final class Sc2Api {
           SC2APIProtocol.Sc2Api.RequestQuickSave, SC2APIProtocol.Sc2Api.RequestQuickSave.Builder, SC2APIProtocol.Sc2Api.RequestQuickSaveOrBuilder> quickSaveBuilder_;
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4050,7 +4465,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4070,7 +4485,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4090,7 +4505,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4108,7 +4523,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4134,7 +4549,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4157,7 +4572,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4167,7 +4582,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4184,7 +4599,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Saves game to an in-memory bookmark.
+       * Saves game to an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickSave quick_save = 6;</code>
@@ -4212,7 +4627,7 @@ public final class Sc2Api {
           SC2APIProtocol.Sc2Api.RequestQuickLoad, SC2APIProtocol.Sc2Api.RequestQuickLoad.Builder, SC2APIProtocol.Sc2Api.RequestQuickLoadOrBuilder> quickLoadBuilder_;
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4222,7 +4637,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4242,7 +4657,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4262,7 +4677,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4280,7 +4695,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4306,7 +4721,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4329,7 +4744,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4339,7 +4754,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4356,7 +4771,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented. Loads from an in-memory bookmark.
+       * Loads from an in-memory bookmark.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestQuickLoad quick_load = 7;</code>
@@ -4900,7 +5315,7 @@ public final class Sc2Api {
           SC2APIProtocol.Sc2Api.RequestAction, SC2APIProtocol.Sc2Api.RequestAction.Builder, SC2APIProtocol.Sc2Api.RequestActionOrBuilder> actionBuilder_;
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -4910,7 +5325,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -4930,7 +5345,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -4950,7 +5365,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -4968,7 +5383,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -4994,7 +5409,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -5017,7 +5432,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -5027,7 +5442,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -5044,7 +5459,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Executes an action.
+       * Executes an action for a participant.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.RequestAction action = 11;</code>
@@ -5066,6 +5481,178 @@ public final class Sc2Api {
         requestCase_ = 11;
         onChanged();;
         return actionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.RequestObserverAction, SC2APIProtocol.Sc2Api.RequestObserverAction.Builder, SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder> obsActionBuilder_;
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public boolean hasObsAction() {
+        return requestCase_ == 21;
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public SC2APIProtocol.Sc2Api.RequestObserverAction getObsAction() {
+        if (obsActionBuilder_ == null) {
+          if (requestCase_ == 21) {
+            return (SC2APIProtocol.Sc2Api.RequestObserverAction) request_;
+          }
+          return SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
+        } else {
+          if (requestCase_ == 21) {
+            return obsActionBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public Builder setObsAction(SC2APIProtocol.Sc2Api.RequestObserverAction value) {
+        if (obsActionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          obsActionBuilder_.setMessage(value);
+        }
+        requestCase_ = 21;
+        return this;
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public Builder setObsAction(
+          SC2APIProtocol.Sc2Api.RequestObserverAction.Builder builderForValue) {
+        if (obsActionBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          obsActionBuilder_.setMessage(builderForValue.build());
+        }
+        requestCase_ = 21;
+        return this;
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public Builder mergeObsAction(SC2APIProtocol.Sc2Api.RequestObserverAction value) {
+        if (obsActionBuilder_ == null) {
+          if (requestCase_ == 21 &&
+              request_ != SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance()) {
+            request_ = SC2APIProtocol.Sc2Api.RequestObserverAction.newBuilder((SC2APIProtocol.Sc2Api.RequestObserverAction) request_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestCase_ == 21) {
+            obsActionBuilder_.mergeFrom(value);
+          }
+          obsActionBuilder_.setMessage(value);
+        }
+        requestCase_ = 21;
+        return this;
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public Builder clearObsAction() {
+        if (obsActionBuilder_ == null) {
+          if (requestCase_ == 21) {
+            requestCase_ = 0;
+            request_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestCase_ == 21) {
+            requestCase_ = 0;
+            request_ = null;
+          }
+          obsActionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public SC2APIProtocol.Sc2Api.RequestObserverAction.Builder getObsActionBuilder() {
+        return getObsActionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      public SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder getObsActionOrBuilder() {
+        if ((requestCase_ == 21) && (obsActionBuilder_ != null)) {
+          return obsActionBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestCase_ == 21) {
+            return (SC2APIProtocol.Sc2Api.RequestObserverAction) request_;
+          }
+          return SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Executes an action for an observer.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestObserverAction obs_action = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.RequestObserverAction, SC2APIProtocol.Sc2Api.RequestObserverAction.Builder, SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder> 
+          getObsActionFieldBuilder() {
+        if (obsActionBuilder_ == null) {
+          if (!(requestCase_ == 21)) {
+            request_ = SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
+          }
+          obsActionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.RequestObserverAction, SC2APIProtocol.Sc2Api.RequestObserverAction.Builder, SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.RequestObserverAction) request_,
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        requestCase_ = 21;
+        onChanged();;
+        return obsActionBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5754,6 +6341,178 @@ public final class Sc2Api {
         requestCase_ = 15;
         onChanged();;
         return saveReplayBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.RequestMapCommand, SC2APIProtocol.Sc2Api.RequestMapCommand.Builder, SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder> mapCommandBuilder_;
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public boolean hasMapCommand() {
+        return requestCase_ == 22;
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public SC2APIProtocol.Sc2Api.RequestMapCommand getMapCommand() {
+        if (mapCommandBuilder_ == null) {
+          if (requestCase_ == 22) {
+            return (SC2APIProtocol.Sc2Api.RequestMapCommand) request_;
+          }
+          return SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
+        } else {
+          if (requestCase_ == 22) {
+            return mapCommandBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public Builder setMapCommand(SC2APIProtocol.Sc2Api.RequestMapCommand value) {
+        if (mapCommandBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          mapCommandBuilder_.setMessage(value);
+        }
+        requestCase_ = 22;
+        return this;
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public Builder setMapCommand(
+          SC2APIProtocol.Sc2Api.RequestMapCommand.Builder builderForValue) {
+        if (mapCommandBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          mapCommandBuilder_.setMessage(builderForValue.build());
+        }
+        requestCase_ = 22;
+        return this;
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public Builder mergeMapCommand(SC2APIProtocol.Sc2Api.RequestMapCommand value) {
+        if (mapCommandBuilder_ == null) {
+          if (requestCase_ == 22 &&
+              request_ != SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance()) {
+            request_ = SC2APIProtocol.Sc2Api.RequestMapCommand.newBuilder((SC2APIProtocol.Sc2Api.RequestMapCommand) request_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestCase_ == 22) {
+            mapCommandBuilder_.mergeFrom(value);
+          }
+          mapCommandBuilder_.setMessage(value);
+        }
+        requestCase_ = 22;
+        return this;
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public Builder clearMapCommand() {
+        if (mapCommandBuilder_ == null) {
+          if (requestCase_ == 22) {
+            requestCase_ = 0;
+            request_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestCase_ == 22) {
+            requestCase_ = 0;
+            request_ = null;
+          }
+          mapCommandBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public SC2APIProtocol.Sc2Api.RequestMapCommand.Builder getMapCommandBuilder() {
+        return getMapCommandFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      public SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder getMapCommandOrBuilder() {
+        if ((requestCase_ == 22) && (mapCommandBuilder_ != null)) {
+          return mapCommandBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestCase_ == 22) {
+            return (SC2APIProtocol.Sc2Api.RequestMapCommand) request_;
+          }
+          return SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Execute a particular trigger through a string interface
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.RequestMapCommand map_command = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.RequestMapCommand, SC2APIProtocol.Sc2Api.RequestMapCommand.Builder, SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder> 
+          getMapCommandFieldBuilder() {
+        if (mapCommandBuilder_ == null) {
+          if (!(requestCase_ == 22)) {
+            request_ = SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
+          }
+          mapCommandBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.RequestMapCommand, SC2APIProtocol.Sc2Api.RequestMapCommand.Builder, SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.RequestMapCommand) request_,
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        requestCase_ = 22;
+        onChanged();;
+        return mapCommandBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6615,11 +7374,45 @@ public final class Sc2Api {
         onChanged();;
         return debugBuilder_;
       }
+
+      private int id_ ;
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00400000) == 0x00400000);
+      }
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public Builder setId(int value) {
+        bitField0_ |= 0x00400000;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00400000);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6641,11 +7434,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Request>
         PARSER = new com.google.protobuf.AbstractParser<Request>() {
+      @java.lang.Override
       public Request parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Request(input, extensionRegistry);
+        return new Request(input, extensionRegistry);
       }
     };
 
@@ -6658,6 +7452,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.Request getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6812,6 +7607,19 @@ public final class Sc2Api {
     SC2APIProtocol.Sc2Api.ResponseActionOrBuilder getActionOrBuilder();
 
     /**
+     * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+     */
+    boolean hasObsAction();
+    /**
+     * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+     */
+    SC2APIProtocol.Sc2Api.ResponseObserverAction getObsAction();
+    /**
+     * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+     */
+    SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder getObsActionOrBuilder();
+
+    /**
      * <code>optional .SC2APIProtocol.ResponseStep step = 12;</code>
      */
     boolean hasStep();
@@ -6903,6 +7711,19 @@ public final class Sc2Api {
     SC2APIProtocol.Sc2Api.ResponseSaveMapOrBuilder getSaveMapOrBuilder();
 
     /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+     */
+    boolean hasMapCommand();
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+     */
+    SC2APIProtocol.Sc2Api.ResponseMapCommand getMapCommand();
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+     */
+    SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder getMapCommandOrBuilder();
+
+    /**
      * <pre>
      * Debugging
      * </pre>
@@ -6939,6 +7760,15 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseDebug debug = 20;</code>
      */
     SC2APIProtocol.Sc2Api.ResponseDebugOrBuilder getDebugOrBuilder();
+
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    int getId();
 
     /**
      * <pre>
@@ -7007,6 +7837,7 @@ public final class Sc2Api {
       super(builder);
     }
     private Response() {
+      id_ = 0;
       error_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       status_ = 1;
     }
@@ -7021,6 +7852,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7032,13 +7866,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Sc2Api.ResponseCreateGame.Builder subBuilder = null;
               if (responseCase_ == 1) {
@@ -7319,23 +8146,64 @@ public final class Sc2Api {
               responseCase_ = 20;
               break;
             }
+            case 170: {
+              SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder subBuilder = null;
+              if (responseCase_ == 21) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.ResponseObserverAction) response_).toBuilder();
+              }
+              response_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.ResponseObserverAction.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.ResponseObserverAction) response_);
+                response_ = subBuilder.buildPartial();
+              }
+              responseCase_ = 21;
+              break;
+            }
+            case 178: {
+              SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder subBuilder = null;
+              if (responseCase_ == 22) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.ResponseMapCommand) response_).toBuilder();
+              }
+              response_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.ResponseMapCommand.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.ResponseMapCommand) response_);
+                response_ = subBuilder.buildPartial();
+              }
+              responseCase_ = 22;
+              break;
+            }
+            case 776: {
+              bitField0_ |= 0x00400000;
+              id_ = input.readUInt32();
+              break;
+            }
             case 786: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00100000) == 0x00100000)) {
+              if (!((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
                 error_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00100000;
+                mutable_bitField0_ |= 0x00800000;
               }
               error_.add(bs);
               break;
             }
             case 792: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.Status value = SC2APIProtocol.Sc2Api.Status.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(99, rawValue);
               } else {
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00800000;
                 status_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -7347,7 +8215,7 @@ public final class Sc2Api {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00100000) == 0x00100000)) {
+        if (((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
           error_ = error_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -7359,6 +8227,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Response_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Response_fieldAccessorTable
@@ -7382,6 +8251,7 @@ public final class Sc2Api {
       GAME_INFO(9),
       OBSERVATION(10),
       ACTION(11),
+      OBS_ACTION(21),
       STEP(12),
       DATA(13),
       QUERY(14),
@@ -7389,6 +8259,7 @@ public final class Sc2Api {
       REPLAY_INFO(16),
       AVAILABLE_MAPS(17),
       SAVE_MAP(18),
+      MAP_COMMAND(22),
       PING(19),
       DEBUG(20),
       RESPONSE_NOT_SET(0);
@@ -7417,6 +8288,7 @@ public final class Sc2Api {
           case 9: return GAME_INFO;
           case 10: return OBSERVATION;
           case 11: return ACTION;
+          case 21: return OBS_ACTION;
           case 12: return STEP;
           case 13: return DATA;
           case 14: return QUERY;
@@ -7424,6 +8296,7 @@ public final class Sc2Api {
           case 16: return REPLAY_INFO;
           case 17: return AVAILABLE_MAPS;
           case 18: return SAVE_MAP;
+          case 22: return MAP_COMMAND;
           case 19: return PING;
           case 20: return DEBUG;
           case 0: return RESPONSE_NOT_SET;
@@ -7727,6 +8600,32 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.ResponseAction.getDefaultInstance();
     }
 
+    public static final int OBS_ACTION_FIELD_NUMBER = 21;
+    /**
+     * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+     */
+    public boolean hasObsAction() {
+      return responseCase_ == 21;
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ResponseObserverAction getObsAction() {
+      if (responseCase_ == 21) {
+         return (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_;
+      }
+      return SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder getObsActionOrBuilder() {
+      if (responseCase_ == 21) {
+         return (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_;
+      }
+      return SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+    }
+
     public static final int STEP_FIELD_NUMBER = 12;
     /**
      * <code>optional .SC2APIProtocol.ResponseStep step = 12;</code>
@@ -7909,6 +8808,32 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.ResponseSaveMap.getDefaultInstance();
     }
 
+    public static final int MAP_COMMAND_FIELD_NUMBER = 22;
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+     */
+    public boolean hasMapCommand() {
+      return responseCase_ == 22;
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ResponseMapCommand getMapCommand() {
+      if (responseCase_ == 22) {
+         return (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_;
+      }
+      return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder getMapCommandOrBuilder() {
+      if (responseCase_ == 22) {
+         return (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_;
+      }
+      return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+    }
+
     public static final int PING_FIELD_NUMBER = 19;
     /**
      * <pre>
@@ -7973,6 +8898,21 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.ResponseDebug.getDefaultInstance();
     }
 
+    public static final int ID_FIELD_NUMBER = 97;
+    private int id_;
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00400000) == 0x00400000);
+    }
+    /**
+     * <code>optional uint32 id = 97;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
     public static final int ERROR_FIELD_NUMBER = 98;
     private com.google.protobuf.LazyStringList error_;
     /**
@@ -8028,7 +8968,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Status status = 99;</code>
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x00800000) == 0x00800000);
     }
     /**
      * <pre>
@@ -8038,11 +8978,13 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Status status = 99;</code>
      */
     public SC2APIProtocol.Sc2Api.Status getStatus() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.Status result = SC2APIProtocol.Sc2Api.Status.valueOf(status_);
       return result == null ? SC2APIProtocol.Sc2Api.Status.launched : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8052,6 +8994,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (responseCase_ == 1) {
@@ -8114,15 +9057,25 @@ public final class Sc2Api {
       if (responseCase_ == 20) {
         output.writeMessage(20, (SC2APIProtocol.Sc2Api.ResponseDebug) response_);
       }
+      if (responseCase_ == 21) {
+        output.writeMessage(21, (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_);
+      }
+      if (responseCase_ == 22) {
+        output.writeMessage(22, (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_);
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        output.writeUInt32(97, id_);
+      }
       for (int i = 0; i < error_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 98, error_.getRaw(i));
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         output.writeEnum(99, status_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8208,6 +9161,18 @@ public final class Sc2Api {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(20, (SC2APIProtocol.Sc2Api.ResponseDebug) response_);
       }
+      if (responseCase_ == 21) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_);
+      }
+      if (responseCase_ == 22) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_);
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(97, id_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < error_.size(); i++) {
@@ -8216,7 +9181,7 @@ public final class Sc2Api {
         size += dataSize;
         size += 2 * getErrorList().size();
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(99, status_);
       }
@@ -8236,6 +9201,11 @@ public final class Sc2Api {
       SC2APIProtocol.Sc2Api.Response other = (SC2APIProtocol.Sc2Api.Response) obj;
 
       boolean result = true;
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && (getId()
+            == other.getId());
+      }
       result = result && getErrorList()
           .equals(other.getErrorList());
       result = result && (hasStatus() == other.hasStatus());
@@ -8290,6 +9260,10 @@ public final class Sc2Api {
           result = result && getAction()
               .equals(other.getAction());
           break;
+        case 21:
+          result = result && getObsAction()
+              .equals(other.getObsAction());
+          break;
         case 12:
           result = result && getStep()
               .equals(other.getStep());
@@ -8318,6 +9292,10 @@ public final class Sc2Api {
           result = result && getSaveMap()
               .equals(other.getSaveMap());
           break;
+        case 22:
+          result = result && getMapCommand()
+              .equals(other.getMapCommand());
+          break;
         case 19:
           result = result && getPing()
               .equals(other.getPing());
@@ -8340,6 +9318,10 @@ public final class Sc2Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+      }
       if (getErrorCount() > 0) {
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
         hash = (53 * hash) + getErrorList().hashCode();
@@ -8393,6 +9375,10 @@ public final class Sc2Api {
           hash = (37 * hash) + ACTION_FIELD_NUMBER;
           hash = (53 * hash) + getAction().hashCode();
           break;
+        case 21:
+          hash = (37 * hash) + OBS_ACTION_FIELD_NUMBER;
+          hash = (53 * hash) + getObsAction().hashCode();
+          break;
         case 12:
           hash = (37 * hash) + STEP_FIELD_NUMBER;
           hash = (53 * hash) + getStep().hashCode();
@@ -8420,6 +9406,10 @@ public final class Sc2Api {
         case 18:
           hash = (37 * hash) + SAVE_MAP_FIELD_NUMBER;
           hash = (53 * hash) + getSaveMap().hashCode();
+          break;
+        case 22:
+          hash = (37 * hash) + MAP_COMMAND_FIELD_NUMBER;
+          hash = (53 * hash) + getMapCommand().hashCode();
           break;
         case 19:
           hash = (37 * hash) + PING_FIELD_NUMBER;
@@ -8507,6 +9497,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8514,6 +9505,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.Response prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8537,6 +9529,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Response_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Response_fieldAccessorTable
@@ -8559,26 +9552,32 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00400000);
         error_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         status_ = 1;
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         responseCase_ = 0;
         response_ = null;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Response_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Response getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.Response.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Response build() {
         SC2APIProtocol.Sc2Api.Response result = buildPartial();
         if (!result.isInitialized()) {
@@ -8587,6 +9586,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Response buildPartial() {
         SC2APIProtocol.Sc2Api.Response result = new SC2APIProtocol.Sc2Api.Response(this);
         int from_bitField0_ = bitField0_;
@@ -8668,6 +9668,13 @@ public final class Sc2Api {
             result.response_ = actionBuilder_.build();
           }
         }
+        if (responseCase_ == 21) {
+          if (obsActionBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = obsActionBuilder_.build();
+          }
+        }
         if (responseCase_ == 12) {
           if (stepBuilder_ == null) {
             result.response_ = response_;
@@ -8717,6 +9724,13 @@ public final class Sc2Api {
             result.response_ = saveMapBuilder_.build();
           }
         }
+        if (responseCase_ == 22) {
+          if (mapCommandBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = mapCommandBuilder_.build();
+          }
+        }
         if (responseCase_ == 19) {
           if (pingBuilder_ == null) {
             result.response_ = response_;
@@ -8731,13 +9745,17 @@ public final class Sc2Api {
             result.response_ = debugBuilder_.build();
           }
         }
-        if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00400000;
+        }
+        result.id_ = id_;
+        if (((bitField0_ & 0x00800000) == 0x00800000)) {
           error_ = error_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00800000);
         }
         result.error_ = error_;
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
-          to_bitField0_ |= 0x00100000;
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x00800000;
         }
         result.status_ = status_;
         result.bitField0_ = to_bitField0_;
@@ -8746,32 +9764,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.Response) {
           return mergeFrom((SC2APIProtocol.Sc2Api.Response)other);
@@ -8783,10 +9808,13 @@ public final class Sc2Api {
 
       public Builder mergeFrom(SC2APIProtocol.Sc2Api.Response other) {
         if (other == SC2APIProtocol.Sc2Api.Response.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
         if (!other.error_.isEmpty()) {
           if (error_.isEmpty()) {
             error_ = other.error_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00800000);
           } else {
             ensureErrorIsMutable();
             error_.addAll(other.error_);
@@ -8841,6 +9869,10 @@ public final class Sc2Api {
             mergeAction(other.getAction());
             break;
           }
+          case OBS_ACTION: {
+            mergeObsAction(other.getObsAction());
+            break;
+          }
           case STEP: {
             mergeStep(other.getStep());
             break;
@@ -8869,6 +9901,10 @@ public final class Sc2Api {
             mergeSaveMap(other.getSaveMap());
             break;
           }
+          case MAP_COMMAND: {
+            mergeMapCommand(other.getMapCommand());
+            break;
+          }
           case PING: {
             mergePing(other.getPing());
             break;
@@ -8886,10 +9922,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10421,6 +11459,142 @@ public final class Sc2Api {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ResponseObserverAction, SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder, SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder> obsActionBuilder_;
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public boolean hasObsAction() {
+        return responseCase_ == 21;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseObserverAction getObsAction() {
+        if (obsActionBuilder_ == null) {
+          if (responseCase_ == 21) {
+            return (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_;
+          }
+          return SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+        } else {
+          if (responseCase_ == 21) {
+            return obsActionBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public Builder setObsAction(SC2APIProtocol.Sc2Api.ResponseObserverAction value) {
+        if (obsActionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          obsActionBuilder_.setMessage(value);
+        }
+        responseCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public Builder setObsAction(
+          SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder builderForValue) {
+        if (obsActionBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          obsActionBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public Builder mergeObsAction(SC2APIProtocol.Sc2Api.ResponseObserverAction value) {
+        if (obsActionBuilder_ == null) {
+          if (responseCase_ == 21 &&
+              response_ != SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance()) {
+            response_ = SC2APIProtocol.Sc2Api.ResponseObserverAction.newBuilder((SC2APIProtocol.Sc2Api.ResponseObserverAction) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 21) {
+            obsActionBuilder_.mergeFrom(value);
+          }
+          obsActionBuilder_.setMessage(value);
+        }
+        responseCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public Builder clearObsAction() {
+        if (obsActionBuilder_ == null) {
+          if (responseCase_ == 21) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 21) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          obsActionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder getObsActionBuilder() {
+        return getObsActionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder getObsActionOrBuilder() {
+        if ((responseCase_ == 21) && (obsActionBuilder_ != null)) {
+          return obsActionBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 21) {
+            return (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_;
+          }
+          return SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseObserverAction obs_action = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ResponseObserverAction, SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder, SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder> 
+          getObsActionFieldBuilder() {
+        if (obsActionBuilder_ == null) {
+          if (!(responseCase_ == 21)) {
+            response_ = SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+          }
+          obsActionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ResponseObserverAction, SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder, SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.ResponseObserverAction) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 21;
+        onChanged();;
+        return obsActionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.Sc2Api.ResponseStep, SC2APIProtocol.Sc2Api.ResponseStep.Builder, SC2APIProtocol.Sc2Api.ResponseStepOrBuilder> stepBuilder_;
       /**
        * <code>optional .SC2APIProtocol.ResponseStep step = 12;</code>
@@ -11373,6 +12547,142 @@ public final class Sc2Api {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ResponseMapCommand, SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder, SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder> mapCommandBuilder_;
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public boolean hasMapCommand() {
+        return responseCase_ == 22;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseMapCommand getMapCommand() {
+        if (mapCommandBuilder_ == null) {
+          if (responseCase_ == 22) {
+            return (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_;
+          }
+          return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+        } else {
+          if (responseCase_ == 22) {
+            return mapCommandBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public Builder setMapCommand(SC2APIProtocol.Sc2Api.ResponseMapCommand value) {
+        if (mapCommandBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          mapCommandBuilder_.setMessage(value);
+        }
+        responseCase_ = 22;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public Builder setMapCommand(
+          SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder builderForValue) {
+        if (mapCommandBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          mapCommandBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 22;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public Builder mergeMapCommand(SC2APIProtocol.Sc2Api.ResponseMapCommand value) {
+        if (mapCommandBuilder_ == null) {
+          if (responseCase_ == 22 &&
+              response_ != SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance()) {
+            response_ = SC2APIProtocol.Sc2Api.ResponseMapCommand.newBuilder((SC2APIProtocol.Sc2Api.ResponseMapCommand) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 22) {
+            mapCommandBuilder_.mergeFrom(value);
+          }
+          mapCommandBuilder_.setMessage(value);
+        }
+        responseCase_ = 22;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public Builder clearMapCommand() {
+        if (mapCommandBuilder_ == null) {
+          if (responseCase_ == 22) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 22) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          mapCommandBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder getMapCommandBuilder() {
+        return getMapCommandFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder getMapCommandOrBuilder() {
+        if ((responseCase_ == 22) && (mapCommandBuilder_ != null)) {
+          return mapCommandBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 22) {
+            return (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_;
+          }
+          return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand map_command = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ResponseMapCommand, SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder, SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder> 
+          getMapCommandFieldBuilder() {
+        if (mapCommandBuilder_ == null) {
+          if (!(responseCase_ == 22)) {
+            response_ = SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+          }
+          mapCommandBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ResponseMapCommand, SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder, SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.ResponseMapCommand) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 22;
+        onChanged();;
+        return mapCommandBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.Sc2Api.ResponsePing, SC2APIProtocol.Sc2Api.ResponsePing.Builder, SC2APIProtocol.Sc2Api.ResponsePingOrBuilder> pingBuilder_;
       /**
        * <pre>
@@ -11680,11 +12990,43 @@ public final class Sc2Api {
         return debugBuilder_;
       }
 
+      private int id_ ;
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00400000) == 0x00400000);
+      }
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public Builder setId(int value) {
+        bitField0_ |= 0x00400000;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 id = 97;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00400000);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList error_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureErrorIsMutable() {
-        if (!((bitField0_ & 0x00100000) == 0x00100000)) {
+        if (!((bitField0_ & 0x00800000) == 0x00800000)) {
           error_ = new com.google.protobuf.LazyStringArrayList(error_);
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00800000;
          }
       }
       /**
@@ -11787,7 +13129,7 @@ public final class Sc2Api {
        */
       public Builder clearError() {
         error_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
         return this;
       }
@@ -11818,7 +13160,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Status status = 99;</code>
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       /**
        * <pre>
@@ -11828,6 +13170,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Status status = 99;</code>
        */
       public SC2APIProtocol.Sc2Api.Status getStatus() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.Status result = SC2APIProtocol.Sc2Api.Status.valueOf(status_);
         return result == null ? SC2APIProtocol.Sc2Api.Status.launched : result;
       }
@@ -11842,7 +13185,7 @@ public final class Sc2Api {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x01000000;
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -11855,16 +13198,18 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Status status = 99;</code>
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         status_ = 1;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -11886,11 +13231,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Response>
         PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      @java.lang.Override
       public Response parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Response(input, extensionRegistry);
+        return new Response(input, extensionRegistry);
       }
     };
 
@@ -11903,6 +13249,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.Response getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12068,6 +13415,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12079,13 +13429,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Sc2Api.LocalMap.Builder subBuilder = null;
               if (mapCase_ == 1) {
@@ -12130,6 +13473,13 @@ public final class Sc2Api {
               realtime_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12150,6 +13500,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestCreateGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestCreateGame_fieldAccessorTable
@@ -12392,6 +13743,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12401,6 +13753,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (mapCase_ == 1) {
@@ -12424,6 +13777,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12616,6 +13970,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12623,6 +13978,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestCreateGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12652,6 +14008,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestCreateGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestCreateGame_fieldAccessorTable
@@ -12675,6 +14032,7 @@ public final class Sc2Api {
           getPlayerSetupFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (playerSetupBuilder_ == null) {
@@ -12694,15 +14052,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestCreateGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestCreateGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestCreateGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestCreateGame build() {
         SC2APIProtocol.Sc2Api.RequestCreateGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -12711,6 +14072,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestCreateGame buildPartial() {
         SC2APIProtocol.Sc2Api.RequestCreateGame result = new SC2APIProtocol.Sc2Api.RequestCreateGame(this);
         int from_bitField0_ = bitField0_;
@@ -12752,32 +14114,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestCreateGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestCreateGame)other);
@@ -12844,10 +14213,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13532,11 +14903,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13558,11 +14931,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestCreateGame>
         PARSER = new com.google.protobuf.AbstractParser<RequestCreateGame>() {
+      @java.lang.Override
       public RequestCreateGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestCreateGame(input, extensionRegistry);
+        return new RequestCreateGame(input, extensionRegistry);
       }
     };
 
@@ -13575,6 +14949,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestCreateGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13653,6 +15028,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13664,13 +15042,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -13680,6 +15051,13 @@ public final class Sc2Api {
             case 58: {
               bitField0_ |= 0x00000002;
               mapData_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -13699,6 +15077,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_LocalMap_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_LocalMap_fieldAccessorTable
@@ -13783,6 +15162,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -13792,6 +15172,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13803,6 +15184,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13935,6 +15317,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13942,6 +15325,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.LocalMap prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13965,6 +15349,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_LocalMap_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_LocalMap_fieldAccessorTable
@@ -13987,6 +15372,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         mapPath_ = "";
@@ -13996,15 +15382,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_LocalMap_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.LocalMap getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.LocalMap.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.LocalMap build() {
         SC2APIProtocol.Sc2Api.LocalMap result = buildPartial();
         if (!result.isInitialized()) {
@@ -14013,6 +15402,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.LocalMap buildPartial() {
         SC2APIProtocol.Sc2Api.LocalMap result = new SC2APIProtocol.Sc2Api.LocalMap(this);
         int from_bitField0_ = bitField0_;
@@ -14030,32 +15420,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.LocalMap) {
           return mergeFrom((SC2APIProtocol.Sc2Api.LocalMap)other);
@@ -14080,10 +15477,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14249,11 +15648,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -14275,11 +15676,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<LocalMap>
         PARSER = new com.google.protobuf.AbstractParser<LocalMap>() {
+      @java.lang.Override
       public LocalMap parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LocalMap(input, extensionRegistry);
+        return new LocalMap(input, extensionRegistry);
       }
     };
 
@@ -14292,6 +15694,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.LocalMap getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -14352,6 +15755,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -14363,15 +15769,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ResponseCreateGame.Error value = SC2APIProtocol.Sc2Api.ResponseCreateGame.Error.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -14385,6 +15785,13 @@ public final class Sc2Api {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               errorDetails_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -14404,6 +15811,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseCreateGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseCreateGame_fieldAccessorTable
@@ -14576,6 +15984,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseCreateGame.Error error = 1;</code>
      */
     public SC2APIProtocol.Sc2Api.ResponseCreateGame.Error getError() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ResponseCreateGame.Error result = SC2APIProtocol.Sc2Api.ResponseCreateGame.Error.valueOf(error_);
       return result == null ? SC2APIProtocol.Sc2Api.ResponseCreateGame.Error.MissingMap : result;
     }
@@ -14623,6 +16032,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -14632,6 +16042,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14643,6 +16054,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -14774,6 +16186,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -14781,6 +16194,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseCreateGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -14804,6 +16218,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseCreateGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseCreateGame_fieldAccessorTable
@@ -14826,6 +16241,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         error_ = 1;
@@ -14835,15 +16251,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseCreateGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseCreateGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseCreateGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseCreateGame build() {
         SC2APIProtocol.Sc2Api.ResponseCreateGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -14852,6 +16271,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseCreateGame buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseCreateGame result = new SC2APIProtocol.Sc2Api.ResponseCreateGame(this);
         int from_bitField0_ = bitField0_;
@@ -14869,32 +16289,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseCreateGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseCreateGame)other);
@@ -14919,10 +16346,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14953,6 +16382,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ResponseCreateGame.Error error = 1;</code>
        */
       public SC2APIProtocol.Sc2Api.ResponseCreateGame.Error getError() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ResponseCreateGame.Error result = SC2APIProtocol.Sc2Api.ResponseCreateGame.Error.valueOf(error_);
         return result == null ? SC2APIProtocol.Sc2Api.ResponseCreateGame.Error.MissingMap : result;
       }
@@ -15053,11 +16483,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -15079,11 +16511,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseCreateGame>
         PARSER = new com.google.protobuf.AbstractParser<ResponseCreateGame>() {
+      @java.lang.Override
       public ResponseCreateGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseCreateGame(input, extensionRegistry);
+        return new ResponseCreateGame(input, extensionRegistry);
       }
     };
 
@@ -15096,6 +16529,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseCreateGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -15251,6 +16685,32 @@ public final class Sc2Api {
      */
     int getSharedPort();
 
+    /**
+     * <pre>
+     * Use this to set the player's name to something other than autogenerated name.
+     * </pre>
+     *
+     * <code>optional string player_name = 7;</code>
+     */
+    boolean hasPlayerName();
+    /**
+     * <pre>
+     * Use this to set the player's name to something other than autogenerated name.
+     * </pre>
+     *
+     * <code>optional string player_name = 7;</code>
+     */
+    java.lang.String getPlayerName();
+    /**
+     * <pre>
+     * Use this to set the player's name to something other than autogenerated name.
+     * </pre>
+     *
+     * <code>optional string player_name = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlayerNameBytes();
+
     public SC2APIProtocol.Sc2Api.RequestJoinGame.ParticipationCase getParticipationCase();
   }
   /**
@@ -15274,6 +16734,7 @@ public final class Sc2Api {
     private RequestJoinGame() {
       clientPorts_ = java.util.Collections.emptyList();
       sharedPort_ = 0;
+      playerName_ = "";
     }
 
     @java.lang.Override
@@ -15286,6 +16747,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15297,15 +16761,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
               SC2APIProtocol.Common.Race value = SC2APIProtocol.Common.Race.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -15360,6 +16818,19 @@ public final class Sc2Api {
               sharedPort_ = input.readInt32();
               break;
             }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              playerName_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -15380,6 +16851,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestJoinGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestJoinGame_fieldAccessorTable
@@ -15446,6 +16918,7 @@ public final class Sc2Api {
      */
     public SC2APIProtocol.Common.Race getRace() {
       if (participationCase_ == 1) {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(
             (java.lang.Integer) participation_);
         return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
@@ -15622,7 +17095,62 @@ public final class Sc2Api {
       return sharedPort_;
     }
 
+    public static final int PLAYER_NAME_FIELD_NUMBER = 7;
+    private volatile java.lang.Object playerName_;
+    /**
+     * <pre>
+     * Use this to set the player's name to something other than autogenerated name.
+     * </pre>
+     *
+     * <code>optional string player_name = 7;</code>
+     */
+    public boolean hasPlayerName() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <pre>
+     * Use this to set the player's name to something other than autogenerated name.
+     * </pre>
+     *
+     * <code>optional string player_name = 7;</code>
+     */
+    public java.lang.String getPlayerName() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          playerName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Use this to set the player's name to something other than autogenerated name.
+     * </pre>
+     *
+     * <code>optional string player_name = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlayerNameBytes() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        playerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -15632,6 +17160,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (participationCase_ == 1) {
@@ -15653,9 +17182,13 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(6, sharedPort_);
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, playerName_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -15685,6 +17218,9 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, sharedPort_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, playerName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15718,6 +17254,11 @@ public final class Sc2Api {
       if (hasSharedPort()) {
         result = result && (getSharedPort()
             == other.getSharedPort());
+      }
+      result = result && (hasPlayerName() == other.hasPlayerName());
+      if (hasPlayerName()) {
+        result = result && getPlayerName()
+            .equals(other.getPlayerName());
       }
       result = result && getParticipationCase().equals(
           other.getParticipationCase());
@@ -15760,6 +17301,10 @@ public final class Sc2Api {
       if (hasSharedPort()) {
         hash = (37 * hash) + SHARED_PORT_FIELD_NUMBER;
         hash = (53 * hash) + getSharedPort();
+      }
+      if (hasPlayerName()) {
+        hash = (37 * hash) + PLAYER_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerName().hashCode();
       }
       switch (participationCase_) {
         case 1:
@@ -15848,6 +17393,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -15855,6 +17401,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestJoinGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -15884,6 +17431,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestJoinGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestJoinGame_fieldAccessorTable
@@ -15909,6 +17457,7 @@ public final class Sc2Api {
           getClientPortsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (optionsBuilder_ == null) {
@@ -15931,20 +17480,25 @@ public final class Sc2Api {
         }
         sharedPort_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
+        playerName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         participationCase_ = 0;
         participation_ = null;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestJoinGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestJoinGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestJoinGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestJoinGame build() {
         SC2APIProtocol.Sc2Api.RequestJoinGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -15953,6 +17507,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestJoinGame buildPartial() {
         SC2APIProtocol.Sc2Api.RequestJoinGame result = new SC2APIProtocol.Sc2Api.RequestJoinGame(this);
         int from_bitField0_ = bitField0_;
@@ -15992,38 +17547,49 @@ public final class Sc2Api {
           to_bitField0_ |= 0x00000010;
         }
         result.sharedPort_ = sharedPort_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.playerName_ = playerName_;
         result.bitField0_ = to_bitField0_;
         result.participationCase_ = participationCase_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestJoinGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestJoinGame)other);
@@ -16070,6 +17636,11 @@ public final class Sc2Api {
         if (other.hasSharedPort()) {
           setSharedPort(other.getSharedPort());
         }
+        if (other.hasPlayerName()) {
+          bitField0_ |= 0x00000040;
+          playerName_ = other.playerName_;
+          onChanged();
+        }
         switch (other.getParticipationCase()) {
           case RACE: {
             setRace(other.getRace());
@@ -16088,10 +17659,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16145,6 +17718,7 @@ public final class Sc2Api {
        */
       public SC2APIProtocol.Common.Race getRace() {
         if (participationCase_ == 1) {
+          @SuppressWarnings("deprecation")
           SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(
               (java.lang.Integer) participation_);
           return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
@@ -16902,11 +18476,113 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+
+      private java.lang.Object playerName_ = "";
+      /**
+       * <pre>
+       * Use this to set the player's name to something other than autogenerated name.
+       * </pre>
+       *
+       * <code>optional string player_name = 7;</code>
+       */
+      public boolean hasPlayerName() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <pre>
+       * Use this to set the player's name to something other than autogenerated name.
+       * </pre>
+       *
+       * <code>optional string player_name = 7;</code>
+       */
+      public java.lang.String getPlayerName() {
+        java.lang.Object ref = playerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            playerName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Use this to set the player's name to something other than autogenerated name.
+       * </pre>
+       *
+       * <code>optional string player_name = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlayerNameBytes() {
+        java.lang.Object ref = playerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          playerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Use this to set the player's name to something other than autogenerated name.
+       * </pre>
+       *
+       * <code>optional string player_name = 7;</code>
+       */
+      public Builder setPlayerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        playerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Use this to set the player's name to something other than autogenerated name.
+       * </pre>
+       *
+       * <code>optional string player_name = 7;</code>
+       */
+      public Builder clearPlayerName() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        playerName_ = getDefaultInstance().getPlayerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Use this to set the player's name to something other than autogenerated name.
+       * </pre>
+       *
+       * <code>optional string player_name = 7;</code>
+       */
+      public Builder setPlayerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        playerName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -16928,11 +18604,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestJoinGame>
         PARSER = new com.google.protobuf.AbstractParser<RequestJoinGame>() {
+      @java.lang.Override
       public RequestJoinGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestJoinGame(input, extensionRegistry);
+        return new RequestJoinGame(input, extensionRegistry);
       }
     };
 
@@ -16945,6 +18622,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestJoinGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -17008,6 +18686,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -17019,13 +18700,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               gamePort_ = input.readInt32();
@@ -17034,6 +18708,13 @@ public final class Sc2Api {
             case 16: {
               bitField0_ |= 0x00000002;
               basePort_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -17053,6 +18734,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PortSet_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PortSet_fieldAccessorTable
@@ -17100,6 +18782,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -17109,6 +18792,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17120,6 +18804,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -17253,6 +18938,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17260,6 +18946,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.PortSet prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17283,6 +18970,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PortSet_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PortSet_fieldAccessorTable
@@ -17305,6 +18993,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         gamePort_ = 0;
@@ -17314,15 +19003,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PortSet_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PortSet getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.PortSet.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PortSet build() {
         SC2APIProtocol.Sc2Api.PortSet result = buildPartial();
         if (!result.isInitialized()) {
@@ -17331,6 +19023,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PortSet buildPartial() {
         SC2APIProtocol.Sc2Api.PortSet result = new SC2APIProtocol.Sc2Api.PortSet(this);
         int from_bitField0_ = bitField0_;
@@ -17348,32 +19041,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.PortSet) {
           return mergeFrom((SC2APIProtocol.Sc2Api.PortSet)other);
@@ -17396,10 +19096,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17498,11 +19200,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -17524,11 +19228,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PortSet>
         PARSER = new com.google.protobuf.AbstractParser<PortSet>() {
+      @java.lang.Override
       public PortSet parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PortSet(input, extensionRegistry);
+        return new PortSet(input, extensionRegistry);
       }
     };
 
@@ -17541,6 +19246,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.PortSet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -17611,6 +19317,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -17622,13 +19331,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               playerId_ = input.readUInt32();
@@ -17636,6 +19338,7 @@ public final class Sc2Api {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ResponseJoinGame.Error value = SC2APIProtocol.Sc2Api.ResponseJoinGame.Error.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
@@ -17649,6 +19352,13 @@ public final class Sc2Api {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               errorDetails_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -17668,6 +19378,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseJoinGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseJoinGame_fieldAccessorTable
@@ -17900,6 +19611,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseJoinGame.Error error = 2;</code>
      */
     public SC2APIProtocol.Sc2Api.ResponseJoinGame.Error getError() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ResponseJoinGame.Error result = SC2APIProtocol.Sc2Api.ResponseJoinGame.Error.valueOf(error_);
       return result == null ? SC2APIProtocol.Sc2Api.ResponseJoinGame.Error.MissingParticipation : result;
     }
@@ -17947,6 +19659,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -17956,6 +19669,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17970,6 +19684,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -18114,6 +19829,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -18121,6 +19837,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseJoinGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -18144,6 +19861,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseJoinGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseJoinGame_fieldAccessorTable
@@ -18166,6 +19884,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         playerId_ = 0;
@@ -18177,15 +19896,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseJoinGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseJoinGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseJoinGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseJoinGame build() {
         SC2APIProtocol.Sc2Api.ResponseJoinGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -18194,6 +19916,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseJoinGame buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseJoinGame result = new SC2APIProtocol.Sc2Api.ResponseJoinGame(this);
         int from_bitField0_ = bitField0_;
@@ -18215,32 +19938,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseJoinGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseJoinGame)other);
@@ -18268,10 +19998,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18334,6 +20066,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ResponseJoinGame.Error error = 2;</code>
        */
       public SC2APIProtocol.Sc2Api.ResponseJoinGame.Error getError() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ResponseJoinGame.Error result = SC2APIProtocol.Sc2Api.ResponseJoinGame.Error.valueOf(error_);
         return result == null ? SC2APIProtocol.Sc2Api.ResponseJoinGame.Error.MissingParticipation : result;
       }
@@ -18434,11 +20167,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18460,11 +20195,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseJoinGame>
         PARSER = new com.google.protobuf.AbstractParser<ResponseJoinGame>() {
+      @java.lang.Override
       public ResponseJoinGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseJoinGame(input, extensionRegistry);
+        return new ResponseJoinGame(input, extensionRegistry);
       }
     };
 
@@ -18477,6 +20213,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseJoinGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18516,6 +20253,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -18550,6 +20290,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestRestartGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestRestartGame_fieldAccessorTable
@@ -18558,6 +20299,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -18567,11 +20309,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -18679,6 +20423,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -18686,6 +20431,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestRestartGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -18713,6 +20459,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestRestartGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestRestartGame_fieldAccessorTable
@@ -18735,20 +20482,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestRestartGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestRestartGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestRestartGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestRestartGame build() {
         SC2APIProtocol.Sc2Api.RequestRestartGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -18757,38 +20508,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestRestartGame buildPartial() {
         SC2APIProtocol.Sc2Api.RequestRestartGame result = new SC2APIProtocol.Sc2Api.RequestRestartGame(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestRestartGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestRestartGame)other);
@@ -18805,10 +20564,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18826,11 +20587,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18852,11 +20615,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestRestartGame>
         PARSER = new com.google.protobuf.AbstractParser<RequestRestartGame>() {
+      @java.lang.Override
       public RequestRestartGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestRestartGame(input, extensionRegistry);
+        return new RequestRestartGame(input, extensionRegistry);
       }
     };
 
@@ -18869,6 +20633,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestRestartGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18901,8 +20666,29 @@ public final class Sc2Api {
      */
     com.google.protobuf.ByteString
         getErrorDetailsBytes();
+
+    /**
+     * <pre>
+     * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+     * </pre>
+     *
+     * <code>optional bool need_hard_reset = 3;</code>
+     */
+    boolean hasNeedHardReset();
+    /**
+     * <pre>
+     * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+     * </pre>
+     *
+     * <code>optional bool need_hard_reset = 3;</code>
+     */
+    boolean getNeedHardReset();
   }
   /**
+   * <pre>
+   * The defaultRestartGameLoops is specified to be (1&lt;&lt;18) by default
+   * </pre>
+   *
    * Protobuf type {@code SC2APIProtocol.ResponseRestartGame}
    */
   public  static final class ResponseRestartGame extends
@@ -18917,6 +20703,7 @@ public final class Sc2Api {
     private ResponseRestartGame() {
       error_ = 1;
       errorDetails_ = "";
+      needHardReset_ = false;
     }
 
     @java.lang.Override
@@ -18929,6 +20716,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -18940,15 +20730,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ResponseRestartGame.Error value = SC2APIProtocol.Sc2Api.ResponseRestartGame.Error.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -18962,6 +20746,18 @@ public final class Sc2Api {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               errorDetails_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              needHardReset_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -18981,6 +20777,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseRestartGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseRestartGame_fieldAccessorTable
@@ -19082,6 +20879,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseRestartGame.Error error = 1;</code>
      */
     public SC2APIProtocol.Sc2Api.ResponseRestartGame.Error getError() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ResponseRestartGame.Error result = SC2APIProtocol.Sc2Api.ResponseRestartGame.Error.valueOf(error_);
       return result == null ? SC2APIProtocol.Sc2Api.ResponseRestartGame.Error.LaunchError : result;
     }
@@ -19128,7 +20926,31 @@ public final class Sc2Api {
       }
     }
 
+    public static final int NEED_HARD_RESET_FIELD_NUMBER = 3;
+    private boolean needHardReset_;
+    /**
+     * <pre>
+     * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+     * </pre>
+     *
+     * <code>optional bool need_hard_reset = 3;</code>
+     */
+    public boolean hasNeedHardReset() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <pre>
+     * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+     * </pre>
+     *
+     * <code>optional bool need_hard_reset = 3;</code>
+     */
+    public boolean getNeedHardReset() {
+      return needHardReset_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -19138,6 +20960,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -19146,9 +20969,13 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorDetails_);
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBool(3, needHardReset_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -19160,6 +20987,10 @@ public final class Sc2Api {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorDetails_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, needHardReset_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19186,6 +21017,11 @@ public final class Sc2Api {
         result = result && getErrorDetails()
             .equals(other.getErrorDetails());
       }
+      result = result && (hasNeedHardReset() == other.hasNeedHardReset());
+      if (hasNeedHardReset()) {
+        result = result && (getNeedHardReset()
+            == other.getNeedHardReset());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -19204,6 +21040,11 @@ public final class Sc2Api {
       if (hasErrorDetails()) {
         hash = (37 * hash) + ERROR_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getErrorDetails().hashCode();
+      }
+      if (hasNeedHardReset()) {
+        hash = (37 * hash) + NEED_HARD_RESET_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getNeedHardReset());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -19280,6 +21121,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -19287,6 +21129,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseRestartGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -19299,6 +21142,10 @@ public final class Sc2Api {
       return builder;
     }
     /**
+     * <pre>
+     * The defaultRestartGameLoops is specified to be (1&lt;&lt;18) by default
+     * </pre>
+     *
      * Protobuf type {@code SC2APIProtocol.ResponseRestartGame}
      */
     public static final class Builder extends
@@ -19310,6 +21157,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseRestartGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseRestartGame_fieldAccessorTable
@@ -19332,24 +21180,30 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         error_ = 1;
         bitField0_ = (bitField0_ & ~0x00000001);
         errorDetails_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        needHardReset_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseRestartGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseRestartGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseRestartGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseRestartGame build() {
         SC2APIProtocol.Sc2Api.ResponseRestartGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -19358,6 +21212,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseRestartGame buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseRestartGame result = new SC2APIProtocol.Sc2Api.ResponseRestartGame(this);
         int from_bitField0_ = bitField0_;
@@ -19370,37 +21225,48 @@ public final class Sc2Api {
           to_bitField0_ |= 0x00000002;
         }
         result.errorDetails_ = errorDetails_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.needHardReset_ = needHardReset_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseRestartGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseRestartGame)other);
@@ -19420,15 +21286,20 @@ public final class Sc2Api {
           errorDetails_ = other.errorDetails_;
           onChanged();
         }
+        if (other.hasNeedHardReset()) {
+          setNeedHardReset(other.getNeedHardReset());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -19459,6 +21330,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ResponseRestartGame.Error error = 1;</code>
        */
       public SC2APIProtocol.Sc2Api.ResponseRestartGame.Error getError() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ResponseRestartGame.Error result = SC2APIProtocol.Sc2Api.ResponseRestartGame.Error.valueOf(error_);
         return result == null ? SC2APIProtocol.Sc2Api.ResponseRestartGame.Error.LaunchError : result;
       }
@@ -19559,11 +21431,61 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+
+      private boolean needHardReset_ ;
+      /**
+       * <pre>
+       * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+       * </pre>
+       *
+       * <code>optional bool need_hard_reset = 3;</code>
+       */
+      public boolean hasNeedHardReset() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <pre>
+       * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+       * </pre>
+       *
+       * <code>optional bool need_hard_reset = 3;</code>
+       */
+      public boolean getNeedHardReset() {
+        return needHardReset_;
+      }
+      /**
+       * <pre>
+       * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+       * </pre>
+       *
+       * <code>optional bool need_hard_reset = 3;</code>
+       */
+      public Builder setNeedHardReset(boolean value) {
+        bitField0_ |= 0x00000004;
+        needHardReset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This will occur once the simulation_loop is greater then defaultRestartGameLoops
+       * </pre>
+       *
+       * <code>optional bool need_hard_reset = 3;</code>
+       */
+      public Builder clearNeedHardReset() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        needHardReset_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -19585,11 +21507,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseRestartGame>
         PARSER = new com.google.protobuf.AbstractParser<ResponseRestartGame>() {
+      @java.lang.Override
       public ResponseRestartGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseRestartGame(input, extensionRegistry);
+        return new ResponseRestartGame(input, extensionRegistry);
       }
     };
 
@@ -19602,6 +21525,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseRestartGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -19683,6 +21607,15 @@ public final class Sc2Api {
      */
     boolean getDisableFog();
 
+    /**
+     * <code>optional bool realtime = 7;</code>
+     */
+    boolean hasRealtime();
+    /**
+     * <code>optional bool realtime = 7;</code>
+     */
+    boolean getRealtime();
+
     public SC2APIProtocol.Sc2Api.RequestStartReplay.ReplayCase getReplayCase();
   }
   /**
@@ -19705,6 +21638,7 @@ public final class Sc2Api {
       mapData_ = com.google.protobuf.ByteString.EMPTY;
       observedPlayerId_ = 0;
       disableFog_ = false;
+      realtime_ = false;
     }
 
     @java.lang.Override
@@ -19717,6 +21651,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -19728,13 +21665,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               replayCase_ = 1;
@@ -19774,6 +21704,18 @@ public final class Sc2Api {
               mapData_ = input.readBytes();
               break;
             }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              realtime_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -19791,6 +21733,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStartReplay_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStartReplay_fieldAccessorTable
@@ -19977,7 +21920,23 @@ public final class Sc2Api {
       return disableFog_;
     }
 
+    public static final int REALTIME_FIELD_NUMBER = 7;
+    private boolean realtime_;
+    /**
+     * <code>optional bool realtime = 7;</code>
+     */
+    public boolean hasRealtime() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional bool realtime = 7;</code>
+     */
+    public boolean getRealtime() {
+      return realtime_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -19987,6 +21946,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (replayCase_ == 1) {
@@ -20008,9 +21968,13 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(6, mapData_);
       }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBool(7, realtime_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -20039,6 +22003,10 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, mapData_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, realtime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -20075,6 +22043,11 @@ public final class Sc2Api {
       if (hasDisableFog()) {
         result = result && (getDisableFog()
             == other.getDisableFog());
+      }
+      result = result && (hasRealtime() == other.hasRealtime());
+      if (hasRealtime()) {
+        result = result && (getRealtime()
+            == other.getRealtime());
       }
       result = result && getReplayCase().equals(
           other.getReplayCase());
@@ -20118,6 +22091,11 @@ public final class Sc2Api {
         hash = (37 * hash) + DISABLE_FOG_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getDisableFog());
+      }
+      if (hasRealtime()) {
+        hash = (37 * hash) + REALTIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getRealtime());
       }
       switch (replayCase_) {
         case 1:
@@ -20206,6 +22184,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -20213,6 +22192,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestStartReplay prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -20240,6 +22220,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStartReplay_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStartReplay_fieldAccessorTable
@@ -20263,6 +22244,7 @@ public final class Sc2Api {
           getOptionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         mapData_ = com.google.protobuf.ByteString.EMPTY;
@@ -20277,20 +22259,25 @@ public final class Sc2Api {
         bitField0_ = (bitField0_ & ~0x00000010);
         disableFog_ = false;
         bitField0_ = (bitField0_ & ~0x00000020);
+        realtime_ = false;
+        bitField0_ = (bitField0_ & ~0x00000040);
         replayCase_ = 0;
         replay_ = null;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStartReplay_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestStartReplay getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestStartReplay.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestStartReplay build() {
         SC2APIProtocol.Sc2Api.RequestStartReplay result = buildPartial();
         if (!result.isInitialized()) {
@@ -20299,6 +22286,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestStartReplay buildPartial() {
         SC2APIProtocol.Sc2Api.RequestStartReplay result = new SC2APIProtocol.Sc2Api.RequestStartReplay(this);
         int from_bitField0_ = bitField0_;
@@ -20329,38 +22317,49 @@ public final class Sc2Api {
           to_bitField0_ |= 0x00000020;
         }
         result.disableFog_ = disableFog_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.realtime_ = realtime_;
         result.bitField0_ = to_bitField0_;
         result.replayCase_ = replayCase_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestStartReplay) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestStartReplay)other);
@@ -20384,6 +22383,9 @@ public final class Sc2Api {
         if (other.hasDisableFog()) {
           setDisableFog(other.getDisableFog());
         }
+        if (other.hasRealtime()) {
+          setRealtime(other.getRealtime());
+        }
         switch (other.getReplayCase()) {
           case REPLAY_PATH: {
             replayCase_ = 1;
@@ -20404,10 +22406,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -20800,11 +22804,45 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+
+      private boolean realtime_ ;
+      /**
+       * <code>optional bool realtime = 7;</code>
+       */
+      public boolean hasRealtime() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional bool realtime = 7;</code>
+       */
+      public boolean getRealtime() {
+        return realtime_;
+      }
+      /**
+       * <code>optional bool realtime = 7;</code>
+       */
+      public Builder setRealtime(boolean value) {
+        bitField0_ |= 0x00000040;
+        realtime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool realtime = 7;</code>
+       */
+      public Builder clearRealtime() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        realtime_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -20826,11 +22864,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestStartReplay>
         PARSER = new com.google.protobuf.AbstractParser<RequestStartReplay>() {
+      @java.lang.Override
       public RequestStartReplay parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestStartReplay(input, extensionRegistry);
+        return new RequestStartReplay(input, extensionRegistry);
       }
     };
 
@@ -20843,6 +22882,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestStartReplay getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -20903,6 +22943,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -20914,15 +22957,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ResponseStartReplay.Error value = SC2APIProtocol.Sc2Api.ResponseStartReplay.Error.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -20936,6 +22973,13 @@ public final class Sc2Api {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               errorDetails_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -20955,6 +22999,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStartReplay_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStartReplay_fieldAccessorTable
@@ -21110,6 +23155,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseStartReplay.Error error = 1;</code>
      */
     public SC2APIProtocol.Sc2Api.ResponseStartReplay.Error getError() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ResponseStartReplay.Error result = SC2APIProtocol.Sc2Api.ResponseStartReplay.Error.valueOf(error_);
       return result == null ? SC2APIProtocol.Sc2Api.ResponseStartReplay.Error.MissingReplay : result;
     }
@@ -21157,6 +23203,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -21166,6 +23213,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -21177,6 +23225,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -21308,6 +23357,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -21315,6 +23365,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseStartReplay prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -21338,6 +23389,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStartReplay_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStartReplay_fieldAccessorTable
@@ -21360,6 +23412,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         error_ = 1;
@@ -21369,15 +23422,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStartReplay_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseStartReplay getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseStartReplay.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseStartReplay build() {
         SC2APIProtocol.Sc2Api.ResponseStartReplay result = buildPartial();
         if (!result.isInitialized()) {
@@ -21386,6 +23442,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseStartReplay buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseStartReplay result = new SC2APIProtocol.Sc2Api.ResponseStartReplay(this);
         int from_bitField0_ = bitField0_;
@@ -21403,32 +23460,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseStartReplay) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseStartReplay)other);
@@ -21453,10 +23517,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -21487,6 +23553,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ResponseStartReplay.Error error = 1;</code>
        */
       public SC2APIProtocol.Sc2Api.ResponseStartReplay.Error getError() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ResponseStartReplay.Error result = SC2APIProtocol.Sc2Api.ResponseStartReplay.Error.valueOf(error_);
         return result == null ? SC2APIProtocol.Sc2Api.ResponseStartReplay.Error.MissingReplay : result;
       }
@@ -21587,11 +23654,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -21613,11 +23682,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseStartReplay>
         PARSER = new com.google.protobuf.AbstractParser<ResponseStartReplay>() {
+      @java.lang.Override
       public ResponseStartReplay parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseStartReplay(input, extensionRegistry);
+        return new ResponseStartReplay(input, extensionRegistry);
       }
     };
 
@@ -21630,7 +23700,1363 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseStartReplay getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RequestMapCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.RequestMapCommand)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string trigger_cmd = 1;</code>
+     */
+    boolean hasTriggerCmd();
+    /**
+     * <code>optional string trigger_cmd = 1;</code>
+     */
+    java.lang.String getTriggerCmd();
+    /**
+     * <code>optional string trigger_cmd = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTriggerCmdBytes();
+  }
+  /**
+   * <pre>
+   *-----------------------------------------------------------------------------
+   * </pre>
+   *
+   * Protobuf type {@code SC2APIProtocol.RequestMapCommand}
+   */
+  public  static final class RequestMapCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.RequestMapCommand)
+      RequestMapCommandOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RequestMapCommand.newBuilder() to construct.
+    private RequestMapCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RequestMapCommand() {
+      triggerCmd_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RequestMapCommand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              triggerCmd_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestMapCommand_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestMapCommand_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.RequestMapCommand.class, SC2APIProtocol.Sc2Api.RequestMapCommand.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TRIGGER_CMD_FIELD_NUMBER = 1;
+    private volatile java.lang.Object triggerCmd_;
+    /**
+     * <code>optional string trigger_cmd = 1;</code>
+     */
+    public boolean hasTriggerCmd() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string trigger_cmd = 1;</code>
+     */
+    public java.lang.String getTriggerCmd() {
+      java.lang.Object ref = triggerCmd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          triggerCmd_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string trigger_cmd = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTriggerCmdBytes() {
+      java.lang.Object ref = triggerCmd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        triggerCmd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, triggerCmd_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, triggerCmd_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.RequestMapCommand)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.RequestMapCommand other = (SC2APIProtocol.Sc2Api.RequestMapCommand) obj;
+
+      boolean result = true;
+      result = result && (hasTriggerCmd() == other.hasTriggerCmd());
+      if (hasTriggerCmd()) {
+        result = result && getTriggerCmd()
+            .equals(other.getTriggerCmd());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTriggerCmd()) {
+        hash = (37 * hash) + TRIGGER_CMD_FIELD_NUMBER;
+        hash = (53 * hash) + getTriggerCmd().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestMapCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *-----------------------------------------------------------------------------
+     * </pre>
+     *
+     * Protobuf type {@code SC2APIProtocol.RequestMapCommand}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.RequestMapCommand)
+        SC2APIProtocol.Sc2Api.RequestMapCommandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestMapCommand_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestMapCommand_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.RequestMapCommand.class, SC2APIProtocol.Sc2Api.RequestMapCommand.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.RequestMapCommand.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        triggerCmd_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestMapCommand_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.RequestMapCommand getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.RequestMapCommand build() {
+        SC2APIProtocol.Sc2Api.RequestMapCommand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.RequestMapCommand buildPartial() {
+        SC2APIProtocol.Sc2Api.RequestMapCommand result = new SC2APIProtocol.Sc2Api.RequestMapCommand(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.triggerCmd_ = triggerCmd_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.RequestMapCommand) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.RequestMapCommand)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.RequestMapCommand other) {
+        if (other == SC2APIProtocol.Sc2Api.RequestMapCommand.getDefaultInstance()) return this;
+        if (other.hasTriggerCmd()) {
+          bitField0_ |= 0x00000001;
+          triggerCmd_ = other.triggerCmd_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.RequestMapCommand parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.RequestMapCommand) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object triggerCmd_ = "";
+      /**
+       * <code>optional string trigger_cmd = 1;</code>
+       */
+      public boolean hasTriggerCmd() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string trigger_cmd = 1;</code>
+       */
+      public java.lang.String getTriggerCmd() {
+        java.lang.Object ref = triggerCmd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            triggerCmd_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string trigger_cmd = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTriggerCmdBytes() {
+        java.lang.Object ref = triggerCmd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          triggerCmd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string trigger_cmd = 1;</code>
+       */
+      public Builder setTriggerCmd(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        triggerCmd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string trigger_cmd = 1;</code>
+       */
+      public Builder clearTriggerCmd() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        triggerCmd_ = getDefaultInstance().getTriggerCmd();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string trigger_cmd = 1;</code>
+       */
+      public Builder setTriggerCmdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        triggerCmd_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.RequestMapCommand)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.RequestMapCommand)
+    private static final SC2APIProtocol.Sc2Api.RequestMapCommand DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.RequestMapCommand();
+    }
+
+    public static SC2APIProtocol.Sc2Api.RequestMapCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestMapCommand>
+        PARSER = new com.google.protobuf.AbstractParser<RequestMapCommand>() {
+      @java.lang.Override
+      public RequestMapCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RequestMapCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RequestMapCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RequestMapCommand> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.RequestMapCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResponseMapCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ResponseMapCommand)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+     */
+    boolean hasError();
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+     */
+    SC2APIProtocol.Sc2Api.ResponseMapCommand.Error getError();
+
+    /**
+     * <code>optional string error_details = 2;</code>
+     */
+    boolean hasErrorDetails();
+    /**
+     * <code>optional string error_details = 2;</code>
+     */
+    java.lang.String getErrorDetails();
+    /**
+     * <code>optional string error_details = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getErrorDetailsBytes();
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ResponseMapCommand}
+   */
+  public  static final class ResponseMapCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ResponseMapCommand)
+      ResponseMapCommandOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResponseMapCommand.newBuilder() to construct.
+    private ResponseMapCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResponseMapCommand() {
+      error_ = 1;
+      errorDetails_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResponseMapCommand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              SC2APIProtocol.Sc2Api.ResponseMapCommand.Error value = SC2APIProtocol.Sc2Api.ResponseMapCommand.Error.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                error_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              errorDetails_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseMapCommand_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseMapCommand_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ResponseMapCommand.class, SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code SC2APIProtocol.ResponseMapCommand.Error}
+     */
+    public enum Error
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NoTriggerError = 1;</code>
+       */
+      NoTriggerError(1),
+      ;
+
+      /**
+       * <code>NoTriggerError = 1;</code>
+       */
+      public static final int NoTriggerError_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Error valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Error forNumber(int value) {
+        switch (value) {
+          case 1: return NoTriggerError;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Error>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Error> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Error>() {
+              public Error findValueByNumber(int number) {
+                return Error.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Error[] VALUES = values();
+
+      public static Error valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Error(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:SC2APIProtocol.ResponseMapCommand.Error)
+    }
+
+    private int bitField0_;
+    public static final int ERROR_FIELD_NUMBER = 1;
+    private int error_;
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+     */
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ResponseMapCommand.Error getError() {
+      @SuppressWarnings("deprecation")
+      SC2APIProtocol.Sc2Api.ResponseMapCommand.Error result = SC2APIProtocol.Sc2Api.ResponseMapCommand.Error.valueOf(error_);
+      return result == null ? SC2APIProtocol.Sc2Api.ResponseMapCommand.Error.NoTriggerError : result;
+    }
+
+    public static final int ERROR_DETAILS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object errorDetails_;
+    /**
+     * <code>optional string error_details = 2;</code>
+     */
+    public boolean hasErrorDetails() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string error_details = 2;</code>
+     */
+    public java.lang.String getErrorDetails() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          errorDetails_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string error_details = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getErrorDetailsBytes() {
+      java.lang.Object ref = errorDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, error_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorDetails_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, error_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorDetails_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ResponseMapCommand)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ResponseMapCommand other = (SC2APIProtocol.Sc2Api.ResponseMapCommand) obj;
+
+      boolean result = true;
+      result = result && (hasError() == other.hasError());
+      if (hasError()) {
+        result = result && error_ == other.error_;
+      }
+      result = result && (hasErrorDetails() == other.hasErrorDetails());
+      if (hasErrorDetails()) {
+        result = result && getErrorDetails()
+            .equals(other.getErrorDetails());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + error_;
+      }
+      if (hasErrorDetails()) {
+        hash = (37 * hash) + ERROR_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getErrorDetails().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseMapCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ResponseMapCommand}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ResponseMapCommand)
+        SC2APIProtocol.Sc2Api.ResponseMapCommandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseMapCommand_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseMapCommand_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ResponseMapCommand.class, SC2APIProtocol.Sc2Api.ResponseMapCommand.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ResponseMapCommand.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        error_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        errorDetails_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseMapCommand_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ResponseMapCommand getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ResponseMapCommand build() {
+        SC2APIProtocol.Sc2Api.ResponseMapCommand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ResponseMapCommand buildPartial() {
+        SC2APIProtocol.Sc2Api.ResponseMapCommand result = new SC2APIProtocol.Sc2Api.ResponseMapCommand(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.error_ = error_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.errorDetails_ = errorDetails_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ResponseMapCommand) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ResponseMapCommand)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ResponseMapCommand other) {
+        if (other == SC2APIProtocol.Sc2Api.ResponseMapCommand.getDefaultInstance()) return this;
+        if (other.hasError()) {
+          setError(other.getError());
+        }
+        if (other.hasErrorDetails()) {
+          bitField0_ |= 0x00000002;
+          errorDetails_ = other.errorDetails_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ResponseMapCommand parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ResponseMapCommand) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int error_ = 1;
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+       */
+      public boolean hasError() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ResponseMapCommand.Error getError() {
+        @SuppressWarnings("deprecation")
+        SC2APIProtocol.Sc2Api.ResponseMapCommand.Error result = SC2APIProtocol.Sc2Api.ResponseMapCommand.Error.valueOf(error_);
+        return result == null ? SC2APIProtocol.Sc2Api.ResponseMapCommand.Error.NoTriggerError : result;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+       */
+      public Builder setError(SC2APIProtocol.Sc2Api.ResponseMapCommand.Error value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        error_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ResponseMapCommand.Error error = 1;</code>
+       */
+      public Builder clearError() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        error_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errorDetails_ = "";
+      /**
+       * <code>optional string error_details = 2;</code>
+       */
+      public boolean hasErrorDetails() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string error_details = 2;</code>
+       */
+      public java.lang.String getErrorDetails() {
+        java.lang.Object ref = errorDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            errorDetails_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string error_details = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getErrorDetailsBytes() {
+        java.lang.Object ref = errorDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string error_details = 2;</code>
+       */
+      public Builder setErrorDetails(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string error_details = 2;</code>
+       */
+      public Builder clearErrorDetails() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        errorDetails_ = getDefaultInstance().getErrorDetails();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string error_details = 2;</code>
+       */
+      public Builder setErrorDetailsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        errorDetails_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ResponseMapCommand)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ResponseMapCommand)
+    private static final SC2APIProtocol.Sc2Api.ResponseMapCommand DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ResponseMapCommand();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ResponseMapCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseMapCommand>
+        PARSER = new com.google.protobuf.AbstractParser<ResponseMapCommand>() {
+      @java.lang.Override
+      public ResponseMapCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponseMapCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResponseMapCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponseMapCommand> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ResponseMapCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -21669,6 +25095,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -21703,6 +25132,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestLeaveGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestLeaveGame_fieldAccessorTable
@@ -21711,6 +25141,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -21720,11 +25151,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -21832,6 +25265,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -21839,6 +25273,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestLeaveGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -21866,6 +25301,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestLeaveGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestLeaveGame_fieldAccessorTable
@@ -21888,20 +25324,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestLeaveGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestLeaveGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestLeaveGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestLeaveGame build() {
         SC2APIProtocol.Sc2Api.RequestLeaveGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -21910,38 +25350,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestLeaveGame buildPartial() {
         SC2APIProtocol.Sc2Api.RequestLeaveGame result = new SC2APIProtocol.Sc2Api.RequestLeaveGame(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestLeaveGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestLeaveGame)other);
@@ -21958,10 +25406,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -21979,11 +25429,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -22005,11 +25457,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestLeaveGame>
         PARSER = new com.google.protobuf.AbstractParser<RequestLeaveGame>() {
+      @java.lang.Override
       public RequestLeaveGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestLeaveGame(input, extensionRegistry);
+        return new RequestLeaveGame(input, extensionRegistry);
       }
     };
 
@@ -22022,6 +25475,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestLeaveGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -22057,6 +25511,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -22091,6 +25548,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseLeaveGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseLeaveGame_fieldAccessorTable
@@ -22099,6 +25557,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -22108,11 +25567,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -22220,6 +25681,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -22227,6 +25689,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseLeaveGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -22250,6 +25713,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseLeaveGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseLeaveGame_fieldAccessorTable
@@ -22272,20 +25736,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseLeaveGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseLeaveGame getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseLeaveGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseLeaveGame build() {
         SC2APIProtocol.Sc2Api.ResponseLeaveGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -22294,38 +25762,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseLeaveGame buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseLeaveGame result = new SC2APIProtocol.Sc2Api.ResponseLeaveGame(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseLeaveGame) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseLeaveGame)other);
@@ -22342,10 +25818,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22363,11 +25841,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -22389,11 +25869,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseLeaveGame>
         PARSER = new com.google.protobuf.AbstractParser<ResponseLeaveGame>() {
+      @java.lang.Override
       public ResponseLeaveGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseLeaveGame(input, extensionRegistry);
+        return new ResponseLeaveGame(input, extensionRegistry);
       }
     };
 
@@ -22406,6 +25887,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseLeaveGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -22445,6 +25927,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -22479,6 +25964,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickSave_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickSave_fieldAccessorTable
@@ -22487,6 +25973,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -22496,11 +25983,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -22608,6 +26097,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -22615,6 +26105,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestQuickSave prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -22642,6 +26133,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickSave_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickSave_fieldAccessorTable
@@ -22664,20 +26156,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickSave_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuickSave getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestQuickSave.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuickSave build() {
         SC2APIProtocol.Sc2Api.RequestQuickSave result = buildPartial();
         if (!result.isInitialized()) {
@@ -22686,38 +26182,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuickSave buildPartial() {
         SC2APIProtocol.Sc2Api.RequestQuickSave result = new SC2APIProtocol.Sc2Api.RequestQuickSave(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestQuickSave) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestQuickSave)other);
@@ -22734,10 +26238,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -22755,11 +26261,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -22781,11 +26289,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQuickSave>
         PARSER = new com.google.protobuf.AbstractParser<RequestQuickSave>() {
+      @java.lang.Override
       public RequestQuickSave parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQuickSave(input, extensionRegistry);
+        return new RequestQuickSave(input, extensionRegistry);
       }
     };
 
@@ -22798,6 +26307,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestQuickSave getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -22837,6 +26347,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -22871,6 +26384,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickSave_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickSave_fieldAccessorTable
@@ -22879,6 +26393,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -22888,11 +26403,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -23000,6 +26517,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -23007,6 +26525,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseQuickSave prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -23034,6 +26553,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickSave_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickSave_fieldAccessorTable
@@ -23056,20 +26576,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickSave_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuickSave getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseQuickSave.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuickSave build() {
         SC2APIProtocol.Sc2Api.ResponseQuickSave result = buildPartial();
         if (!result.isInitialized()) {
@@ -23078,38 +26602,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuickSave buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseQuickSave result = new SC2APIProtocol.Sc2Api.ResponseQuickSave(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseQuickSave) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseQuickSave)other);
@@ -23126,10 +26658,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -23147,11 +26681,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -23173,11 +26709,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQuickSave>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQuickSave>() {
+      @java.lang.Override
       public ResponseQuickSave parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQuickSave(input, extensionRegistry);
+        return new ResponseQuickSave(input, extensionRegistry);
       }
     };
 
@@ -23190,6 +26727,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseQuickSave getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -23229,6 +26767,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -23263,6 +26804,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickLoad_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickLoad_fieldAccessorTable
@@ -23271,6 +26813,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -23280,11 +26823,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -23392,6 +26937,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -23399,6 +26945,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestQuickLoad prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -23426,6 +26973,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickLoad_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickLoad_fieldAccessorTable
@@ -23448,20 +26996,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuickLoad_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuickLoad getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestQuickLoad.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuickLoad build() {
         SC2APIProtocol.Sc2Api.RequestQuickLoad result = buildPartial();
         if (!result.isInitialized()) {
@@ -23470,38 +27022,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuickLoad buildPartial() {
         SC2APIProtocol.Sc2Api.RequestQuickLoad result = new SC2APIProtocol.Sc2Api.RequestQuickLoad(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestQuickLoad) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestQuickLoad)other);
@@ -23518,10 +27078,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -23539,11 +27101,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -23565,11 +27129,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQuickLoad>
         PARSER = new com.google.protobuf.AbstractParser<RequestQuickLoad>() {
+      @java.lang.Override
       public RequestQuickLoad parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQuickLoad(input, extensionRegistry);
+        return new RequestQuickLoad(input, extensionRegistry);
       }
     };
 
@@ -23582,6 +27147,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestQuickLoad getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -23621,6 +27187,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -23655,6 +27224,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickLoad_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickLoad_fieldAccessorTable
@@ -23663,6 +27233,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -23672,11 +27243,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -23784,6 +27357,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -23791,6 +27365,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseQuickLoad prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -23818,6 +27393,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickLoad_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickLoad_fieldAccessorTable
@@ -23840,20 +27416,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuickLoad_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuickLoad getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseQuickLoad.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuickLoad build() {
         SC2APIProtocol.Sc2Api.ResponseQuickLoad result = buildPartial();
         if (!result.isInitialized()) {
@@ -23862,38 +27442,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuickLoad buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseQuickLoad result = new SC2APIProtocol.Sc2Api.ResponseQuickLoad(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseQuickLoad) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseQuickLoad)other);
@@ -23910,10 +27498,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -23931,11 +27521,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -23957,11 +27549,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQuickLoad>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQuickLoad>() {
+      @java.lang.Override
       public ResponseQuickLoad parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQuickLoad(input, extensionRegistry);
+        return new ResponseQuickLoad(input, extensionRegistry);
       }
     };
 
@@ -23974,6 +27567,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseQuickLoad getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -24013,6 +27607,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -24047,6 +27644,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuit_fieldAccessorTable
@@ -24055,6 +27653,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -24064,11 +27663,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -24176,6 +27777,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -24183,6 +27785,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestQuit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -24210,6 +27813,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuit_fieldAccessorTable
@@ -24232,20 +27836,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestQuit_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuit getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestQuit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuit build() {
         SC2APIProtocol.Sc2Api.RequestQuit result = buildPartial();
         if (!result.isInitialized()) {
@@ -24254,38 +27862,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestQuit buildPartial() {
         SC2APIProtocol.Sc2Api.RequestQuit result = new SC2APIProtocol.Sc2Api.RequestQuit(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestQuit) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestQuit)other);
@@ -24302,10 +27918,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -24323,11 +27941,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -24349,11 +27969,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQuit>
         PARSER = new com.google.protobuf.AbstractParser<RequestQuit>() {
+      @java.lang.Override
       public RequestQuit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQuit(input, extensionRegistry);
+        return new RequestQuit(input, extensionRegistry);
       }
     };
 
@@ -24366,6 +27987,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestQuit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -24401,6 +28023,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -24435,6 +28060,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuit_fieldAccessorTable
@@ -24443,6 +28069,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -24452,11 +28079,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -24564,6 +28193,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -24571,6 +28201,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseQuit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -24594,6 +28225,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuit_fieldAccessorTable
@@ -24616,20 +28248,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseQuit_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuit getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseQuit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuit build() {
         SC2APIProtocol.Sc2Api.ResponseQuit result = buildPartial();
         if (!result.isInitialized()) {
@@ -24638,38 +28274,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseQuit buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseQuit result = new SC2APIProtocol.Sc2Api.ResponseQuit(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseQuit) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseQuit)other);
@@ -24686,10 +28330,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -24707,11 +28353,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -24733,11 +28381,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQuit>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQuit>() {
+      @java.lang.Override
       public ResponseQuit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQuit(input, extensionRegistry);
+        return new ResponseQuit(input, extensionRegistry);
       }
     };
 
@@ -24750,6 +28399,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseQuit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -24789,6 +28439,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -24823,6 +28476,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestGameInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestGameInfo_fieldAccessorTable
@@ -24831,6 +28485,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -24840,11 +28495,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -24952,6 +28609,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -24959,6 +28617,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestGameInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -24986,6 +28645,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestGameInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestGameInfo_fieldAccessorTable
@@ -25008,20 +28668,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestGameInfo_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestGameInfo getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestGameInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestGameInfo build() {
         SC2APIProtocol.Sc2Api.RequestGameInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -25030,38 +28694,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestGameInfo buildPartial() {
         SC2APIProtocol.Sc2Api.RequestGameInfo result = new SC2APIProtocol.Sc2Api.RequestGameInfo(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestGameInfo) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestGameInfo)other);
@@ -25078,10 +28750,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -25099,11 +28773,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -25125,11 +28801,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestGameInfo>
         PARSER = new com.google.protobuf.AbstractParser<RequestGameInfo>() {
+      @java.lang.Override
       public RequestGameInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestGameInfo(input, extensionRegistry);
+        return new RequestGameInfo(input, extensionRegistry);
       }
     };
 
@@ -25142,6 +28819,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestGameInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -25290,6 +28968,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -25301,13 +28982,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -25364,6 +29038,13 @@ public final class Sc2Api {
               modNames_.add(bs);
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -25387,6 +29068,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseGameInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseGameInfo_fieldAccessorTable
@@ -25598,6 +29280,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -25607,6 +29290,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -25630,6 +29314,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -25811,6 +29496,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -25818,6 +29504,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseGameInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -25841,6 +29528,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseGameInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseGameInfo_fieldAccessorTable
@@ -25866,6 +29554,7 @@ public final class Sc2Api {
           getOptionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         mapName_ = "";
@@ -25895,15 +29584,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseGameInfo_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseGameInfo getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseGameInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseGameInfo build() {
         SC2APIProtocol.Sc2Api.ResponseGameInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -25912,6 +29604,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseGameInfo buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseGameInfo result = new SC2APIProtocol.Sc2Api.ResponseGameInfo(this);
         int from_bitField0_ = bitField0_;
@@ -25959,32 +29652,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseGameInfo) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseGameInfo)other);
@@ -26053,10 +29753,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -26832,11 +30534,13 @@ public final class Sc2Api {
         }
         return optionsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -26858,11 +30562,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseGameInfo>
         PARSER = new com.google.protobuf.AbstractParser<ResponseGameInfo>() {
+      @java.lang.Override
       public ResponseGameInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseGameInfo(input, extensionRegistry);
+        return new ResponseGameInfo(input, extensionRegistry);
       }
     };
 
@@ -26875,6 +30580,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseGameInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -26893,6 +30599,23 @@ public final class Sc2Api {
      * <code>optional bool disable_fog = 1;</code>
      */
     boolean getDisableFog();
+
+    /**
+     * <pre>
+     * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+     * </pre>
+     *
+     * <code>optional uint32 game_loop = 2;</code>
+     */
+    boolean hasGameLoop();
+    /**
+     * <pre>
+     * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+     * </pre>
+     *
+     * <code>optional uint32 game_loop = 2;</code>
+     */
+    int getGameLoop();
   }
   /**
    * <pre>
@@ -26912,6 +30635,7 @@ public final class Sc2Api {
     }
     private RequestObservation() {
       disableFog_ = false;
+      gameLoop_ = 0;
     }
 
     @java.lang.Override
@@ -26924,6 +30648,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -26935,16 +30662,21 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              disableFog_ = input.readBool();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              gameLoop_ = input.readUInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              disableFog_ = input.readBool();
               break;
             }
           }
@@ -26964,6 +30696,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObservation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObservation_fieldAccessorTable
@@ -26987,7 +30720,31 @@ public final class Sc2Api {
       return disableFog_;
     }
 
+    public static final int GAME_LOOP_FIELD_NUMBER = 2;
+    private int gameLoop_;
+    /**
+     * <pre>
+     * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+     * </pre>
+     *
+     * <code>optional uint32 game_loop = 2;</code>
+     */
+    public boolean hasGameLoop() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+     * </pre>
+     *
+     * <code>optional uint32 game_loop = 2;</code>
+     */
+    public int getGameLoop() {
+      return gameLoop_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -26997,14 +30754,19 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBool(1, disableFog_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, gameLoop_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -27013,6 +30775,10 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, disableFog_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, gameLoop_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -27035,6 +30801,11 @@ public final class Sc2Api {
         result = result && (getDisableFog()
             == other.getDisableFog());
       }
+      result = result && (hasGameLoop() == other.hasGameLoop());
+      if (hasGameLoop()) {
+        result = result && (getGameLoop()
+            == other.getGameLoop());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -27050,6 +30821,10 @@ public final class Sc2Api {
         hash = (37 * hash) + DISABLE_FOG_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getDisableFog());
+      }
+      if (hasGameLoop()) {
+        hash = (37 * hash) + GAME_LOOP_FIELD_NUMBER;
+        hash = (53 * hash) + getGameLoop();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -27126,6 +30901,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -27133,6 +30909,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestObservation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -27160,6 +30937,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObservation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObservation_fieldAccessorTable
@@ -27182,22 +30960,28 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         disableFog_ = false;
         bitField0_ = (bitField0_ & ~0x00000001);
+        gameLoop_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObservation_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestObservation getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestObservation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestObservation build() {
         SC2APIProtocol.Sc2Api.RequestObservation result = buildPartial();
         if (!result.isInitialized()) {
@@ -27206,6 +30990,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestObservation buildPartial() {
         SC2APIProtocol.Sc2Api.RequestObservation result = new SC2APIProtocol.Sc2Api.RequestObservation(this);
         int from_bitField0_ = bitField0_;
@@ -27214,37 +30999,48 @@ public final class Sc2Api {
           to_bitField0_ |= 0x00000001;
         }
         result.disableFog_ = disableFog_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.gameLoop_ = gameLoop_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestObservation) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestObservation)other);
@@ -27259,15 +31055,20 @@ public final class Sc2Api {
         if (other.hasDisableFog()) {
           setDisableFog(other.getDisableFog());
         }
+        if (other.hasGameLoop()) {
+          setGameLoop(other.getGameLoop());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -27318,11 +31119,61 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+
+      private int gameLoop_ ;
+      /**
+       * <pre>
+       * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 2;</code>
+       */
+      public boolean hasGameLoop() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 2;</code>
+       */
+      public int getGameLoop() {
+        return gameLoop_;
+      }
+      /**
+       * <pre>
+       * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 2;</code>
+       */
+      public Builder setGameLoop(int value) {
+        bitField0_ |= 0x00000002;
+        gameLoop_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In realtime the request will only return once the simulation game loop has reached this value. When not realtime this value is ignored.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 2;</code>
+       */
+      public Builder clearGameLoop() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gameLoop_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -27344,11 +31195,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestObservation>
         PARSER = new com.google.protobuf.AbstractParser<RequestObservation>() {
+      @java.lang.Override
       public RequestObservation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestObservation(input, extensionRegistry);
+        return new RequestObservation(input, extensionRegistry);
       }
     };
 
@@ -27361,6 +31213,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestObservation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -27569,6 +31422,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -27580,13 +31436,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 actions_ = new java.util.ArrayList<SC2APIProtocol.Sc2Api.Action>();
@@ -27636,6 +31485,13 @@ public final class Sc2Api {
                   input.readMessage(SC2APIProtocol.Sc2Api.ChatReceived.PARSER, extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -27665,6 +31521,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObservation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObservation_fieldAccessorTable
@@ -27895,6 +31752,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -27904,6 +31762,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < actions_.size(); i++) {
@@ -27924,6 +31783,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -28084,6 +31944,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -28091,6 +31952,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseObservation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -28114,6 +31976,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObservation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObservation_fieldAccessorTable
@@ -28141,6 +32004,7 @@ public final class Sc2Api {
           getChatFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (actionsBuilder_ == null) {
@@ -28176,15 +32040,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObservation_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseObservation getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseObservation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseObservation build() {
         SC2APIProtocol.Sc2Api.ResponseObservation result = buildPartial();
         if (!result.isInitialized()) {
@@ -28193,6 +32060,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseObservation buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseObservation result = new SC2APIProtocol.Sc2Api.ResponseObservation(this);
         int from_bitField0_ = bitField0_;
@@ -28246,32 +32114,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseObservation) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseObservation)other);
@@ -28395,10 +32270,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -29711,11 +33588,13 @@ public final class Sc2Api {
         }
         return chatBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -29737,11 +33616,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseObservation>
         PARSER = new com.google.protobuf.AbstractParser<ResponseObservation>() {
+      @java.lang.Override
       public ResponseObservation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseObservation(input, extensionRegistry);
+        return new ResponseObservation(input, extensionRegistry);
       }
     };
 
@@ -29754,6 +33634,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseObservation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -29765,11 +33646,11 @@ public final class Sc2Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 player_id = 1;</code>
+     * <code>optional uint32 player_id = 1;</code>
      */
     boolean hasPlayerId();
     /**
-     * <code>optional int32 player_id = 1;</code>
+     * <code>optional uint32 player_id = 1;</code>
      */
     int getPlayerId();
 
@@ -29814,6 +33695,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -29825,22 +33709,22 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
-              playerId_ = input.readInt32();
+              playerId_ = input.readUInt32();
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               message_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -29860,6 +33744,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ChatReceived_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ChatReceived_fieldAccessorTable
@@ -29871,13 +33756,13 @@ public final class Sc2Api {
     public static final int PLAYER_ID_FIELD_NUMBER = 1;
     private int playerId_;
     /**
-     * <code>optional int32 player_id = 1;</code>
+     * <code>optional uint32 player_id = 1;</code>
      */
     public boolean hasPlayerId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional int32 player_id = 1;</code>
+     * <code>optional uint32 player_id = 1;</code>
      */
     public int getPlayerId() {
       return playerId_;
@@ -29926,6 +33811,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -29935,10 +33821,11 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, playerId_);
+        output.writeUInt32(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -29946,6 +33833,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -29953,7 +33841,7 @@ public final class Sc2Api {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, playerId_);
+          .computeUInt32Size(1, playerId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -30078,6 +33966,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -30085,6 +33974,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ChatReceived prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -30108,6 +33998,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ChatReceived_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ChatReceived_fieldAccessorTable
@@ -30130,6 +34021,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         playerId_ = 0;
@@ -30139,15 +34031,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ChatReceived_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ChatReceived getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ChatReceived.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ChatReceived build() {
         SC2APIProtocol.Sc2Api.ChatReceived result = buildPartial();
         if (!result.isInitialized()) {
@@ -30156,6 +34051,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ChatReceived buildPartial() {
         SC2APIProtocol.Sc2Api.ChatReceived result = new SC2APIProtocol.Sc2Api.ChatReceived(this);
         int from_bitField0_ = bitField0_;
@@ -30173,32 +34069,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ChatReceived) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ChatReceived)other);
@@ -30223,10 +34126,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -30248,19 +34153,19 @@ public final class Sc2Api {
 
       private int playerId_ ;
       /**
-       * <code>optional int32 player_id = 1;</code>
+       * <code>optional uint32 player_id = 1;</code>
        */
       public boolean hasPlayerId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional int32 player_id = 1;</code>
+       * <code>optional uint32 player_id = 1;</code>
        */
       public int getPlayerId() {
         return playerId_;
       }
       /**
-       * <code>optional int32 player_id = 1;</code>
+       * <code>optional uint32 player_id = 1;</code>
        */
       public Builder setPlayerId(int value) {
         bitField0_ |= 0x00000001;
@@ -30269,7 +34174,7 @@ public final class Sc2Api {
         return this;
       }
       /**
-       * <code>optional int32 player_id = 1;</code>
+       * <code>optional uint32 player_id = 1;</code>
        */
       public Builder clearPlayerId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -30353,11 +34258,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -30379,11 +34286,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ChatReceived>
         PARSER = new com.google.protobuf.AbstractParser<ChatReceived>() {
+      @java.lang.Override
       public ChatReceived parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChatReceived(input, extensionRegistry);
+        return new ChatReceived(input, extensionRegistry);
       }
     };
 
@@ -30396,6 +34304,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ChatReceived getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -30460,6 +34369,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -30471,13 +34383,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 actions_ = new java.util.ArrayList<SC2APIProtocol.Sc2Api.Action>();
@@ -30485,6 +34390,13 @@ public final class Sc2Api {
               }
               actions_.add(
                   input.readMessage(SC2APIProtocol.Sc2Api.Action.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -30507,6 +34419,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAction_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAction_fieldAccessorTable
@@ -30550,6 +34463,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -30559,6 +34473,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < actions_.size(); i++) {
@@ -30567,6 +34482,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -30684,6 +34600,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -30691,6 +34608,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestAction prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -30718,6 +34636,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAction_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAction_fieldAccessorTable
@@ -30741,6 +34660,7 @@ public final class Sc2Api {
           getActionsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (actionsBuilder_ == null) {
@@ -30752,15 +34672,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAction_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestAction getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestAction.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestAction build() {
         SC2APIProtocol.Sc2Api.RequestAction result = buildPartial();
         if (!result.isInitialized()) {
@@ -30769,6 +34692,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestAction buildPartial() {
         SC2APIProtocol.Sc2Api.RequestAction result = new SC2APIProtocol.Sc2Api.RequestAction(this);
         int from_bitField0_ = bitField0_;
@@ -30785,32 +34709,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestAction) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestAction)other);
@@ -30853,10 +34784,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -31115,11 +35048,13 @@ public final class Sc2Api {
         }
         return actionsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -31141,11 +35076,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestAction>
         PARSER = new com.google.protobuf.AbstractParser<RequestAction>() {
+      @java.lang.Override
       public RequestAction parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestAction(input, extensionRegistry);
+        return new RequestAction(input, extensionRegistry);
       }
     };
 
@@ -31158,6 +35094,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestAction getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -31207,6 +35144,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -31218,15 +35158,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
               SC2APIProtocol.Error.ActionResult value = SC2APIProtocol.Error.ActionResult.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -31244,6 +35178,7 @@ public final class Sc2Api {
               int oldLimit = input.pushLimit(length);
               while(input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
                 SC2APIProtocol.Error.ActionResult value = SC2APIProtocol.Error.ActionResult.valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(1, rawValue);
@@ -31256,6 +35191,13 @@ public final class Sc2Api {
                 }
               }
               input.popLimit(oldLimit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -31278,6 +35220,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAction_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAction_fieldAccessorTable
@@ -31292,6 +35235,7 @@ public final class Sc2Api {
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, SC2APIProtocol.Error.ActionResult>() {
               public SC2APIProtocol.Error.ActionResult convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
                 SC2APIProtocol.Error.ActionResult result = SC2APIProtocol.Error.ActionResult.valueOf(from);
                 return result == null ? SC2APIProtocol.Error.ActionResult.Success : result;
               }
@@ -31317,6 +35261,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -31326,6 +35271,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < result_.size(); i++) {
@@ -31334,6 +35280,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -31455,6 +35402,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -31462,6 +35410,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseAction prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -31485,6 +35434,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAction_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAction_fieldAccessorTable
@@ -31507,6 +35457,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         result_ = java.util.Collections.emptyList();
@@ -31514,15 +35465,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAction_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseAction getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseAction.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseAction build() {
         SC2APIProtocol.Sc2Api.ResponseAction result = buildPartial();
         if (!result.isInitialized()) {
@@ -31531,6 +35485,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseAction buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseAction result = new SC2APIProtocol.Sc2Api.ResponseAction(this);
         int from_bitField0_ = bitField0_;
@@ -31543,32 +35498,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseAction) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseAction)other);
@@ -31595,10 +35557,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -31691,11 +35655,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -31717,11 +35683,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseAction>
         PARSER = new com.google.protobuf.AbstractParser<ResponseAction>() {
+      @java.lang.Override
       public ResponseAction parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseAction(input, extensionRegistry);
+        return new ResponseAction(input, extensionRegistry);
       }
     };
 
@@ -31734,7 +35701,1210 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RequestObserverActionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.RequestObserverAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    java.util.List<SC2APIProtocol.Sc2Api.ObserverAction> 
+        getActionsList();
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    SC2APIProtocol.Sc2Api.ObserverAction getActions(int index);
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    int getActionsCount();
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    java.util.List<? extends SC2APIProtocol.Sc2Api.ObserverActionOrBuilder> 
+        getActionsOrBuilderList();
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    SC2APIProtocol.Sc2Api.ObserverActionOrBuilder getActionsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   *-----------------------------------------------------------------------------
+   * </pre>
+   *
+   * Protobuf type {@code SC2APIProtocol.RequestObserverAction}
+   */
+  public  static final class RequestObserverAction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.RequestObserverAction)
+      RequestObserverActionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RequestObserverAction.newBuilder() to construct.
+    private RequestObserverAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RequestObserverAction() {
+      actions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RequestObserverAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                actions_ = new java.util.ArrayList<SC2APIProtocol.Sc2Api.ObserverAction>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              actions_.add(
+                  input.readMessage(SC2APIProtocol.Sc2Api.ObserverAction.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          actions_ = java.util.Collections.unmodifiableList(actions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObserverAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObserverAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.RequestObserverAction.class, SC2APIProtocol.Sc2Api.RequestObserverAction.Builder.class);
+    }
+
+    public static final int ACTIONS_FIELD_NUMBER = 1;
+    private java.util.List<SC2APIProtocol.Sc2Api.ObserverAction> actions_;
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    public java.util.List<SC2APIProtocol.Sc2Api.ObserverAction> getActionsList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    public java.util.List<? extends SC2APIProtocol.Sc2Api.ObserverActionOrBuilder> 
+        getActionsOrBuilderList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    public int getActionsCount() {
+      return actions_.size();
+    }
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ObserverAction getActions(int index) {
+      return actions_.get(index);
+    }
+    /**
+     * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ObserverActionOrBuilder getActionsOrBuilder(
+        int index) {
+      return actions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(1, actions_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < actions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, actions_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.RequestObserverAction)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.RequestObserverAction other = (SC2APIProtocol.Sc2Api.RequestObserverAction) obj;
+
+      boolean result = true;
+      result = result && getActionsList()
+          .equals(other.getActionsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestObserverAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *-----------------------------------------------------------------------------
+     * </pre>
+     *
+     * Protobuf type {@code SC2APIProtocol.RequestObserverAction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.RequestObserverAction)
+        SC2APIProtocol.Sc2Api.RequestObserverActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObserverAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObserverAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.RequestObserverAction.class, SC2APIProtocol.Sc2Api.RequestObserverAction.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.RequestObserverAction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getActionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestObserverAction_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.RequestObserverAction getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.RequestObserverAction build() {
+        SC2APIProtocol.Sc2Api.RequestObserverAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.RequestObserverAction buildPartial() {
+        SC2APIProtocol.Sc2Api.RequestObserverAction result = new SC2APIProtocol.Sc2Api.RequestObserverAction(this);
+        int from_bitField0_ = bitField0_;
+        if (actionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            actions_ = java.util.Collections.unmodifiableList(actions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.RequestObserverAction) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.RequestObserverAction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.RequestObserverAction other) {
+        if (other == SC2APIProtocol.Sc2Api.RequestObserverAction.getDefaultInstance()) return this;
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              actionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getActionsFieldBuilder() : null;
+            } else {
+              actionsBuilder_.addAllMessages(other.actions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.RequestObserverAction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.RequestObserverAction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<SC2APIProtocol.Sc2Api.ObserverAction> actions_ =
+        java.util.Collections.emptyList();
+      private void ensureActionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          actions_ = new java.util.ArrayList<SC2APIProtocol.Sc2Api.ObserverAction>(actions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ObserverAction, SC2APIProtocol.Sc2Api.ObserverAction.Builder, SC2APIProtocol.Sc2Api.ObserverActionOrBuilder> actionsBuilder_;
+
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public java.util.List<SC2APIProtocol.Sc2Api.ObserverAction> getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
+        } else {
+          return actionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
+        } else {
+          return actionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ObserverAction getActions(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder setActions(
+          int index, SC2APIProtocol.Sc2Api.ObserverAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.set(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder setActions(
+          int index, SC2APIProtocol.Sc2Api.ObserverAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder addActions(SC2APIProtocol.Sc2Api.ObserverAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder addActions(
+          int index, SC2APIProtocol.Sc2Api.ObserverAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder addActions(
+          SC2APIProtocol.Sc2Api.ObserverAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder addActions(
+          int index, SC2APIProtocol.Sc2Api.ObserverAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder addAllActions(
+          java.lang.Iterable<? extends SC2APIProtocol.Sc2Api.ObserverAction> values) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, actions_);
+          onChanged();
+        } else {
+          actionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
+          onChanged();
+        } else {
+          actionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ObserverAction.Builder getActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ObserverActionOrBuilder getActionsOrBuilder(
+          int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);  } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public java.util.List<? extends SC2APIProtocol.Sc2Api.ObserverActionOrBuilder> 
+           getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(actions_);
+        }
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ObserverAction.Builder addActionsBuilder() {
+        return getActionsFieldBuilder().addBuilder(
+            SC2APIProtocol.Sc2Api.ObserverAction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ObserverAction.Builder addActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().addBuilder(
+            index, SC2APIProtocol.Sc2Api.ObserverAction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .SC2APIProtocol.ObserverAction actions = 1;</code>
+       */
+      public java.util.List<SC2APIProtocol.Sc2Api.ObserverAction.Builder> 
+           getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ObserverAction, SC2APIProtocol.Sc2Api.ObserverAction.Builder, SC2APIProtocol.Sc2Api.ObserverActionOrBuilder> 
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ObserverAction, SC2APIProtocol.Sc2Api.ObserverAction.Builder, SC2APIProtocol.Sc2Api.ObserverActionOrBuilder>(
+                  actions_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.RequestObserverAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.RequestObserverAction)
+    private static final SC2APIProtocol.Sc2Api.RequestObserverAction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.RequestObserverAction();
+    }
+
+    public static SC2APIProtocol.Sc2Api.RequestObserverAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestObserverAction>
+        PARSER = new com.google.protobuf.AbstractParser<RequestObserverAction>() {
+      @java.lang.Override
+      public RequestObserverAction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RequestObserverAction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RequestObserverAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RequestObserverAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.RequestObserverAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResponseObserverActionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ResponseObserverAction)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ResponseObserverAction}
+   */
+  public  static final class ResponseObserverAction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ResponseObserverAction)
+      ResponseObserverActionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResponseObserverAction.newBuilder() to construct.
+    private ResponseObserverAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResponseObserverAction() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResponseObserverAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObserverAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObserverAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ResponseObserverAction.class, SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ResponseObserverAction)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ResponseObserverAction other = (SC2APIProtocol.Sc2Api.ResponseObserverAction) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseObserverAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ResponseObserverAction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ResponseObserverAction)
+        SC2APIProtocol.Sc2Api.ResponseObserverActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObserverAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObserverAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ResponseObserverAction.class, SC2APIProtocol.Sc2Api.ResponseObserverAction.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ResponseObserverAction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseObserverAction_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ResponseObserverAction getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ResponseObserverAction build() {
+        SC2APIProtocol.Sc2Api.ResponseObserverAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ResponseObserverAction buildPartial() {
+        SC2APIProtocol.Sc2Api.ResponseObserverAction result = new SC2APIProtocol.Sc2Api.ResponseObserverAction(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ResponseObserverAction) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ResponseObserverAction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ResponseObserverAction other) {
+        if (other == SC2APIProtocol.Sc2Api.ResponseObserverAction.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ResponseObserverAction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ResponseObserverAction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ResponseObserverAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ResponseObserverAction)
+    private static final SC2APIProtocol.Sc2Api.ResponseObserverAction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ResponseObserverAction();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ResponseObserverAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseObserverAction>
+        PARSER = new com.google.protobuf.AbstractParser<ResponseObserverAction>() {
+      @java.lang.Override
+      public ResponseObserverAction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponseObserverAction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResponseObserverAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponseObserverAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ResponseObserverAction getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -31791,6 +36961,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -31802,16 +36975,16 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              count_ = input.readUInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              count_ = input.readUInt32();
               break;
             }
           }
@@ -31831,6 +37004,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStep_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStep_fieldAccessorTable
@@ -31863,6 +37037,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -31872,6 +37047,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -31880,6 +37056,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -32000,6 +37177,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -32007,6 +37185,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestStep prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -32034,6 +37213,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStep_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStep_fieldAccessorTable
@@ -32056,6 +37236,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         count_ = 0;
@@ -32063,15 +37244,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestStep_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestStep getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestStep.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestStep build() {
         SC2APIProtocol.Sc2Api.RequestStep result = buildPartial();
         if (!result.isInitialized()) {
@@ -32080,6 +37264,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestStep buildPartial() {
         SC2APIProtocol.Sc2Api.RequestStep result = new SC2APIProtocol.Sc2Api.RequestStep(this);
         int from_bitField0_ = bitField0_;
@@ -32093,32 +37278,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestStep) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestStep)other);
@@ -32138,10 +37330,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -32208,11 +37402,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -32234,11 +37430,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestStep>
         PARSER = new com.google.protobuf.AbstractParser<RequestStep>() {
+      @java.lang.Override
       public RequestStep parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestStep(input, extensionRegistry);
+        return new RequestStep(input, extensionRegistry);
       }
     };
 
@@ -32251,6 +37448,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestStep getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -32260,6 +37458,29 @@ public final class Sc2Api {
   public interface ResponseStepOrBuilder extends
       // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ResponseStep)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+     *  The "end of time" is classified as the maximum number of game loops or absolute game time
+     *  representable as a positive fixed point number.
+     *  When we reach the "end of time", permanently pause the game and end the game for all.
+     * </pre>
+     *
+     * <code>optional uint32 simulation_loop = 1;</code>
+     */
+    boolean hasSimulationLoop();
+    /**
+     * <pre>
+     *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+     *  The "end of time" is classified as the maximum number of game loops or absolute game time
+     *  representable as a positive fixed point number.
+     *  When we reach the "end of time", permanently pause the game and end the game for all.
+     * </pre>
+     *
+     * <code>optional uint32 simulation_loop = 1;</code>
+     */
+    int getSimulationLoop();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.ResponseStep}
@@ -32274,6 +37495,7 @@ public final class Sc2Api {
       super(builder);
     }
     private ResponseStep() {
+      simulationLoop_ = 0;
     }
 
     @java.lang.Override
@@ -32286,6 +37508,10 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -32296,6 +37522,11 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              simulationLoop_ = input.readUInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -32320,6 +37551,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStep_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStep_fieldAccessorTable
@@ -32327,7 +37559,38 @@ public final class Sc2Api {
               SC2APIProtocol.Sc2Api.ResponseStep.class, SC2APIProtocol.Sc2Api.ResponseStep.Builder.class);
     }
 
+    private int bitField0_;
+    public static final int SIMULATION_LOOP_FIELD_NUMBER = 1;
+    private int simulationLoop_;
+    /**
+     * <pre>
+     *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+     *  The "end of time" is classified as the maximum number of game loops or absolute game time
+     *  representable as a positive fixed point number.
+     *  When we reach the "end of time", permanently pause the game and end the game for all.
+     * </pre>
+     *
+     * <code>optional uint32 simulation_loop = 1;</code>
+     */
+    public boolean hasSimulationLoop() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+     *  The "end of time" is classified as the maximum number of game loops or absolute game time
+     *  representable as a positive fixed point number.
+     *  When we reach the "end of time", permanently pause the game and end the game for all.
+     * </pre>
+     *
+     * <code>optional uint32 simulation_loop = 1;</code>
+     */
+    public int getSimulationLoop() {
+      return simulationLoop_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -32337,16 +37600,25 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, simulationLoop_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, simulationLoop_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -32363,6 +37635,11 @@ public final class Sc2Api {
       SC2APIProtocol.Sc2Api.ResponseStep other = (SC2APIProtocol.Sc2Api.ResponseStep) obj;
 
       boolean result = true;
+      result = result && (hasSimulationLoop() == other.hasSimulationLoop());
+      if (hasSimulationLoop()) {
+        result = result && (getSimulationLoop()
+            == other.getSimulationLoop());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -32374,6 +37651,10 @@ public final class Sc2Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSimulationLoop()) {
+        hash = (37 * hash) + SIMULATION_LOOP_FIELD_NUMBER;
+        hash = (53 * hash) + getSimulationLoop();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -32449,6 +37730,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -32456,6 +37738,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseStep prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -32479,6 +37762,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStep_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStep_fieldAccessorTable
@@ -32501,20 +37785,26 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
+        simulationLoop_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseStep_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseStep getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseStep.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseStep build() {
         SC2APIProtocol.Sc2Api.ResponseStep result = buildPartial();
         if (!result.isInitialized()) {
@@ -32523,38 +37813,53 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseStep buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseStep result = new SC2APIProtocol.Sc2Api.ResponseStep(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.simulationLoop_ = simulationLoop_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseStep) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseStep)other);
@@ -32566,15 +37871,20 @@ public final class Sc2Api {
 
       public Builder mergeFrom(SC2APIProtocol.Sc2Api.ResponseStep other) {
         if (other == SC2APIProtocol.Sc2Api.ResponseStep.getDefaultInstance()) return this;
+        if (other.hasSimulationLoop()) {
+          setSimulationLoop(other.getSimulationLoop());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -32592,11 +37902,74 @@ public final class Sc2Api {
         }
         return this;
       }
+      private int bitField0_;
+
+      private int simulationLoop_ ;
+      /**
+       * <pre>
+       *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+       *  The "end of time" is classified as the maximum number of game loops or absolute game time
+       *  representable as a positive fixed point number.
+       *  When we reach the "end of time", permanently pause the game and end the game for all.
+       * </pre>
+       *
+       * <code>optional uint32 simulation_loop = 1;</code>
+       */
+      public boolean hasSimulationLoop() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+       *  The "end of time" is classified as the maximum number of game loops or absolute game time
+       *  representable as a positive fixed point number.
+       *  When we reach the "end of time", permanently pause the game and end the game for all.
+       * </pre>
+       *
+       * <code>optional uint32 simulation_loop = 1;</code>
+       */
+      public int getSimulationLoop() {
+        return simulationLoop_;
+      }
+      /**
+       * <pre>
+       *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+       *  The "end of time" is classified as the maximum number of game loops or absolute game time
+       *  representable as a positive fixed point number.
+       *  When we reach the "end of time", permanently pause the game and end the game for all.
+       * </pre>
+       *
+       * <code>optional uint32 simulation_loop = 1;</code>
+       */
+      public Builder setSimulationLoop(int value) {
+        bitField0_ |= 0x00000001;
+        simulationLoop_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Max simulation_loop is (1&lt;&lt;19) before "end of time" will occur
+       *  The "end of time" is classified as the maximum number of game loops or absolute game time
+       *  representable as a positive fixed point number.
+       *  When we reach the "end of time", permanently pause the game and end the game for all.
+       * </pre>
+       *
+       * <code>optional uint32 simulation_loop = 1;</code>
+       */
+      public Builder clearSimulationLoop() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        simulationLoop_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -32618,11 +37991,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseStep>
         PARSER = new com.google.protobuf.AbstractParser<ResponseStep>() {
+      @java.lang.Override
       public ResponseStep parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseStep(input, extensionRegistry);
+        return new ResponseStep(input, extensionRegistry);
       }
     };
 
@@ -32635,6 +38009,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseStep getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -32724,6 +38099,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -32735,13 +38113,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readBool();
@@ -32767,6 +38138,13 @@ public final class Sc2Api {
               effectId_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -32784,6 +38162,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestData_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestData_fieldAccessorTable
@@ -32868,6 +38247,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -32877,6 +38257,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -32897,6 +38278,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -33074,6 +38456,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -33081,6 +38464,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -33108,6 +38492,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestData_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestData_fieldAccessorTable
@@ -33130,6 +38515,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = false;
@@ -33145,15 +38531,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestData_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestData getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestData.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestData build() {
         SC2APIProtocol.Sc2Api.RequestData result = buildPartial();
         if (!result.isInitialized()) {
@@ -33162,6 +38551,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestData buildPartial() {
         SC2APIProtocol.Sc2Api.RequestData result = new SC2APIProtocol.Sc2Api.RequestData(this);
         int from_bitField0_ = bitField0_;
@@ -33191,32 +38581,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestData) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestData)other);
@@ -33248,10 +38645,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -33430,11 +38829,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -33456,11 +38857,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestData>
         PARSER = new com.google.protobuf.AbstractParser<RequestData>() {
+      @java.lang.Override
       public RequestData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestData(input, extensionRegistry);
+        return new RequestData(input, extensionRegistry);
       }
     };
 
@@ -33473,6 +38875,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -33633,6 +39036,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -33644,13 +39050,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 abilities_ = new java.util.ArrayList<SC2APIProtocol.Data.AbilityData>();
@@ -33696,6 +39095,13 @@ public final class Sc2Api {
                   input.readMessage(SC2APIProtocol.Data.EffectData.PARSER, extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -33728,6 +39134,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseData_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseData_fieldAccessorTable
@@ -33911,6 +39318,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -33920,6 +39328,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < abilities_.size(); i++) {
@@ -33940,6 +39349,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -34097,6 +39507,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -34104,6 +39515,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -34127,6 +39539,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseData_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseData_fieldAccessorTable
@@ -34154,6 +39567,7 @@ public final class Sc2Api {
           getEffectsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (abilitiesBuilder_ == null) {
@@ -34189,15 +39603,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseData_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseData getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseData.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseData build() {
         SC2APIProtocol.Sc2Api.ResponseData result = buildPartial();
         if (!result.isInitialized()) {
@@ -34206,6 +39623,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseData buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseData result = new SC2APIProtocol.Sc2Api.ResponseData(this);
         int from_bitField0_ = bitField0_;
@@ -34258,32 +39676,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseData) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseData)other);
@@ -34430,10 +39855,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -35652,11 +41079,13 @@ public final class Sc2Api {
         }
         return effectsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -35678,11 +41107,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseData>
         PARSER = new com.google.protobuf.AbstractParser<ResponseData>() {
+      @java.lang.Override
       public ResponseData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseData(input, extensionRegistry);
+        return new ResponseData(input, extensionRegistry);
       }
     };
 
@@ -35695,6 +41125,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -35734,6 +41165,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -35768,6 +41202,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveReplay_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveReplay_fieldAccessorTable
@@ -35776,6 +41211,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -35785,11 +41221,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -35897,6 +41335,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -35904,6 +41343,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestSaveReplay prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -35931,6 +41371,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveReplay_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveReplay_fieldAccessorTable
@@ -35953,20 +41394,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveReplay_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestSaveReplay getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestSaveReplay.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestSaveReplay build() {
         SC2APIProtocol.Sc2Api.RequestSaveReplay result = buildPartial();
         if (!result.isInitialized()) {
@@ -35975,38 +41420,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestSaveReplay buildPartial() {
         SC2APIProtocol.Sc2Api.RequestSaveReplay result = new SC2APIProtocol.Sc2Api.RequestSaveReplay(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestSaveReplay) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestSaveReplay)other);
@@ -36023,10 +41476,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -36044,11 +41499,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -36070,11 +41527,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestSaveReplay>
         PARSER = new com.google.protobuf.AbstractParser<RequestSaveReplay>() {
+      @java.lang.Override
       public RequestSaveReplay parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestSaveReplay(input, extensionRegistry);
+        return new RequestSaveReplay(input, extensionRegistry);
       }
     };
 
@@ -36087,6 +41545,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestSaveReplay getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -36132,6 +41591,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -36143,16 +41605,16 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
+            case 10: {
+              bitField0_ |= 0x00000001;
+              data_ = input.readBytes();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              data_ = input.readBytes();
               break;
             }
           }
@@ -36172,6 +41634,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveReplay_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveReplay_fieldAccessorTable
@@ -36196,6 +41659,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -36205,6 +41669,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -36213,6 +41678,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -36333,6 +41799,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -36340,6 +41807,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseSaveReplay prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -36363,6 +41831,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveReplay_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveReplay_fieldAccessorTable
@@ -36385,6 +41854,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         data_ = com.google.protobuf.ByteString.EMPTY;
@@ -36392,15 +41862,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveReplay_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseSaveReplay getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseSaveReplay.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseSaveReplay build() {
         SC2APIProtocol.Sc2Api.ResponseSaveReplay result = buildPartial();
         if (!result.isInitialized()) {
@@ -36409,6 +41882,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseSaveReplay buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseSaveReplay result = new SC2APIProtocol.Sc2Api.ResponseSaveReplay(this);
         int from_bitField0_ = bitField0_;
@@ -36422,32 +41896,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseSaveReplay) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseSaveReplay)other);
@@ -36467,10 +41948,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -36524,11 +42007,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -36550,11 +42035,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseSaveReplay>
         PARSER = new com.google.protobuf.AbstractParser<ResponseSaveReplay>() {
+      @java.lang.Override
       public ResponseSaveReplay parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseSaveReplay(input, extensionRegistry);
+        return new ResponseSaveReplay(input, extensionRegistry);
       }
     };
 
@@ -36567,6 +42053,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseSaveReplay getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -36661,6 +42148,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -36672,13 +42162,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               replayCase_ = 1;
@@ -36693,6 +42176,13 @@ public final class Sc2Api {
             case 24: {
               bitField0_ |= 0x00000004;
               downloadData_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -36712,6 +42202,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestReplayInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestReplayInfo_fieldAccessorTable
@@ -36860,6 +42351,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -36869,6 +42361,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (replayCase_ == 1) {
@@ -36884,6 +42377,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -37040,6 +42534,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -37047,6 +42542,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestReplayInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -37074,6 +42570,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestReplayInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestReplayInfo_fieldAccessorTable
@@ -37096,6 +42593,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         downloadData_ = false;
@@ -37105,15 +42603,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestReplayInfo_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestReplayInfo getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestReplayInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestReplayInfo build() {
         SC2APIProtocol.Sc2Api.RequestReplayInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -37122,6 +42623,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestReplayInfo buildPartial() {
         SC2APIProtocol.Sc2Api.RequestReplayInfo result = new SC2APIProtocol.Sc2Api.RequestReplayInfo(this);
         int from_bitField0_ = bitField0_;
@@ -37142,32 +42644,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestReplayInfo) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestReplayInfo)other);
@@ -37202,10 +42711,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -37437,11 +42948,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -37463,11 +42976,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestReplayInfo>
         PARSER = new com.google.protobuf.AbstractParser<RequestReplayInfo>() {
+      @java.lang.Override
       public RequestReplayInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestReplayInfo(input, extensionRegistry);
+        return new RequestReplayInfo(input, extensionRegistry);
       }
     };
 
@@ -37480,6 +42994,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestReplayInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -37561,6 +43076,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -37572,13 +43090,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Sc2Api.PlayerInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -37615,6 +43126,13 @@ public final class Sc2Api {
               playerApm_ = input.readInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -37632,6 +43150,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfoExtra_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfoExtra_fieldAccessorTable
@@ -37713,6 +43232,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -37722,6 +43242,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -37739,6 +43260,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -37898,6 +43420,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -37905,6 +43428,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.PlayerInfoExtra prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -37928,6 +43452,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfoExtra_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfoExtra_fieldAccessorTable
@@ -37952,6 +43477,7 @@ public final class Sc2Api {
           getPlayerResultFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (playerInfoBuilder_ == null) {
@@ -37973,15 +43499,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfoExtra_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerInfoExtra getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.PlayerInfoExtra.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerInfoExtra build() {
         SC2APIProtocol.Sc2Api.PlayerInfoExtra result = buildPartial();
         if (!result.isInitialized()) {
@@ -37990,6 +43519,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerInfoExtra buildPartial() {
         SC2APIProtocol.Sc2Api.PlayerInfoExtra result = new SC2APIProtocol.Sc2Api.PlayerInfoExtra(this);
         int from_bitField0_ = bitField0_;
@@ -38023,32 +43553,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.PlayerInfoExtra) {
           return mergeFrom((SC2APIProtocol.Sc2Api.PlayerInfoExtra)other);
@@ -38077,10 +43614,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -38399,11 +43938,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -38425,11 +43966,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerInfoExtra>
         PARSER = new com.google.protobuf.AbstractParser<PlayerInfoExtra>() {
+      @java.lang.Override
       public PlayerInfoExtra parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerInfoExtra(input, extensionRegistry);
+        return new PlayerInfoExtra(input, extensionRegistry);
       }
     };
 
@@ -38442,6 +43984,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.PlayerInfoExtra getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -38627,6 +44170,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -38638,13 +44184,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -38694,6 +44233,7 @@ public final class Sc2Api {
             }
             case 72: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error value = SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(9, rawValue);
@@ -38713,6 +44253,13 @@ public final class Sc2Api {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
               dataVersion_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -38735,6 +44282,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseReplayInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseReplayInfo_fieldAccessorTable
@@ -39135,6 +44683,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseReplayInfo.Error error = 9;</code>
      */
     public SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error getError() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error result = SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error.valueOf(error_);
       return result == null ? SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error.MissingReplay : result;
     }
@@ -39182,6 +44731,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -39191,6 +44741,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -39229,6 +44780,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -39473,6 +45025,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -39480,6 +45033,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseReplayInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -39503,6 +45057,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseReplayInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseReplayInfo_fieldAccessorTable
@@ -39526,6 +45081,7 @@ public final class Sc2Api {
           getPlayerInfoFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         mapName_ = "";
@@ -39557,15 +45113,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseReplayInfo_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseReplayInfo getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseReplayInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseReplayInfo build() {
         SC2APIProtocol.Sc2Api.ResponseReplayInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -39574,6 +45133,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseReplayInfo buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseReplayInfo result = new SC2APIProtocol.Sc2Api.ResponseReplayInfo(this);
         int from_bitField0_ = bitField0_;
@@ -39632,32 +45192,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseReplayInfo) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseReplayInfo)other);
@@ -39740,10 +45307,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -40446,6 +46015,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ResponseReplayInfo.Error error = 9;</code>
        */
       public SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error getError() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error result = SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error.valueOf(error_);
         return result == null ? SC2APIProtocol.Sc2Api.ResponseReplayInfo.Error.MissingReplay : result;
       }
@@ -40546,11 +46116,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -40572,11 +46144,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseReplayInfo>
         PARSER = new com.google.protobuf.AbstractParser<ResponseReplayInfo>() {
+      @java.lang.Override
       public ResponseReplayInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseReplayInfo(input, extensionRegistry);
+        return new ResponseReplayInfo(input, extensionRegistry);
       }
     };
 
@@ -40589,6 +46162,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseReplayInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -40628,6 +46202,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -40662,6 +46239,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAvailableMaps_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAvailableMaps_fieldAccessorTable
@@ -40670,6 +46248,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -40679,11 +46258,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -40791,6 +46372,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -40798,6 +46380,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestAvailableMaps prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -40825,6 +46408,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAvailableMaps_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAvailableMaps_fieldAccessorTable
@@ -40847,20 +46431,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestAvailableMaps_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestAvailableMaps getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestAvailableMaps.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestAvailableMaps build() {
         SC2APIProtocol.Sc2Api.RequestAvailableMaps result = buildPartial();
         if (!result.isInitialized()) {
@@ -40869,38 +46457,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestAvailableMaps buildPartial() {
         SC2APIProtocol.Sc2Api.RequestAvailableMaps result = new SC2APIProtocol.Sc2Api.RequestAvailableMaps(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestAvailableMaps) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestAvailableMaps)other);
@@ -40917,10 +46513,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -40938,11 +46536,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -40964,11 +46564,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestAvailableMaps>
         PARSER = new com.google.protobuf.AbstractParser<RequestAvailableMaps>() {
+      @java.lang.Override
       public RequestAvailableMaps parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestAvailableMaps(input, extensionRegistry);
+        return new RequestAvailableMaps(input, extensionRegistry);
       }
     };
 
@@ -40981,6 +46582,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestAvailableMaps getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -41094,6 +46696,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -41105,13 +46710,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -41128,6 +46726,13 @@ public final class Sc2Api {
                 mutable_bitField0_ |= 0x00000002;
               }
               battlenetMapNames_.add(bs);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -41153,6 +46758,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAvailableMaps_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAvailableMaps_fieldAccessorTable
@@ -41251,6 +46857,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -41260,6 +46867,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < localMapPaths_.size(); i++) {
@@ -41271,6 +46879,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -41406,6 +47015,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -41413,6 +47023,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseAvailableMaps prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -41442,6 +47053,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAvailableMaps_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAvailableMaps_fieldAccessorTable
@@ -41464,6 +47076,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         localMapPaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -41473,15 +47086,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseAvailableMaps_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseAvailableMaps getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseAvailableMaps.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseAvailableMaps build() {
         SC2APIProtocol.Sc2Api.ResponseAvailableMaps result = buildPartial();
         if (!result.isInitialized()) {
@@ -41490,6 +47106,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseAvailableMaps buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseAvailableMaps result = new SC2APIProtocol.Sc2Api.ResponseAvailableMaps(this);
         int from_bitField0_ = bitField0_;
@@ -41507,32 +47124,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseAvailableMaps) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseAvailableMaps)other);
@@ -41569,10 +47193,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -41849,11 +47475,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -41875,11 +47503,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseAvailableMaps>
         PARSER = new com.google.protobuf.AbstractParser<ResponseAvailableMaps>() {
+      @java.lang.Override
       public ResponseAvailableMaps parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseAvailableMaps(input, extensionRegistry);
+        return new ResponseAvailableMaps(input, extensionRegistry);
       }
     };
 
@@ -41892,6 +47521,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseAvailableMaps getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -41977,6 +47607,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -41988,13 +47621,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -42004,6 +47630,13 @@ public final class Sc2Api {
             case 18: {
               bitField0_ |= 0x00000002;
               mapData_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -42023,6 +47656,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveMap_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveMap_fieldAccessorTable
@@ -42109,6 +47743,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -42118,6 +47753,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -42129,6 +47765,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -42261,6 +47898,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -42268,6 +47906,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestSaveMap prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -42296,6 +47935,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveMap_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveMap_fieldAccessorTable
@@ -42318,6 +47958,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         mapPath_ = "";
@@ -42327,15 +47968,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestSaveMap_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestSaveMap getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestSaveMap.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestSaveMap build() {
         SC2APIProtocol.Sc2Api.RequestSaveMap result = buildPartial();
         if (!result.isInitialized()) {
@@ -42344,6 +47988,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestSaveMap buildPartial() {
         SC2APIProtocol.Sc2Api.RequestSaveMap result = new SC2APIProtocol.Sc2Api.RequestSaveMap(this);
         int from_bitField0_ = bitField0_;
@@ -42361,32 +48006,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestSaveMap) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestSaveMap)other);
@@ -42411,10 +48063,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -42584,11 +48238,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -42610,11 +48266,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestSaveMap>
         PARSER = new com.google.protobuf.AbstractParser<RequestSaveMap>() {
+      @java.lang.Override
       public RequestSaveMap parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestSaveMap(input, extensionRegistry);
+        return new RequestSaveMap(input, extensionRegistry);
       }
     };
 
@@ -42627,6 +48284,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestSaveMap getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -42672,6 +48330,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -42683,21 +48344,22 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ResponseSaveMap.Error value = SC2APIProtocol.Sc2Api.ResponseSaveMap.Error.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
                 error_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -42718,6 +48380,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveMap_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveMap_fieldAccessorTable
@@ -42819,11 +48482,13 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ResponseSaveMap.Error error = 1;</code>
      */
     public SC2APIProtocol.Sc2Api.ResponseSaveMap.Error getError() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ResponseSaveMap.Error result = SC2APIProtocol.Sc2Api.ResponseSaveMap.Error.valueOf(error_);
       return result == null ? SC2APIProtocol.Sc2Api.ResponseSaveMap.Error.InvalidMapData : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -42833,6 +48498,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -42841,6 +48507,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -42960,6 +48627,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -42967,6 +48635,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseSaveMap prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -42990,6 +48659,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveMap_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveMap_fieldAccessorTable
@@ -43012,6 +48682,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         error_ = 1;
@@ -43019,15 +48690,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseSaveMap_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseSaveMap getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseSaveMap.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseSaveMap build() {
         SC2APIProtocol.Sc2Api.ResponseSaveMap result = buildPartial();
         if (!result.isInitialized()) {
@@ -43036,6 +48710,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseSaveMap buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseSaveMap result = new SC2APIProtocol.Sc2Api.ResponseSaveMap(this);
         int from_bitField0_ = bitField0_;
@@ -43049,32 +48724,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseSaveMap) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseSaveMap)other);
@@ -43094,10 +48776,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -43128,6 +48812,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ResponseSaveMap.Error error = 1;</code>
        */
       public SC2APIProtocol.Sc2Api.ResponseSaveMap.Error getError() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ResponseSaveMap.Error result = SC2APIProtocol.Sc2Api.ResponseSaveMap.Error.valueOf(error_);
         return result == null ? SC2APIProtocol.Sc2Api.ResponseSaveMap.Error.InvalidMapData : result;
       }
@@ -43152,11 +48837,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -43178,11 +48865,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseSaveMap>
         PARSER = new com.google.protobuf.AbstractParser<ResponseSaveMap>() {
+      @java.lang.Override
       public ResponseSaveMap parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseSaveMap(input, extensionRegistry);
+        return new ResponseSaveMap(input, extensionRegistry);
       }
     };
 
@@ -43195,6 +48883,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseSaveMap getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -43234,6 +48923,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -43268,6 +48960,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestPing_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestPing_fieldAccessorTable
@@ -43276,6 +48969,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -43285,11 +48979,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -43397,6 +49093,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -43404,6 +49101,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestPing prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -43431,6 +49129,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestPing_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestPing_fieldAccessorTable
@@ -43453,20 +49152,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestPing_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestPing getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestPing.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestPing build() {
         SC2APIProtocol.Sc2Api.RequestPing result = buildPartial();
         if (!result.isInitialized()) {
@@ -43475,38 +49178,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestPing buildPartial() {
         SC2APIProtocol.Sc2Api.RequestPing result = new SC2APIProtocol.Sc2Api.RequestPing(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestPing) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestPing)other);
@@ -43523,10 +49234,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -43544,11 +49257,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -43570,11 +49285,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestPing>
         PARSER = new com.google.protobuf.AbstractParser<RequestPing>() {
+      @java.lang.Override
       public RequestPing parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestPing(input, extensionRegistry);
+        return new RequestPing(input, extensionRegistry);
       }
     };
 
@@ -43587,6 +49303,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestPing getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -43672,6 +49389,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43683,13 +49403,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -43712,6 +49425,13 @@ public final class Sc2Api {
               baseBuild_ = input.readUInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -43729,6 +49449,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponsePing_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponsePing_fieldAccessorTable
@@ -43852,6 +49573,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -43861,6 +49583,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -43878,6 +49601,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -44035,6 +49759,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -44042,6 +49767,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponsePing prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -44065,6 +49791,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponsePing_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponsePing_fieldAccessorTable
@@ -44087,6 +49814,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         gameVersion_ = "";
@@ -44100,15 +49828,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponsePing_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponsePing getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponsePing.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponsePing build() {
         SC2APIProtocol.Sc2Api.ResponsePing result = buildPartial();
         if (!result.isInitialized()) {
@@ -44117,6 +49848,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponsePing buildPartial() {
         SC2APIProtocol.Sc2Api.ResponsePing result = new SC2APIProtocol.Sc2Api.ResponsePing(this);
         int from_bitField0_ = bitField0_;
@@ -44142,32 +49874,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponsePing) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponsePing)other);
@@ -44200,10 +49939,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -44438,11 +50179,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -44464,11 +50207,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponsePing>
         PARSER = new com.google.protobuf.AbstractParser<ResponsePing>() {
+      @java.lang.Override
       public ResponsePing parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponsePing(input, extensionRegistry);
+        return new ResponsePing(input, extensionRegistry);
       }
     };
 
@@ -44481,6 +50225,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponsePing getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -44545,6 +50290,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44556,13 +50304,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 debug_ = new java.util.ArrayList<SC2APIProtocol.Debug.DebugCommand>();
@@ -44570,6 +50311,13 @@ public final class Sc2Api {
               }
               debug_.add(
                   input.readMessage(SC2APIProtocol.Debug.DebugCommand.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -44592,6 +50340,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestDebug_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestDebug_fieldAccessorTable
@@ -44635,6 +50384,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -44644,6 +50394,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < debug_.size(); i++) {
@@ -44652,6 +50403,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -44769,6 +50521,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -44776,6 +50529,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.RequestDebug prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -44803,6 +50557,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestDebug_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestDebug_fieldAccessorTable
@@ -44826,6 +50581,7 @@ public final class Sc2Api {
           getDebugFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (debugBuilder_ == null) {
@@ -44837,15 +50593,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_RequestDebug_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestDebug getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.RequestDebug.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestDebug build() {
         SC2APIProtocol.Sc2Api.RequestDebug result = buildPartial();
         if (!result.isInitialized()) {
@@ -44854,6 +50613,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.RequestDebug buildPartial() {
         SC2APIProtocol.Sc2Api.RequestDebug result = new SC2APIProtocol.Sc2Api.RequestDebug(this);
         int from_bitField0_ = bitField0_;
@@ -44870,32 +50630,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.RequestDebug) {
           return mergeFrom((SC2APIProtocol.Sc2Api.RequestDebug)other);
@@ -44938,10 +50705,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -45200,11 +50969,13 @@ public final class Sc2Api {
         }
         return debugBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -45226,11 +50997,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestDebug>
         PARSER = new com.google.protobuf.AbstractParser<RequestDebug>() {
+      @java.lang.Override
       public RequestDebug parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestDebug(input, extensionRegistry);
+        return new RequestDebug(input, extensionRegistry);
       }
     };
 
@@ -45243,6 +51015,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.RequestDebug getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -45278,6 +51051,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -45312,6 +51088,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseDebug_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseDebug_fieldAccessorTable
@@ -45320,6 +51097,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -45329,11 +51107,13 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -45441,6 +51221,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -45448,6 +51229,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ResponseDebug prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -45471,6 +51253,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseDebug_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseDebug_fieldAccessorTable
@@ -45493,20 +51276,24 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ResponseDebug_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseDebug getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ResponseDebug.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseDebug build() {
         SC2APIProtocol.Sc2Api.ResponseDebug result = buildPartial();
         if (!result.isInitialized()) {
@@ -45515,38 +51302,46 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ResponseDebug buildPartial() {
         SC2APIProtocol.Sc2Api.ResponseDebug result = new SC2APIProtocol.Sc2Api.ResponseDebug(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ResponseDebug) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ResponseDebug)other);
@@ -45563,10 +51358,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -45584,11 +51381,13 @@ public final class Sc2Api {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -45610,11 +51409,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseDebug>
         PARSER = new com.google.protobuf.AbstractParser<ResponseDebug>() {
+      @java.lang.Override
       public ResponseDebug parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseDebug(input, extensionRegistry);
+        return new ResponseDebug(input, extensionRegistry);
       }
     };
 
@@ -45627,6 +51427,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ResponseDebug getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -45671,6 +51472,29 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Difficulty difficulty = 3;</code>
      */
     SC2APIProtocol.Sc2Api.Difficulty getDifficulty();
+
+    /**
+     * <code>optional string player_name = 4;</code>
+     */
+    boolean hasPlayerName();
+    /**
+     * <code>optional string player_name = 4;</code>
+     */
+    java.lang.String getPlayerName();
+    /**
+     * <code>optional string player_name = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlayerNameBytes();
+
+    /**
+     * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+     */
+    boolean hasAiBuild();
+    /**
+     * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+     */
+    SC2APIProtocol.Sc2Api.AIBuild getAiBuild();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.PlayerSetup}
@@ -45688,6 +51512,8 @@ public final class Sc2Api {
       type_ = 1;
       race_ = 0;
       difficulty_ = 1;
+      playerName_ = "";
+      aiBuild_ = 1;
     }
 
     @java.lang.Override
@@ -45700,6 +51526,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45711,15 +51540,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.PlayerType value = SC2APIProtocol.Sc2Api.PlayerType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -45731,6 +51554,7 @@ public final class Sc2Api {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Common.Race value = SC2APIProtocol.Common.Race.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
@@ -45742,12 +51566,38 @@ public final class Sc2Api {
             }
             case 24: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.Difficulty value = SC2APIProtocol.Sc2Api.Difficulty.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
                 bitField0_ |= 0x00000004;
                 difficulty_ = rawValue;
+              }
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              playerName_ = bs;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              SC2APIProtocol.Sc2Api.AIBuild value = SC2APIProtocol.Sc2Api.AIBuild.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(5, rawValue);
+              } else {
+                bitField0_ |= 0x00000010;
+                aiBuild_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -45768,6 +51618,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerSetup_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerSetup_fieldAccessorTable
@@ -45788,6 +51639,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.PlayerType type = 1;</code>
      */
     public SC2APIProtocol.Sc2Api.PlayerType getType() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.PlayerType result = SC2APIProtocol.Sc2Api.PlayerType.valueOf(type_);
       return result == null ? SC2APIProtocol.Sc2Api.PlayerType.Participant : result;
     }
@@ -45812,6 +51664,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Race race = 2;</code>
      */
     public SC2APIProtocol.Common.Race getRace() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(race_);
       return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
     }
@@ -45828,11 +51681,72 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Difficulty difficulty = 3;</code>
      */
     public SC2APIProtocol.Sc2Api.Difficulty getDifficulty() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.Difficulty result = SC2APIProtocol.Sc2Api.Difficulty.valueOf(difficulty_);
       return result == null ? SC2APIProtocol.Sc2Api.Difficulty.VeryEasy : result;
     }
 
+    public static final int PLAYER_NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object playerName_;
+    /**
+     * <code>optional string player_name = 4;</code>
+     */
+    public boolean hasPlayerName() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string player_name = 4;</code>
+     */
+    public java.lang.String getPlayerName() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          playerName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string player_name = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlayerNameBytes() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        playerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AI_BUILD_FIELD_NUMBER = 5;
+    private int aiBuild_;
+    /**
+     * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+     */
+    public boolean hasAiBuild() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+     */
+    public SC2APIProtocol.Sc2Api.AIBuild getAiBuild() {
+      @SuppressWarnings("deprecation")
+      SC2APIProtocol.Sc2Api.AIBuild result = SC2APIProtocol.Sc2Api.AIBuild.valueOf(aiBuild_);
+      return result == null ? SC2APIProtocol.Sc2Api.AIBuild.RandomBuild : result;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -45842,6 +51756,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -45853,9 +51768,16 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeEnum(3, difficulty_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, playerName_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeEnum(5, aiBuild_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -45872,6 +51794,13 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, difficulty_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, playerName_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, aiBuild_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -45901,6 +51830,15 @@ public final class Sc2Api {
       if (hasDifficulty()) {
         result = result && difficulty_ == other.difficulty_;
       }
+      result = result && (hasPlayerName() == other.hasPlayerName());
+      if (hasPlayerName()) {
+        result = result && getPlayerName()
+            .equals(other.getPlayerName());
+      }
+      result = result && (hasAiBuild() == other.hasAiBuild());
+      if (hasAiBuild()) {
+        result = result && aiBuild_ == other.aiBuild_;
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -45923,6 +51861,14 @@ public final class Sc2Api {
       if (hasDifficulty()) {
         hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
         hash = (53 * hash) + difficulty_;
+      }
+      if (hasPlayerName()) {
+        hash = (37 * hash) + PLAYER_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerName().hashCode();
+      }
+      if (hasAiBuild()) {
+        hash = (37 * hash) + AI_BUILD_FIELD_NUMBER;
+        hash = (53 * hash) + aiBuild_;
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -45999,6 +51945,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -46006,6 +51953,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.PlayerSetup prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -46029,6 +51977,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerSetup_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerSetup_fieldAccessorTable
@@ -46051,6 +52000,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         type_ = 1;
@@ -46059,18 +52009,25 @@ public final class Sc2Api {
         bitField0_ = (bitField0_ & ~0x00000002);
         difficulty_ = 1;
         bitField0_ = (bitField0_ & ~0x00000004);
+        playerName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        aiBuild_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerSetup_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerSetup getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.PlayerSetup.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerSetup build() {
         SC2APIProtocol.Sc2Api.PlayerSetup result = buildPartial();
         if (!result.isInitialized()) {
@@ -46079,6 +52036,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerSetup buildPartial() {
         SC2APIProtocol.Sc2Api.PlayerSetup result = new SC2APIProtocol.Sc2Api.PlayerSetup(this);
         int from_bitField0_ = bitField0_;
@@ -46095,37 +52053,52 @@ public final class Sc2Api {
           to_bitField0_ |= 0x00000004;
         }
         result.difficulty_ = difficulty_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.playerName_ = playerName_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.aiBuild_ = aiBuild_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.PlayerSetup) {
           return mergeFrom((SC2APIProtocol.Sc2Api.PlayerSetup)other);
@@ -46146,15 +52119,25 @@ public final class Sc2Api {
         if (other.hasDifficulty()) {
           setDifficulty(other.getDifficulty());
         }
+        if (other.hasPlayerName()) {
+          bitField0_ |= 0x00000008;
+          playerName_ = other.playerName_;
+          onChanged();
+        }
+        if (other.hasAiBuild()) {
+          setAiBuild(other.getAiBuild());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46185,6 +52168,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.PlayerType type = 1;</code>
        */
       public SC2APIProtocol.Sc2Api.PlayerType getType() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.PlayerType result = SC2APIProtocol.Sc2Api.PlayerType.valueOf(type_);
         return result == null ? SC2APIProtocol.Sc2Api.PlayerType.Participant : result;
       }
@@ -46229,6 +52213,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Race race = 2;</code>
        */
       public SC2APIProtocol.Common.Race getRace() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(race_);
         return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
       }
@@ -46273,6 +52258,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Difficulty difficulty = 3;</code>
        */
       public SC2APIProtocol.Sc2Api.Difficulty getDifficulty() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.Difficulty result = SC2APIProtocol.Sc2Api.Difficulty.valueOf(difficulty_);
         return result == null ? SC2APIProtocol.Sc2Api.Difficulty.VeryEasy : result;
       }
@@ -46297,11 +52283,126 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+
+      private java.lang.Object playerName_ = "";
+      /**
+       * <code>optional string player_name = 4;</code>
+       */
+      public boolean hasPlayerName() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string player_name = 4;</code>
+       */
+      public java.lang.String getPlayerName() {
+        java.lang.Object ref = playerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            playerName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string player_name = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlayerNameBytes() {
+        java.lang.Object ref = playerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          playerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string player_name = 4;</code>
+       */
+      public Builder setPlayerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        playerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string player_name = 4;</code>
+       */
+      public Builder clearPlayerName() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        playerName_ = getDefaultInstance().getPlayerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string player_name = 4;</code>
+       */
+      public Builder setPlayerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        playerName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int aiBuild_ = 1;
+      /**
+       * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+       */
+      public boolean hasAiBuild() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+       */
+      public SC2APIProtocol.Sc2Api.AIBuild getAiBuild() {
+        @SuppressWarnings("deprecation")
+        SC2APIProtocol.Sc2Api.AIBuild result = SC2APIProtocol.Sc2Api.AIBuild.valueOf(aiBuild_);
+        return result == null ? SC2APIProtocol.Sc2Api.AIBuild.RandomBuild : result;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+       */
+      public Builder setAiBuild(SC2APIProtocol.Sc2Api.AIBuild value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        aiBuild_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.AIBuild ai_build = 5;</code>
+       */
+      public Builder clearAiBuild() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        aiBuild_ = 1;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -46323,11 +52424,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerSetup>
         PARSER = new com.google.protobuf.AbstractParser<PlayerSetup>() {
+      @java.lang.Override
       public PlayerSetup parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerSetup(input, extensionRegistry);
+        return new PlayerSetup(input, extensionRegistry);
       }
     };
 
@@ -46340,6 +52442,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.PlayerSetup getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -46411,6 +52514,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46422,13 +52528,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
               bitField0_ |= 0x00000001;
               width_ = input.readFloat();
@@ -46460,6 +52559,13 @@ public final class Sc2Api {
               bitField0_ |= 0x00000004;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -46477,6 +52583,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_SpatialCameraSetup_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_SpatialCameraSetup_fieldAccessorTable
@@ -46543,6 +52650,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -46552,6 +52660,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -46566,6 +52675,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -46715,6 +52825,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -46722,6 +52833,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.SpatialCameraSetup prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -46745,6 +52857,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_SpatialCameraSetup_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_SpatialCameraSetup_fieldAccessorTable
@@ -46769,6 +52882,7 @@ public final class Sc2Api {
           getMinimapResolutionFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         width_ = 0F;
@@ -46788,15 +52902,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_SpatialCameraSetup_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.SpatialCameraSetup getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.SpatialCameraSetup.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.SpatialCameraSetup build() {
         SC2APIProtocol.Sc2Api.SpatialCameraSetup result = buildPartial();
         if (!result.isInitialized()) {
@@ -46805,6 +52922,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.SpatialCameraSetup buildPartial() {
         SC2APIProtocol.Sc2Api.SpatialCameraSetup result = new SC2APIProtocol.Sc2Api.SpatialCameraSetup(this);
         int from_bitField0_ = bitField0_;
@@ -46834,32 +52952,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.SpatialCameraSetup) {
           return mergeFrom((SC2APIProtocol.Sc2Api.SpatialCameraSetup)other);
@@ -46885,10 +53010,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47175,11 +53302,13 @@ public final class Sc2Api {
         }
         return minimapResolutionBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -47201,11 +53330,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<SpatialCameraSetup>
         PARSER = new com.google.protobuf.AbstractParser<SpatialCameraSetup>() {
+      @java.lang.Override
       public SpatialCameraSetup parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SpatialCameraSetup(input, extensionRegistry);
+        return new SpatialCameraSetup(input, extensionRegistry);
       }
     };
 
@@ -47218,6 +53348,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.SpatialCameraSetup getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -47281,7 +53412,7 @@ public final class Sc2Api {
 
     /**
      * <pre>
-     * Not implemented.
+     * Omit to disable.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -47289,7 +53420,7 @@ public final class Sc2Api {
     boolean hasRender();
     /**
      * <pre>
-     * Not implemented.
+     * Omit to disable.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -47297,12 +53428,29 @@ public final class Sc2Api {
     SC2APIProtocol.Sc2Api.SpatialCameraSetup getRender();
     /**
      * <pre>
-     * Not implemented.
+     * Omit to disable.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
      */
     SC2APIProtocol.Sc2Api.SpatialCameraSetupOrBuilder getRenderOrBuilder();
+
+    /**
+     * <pre>
+     * By default cloaked units are completely hidden. This shows some details.
+     * </pre>
+     *
+     * <code>optional bool show_cloaked = 5;</code>
+     */
+    boolean hasShowCloaked();
+    /**
+     * <pre>
+     * By default cloaked units are completely hidden. This shows some details.
+     * </pre>
+     *
+     * <code>optional bool show_cloaked = 5;</code>
+     */
+    boolean getShowCloaked();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.InterfaceOptions}
@@ -47319,6 +53467,7 @@ public final class Sc2Api {
     private InterfaceOptions() {
       raw_ = false;
       score_ = false;
+      showCloaked_ = false;
     }
 
     @java.lang.Override
@@ -47331,6 +53480,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47342,13 +53494,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               raw_ = input.readBool();
@@ -47385,6 +53530,18 @@ public final class Sc2Api {
               bitField0_ |= 0x00000008;
               break;
             }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              showCloaked_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -47402,6 +53559,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_InterfaceOptions_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_InterfaceOptions_fieldAccessorTable
@@ -47485,7 +53643,7 @@ public final class Sc2Api {
     private SC2APIProtocol.Sc2Api.SpatialCameraSetup render_;
     /**
      * <pre>
-     * Not implemented.
+     * Omit to disable.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -47495,7 +53653,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Not implemented.
+     * Omit to disable.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -47505,7 +53663,7 @@ public final class Sc2Api {
     }
     /**
      * <pre>
-     * Not implemented.
+     * Omit to disable.
      * </pre>
      *
      * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -47514,7 +53672,31 @@ public final class Sc2Api {
       return render_ == null ? SC2APIProtocol.Sc2Api.SpatialCameraSetup.getDefaultInstance() : render_;
     }
 
+    public static final int SHOW_CLOAKED_FIELD_NUMBER = 5;
+    private boolean showCloaked_;
+    /**
+     * <pre>
+     * By default cloaked units are completely hidden. This shows some details.
+     * </pre>
+     *
+     * <code>optional bool show_cloaked = 5;</code>
+     */
+    public boolean hasShowCloaked() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <pre>
+     * By default cloaked units are completely hidden. This shows some details.
+     * </pre>
+     *
+     * <code>optional bool show_cloaked = 5;</code>
+     */
+    public boolean getShowCloaked() {
+      return showCloaked_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -47524,6 +53706,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -47538,9 +53721,13 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeMessage(4, getRender());
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBool(5, showCloaked_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -47561,6 +53748,10 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getRender());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, showCloaked_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -47598,6 +53789,11 @@ public final class Sc2Api {
         result = result && getRender()
             .equals(other.getRender());
       }
+      result = result && (hasShowCloaked() == other.hasShowCloaked());
+      if (hasShowCloaked()) {
+        result = result && (getShowCloaked()
+            == other.getShowCloaked());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -47626,6 +53822,11 @@ public final class Sc2Api {
       if (hasRender()) {
         hash = (37 * hash) + RENDER_FIELD_NUMBER;
         hash = (53 * hash) + getRender().hashCode();
+      }
+      if (hasShowCloaked()) {
+        hash = (37 * hash) + SHOW_CLOAKED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getShowCloaked());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -47702,6 +53903,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -47709,6 +53911,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.InterfaceOptions prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -47732,6 +53935,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_InterfaceOptions_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_InterfaceOptions_fieldAccessorTable
@@ -47756,6 +53960,7 @@ public final class Sc2Api {
           getRenderFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         raw_ = false;
@@ -47774,18 +53979,23 @@ public final class Sc2Api {
           renderBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
+        showCloaked_ = false;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_InterfaceOptions_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.InterfaceOptions getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.InterfaceOptions.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.InterfaceOptions build() {
         SC2APIProtocol.Sc2Api.InterfaceOptions result = buildPartial();
         if (!result.isInitialized()) {
@@ -47794,6 +54004,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.InterfaceOptions buildPartial() {
         SC2APIProtocol.Sc2Api.InterfaceOptions result = new SC2APIProtocol.Sc2Api.InterfaceOptions(this);
         int from_bitField0_ = bitField0_;
@@ -47822,37 +54033,48 @@ public final class Sc2Api {
         } else {
           result.render_ = renderBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.showCloaked_ = showCloaked_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.InterfaceOptions) {
           return mergeFrom((SC2APIProtocol.Sc2Api.InterfaceOptions)other);
@@ -47876,15 +54098,20 @@ public final class Sc2Api {
         if (other.hasRender()) {
           mergeRender(other.getRender());
         }
+        if (other.hasShowCloaked()) {
+          setShowCloaked(other.getShowCloaked());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48143,7 +54370,7 @@ public final class Sc2Api {
           SC2APIProtocol.Sc2Api.SpatialCameraSetup, SC2APIProtocol.Sc2Api.SpatialCameraSetup.Builder, SC2APIProtocol.Sc2Api.SpatialCameraSetupOrBuilder> renderBuilder_;
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48153,7 +54380,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48167,7 +54394,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48187,7 +54414,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48205,7 +54432,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48229,7 +54456,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48246,7 +54473,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48258,7 +54485,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48273,7 +54500,7 @@ public final class Sc2Api {
       }
       /**
        * <pre>
-       * Not implemented.
+       * Omit to disable.
        * </pre>
        *
        * <code>optional .SC2APIProtocol.SpatialCameraSetup render = 4;</code>
@@ -48291,11 +54518,61 @@ public final class Sc2Api {
         }
         return renderBuilder_;
       }
+
+      private boolean showCloaked_ ;
+      /**
+       * <pre>
+       * By default cloaked units are completely hidden. This shows some details.
+       * </pre>
+       *
+       * <code>optional bool show_cloaked = 5;</code>
+       */
+      public boolean hasShowCloaked() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <pre>
+       * By default cloaked units are completely hidden. This shows some details.
+       * </pre>
+       *
+       * <code>optional bool show_cloaked = 5;</code>
+       */
+      public boolean getShowCloaked() {
+        return showCloaked_;
+      }
+      /**
+       * <pre>
+       * By default cloaked units are completely hidden. This shows some details.
+       * </pre>
+       *
+       * <code>optional bool show_cloaked = 5;</code>
+       */
+      public Builder setShowCloaked(boolean value) {
+        bitField0_ |= 0x00000010;
+        showCloaked_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * By default cloaked units are completely hidden. This shows some details.
+       * </pre>
+       *
+       * <code>optional bool show_cloaked = 5;</code>
+       */
+      public Builder clearShowCloaked() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        showCloaked_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -48317,11 +54594,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<InterfaceOptions>
         PARSER = new com.google.protobuf.AbstractParser<InterfaceOptions>() {
+      @java.lang.Override
       public InterfaceOptions parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InterfaceOptions(input, extensionRegistry);
+        return new InterfaceOptions(input, extensionRegistry);
       }
     };
 
@@ -48334,6 +54612,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.InterfaceOptions getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -48406,6 +54685,20 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Difficulty difficulty = 5;</code>
      */
     SC2APIProtocol.Sc2Api.Difficulty getDifficulty();
+
+    /**
+     * <code>optional string player_name = 6;</code>
+     */
+    boolean hasPlayerName();
+    /**
+     * <code>optional string player_name = 6;</code>
+     */
+    java.lang.String getPlayerName();
+    /**
+     * <code>optional string player_name = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlayerNameBytes();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.PlayerInfo}
@@ -48425,6 +54718,7 @@ public final class Sc2Api {
       raceRequested_ = 0;
       raceActual_ = 0;
       difficulty_ = 1;
+      playerName_ = "";
     }
 
     @java.lang.Override
@@ -48437,6 +54731,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48448,13 +54745,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               playerId_ = input.readUInt32();
@@ -48462,6 +54752,7 @@ public final class Sc2Api {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.PlayerType value = SC2APIProtocol.Sc2Api.PlayerType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
@@ -48473,6 +54764,7 @@ public final class Sc2Api {
             }
             case 24: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Common.Race value = SC2APIProtocol.Common.Race.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
@@ -48484,6 +54776,7 @@ public final class Sc2Api {
             }
             case 32: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Common.Race value = SC2APIProtocol.Common.Race.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(4, rawValue);
@@ -48495,12 +54788,26 @@ public final class Sc2Api {
             }
             case 40: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.Difficulty value = SC2APIProtocol.Sc2Api.Difficulty.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(5, rawValue);
               } else {
                 bitField0_ |= 0x00000010;
                 difficulty_ = rawValue;
+              }
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              playerName_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -48521,6 +54828,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfo_fieldAccessorTable
@@ -48566,6 +54874,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.PlayerType type = 2;</code>
      */
     public SC2APIProtocol.Sc2Api.PlayerType getType() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.PlayerType result = SC2APIProtocol.Sc2Api.PlayerType.valueOf(type_);
       return result == null ? SC2APIProtocol.Sc2Api.PlayerType.Participant : result;
     }
@@ -48582,6 +54891,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Race race_requested = 3;</code>
      */
     public SC2APIProtocol.Common.Race getRaceRequested() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(raceRequested_);
       return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
     }
@@ -48606,6 +54916,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Race race_actual = 4;</code>
      */
     public SC2APIProtocol.Common.Race getRaceActual() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(raceActual_);
       return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
     }
@@ -48622,11 +54933,55 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Difficulty difficulty = 5;</code>
      */
     public SC2APIProtocol.Sc2Api.Difficulty getDifficulty() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.Difficulty result = SC2APIProtocol.Sc2Api.Difficulty.valueOf(difficulty_);
       return result == null ? SC2APIProtocol.Sc2Api.Difficulty.VeryEasy : result;
     }
 
+    public static final int PLAYER_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object playerName_;
+    /**
+     * <code>optional string player_name = 6;</code>
+     */
+    public boolean hasPlayerName() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string player_name = 6;</code>
+     */
+    public java.lang.String getPlayerName() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          playerName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string player_name = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlayerNameBytes() {
+      java.lang.Object ref = playerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        playerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -48636,6 +54991,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -48653,9 +55009,13 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeEnum(5, difficulty_);
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, playerName_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -48680,6 +55040,9 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, difficulty_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, playerName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -48718,6 +55081,11 @@ public final class Sc2Api {
       if (hasDifficulty()) {
         result = result && difficulty_ == other.difficulty_;
       }
+      result = result && (hasPlayerName() == other.hasPlayerName());
+      if (hasPlayerName()) {
+        result = result && getPlayerName()
+            .equals(other.getPlayerName());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -48748,6 +55116,10 @@ public final class Sc2Api {
       if (hasDifficulty()) {
         hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
         hash = (53 * hash) + difficulty_;
+      }
+      if (hasPlayerName()) {
+        hash = (37 * hash) + PLAYER_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerName().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -48824,6 +55196,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -48831,6 +55204,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.PlayerInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -48854,6 +55228,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfo_fieldAccessorTable
@@ -48876,6 +55251,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         playerId_ = 0;
@@ -48888,18 +55264,23 @@ public final class Sc2Api {
         bitField0_ = (bitField0_ & ~0x00000008);
         difficulty_ = 1;
         bitField0_ = (bitField0_ & ~0x00000010);
+        playerName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerInfo_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerInfo getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.PlayerInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerInfo build() {
         SC2APIProtocol.Sc2Api.PlayerInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -48908,6 +55289,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerInfo buildPartial() {
         SC2APIProtocol.Sc2Api.PlayerInfo result = new SC2APIProtocol.Sc2Api.PlayerInfo(this);
         int from_bitField0_ = bitField0_;
@@ -48932,37 +55314,48 @@ public final class Sc2Api {
           to_bitField0_ |= 0x00000010;
         }
         result.difficulty_ = difficulty_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.playerName_ = playerName_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.PlayerInfo) {
           return mergeFrom((SC2APIProtocol.Sc2Api.PlayerInfo)other);
@@ -48989,15 +55382,22 @@ public final class Sc2Api {
         if (other.hasDifficulty()) {
           setDifficulty(other.getDifficulty());
         }
+        if (other.hasPlayerName()) {
+          bitField0_ |= 0x00000020;
+          playerName_ = other.playerName_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49080,6 +55480,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.PlayerType type = 2;</code>
        */
       public SC2APIProtocol.Sc2Api.PlayerType getType() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.PlayerType result = SC2APIProtocol.Sc2Api.PlayerType.valueOf(type_);
         return result == null ? SC2APIProtocol.Sc2Api.PlayerType.Participant : result;
       }
@@ -49116,6 +55517,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Race race_requested = 3;</code>
        */
       public SC2APIProtocol.Common.Race getRaceRequested() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(raceRequested_);
         return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
       }
@@ -49160,6 +55562,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Race race_actual = 4;</code>
        */
       public SC2APIProtocol.Common.Race getRaceActual() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Common.Race result = SC2APIProtocol.Common.Race.valueOf(raceActual_);
         return result == null ? SC2APIProtocol.Common.Race.NoRace : result;
       }
@@ -49204,6 +55607,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Difficulty difficulty = 5;</code>
        */
       public SC2APIProtocol.Sc2Api.Difficulty getDifficulty() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.Difficulty result = SC2APIProtocol.Sc2Api.Difficulty.valueOf(difficulty_);
         return result == null ? SC2APIProtocol.Sc2Api.Difficulty.VeryEasy : result;
       }
@@ -49228,11 +55632,89 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+
+      private java.lang.Object playerName_ = "";
+      /**
+       * <code>optional string player_name = 6;</code>
+       */
+      public boolean hasPlayerName() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string player_name = 6;</code>
+       */
+      public java.lang.String getPlayerName() {
+        java.lang.Object ref = playerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            playerName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string player_name = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlayerNameBytes() {
+        java.lang.Object ref = playerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          playerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string player_name = 6;</code>
+       */
+      public Builder setPlayerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        playerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string player_name = 6;</code>
+       */
+      public Builder clearPlayerName() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        playerName_ = getDefaultInstance().getPlayerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string player_name = 6;</code>
+       */
+      public Builder setPlayerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        playerName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -49254,11 +55736,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerInfo>
         PARSER = new com.google.protobuf.AbstractParser<PlayerInfo>() {
+      @java.lang.Override
       public PlayerInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerInfo(input, extensionRegistry);
+        return new PlayerInfo(input, extensionRegistry);
       }
     };
 
@@ -49271,6 +55754,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.PlayerInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -49416,6 +55900,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49427,13 +55914,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               playerId_ = input.readUInt32();
@@ -49489,6 +55969,13 @@ public final class Sc2Api {
               larvaCount_ = input.readUInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -49506,6 +55993,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerCommon_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerCommon_fieldAccessorTable
@@ -49680,6 +56168,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -49689,6 +56178,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -49727,6 +56217,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -49977,6 +56468,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -49984,6 +56476,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.PlayerCommon prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -50007,6 +56500,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerCommon_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerCommon_fieldAccessorTable
@@ -50029,6 +56523,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         playerId_ = 0;
@@ -50056,15 +56551,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerCommon_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerCommon getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.PlayerCommon.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerCommon build() {
         SC2APIProtocol.Sc2Api.PlayerCommon result = buildPartial();
         if (!result.isInitialized()) {
@@ -50073,6 +56571,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerCommon buildPartial() {
         SC2APIProtocol.Sc2Api.PlayerCommon result = new SC2APIProtocol.Sc2Api.PlayerCommon(this);
         int from_bitField0_ = bitField0_;
@@ -50126,32 +56625,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.PlayerCommon) {
           return mergeFrom((SC2APIProtocol.Sc2Api.PlayerCommon)other);
@@ -50201,10 +56707,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50575,11 +57083,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -50601,11 +57111,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerCommon>
         PARSER = new com.google.protobuf.AbstractParser<PlayerCommon>() {
+      @java.lang.Override
       public PlayerCommon parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerCommon(input, extensionRegistry);
+        return new PlayerCommon(input, extensionRegistry);
       }
     };
 
@@ -50618,6 +57129,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.PlayerCommon getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -50848,6 +57360,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50859,13 +57374,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Sc2Api.PlayerCommon.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
@@ -50960,6 +57468,7 @@ public final class Sc2Api {
             }
             case 80: {
               int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.Alert value = SC2APIProtocol.Sc2Api.Alert.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(10, rawValue);
@@ -50977,6 +57486,7 @@ public final class Sc2Api {
               int oldLimit = input.pushLimit(length);
               while(input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
                 SC2APIProtocol.Sc2Api.Alert value = SC2APIProtocol.Sc2Api.Alert.valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(10, rawValue);
@@ -50989,6 +57499,13 @@ public final class Sc2Api {
                 }
               }
               input.popLimit(oldLimit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -51014,6 +57531,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Observation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Observation_fieldAccessorTable
@@ -51065,6 +57583,7 @@ public final class Sc2Api {
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, SC2APIProtocol.Sc2Api.Alert>() {
               public SC2APIProtocol.Sc2Api.Alert convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
                 SC2APIProtocol.Sc2Api.Alert result = SC2APIProtocol.Sc2Api.Alert.valueOf(from);
                 return result == null ? SC2APIProtocol.Sc2Api.Alert.NuclearLaunchDetected : result;
               }
@@ -51298,6 +57817,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -51307,6 +57827,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
@@ -51339,6 +57860,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -51561,6 +58083,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -51568,6 +58091,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.Observation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -51591,6 +58115,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Observation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Observation_fieldAccessorTable
@@ -51620,6 +58145,7 @@ public final class Sc2Api {
           getUiDataFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         gameLoop_ = 0;
@@ -51671,15 +58197,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Observation_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Observation getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.Observation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Observation build() {
         SC2APIProtocol.Sc2Api.Observation result = buildPartial();
         if (!result.isInitialized()) {
@@ -51688,6 +58217,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Observation buildPartial() {
         SC2APIProtocol.Sc2Api.Observation result = new SC2APIProtocol.Sc2Api.Observation(this);
         int from_bitField0_ = bitField0_;
@@ -51763,32 +58293,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.Observation) {
           return mergeFrom((SC2APIProtocol.Sc2Api.Observation)other);
@@ -51862,10 +58399,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53154,11 +59693,13 @@ public final class Sc2Api {
         }
         return uiDataBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -53180,11 +59721,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Observation>
         PARSER = new com.google.protobuf.AbstractParser<Observation>() {
+      @java.lang.Override
       public Observation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Observation(input, extensionRegistry);
+        return new Observation(input, extensionRegistry);
       }
     };
 
@@ -53197,6 +59739,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.Observation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -53312,44 +59855,42 @@ public final class Sc2Api {
      * Chat messages as a player typing into the chat channel.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
      */
-    java.util.List<SC2APIProtocol.Sc2Api.ActionChat> 
-        getChatList();
+    boolean hasActionChat();
     /**
      * <pre>
      * Chat messages as a player typing into the chat channel.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
      */
-    SC2APIProtocol.Sc2Api.ActionChat getChat(int index);
+    SC2APIProtocol.Sc2Api.ActionChat getActionChat();
     /**
      * <pre>
      * Chat messages as a player typing into the chat channel.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
      */
-    int getChatCount();
+    SC2APIProtocol.Sc2Api.ActionChatOrBuilder getActionChatOrBuilder();
+
     /**
      * <pre>
-     * Chat messages as a player typing into the chat channel.
+     * Populated for actions in ResponseObservation. The game loop on which the action was executed.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional uint32 game_loop = 7;</code>
      */
-    java.util.List<? extends SC2APIProtocol.Sc2Api.ActionChatOrBuilder> 
-        getChatOrBuilderList();
+    boolean hasGameLoop();
     /**
      * <pre>
-     * Chat messages as a player typing into the chat channel.
+     * Populated for actions in ResponseObservation. The game loop on which the action was executed.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional uint32 game_loop = 7;</code>
      */
-    SC2APIProtocol.Sc2Api.ActionChatOrBuilder getChatOrBuilder(
-        int index);
+    int getGameLoop();
   }
   /**
    * Protobuf type {@code SC2APIProtocol.Action}
@@ -53364,7 +59905,7 @@ public final class Sc2Api {
       super(builder);
     }
     private Action() {
-      chat_ = java.util.Collections.emptyList();
+      gameLoop_ = 0;
     }
 
     @java.lang.Override
@@ -53377,6 +59918,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -53388,13 +59932,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Raw.ActionRaw.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -53447,13 +59984,29 @@ public final class Sc2Api {
               bitField0_ |= 0x00000008;
               break;
             }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                chat_ = new java.util.ArrayList<SC2APIProtocol.Sc2Api.ActionChat>();
-                mutable_bitField0_ |= 0x00000010;
+            case 50: {
+              SC2APIProtocol.Sc2Api.ActionChat.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = actionChat_.toBuilder();
               }
-              chat_.add(
-                  input.readMessage(SC2APIProtocol.Sc2Api.ActionChat.PARSER, extensionRegistry));
+              actionChat_ = input.readMessage(SC2APIProtocol.Sc2Api.ActionChat.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(actionChat_);
+                actionChat_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000020;
+              gameLoop_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -53464,9 +60017,6 @@ public final class Sc2Api {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          chat_ = java.util.Collections.unmodifiableList(chat_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -53476,6 +60026,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Action_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Action_fieldAccessorTable
@@ -53616,62 +60167,64 @@ public final class Sc2Api {
       return actionUi_ == null ? SC2APIProtocol.Ui.ActionUI.getDefaultInstance() : actionUi_;
     }
 
-    public static final int CHAT_FIELD_NUMBER = 5;
-    private java.util.List<SC2APIProtocol.Sc2Api.ActionChat> chat_;
+    public static final int ACTION_CHAT_FIELD_NUMBER = 6;
+    private SC2APIProtocol.Sc2Api.ActionChat actionChat_;
     /**
      * <pre>
      * Chat messages as a player typing into the chat channel.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
      */
-    public java.util.List<SC2APIProtocol.Sc2Api.ActionChat> getChatList() {
-      return chat_;
+    public boolean hasActionChat() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
      * Chat messages as a player typing into the chat channel.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
      */
-    public java.util.List<? extends SC2APIProtocol.Sc2Api.ActionChatOrBuilder> 
-        getChatOrBuilderList() {
-      return chat_;
+    public SC2APIProtocol.Sc2Api.ActionChat getActionChat() {
+      return actionChat_ == null ? SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance() : actionChat_;
     }
     /**
      * <pre>
      * Chat messages as a player typing into the chat channel.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
      */
-    public int getChatCount() {
-      return chat_.size();
+    public SC2APIProtocol.Sc2Api.ActionChatOrBuilder getActionChatOrBuilder() {
+      return actionChat_ == null ? SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance() : actionChat_;
+    }
+
+    public static final int GAME_LOOP_FIELD_NUMBER = 7;
+    private int gameLoop_;
+    /**
+     * <pre>
+     * Populated for actions in ResponseObservation. The game loop on which the action was executed.
+     * </pre>
+     *
+     * <code>optional uint32 game_loop = 7;</code>
+     */
+    public boolean hasGameLoop() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <pre>
-     * Chat messages as a player typing into the chat channel.
+     * Populated for actions in ResponseObservation. The game loop on which the action was executed.
      * </pre>
      *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+     * <code>optional uint32 game_loop = 7;</code>
      */
-    public SC2APIProtocol.Sc2Api.ActionChat getChat(int index) {
-      return chat_.get(index);
-    }
-    /**
-     * <pre>
-     * Chat messages as a player typing into the chat channel.
-     * </pre>
-     *
-     * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-     */
-    public SC2APIProtocol.Sc2Api.ActionChatOrBuilder getChatOrBuilder(
-        int index) {
-      return chat_.get(index);
+    public int getGameLoop() {
+      return gameLoop_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -53681,6 +60234,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -53695,12 +60249,16 @@ public final class Sc2Api {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeMessage(4, getActionUi());
       }
-      for (int i = 0; i < chat_.size(); i++) {
-        output.writeMessage(5, chat_.get(i));
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(6, getActionChat());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeUInt32(7, gameLoop_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -53722,9 +60280,13 @@ public final class Sc2Api {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getActionUi());
       }
-      for (int i = 0; i < chat_.size(); i++) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, chat_.get(i));
+          .computeMessageSize(6, getActionChat());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, gameLoop_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -53762,8 +60324,16 @@ public final class Sc2Api {
         result = result && getActionUi()
             .equals(other.getActionUi());
       }
-      result = result && getChatList()
-          .equals(other.getChatList());
+      result = result && (hasActionChat() == other.hasActionChat());
+      if (hasActionChat()) {
+        result = result && getActionChat()
+            .equals(other.getActionChat());
+      }
+      result = result && (hasGameLoop() == other.hasGameLoop());
+      if (hasGameLoop()) {
+        result = result && (getGameLoop()
+            == other.getGameLoop());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -53791,9 +60361,13 @@ public final class Sc2Api {
         hash = (37 * hash) + ACTION_UI_FIELD_NUMBER;
         hash = (53 * hash) + getActionUi().hashCode();
       }
-      if (getChatCount() > 0) {
-        hash = (37 * hash) + CHAT_FIELD_NUMBER;
-        hash = (53 * hash) + getChatList().hashCode();
+      if (hasActionChat()) {
+        hash = (37 * hash) + ACTION_CHAT_FIELD_NUMBER;
+        hash = (53 * hash) + getActionChat().hashCode();
+      }
+      if (hasGameLoop()) {
+        hash = (37 * hash) + GAME_LOOP_FIELD_NUMBER;
+        hash = (53 * hash) + getGameLoop();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -53870,6 +60444,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -53877,6 +60452,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.Action prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -53900,6 +60476,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Action_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Action_fieldAccessorTable
@@ -53924,9 +60501,10 @@ public final class Sc2Api {
           getActionFeatureLayerFieldBuilder();
           getActionRenderFieldBuilder();
           getActionUiFieldBuilder();
-          getChatFieldBuilder();
+          getActionChatFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (actionRawBuilder_ == null) {
@@ -53953,24 +60531,29 @@ public final class Sc2Api {
           actionUiBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
-        if (chatBuilder_ == null) {
-          chat_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+        if (actionChatBuilder_ == null) {
+          actionChat_ = null;
         } else {
-          chatBuilder_.clear();
+          actionChatBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        gameLoop_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_Action_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Action getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.Action.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Action build() {
         SC2APIProtocol.Sc2Api.Action result = buildPartial();
         if (!result.isInitialized()) {
@@ -53979,6 +60562,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.Action buildPartial() {
         SC2APIProtocol.Sc2Api.Action result = new SC2APIProtocol.Sc2Api.Action(this);
         int from_bitField0_ = bitField0_;
@@ -54015,46 +60599,56 @@ public final class Sc2Api {
         } else {
           result.actionUi_ = actionUiBuilder_.build();
         }
-        if (chatBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            chat_ = java.util.Collections.unmodifiableList(chat_);
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.chat_ = chat_;
-        } else {
-          result.chat_ = chatBuilder_.build();
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
         }
+        if (actionChatBuilder_ == null) {
+          result.actionChat_ = actionChat_;
+        } else {
+          result.actionChat_ = actionChatBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.gameLoop_ = gameLoop_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.Action) {
           return mergeFrom((SC2APIProtocol.Sc2Api.Action)other);
@@ -54078,41 +60672,23 @@ public final class Sc2Api {
         if (other.hasActionUi()) {
           mergeActionUi(other.getActionUi());
         }
-        if (chatBuilder_ == null) {
-          if (!other.chat_.isEmpty()) {
-            if (chat_.isEmpty()) {
-              chat_ = other.chat_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-            } else {
-              ensureChatIsMutable();
-              chat_.addAll(other.chat_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.chat_.isEmpty()) {
-            if (chatBuilder_.isEmpty()) {
-              chatBuilder_.dispose();
-              chatBuilder_ = null;
-              chat_ = other.chat_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              chatBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getChatFieldBuilder() : null;
-            } else {
-              chatBuilder_.addAllMessages(other.chat_);
-            }
-          }
+        if (other.hasActionChat()) {
+          mergeActionChat(other.getActionChat());
+        }
+        if (other.hasGameLoop()) {
+          setGameLoop(other.getGameLoop());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54748,30 +61324,31 @@ public final class Sc2Api {
         return actionUiBuilder_;
       }
 
-      private java.util.List<SC2APIProtocol.Sc2Api.ActionChat> chat_ =
-        java.util.Collections.emptyList();
-      private void ensureChatIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          chat_ = new java.util.ArrayList<SC2APIProtocol.Sc2Api.ActionChat>(chat_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          SC2APIProtocol.Sc2Api.ActionChat, SC2APIProtocol.Sc2Api.ActionChat.Builder, SC2APIProtocol.Sc2Api.ActionChatOrBuilder> chatBuilder_;
-
+      private SC2APIProtocol.Sc2Api.ActionChat actionChat_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionChat, SC2APIProtocol.Sc2Api.ActionChat.Builder, SC2APIProtocol.Sc2Api.ActionChatOrBuilder> actionChatBuilder_;
       /**
        * <pre>
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public java.util.List<SC2APIProtocol.Sc2Api.ActionChat> getChatList() {
-        if (chatBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(chat_);
+      public boolean hasActionChat() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <pre>
+       * Chat messages as a player typing into the chat channel.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionChat getActionChat() {
+        if (actionChatBuilder_ == null) {
+          return actionChat_ == null ? SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance() : actionChat_;
         } else {
-          return chatBuilder_.getMessageList();
+          return actionChatBuilder_.getMessage();
         }
       }
       /**
@@ -54779,48 +61356,19 @@ public final class Sc2Api {
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public int getChatCount() {
-        if (chatBuilder_ == null) {
-          return chat_.size();
-        } else {
-          return chatBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public SC2APIProtocol.Sc2Api.ActionChat getChat(int index) {
-        if (chatBuilder_ == null) {
-          return chat_.get(index);
-        } else {
-          return chatBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public Builder setChat(
-          int index, SC2APIProtocol.Sc2Api.ActionChat value) {
-        if (chatBuilder_ == null) {
+      public Builder setActionChat(SC2APIProtocol.Sc2Api.ActionChat value) {
+        if (actionChatBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureChatIsMutable();
-          chat_.set(index, value);
+          actionChat_ = value;
           onChanged();
         } else {
-          chatBuilder_.setMessage(index, value);
+          actionChatBuilder_.setMessage(value);
         }
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -54828,76 +61376,17 @@ public final class Sc2Api {
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public Builder setChat(
-          int index, SC2APIProtocol.Sc2Api.ActionChat.Builder builderForValue) {
-        if (chatBuilder_ == null) {
-          ensureChatIsMutable();
-          chat_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          chatBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public Builder addChat(SC2APIProtocol.Sc2Api.ActionChat value) {
-        if (chatBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureChatIsMutable();
-          chat_.add(value);
-          onChanged();
-        } else {
-          chatBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public Builder addChat(
-          int index, SC2APIProtocol.Sc2Api.ActionChat value) {
-        if (chatBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureChatIsMutable();
-          chat_.add(index, value);
-          onChanged();
-        } else {
-          chatBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public Builder addChat(
+      public Builder setActionChat(
           SC2APIProtocol.Sc2Api.ActionChat.Builder builderForValue) {
-        if (chatBuilder_ == null) {
-          ensureChatIsMutable();
-          chat_.add(builderForValue.build());
+        if (actionChatBuilder_ == null) {
+          actionChat_ = builderForValue.build();
           onChanged();
         } else {
-          chatBuilder_.addMessage(builderForValue.build());
+          actionChatBuilder_.setMessage(builderForValue.build());
         }
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -54905,17 +61394,23 @@ public final class Sc2Api {
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public Builder addChat(
-          int index, SC2APIProtocol.Sc2Api.ActionChat.Builder builderForValue) {
-        if (chatBuilder_ == null) {
-          ensureChatIsMutable();
-          chat_.add(index, builderForValue.build());
+      public Builder mergeActionChat(SC2APIProtocol.Sc2Api.ActionChat value) {
+        if (actionChatBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              actionChat_ != null &&
+              actionChat_ != SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance()) {
+            actionChat_ =
+              SC2APIProtocol.Sc2Api.ActionChat.newBuilder(actionChat_).mergeFrom(value).buildPartial();
+          } else {
+            actionChat_ = value;
+          }
           onChanged();
         } else {
-          chatBuilder_.addMessage(index, builderForValue.build());
+          actionChatBuilder_.mergeFrom(value);
         }
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
@@ -54923,18 +61418,16 @@ public final class Sc2Api {
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public Builder addAllChat(
-          java.lang.Iterable<? extends SC2APIProtocol.Sc2Api.ActionChat> values) {
-        if (chatBuilder_ == null) {
-          ensureChatIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, chat_);
+      public Builder clearActionChat() {
+        if (actionChatBuilder_ == null) {
+          actionChat_ = null;
           onChanged();
         } else {
-          chatBuilder_.addAllMessages(values);
+          actionChatBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
@@ -54942,58 +61435,26 @@ public final class Sc2Api {
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public Builder clearChat() {
-        if (chatBuilder_ == null) {
-          chat_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
+      public SC2APIProtocol.Sc2Api.ActionChat.Builder getActionChatBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getActionChatFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Chat messages as a player typing into the chat channel.
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionChatOrBuilder getActionChatOrBuilder() {
+        if (actionChatBuilder_ != null) {
+          return actionChatBuilder_.getMessageOrBuilder();
         } else {
-          chatBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public Builder removeChat(int index) {
-        if (chatBuilder_ == null) {
-          ensureChatIsMutable();
-          chat_.remove(index);
-          onChanged();
-        } else {
-          chatBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public SC2APIProtocol.Sc2Api.ActionChat.Builder getChatBuilder(
-          int index) {
-        return getChatFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public SC2APIProtocol.Sc2Api.ActionChatOrBuilder getChatOrBuilder(
-          int index) {
-        if (chatBuilder_ == null) {
-          return chat_.get(index);  } else {
-          return chatBuilder_.getMessageOrBuilder(index);
+          return actionChat_ == null ?
+              SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance() : actionChat_;
         }
       }
       /**
@@ -55001,69 +61462,76 @@ public final class Sc2Api {
        * Chat messages as a player typing into the chat channel.
        * </pre>
        *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
+       * <code>optional .SC2APIProtocol.ActionChat action_chat = 6;</code>
        */
-      public java.util.List<? extends SC2APIProtocol.Sc2Api.ActionChatOrBuilder> 
-           getChatOrBuilderList() {
-        if (chatBuilder_ != null) {
-          return chatBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(chat_);
-        }
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public SC2APIProtocol.Sc2Api.ActionChat.Builder addChatBuilder() {
-        return getChatFieldBuilder().addBuilder(
-            SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public SC2APIProtocol.Sc2Api.ActionChat.Builder addChatBuilder(
-          int index) {
-        return getChatFieldBuilder().addBuilder(
-            index, SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Chat messages as a player typing into the chat channel.
-       * </pre>
-       *
-       * <code>repeated .SC2APIProtocol.ActionChat chat = 5;</code>
-       */
-      public java.util.List<SC2APIProtocol.Sc2Api.ActionChat.Builder> 
-           getChatBuilderList() {
-        return getChatFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           SC2APIProtocol.Sc2Api.ActionChat, SC2APIProtocol.Sc2Api.ActionChat.Builder, SC2APIProtocol.Sc2Api.ActionChatOrBuilder> 
-          getChatFieldBuilder() {
-        if (chatBuilder_ == null) {
-          chatBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getActionChatFieldBuilder() {
+        if (actionChatBuilder_ == null) {
+          actionChatBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               SC2APIProtocol.Sc2Api.ActionChat, SC2APIProtocol.Sc2Api.ActionChat.Builder, SC2APIProtocol.Sc2Api.ActionChatOrBuilder>(
-                  chat_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getActionChat(),
                   getParentForChildren(),
                   isClean());
-          chat_ = null;
+          actionChat_ = null;
         }
-        return chatBuilder_;
+        return actionChatBuilder_;
       }
+
+      private int gameLoop_ ;
+      /**
+       * <pre>
+       * Populated for actions in ResponseObservation. The game loop on which the action was executed.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 7;</code>
+       */
+      public boolean hasGameLoop() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <pre>
+       * Populated for actions in ResponseObservation. The game loop on which the action was executed.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 7;</code>
+       */
+      public int getGameLoop() {
+        return gameLoop_;
+      }
+      /**
+       * <pre>
+       * Populated for actions in ResponseObservation. The game loop on which the action was executed.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 7;</code>
+       */
+      public Builder setGameLoop(int value) {
+        bitField0_ |= 0x00000020;
+        gameLoop_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Populated for actions in ResponseObservation. The game loop on which the action was executed.
+       * </pre>
+       *
+       * <code>optional uint32 game_loop = 7;</code>
+       */
+      public Builder clearGameLoop() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        gameLoop_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -55085,11 +61553,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Action>
         PARSER = new com.google.protobuf.AbstractParser<Action>() {
+      @java.lang.Override
       public Action parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Action(input, extensionRegistry);
+        return new Action(input, extensionRegistry);
       }
     };
 
@@ -55102,6 +61571,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.Action getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -55162,6 +61632,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -55173,15 +61646,9 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.ActionChat.Channel value = SC2APIProtocol.Sc2Api.ActionChat.Channel.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -55195,6 +61662,13 @@ public final class Sc2Api {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               message_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -55214,6 +61688,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionChat_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionChat_fieldAccessorTable
@@ -55324,6 +61799,7 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ActionChat.Channel channel = 1;</code>
      */
     public SC2APIProtocol.Sc2Api.ActionChat.Channel getChannel() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.ActionChat.Channel result = SC2APIProtocol.Sc2Api.ActionChat.Channel.valueOf(channel_);
       return result == null ? SC2APIProtocol.Sc2Api.ActionChat.Channel.Broadcast : result;
     }
@@ -55371,6 +61847,7 @@ public final class Sc2Api {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -55380,6 +61857,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -55391,6 +61869,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -55522,6 +62001,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -55529,6 +62009,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ActionChat prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -55552,6 +62033,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionChat_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionChat_fieldAccessorTable
@@ -55574,6 +62056,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         channel_ = 1;
@@ -55583,15 +62066,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionChat_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ActionChat getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ActionChat.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ActionChat build() {
         SC2APIProtocol.Sc2Api.ActionChat result = buildPartial();
         if (!result.isInitialized()) {
@@ -55600,6 +62086,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ActionChat buildPartial() {
         SC2APIProtocol.Sc2Api.ActionChat result = new SC2APIProtocol.Sc2Api.ActionChat(this);
         int from_bitField0_ = bitField0_;
@@ -55617,32 +62104,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ActionChat) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ActionChat)other);
@@ -55667,10 +62161,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -55701,6 +62197,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ActionChat.Channel channel = 1;</code>
        */
       public SC2APIProtocol.Sc2Api.ActionChat.Channel getChannel() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.ActionChat.Channel result = SC2APIProtocol.Sc2Api.ActionChat.Channel.valueOf(channel_);
         return result == null ? SC2APIProtocol.Sc2Api.ActionChat.Channel.Broadcast : result;
       }
@@ -55801,11 +62298,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -55827,11 +62326,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionChat>
         PARSER = new com.google.protobuf.AbstractParser<ActionChat>() {
+      @java.lang.Override
       public ActionChat parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionChat(input, extensionRegistry);
+        return new ActionChat(input, extensionRegistry);
       }
     };
 
@@ -55844,6 +62344,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ActionChat getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -55917,6 +62418,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -55928,13 +62432,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               unitTag_ = input.readUInt64();
@@ -55947,12 +62444,20 @@ public final class Sc2Api {
             }
             case 24: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Error.ActionResult value = SC2APIProtocol.Error.ActionResult.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
                 bitField0_ |= 0x00000004;
                 result_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -55973,6 +62478,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionError_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionError_fieldAccessorTable
@@ -56031,11 +62537,13 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.ActionResult result = 3;</code>
      */
     public SC2APIProtocol.Error.ActionResult getResult() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Error.ActionResult result = SC2APIProtocol.Error.ActionResult.valueOf(result_);
       return result == null ? SC2APIProtocol.Error.ActionResult.Success : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -56045,6 +62553,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -56059,6 +62568,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -56206,6 +62716,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -56213,6 +62724,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.ActionError prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -56236,6 +62748,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionError_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionError_fieldAccessorTable
@@ -56258,6 +62771,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         unitTag_ = 0L;
@@ -56269,15 +62783,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionError_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ActionError getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.ActionError.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ActionError build() {
         SC2APIProtocol.Sc2Api.ActionError result = buildPartial();
         if (!result.isInitialized()) {
@@ -56286,6 +62803,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.ActionError buildPartial() {
         SC2APIProtocol.Sc2Api.ActionError result = new SC2APIProtocol.Sc2Api.ActionError(this);
         int from_bitField0_ = bitField0_;
@@ -56307,32 +62825,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.ActionError) {
           return mergeFrom((SC2APIProtocol.Sc2Api.ActionError)other);
@@ -56358,10 +62883,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -56472,6 +62999,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.ActionResult result = 3;</code>
        */
       public SC2APIProtocol.Error.ActionResult getResult() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Error.ActionResult result = SC2APIProtocol.Error.ActionResult.valueOf(result_);
         return result == null ? SC2APIProtocol.Error.ActionResult.Success : result;
       }
@@ -56496,11 +63024,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -56522,11 +63052,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionError>
         PARSER = new com.google.protobuf.AbstractParser<ActionError>() {
+      @java.lang.Override
       public ActionError parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ActionError(input, extensionRegistry);
+        return new ActionError(input, extensionRegistry);
       }
     };
 
@@ -56539,7 +63070,3881 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.ActionError getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ObserverActionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ObserverAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+     */
+    boolean hasPlayerPerspective();
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective getPlayerPerspective();
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder getPlayerPerspectiveOrBuilder();
+
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+     */
+    boolean hasCameraMove();
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverCameraMove getCameraMove();
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder getCameraMoveOrBuilder();
+
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+     */
+    boolean hasCameraFollowPlayer();
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer getCameraFollowPlayer();
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder getCameraFollowPlayerOrBuilder();
+
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+     */
+    boolean hasCameraFollowUnits();
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits getCameraFollowUnits();
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+     */
+    SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder getCameraFollowUnitsOrBuilder();
+
+    public SC2APIProtocol.Sc2Api.ObserverAction.ActionCase getActionCase();
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ObserverAction}
+   */
+  public  static final class ObserverAction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ObserverAction)
+      ObserverActionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ObserverAction.newBuilder() to construct.
+    private ObserverAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ObserverAction() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ObserverAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder subBuilder = null;
+              if (actionCase_ == 1) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 1;
+              break;
+            }
+            case 18: {
+              SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder subBuilder = null;
+              if (actionCase_ == 2) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.ActionObserverCameraMove.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 2;
+              break;
+            }
+            case 26: {
+              SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder subBuilder = null;
+              if (actionCase_ == 3) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 3;
+              break;
+            }
+            case 34: {
+              SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder subBuilder = null;
+              if (actionCase_ == 4) {
+                subBuilder = ((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 4;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ObserverAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ObserverAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ObserverAction.class, SC2APIProtocol.Sc2Api.ObserverAction.Builder.class);
+    }
+
+    private int bitField0_;
+    private int actionCase_ = 0;
+    private java.lang.Object action_;
+    public enum ActionCase
+        implements com.google.protobuf.Internal.EnumLite {
+      PLAYER_PERSPECTIVE(1),
+      CAMERA_MOVE(2),
+      CAMERA_FOLLOW_PLAYER(3),
+      CAMERA_FOLLOW_UNITS(4),
+      ACTION_NOT_SET(0);
+      private final int value;
+      private ActionCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ActionCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ActionCase forNumber(int value) {
+        switch (value) {
+          case 1: return PLAYER_PERSPECTIVE;
+          case 2: return CAMERA_MOVE;
+          case 3: return CAMERA_FOLLOW_PLAYER;
+          case 4: return CAMERA_FOLLOW_UNITS;
+          case 0: return ACTION_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ActionCase
+    getActionCase() {
+      return ActionCase.forNumber(
+          actionCase_);
+    }
+
+    public static final int PLAYER_PERSPECTIVE_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+     */
+    public boolean hasPlayerPerspective() {
+      return actionCase_ == 1;
+    }
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective getPlayerPerspective() {
+      if (actionCase_ == 1) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder getPlayerPerspectiveOrBuilder() {
+      if (actionCase_ == 1) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+    }
+
+    public static final int CAMERA_MOVE_FIELD_NUMBER = 2;
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+     */
+    public boolean hasCameraMove() {
+      return actionCase_ == 2;
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraMove getCameraMove() {
+      if (actionCase_ == 2) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder getCameraMoveOrBuilder() {
+      if (actionCase_ == 2) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+    }
+
+    public static final int CAMERA_FOLLOW_PLAYER_FIELD_NUMBER = 3;
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+     */
+    public boolean hasCameraFollowPlayer() {
+      return actionCase_ == 3;
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer getCameraFollowPlayer() {
+      if (actionCase_ == 3) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+    }
+    /**
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder getCameraFollowPlayerOrBuilder() {
+      if (actionCase_ == 3) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+    }
+
+    public static final int CAMERA_FOLLOW_UNITS_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+     */
+    public boolean hasCameraFollowUnits() {
+      return actionCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits getCameraFollowUnits() {
+      if (actionCase_ == 4) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Not implemented
+     * </pre>
+     *
+     * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+     */
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder getCameraFollowUnitsOrBuilder() {
+      if (actionCase_ == 4) {
+         return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_;
+      }
+      return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (actionCase_ == 1) {
+        output.writeMessage(1, (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_);
+      }
+      if (actionCase_ == 2) {
+        output.writeMessage(2, (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_);
+      }
+      if (actionCase_ == 3) {
+        output.writeMessage(3, (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_);
+      }
+      if (actionCase_ == 4) {
+        output.writeMessage(4, (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (actionCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_);
+      }
+      if (actionCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_);
+      }
+      if (actionCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_);
+      }
+      if (actionCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ObserverAction)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ObserverAction other = (SC2APIProtocol.Sc2Api.ObserverAction) obj;
+
+      boolean result = true;
+      result = result && getActionCase().equals(
+          other.getActionCase());
+      if (!result) return false;
+      switch (actionCase_) {
+        case 1:
+          result = result && getPlayerPerspective()
+              .equals(other.getPlayerPerspective());
+          break;
+        case 2:
+          result = result && getCameraMove()
+              .equals(other.getCameraMove());
+          break;
+        case 3:
+          result = result && getCameraFollowPlayer()
+              .equals(other.getCameraFollowPlayer());
+          break;
+        case 4:
+          result = result && getCameraFollowUnits()
+              .equals(other.getCameraFollowUnits());
+          break;
+        case 0:
+        default:
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (actionCase_) {
+        case 1:
+          hash = (37 * hash) + PLAYER_PERSPECTIVE_FIELD_NUMBER;
+          hash = (53 * hash) + getPlayerPerspective().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + CAMERA_MOVE_FIELD_NUMBER;
+          hash = (53 * hash) + getCameraMove().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + CAMERA_FOLLOW_PLAYER_FIELD_NUMBER;
+          hash = (53 * hash) + getCameraFollowPlayer().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + CAMERA_FOLLOW_UNITS_FIELD_NUMBER;
+          hash = (53 * hash) + getCameraFollowUnits().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ObserverAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ObserverAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ObserverAction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ObserverAction)
+        SC2APIProtocol.Sc2Api.ObserverActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ObserverAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ObserverAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ObserverAction.class, SC2APIProtocol.Sc2Api.ObserverAction.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ObserverAction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        actionCase_ = 0;
+        action_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ObserverAction_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ObserverAction getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ObserverAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ObserverAction build() {
+        SC2APIProtocol.Sc2Api.ObserverAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ObserverAction buildPartial() {
+        SC2APIProtocol.Sc2Api.ObserverAction result = new SC2APIProtocol.Sc2Api.ObserverAction(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (actionCase_ == 1) {
+          if (playerPerspectiveBuilder_ == null) {
+            result.action_ = action_;
+          } else {
+            result.action_ = playerPerspectiveBuilder_.build();
+          }
+        }
+        if (actionCase_ == 2) {
+          if (cameraMoveBuilder_ == null) {
+            result.action_ = action_;
+          } else {
+            result.action_ = cameraMoveBuilder_.build();
+          }
+        }
+        if (actionCase_ == 3) {
+          if (cameraFollowPlayerBuilder_ == null) {
+            result.action_ = action_;
+          } else {
+            result.action_ = cameraFollowPlayerBuilder_.build();
+          }
+        }
+        if (actionCase_ == 4) {
+          if (cameraFollowUnitsBuilder_ == null) {
+            result.action_ = action_;
+          } else {
+            result.action_ = cameraFollowUnitsBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.actionCase_ = actionCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ObserverAction) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ObserverAction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ObserverAction other) {
+        if (other == SC2APIProtocol.Sc2Api.ObserverAction.getDefaultInstance()) return this;
+        switch (other.getActionCase()) {
+          case PLAYER_PERSPECTIVE: {
+            mergePlayerPerspective(other.getPlayerPerspective());
+            break;
+          }
+          case CAMERA_MOVE: {
+            mergeCameraMove(other.getCameraMove());
+            break;
+          }
+          case CAMERA_FOLLOW_PLAYER: {
+            mergeCameraFollowPlayer(other.getCameraFollowPlayer());
+            break;
+          }
+          case CAMERA_FOLLOW_UNITS: {
+            mergeCameraFollowUnits(other.getCameraFollowUnits());
+            break;
+          }
+          case ACTION_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ObserverAction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ObserverAction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int actionCase_ = 0;
+      private java.lang.Object action_;
+      public ActionCase
+          getActionCase() {
+        return ActionCase.forNumber(
+            actionCase_);
+      }
+
+      public Builder clearAction() {
+        actionCase_ = 0;
+        action_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder> playerPerspectiveBuilder_;
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public boolean hasPlayerPerspective() {
+        return actionCase_ == 1;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective getPlayerPerspective() {
+        if (playerPerspectiveBuilder_ == null) {
+          if (actionCase_ == 1) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+        } else {
+          if (actionCase_ == 1) {
+            return playerPerspectiveBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public Builder setPlayerPerspective(SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective value) {
+        if (playerPerspectiveBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          action_ = value;
+          onChanged();
+        } else {
+          playerPerspectiveBuilder_.setMessage(value);
+        }
+        actionCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public Builder setPlayerPerspective(
+          SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder builderForValue) {
+        if (playerPerspectiveBuilder_ == null) {
+          action_ = builderForValue.build();
+          onChanged();
+        } else {
+          playerPerspectiveBuilder_.setMessage(builderForValue.build());
+        }
+        actionCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public Builder mergePlayerPerspective(SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective value) {
+        if (playerPerspectiveBuilder_ == null) {
+          if (actionCase_ == 1 &&
+              action_ != SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance()) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.newBuilder((SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            action_ = value;
+          }
+          onChanged();
+        } else {
+          if (actionCase_ == 1) {
+            playerPerspectiveBuilder_.mergeFrom(value);
+          }
+          playerPerspectiveBuilder_.setMessage(value);
+        }
+        actionCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public Builder clearPlayerPerspective() {
+        if (playerPerspectiveBuilder_ == null) {
+          if (actionCase_ == 1) {
+            actionCase_ = 0;
+            action_ = null;
+            onChanged();
+          }
+        } else {
+          if (actionCase_ == 1) {
+            actionCase_ = 0;
+            action_ = null;
+          }
+          playerPerspectiveBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder getPlayerPerspectiveBuilder() {
+        return getPlayerPerspectiveFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder getPlayerPerspectiveOrBuilder() {
+        if ((actionCase_ == 1) && (playerPerspectiveBuilder_ != null)) {
+          return playerPerspectiveBuilder_.getMessageOrBuilder();
+        } else {
+          if (actionCase_ == 1) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverPlayerPerspective player_perspective = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder> 
+          getPlayerPerspectiveFieldBuilder() {
+        if (playerPerspectiveBuilder_ == null) {
+          if (!(actionCase_ == 1)) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+          }
+          playerPerspectiveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) action_,
+                  getParentForChildren(),
+                  isClean());
+          action_ = null;
+        }
+        actionCase_ = 1;
+        onChanged();;
+        return playerPerspectiveBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverCameraMove, SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder> cameraMoveBuilder_;
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public boolean hasCameraMove() {
+        return actionCase_ == 2;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraMove getCameraMove() {
+        if (cameraMoveBuilder_ == null) {
+          if (actionCase_ == 2) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+        } else {
+          if (actionCase_ == 2) {
+            return cameraMoveBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public Builder setCameraMove(SC2APIProtocol.Sc2Api.ActionObserverCameraMove value) {
+        if (cameraMoveBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          action_ = value;
+          onChanged();
+        } else {
+          cameraMoveBuilder_.setMessage(value);
+        }
+        actionCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public Builder setCameraMove(
+          SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder builderForValue) {
+        if (cameraMoveBuilder_ == null) {
+          action_ = builderForValue.build();
+          onChanged();
+        } else {
+          cameraMoveBuilder_.setMessage(builderForValue.build());
+        }
+        actionCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public Builder mergeCameraMove(SC2APIProtocol.Sc2Api.ActionObserverCameraMove value) {
+        if (cameraMoveBuilder_ == null) {
+          if (actionCase_ == 2 &&
+              action_ != SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance()) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverCameraMove.newBuilder((SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            action_ = value;
+          }
+          onChanged();
+        } else {
+          if (actionCase_ == 2) {
+            cameraMoveBuilder_.mergeFrom(value);
+          }
+          cameraMoveBuilder_.setMessage(value);
+        }
+        actionCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public Builder clearCameraMove() {
+        if (cameraMoveBuilder_ == null) {
+          if (actionCase_ == 2) {
+            actionCase_ = 0;
+            action_ = null;
+            onChanged();
+          }
+        } else {
+          if (actionCase_ == 2) {
+            actionCase_ = 0;
+            action_ = null;
+          }
+          cameraMoveBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder getCameraMoveBuilder() {
+        return getCameraMoveFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder getCameraMoveOrBuilder() {
+        if ((actionCase_ == 2) && (cameraMoveBuilder_ != null)) {
+          return cameraMoveBuilder_.getMessageOrBuilder();
+        } else {
+          if (actionCase_ == 2) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraMove camera_move = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverCameraMove, SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder> 
+          getCameraMoveFieldBuilder() {
+        if (cameraMoveBuilder_ == null) {
+          if (!(actionCase_ == 2)) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+          }
+          cameraMoveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ActionObserverCameraMove, SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) action_,
+                  getParentForChildren(),
+                  isClean());
+          action_ = null;
+        }
+        actionCase_ = 2;
+        onChanged();;
+        return cameraMoveBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder> cameraFollowPlayerBuilder_;
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public boolean hasCameraFollowPlayer() {
+        return actionCase_ == 3;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer getCameraFollowPlayer() {
+        if (cameraFollowPlayerBuilder_ == null) {
+          if (actionCase_ == 3) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+        } else {
+          if (actionCase_ == 3) {
+            return cameraFollowPlayerBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public Builder setCameraFollowPlayer(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer value) {
+        if (cameraFollowPlayerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          action_ = value;
+          onChanged();
+        } else {
+          cameraFollowPlayerBuilder_.setMessage(value);
+        }
+        actionCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public Builder setCameraFollowPlayer(
+          SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder builderForValue) {
+        if (cameraFollowPlayerBuilder_ == null) {
+          action_ = builderForValue.build();
+          onChanged();
+        } else {
+          cameraFollowPlayerBuilder_.setMessage(builderForValue.build());
+        }
+        actionCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public Builder mergeCameraFollowPlayer(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer value) {
+        if (cameraFollowPlayerBuilder_ == null) {
+          if (actionCase_ == 3 &&
+              action_ != SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance()) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.newBuilder((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            action_ = value;
+          }
+          onChanged();
+        } else {
+          if (actionCase_ == 3) {
+            cameraFollowPlayerBuilder_.mergeFrom(value);
+          }
+          cameraFollowPlayerBuilder_.setMessage(value);
+        }
+        actionCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public Builder clearCameraFollowPlayer() {
+        if (cameraFollowPlayerBuilder_ == null) {
+          if (actionCase_ == 3) {
+            actionCase_ = 0;
+            action_ = null;
+            onChanged();
+          }
+        } else {
+          if (actionCase_ == 3) {
+            actionCase_ = 0;
+            action_ = null;
+          }
+          cameraFollowPlayerBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder getCameraFollowPlayerBuilder() {
+        return getCameraFollowPlayerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder getCameraFollowPlayerOrBuilder() {
+        if ((actionCase_ == 3) && (cameraFollowPlayerBuilder_ != null)) {
+          return cameraFollowPlayerBuilder_.getMessageOrBuilder();
+        } else {
+          if (actionCase_ == 3) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowPlayer camera_follow_player = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder> 
+          getCameraFollowPlayerFieldBuilder() {
+        if (cameraFollowPlayerBuilder_ == null) {
+          if (!(actionCase_ == 3)) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+          }
+          cameraFollowPlayerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) action_,
+                  getParentForChildren(),
+                  isClean());
+          action_ = null;
+        }
+        actionCase_ = 3;
+        onChanged();;
+        return cameraFollowPlayerBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder> cameraFollowUnitsBuilder_;
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public boolean hasCameraFollowUnits() {
+        return actionCase_ == 4;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits getCameraFollowUnits() {
+        if (cameraFollowUnitsBuilder_ == null) {
+          if (actionCase_ == 4) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+        } else {
+          if (actionCase_ == 4) {
+            return cameraFollowUnitsBuilder_.getMessage();
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public Builder setCameraFollowUnits(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits value) {
+        if (cameraFollowUnitsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          action_ = value;
+          onChanged();
+        } else {
+          cameraFollowUnitsBuilder_.setMessage(value);
+        }
+        actionCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public Builder setCameraFollowUnits(
+          SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder builderForValue) {
+        if (cameraFollowUnitsBuilder_ == null) {
+          action_ = builderForValue.build();
+          onChanged();
+        } else {
+          cameraFollowUnitsBuilder_.setMessage(builderForValue.build());
+        }
+        actionCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public Builder mergeCameraFollowUnits(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits value) {
+        if (cameraFollowUnitsBuilder_ == null) {
+          if (actionCase_ == 4 &&
+              action_ != SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance()) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.newBuilder((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            action_ = value;
+          }
+          onChanged();
+        } else {
+          if (actionCase_ == 4) {
+            cameraFollowUnitsBuilder_.mergeFrom(value);
+          }
+          cameraFollowUnitsBuilder_.setMessage(value);
+        }
+        actionCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public Builder clearCameraFollowUnits() {
+        if (cameraFollowUnitsBuilder_ == null) {
+          if (actionCase_ == 4) {
+            actionCase_ = 0;
+            action_ = null;
+            onChanged();
+          }
+        } else {
+          if (actionCase_ == 4) {
+            actionCase_ = 0;
+            action_ = null;
+          }
+          cameraFollowUnitsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder getCameraFollowUnitsBuilder() {
+        return getCameraFollowUnitsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder getCameraFollowUnitsOrBuilder() {
+        if ((actionCase_ == 4) && (cameraFollowUnitsBuilder_ != null)) {
+          return cameraFollowUnitsBuilder_.getMessageOrBuilder();
+        } else {
+          if (actionCase_ == 4) {
+            return (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_;
+          }
+          return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Not implemented
+       * </pre>
+       *
+       * <code>optional .SC2APIProtocol.ActionObserverCameraFollowUnits camera_follow_units = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder> 
+          getCameraFollowUnitsFieldBuilder() {
+        if (cameraFollowUnitsBuilder_ == null) {
+          if (!(actionCase_ == 4)) {
+            action_ = SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+          }
+          cameraFollowUnitsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder>(
+                  (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) action_,
+                  getParentForChildren(),
+                  isClean());
+          action_ = null;
+        }
+        actionCase_ = 4;
+        onChanged();;
+        return cameraFollowUnitsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ObserverAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ObserverAction)
+    private static final SC2APIProtocol.Sc2Api.ObserverAction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ObserverAction();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ObserverAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ObserverAction>
+        PARSER = new com.google.protobuf.AbstractParser<ObserverAction>() {
+      @java.lang.Override
+      public ObserverAction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ObserverAction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ObserverAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ObserverAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ObserverAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ActionObserverPlayerPerspectiveOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ActionObserverPlayerPerspective)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 0 to observe "Everyone"
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <pre>
+     * 0 to observe "Everyone"
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ActionObserverPlayerPerspective}
+   */
+  public  static final class ActionObserverPlayerPerspective extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ActionObserverPlayerPerspective)
+      ActionObserverPlayerPerspectiveOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ActionObserverPlayerPerspective.newBuilder() to construct.
+    private ActionObserverPlayerPerspective(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ActionObserverPlayerPerspective() {
+      playerId_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ActionObserverPlayerPerspective(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.class, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYER_ID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <pre>
+     * 0 to observe "Everyone"
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     * 0 to observe "Everyone"
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, playerId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, playerId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective other = (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) obj;
+
+      boolean result = true;
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ActionObserverPlayerPerspective}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ActionObserverPlayerPerspective)
+        SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspectiveOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.class, SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective build() {
+        SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective buildPartial() {
+        SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective result = new SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective other) {
+        if (other == SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int playerId_ ;
+      /**
+       * <pre>
+       * 0 to observe "Everyone"
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * 0 to observe "Everyone"
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <pre>
+       * 0 to observe "Everyone"
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 0 to observe "Everyone"
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ActionObserverPlayerPerspective)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ActionObserverPlayerPerspective)
+    private static final SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionObserverPlayerPerspective>
+        PARSER = new com.google.protobuf.AbstractParser<ActionObserverPlayerPerspective>() {
+      @java.lang.Override
+      public ActionObserverPlayerPerspective parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ActionObserverPlayerPerspective(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ActionObserverPlayerPerspective> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActionObserverPlayerPerspective> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ActionObserverPlayerPerspective getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ActionObserverCameraMoveOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ActionObserverCameraMove)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+     */
+    boolean hasWorldPos();
+    /**
+     * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+     */
+    SC2APIProtocol.Common.Point2D getWorldPos();
+    /**
+     * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+     */
+    SC2APIProtocol.Common.Point2DOrBuilder getWorldPosOrBuilder();
+
+    /**
+     * <pre>
+     * Distance between camera and terrain. Larger value zooms out camera.
+     * Defaults to standard camera distance if set to 0.
+     * </pre>
+     *
+     * <code>optional float distance = 2;</code>
+     */
+    boolean hasDistance();
+    /**
+     * <pre>
+     * Distance between camera and terrain. Larger value zooms out camera.
+     * Defaults to standard camera distance if set to 0.
+     * </pre>
+     *
+     * <code>optional float distance = 2;</code>
+     */
+    float getDistance();
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ActionObserverCameraMove}
+   */
+  public  static final class ActionObserverCameraMove extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ActionObserverCameraMove)
+      ActionObserverCameraMoveOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ActionObserverCameraMove.newBuilder() to construct.
+    private ActionObserverCameraMove(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ActionObserverCameraMove() {
+      distance_ = 0F;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ActionObserverCameraMove(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              SC2APIProtocol.Common.Point2D.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = worldPos_.toBuilder();
+              }
+              worldPos_ = input.readMessage(SC2APIProtocol.Common.Point2D.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(worldPos_);
+                worldPos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              distance_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraMove_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraMove_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ActionObserverCameraMove.class, SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int WORLD_POS_FIELD_NUMBER = 1;
+    private SC2APIProtocol.Common.Point2D worldPos_;
+    /**
+     * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+     */
+    public boolean hasWorldPos() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+     */
+    public SC2APIProtocol.Common.Point2D getWorldPos() {
+      return worldPos_ == null ? SC2APIProtocol.Common.Point2D.getDefaultInstance() : worldPos_;
+    }
+    /**
+     * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+     */
+    public SC2APIProtocol.Common.Point2DOrBuilder getWorldPosOrBuilder() {
+      return worldPos_ == null ? SC2APIProtocol.Common.Point2D.getDefaultInstance() : worldPos_;
+    }
+
+    public static final int DISTANCE_FIELD_NUMBER = 2;
+    private float distance_;
+    /**
+     * <pre>
+     * Distance between camera and terrain. Larger value zooms out camera.
+     * Defaults to standard camera distance if set to 0.
+     * </pre>
+     *
+     * <code>optional float distance = 2;</code>
+     */
+    public boolean hasDistance() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * Distance between camera and terrain. Larger value zooms out camera.
+     * Defaults to standard camera distance if set to 0.
+     * </pre>
+     *
+     * <code>optional float distance = 2;</code>
+     */
+    public float getDistance() {
+      return distance_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, getWorldPos());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, distance_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getWorldPos());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, distance_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ActionObserverCameraMove)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ActionObserverCameraMove other = (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) obj;
+
+      boolean result = true;
+      result = result && (hasWorldPos() == other.hasWorldPos());
+      if (hasWorldPos()) {
+        result = result && getWorldPos()
+            .equals(other.getWorldPos());
+      }
+      result = result && (hasDistance() == other.hasDistance());
+      if (hasDistance()) {
+        result = result && (
+            java.lang.Float.floatToIntBits(getDistance())
+            == java.lang.Float.floatToIntBits(
+                other.getDistance()));
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasWorldPos()) {
+        hash = (37 * hash) + WORLD_POS_FIELD_NUMBER;
+        hash = (53 * hash) + getWorldPos().hashCode();
+      }
+      if (hasDistance()) {
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getDistance());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ActionObserverCameraMove prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ActionObserverCameraMove}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ActionObserverCameraMove)
+        SC2APIProtocol.Sc2Api.ActionObserverCameraMoveOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraMove_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraMove_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ActionObserverCameraMove.class, SC2APIProtocol.Sc2Api.ActionObserverCameraMove.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ActionObserverCameraMove.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getWorldPosFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (worldPosBuilder_ == null) {
+          worldPos_ = null;
+        } else {
+          worldPosBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        distance_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraMove_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraMove getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraMove build() {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraMove result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraMove buildPartial() {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraMove result = new SC2APIProtocol.Sc2Api.ActionObserverCameraMove(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (worldPosBuilder_ == null) {
+          result.worldPos_ = worldPos_;
+        } else {
+          result.worldPos_ = worldPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.distance_ = distance_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ActionObserverCameraMove) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverCameraMove)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ActionObserverCameraMove other) {
+        if (other == SC2APIProtocol.Sc2Api.ActionObserverCameraMove.getDefaultInstance()) return this;
+        if (other.hasWorldPos()) {
+          mergeWorldPos(other.getWorldPos());
+        }
+        if (other.hasDistance()) {
+          setDistance(other.getDistance());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraMove parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ActionObserverCameraMove) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private SC2APIProtocol.Common.Point2D worldPos_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.Point2D, SC2APIProtocol.Common.Point2D.Builder, SC2APIProtocol.Common.Point2DOrBuilder> worldPosBuilder_;
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public boolean hasWorldPos() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public SC2APIProtocol.Common.Point2D getWorldPos() {
+        if (worldPosBuilder_ == null) {
+          return worldPos_ == null ? SC2APIProtocol.Common.Point2D.getDefaultInstance() : worldPos_;
+        } else {
+          return worldPosBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public Builder setWorldPos(SC2APIProtocol.Common.Point2D value) {
+        if (worldPosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          worldPos_ = value;
+          onChanged();
+        } else {
+          worldPosBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public Builder setWorldPos(
+          SC2APIProtocol.Common.Point2D.Builder builderForValue) {
+        if (worldPosBuilder_ == null) {
+          worldPos_ = builderForValue.build();
+          onChanged();
+        } else {
+          worldPosBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public Builder mergeWorldPos(SC2APIProtocol.Common.Point2D value) {
+        if (worldPosBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              worldPos_ != null &&
+              worldPos_ != SC2APIProtocol.Common.Point2D.getDefaultInstance()) {
+            worldPos_ =
+              SC2APIProtocol.Common.Point2D.newBuilder(worldPos_).mergeFrom(value).buildPartial();
+          } else {
+            worldPos_ = value;
+          }
+          onChanged();
+        } else {
+          worldPosBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public Builder clearWorldPos() {
+        if (worldPosBuilder_ == null) {
+          worldPos_ = null;
+          onChanged();
+        } else {
+          worldPosBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public SC2APIProtocol.Common.Point2D.Builder getWorldPosBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getWorldPosFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      public SC2APIProtocol.Common.Point2DOrBuilder getWorldPosOrBuilder() {
+        if (worldPosBuilder_ != null) {
+          return worldPosBuilder_.getMessageOrBuilder();
+        } else {
+          return worldPos_ == null ?
+              SC2APIProtocol.Common.Point2D.getDefaultInstance() : worldPos_;
+        }
+      }
+      /**
+       * <code>optional .SC2APIProtocol.Point2D world_pos = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SC2APIProtocol.Common.Point2D, SC2APIProtocol.Common.Point2D.Builder, SC2APIProtocol.Common.Point2DOrBuilder> 
+          getWorldPosFieldBuilder() {
+        if (worldPosBuilder_ == null) {
+          worldPosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SC2APIProtocol.Common.Point2D, SC2APIProtocol.Common.Point2D.Builder, SC2APIProtocol.Common.Point2DOrBuilder>(
+                  getWorldPos(),
+                  getParentForChildren(),
+                  isClean());
+          worldPos_ = null;
+        }
+        return worldPosBuilder_;
+      }
+
+      private float distance_ ;
+      /**
+       * <pre>
+       * Distance between camera and terrain. Larger value zooms out camera.
+       * Defaults to standard camera distance if set to 0.
+       * </pre>
+       *
+       * <code>optional float distance = 2;</code>
+       */
+      public boolean hasDistance() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * Distance between camera and terrain. Larger value zooms out camera.
+       * Defaults to standard camera distance if set to 0.
+       * </pre>
+       *
+       * <code>optional float distance = 2;</code>
+       */
+      public float getDistance() {
+        return distance_;
+      }
+      /**
+       * <pre>
+       * Distance between camera and terrain. Larger value zooms out camera.
+       * Defaults to standard camera distance if set to 0.
+       * </pre>
+       *
+       * <code>optional float distance = 2;</code>
+       */
+      public Builder setDistance(float value) {
+        bitField0_ |= 0x00000002;
+        distance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Distance between camera and terrain. Larger value zooms out camera.
+       * Defaults to standard camera distance if set to 0.
+       * </pre>
+       *
+       * <code>optional float distance = 2;</code>
+       */
+      public Builder clearDistance() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        distance_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ActionObserverCameraMove)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ActionObserverCameraMove)
+    private static final SC2APIProtocol.Sc2Api.ActionObserverCameraMove DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ActionObserverCameraMove();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraMove getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionObserverCameraMove>
+        PARSER = new com.google.protobuf.AbstractParser<ActionObserverCameraMove>() {
+      @java.lang.Override
+      public ActionObserverCameraMove parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ActionObserverCameraMove(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ActionObserverCameraMove> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActionObserverCameraMove> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraMove getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ActionObserverCameraFollowPlayerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ActionObserverCameraFollowPlayer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Not implemented. Value must be [1, 15]
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    boolean hasPlayerId();
+    /**
+     * <pre>
+     * Not implemented. Value must be [1, 15]
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    int getPlayerId();
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ActionObserverCameraFollowPlayer}
+   */
+  public  static final class ActionObserverCameraFollowPlayer extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ActionObserverCameraFollowPlayer)
+      ActionObserverCameraFollowPlayerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ActionObserverCameraFollowPlayer.newBuilder() to construct.
+    private ActionObserverCameraFollowPlayer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ActionObserverCameraFollowPlayer() {
+      playerId_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ActionObserverCameraFollowPlayer(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              playerId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.class, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PLAYER_ID_FIELD_NUMBER = 1;
+    private int playerId_;
+    /**
+     * <pre>
+     * Not implemented. Value must be [1, 15]
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    public boolean hasPlayerId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     * Not implemented. Value must be [1, 15]
+     * </pre>
+     *
+     * <code>optional uint32 player_id = 1;</code>
+     */
+    public int getPlayerId() {
+      return playerId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, playerId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, playerId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer other = (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) obj;
+
+      boolean result = true;
+      result = result && (hasPlayerId() == other.hasPlayerId());
+      if (hasPlayerId()) {
+        result = result && (getPlayerId()
+            == other.getPlayerId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPlayerId()) {
+        hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ActionObserverCameraFollowPlayer}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ActionObserverCameraFollowPlayer)
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.class, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        playerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer build() {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer buildPartial() {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer result = new SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.playerId_ = playerId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer other) {
+        if (other == SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer.getDefaultInstance()) return this;
+        if (other.hasPlayerId()) {
+          setPlayerId(other.getPlayerId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int playerId_ ;
+      /**
+       * <pre>
+       * Not implemented. Value must be [1, 15]
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public boolean hasPlayerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * Not implemented. Value must be [1, 15]
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public int getPlayerId() {
+        return playerId_;
+      }
+      /**
+       * <pre>
+       * Not implemented. Value must be [1, 15]
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public Builder setPlayerId(int value) {
+        bitField0_ |= 0x00000001;
+        playerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Not implemented. Value must be [1, 15]
+       * </pre>
+       *
+       * <code>optional uint32 player_id = 1;</code>
+       */
+      public Builder clearPlayerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerId_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ActionObserverCameraFollowPlayer)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ActionObserverCameraFollowPlayer)
+    private static final SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionObserverCameraFollowPlayer>
+        PARSER = new com.google.protobuf.AbstractParser<ActionObserverCameraFollowPlayer>() {
+      @java.lang.Override
+      public ActionObserverCameraFollowPlayer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ActionObserverCameraFollowPlayer(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ActionObserverCameraFollowPlayer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActionObserverCameraFollowPlayer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowPlayer getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ActionObserverCameraFollowUnitsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.ActionObserverCameraFollowUnits)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated uint64 unit_tags = 1;</code>
+     */
+    java.util.List<java.lang.Long> getUnitTagsList();
+    /**
+     * <code>repeated uint64 unit_tags = 1;</code>
+     */
+    int getUnitTagsCount();
+    /**
+     * <code>repeated uint64 unit_tags = 1;</code>
+     */
+    long getUnitTags(int index);
+  }
+  /**
+   * Protobuf type {@code SC2APIProtocol.ActionObserverCameraFollowUnits}
+   */
+  public  static final class ActionObserverCameraFollowUnits extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SC2APIProtocol.ActionObserverCameraFollowUnits)
+      ActionObserverCameraFollowUnitsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ActionObserverCameraFollowUnits.newBuilder() to construct.
+    private ActionObserverCameraFollowUnits(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ActionObserverCameraFollowUnits() {
+      unitTags_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ActionObserverCameraFollowUnits(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                unitTags_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              unitTags_.add(input.readUInt64());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                unitTags_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                unitTags_.add(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          unitTags_ = java.util.Collections.unmodifiableList(unitTags_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.class, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder.class);
+    }
+
+    public static final int UNIT_TAGS_FIELD_NUMBER = 1;
+    private java.util.List<java.lang.Long> unitTags_;
+    /**
+     * <code>repeated uint64 unit_tags = 1;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getUnitTagsList() {
+      return unitTags_;
+    }
+    /**
+     * <code>repeated uint64 unit_tags = 1;</code>
+     */
+    public int getUnitTagsCount() {
+      return unitTags_.size();
+    }
+    /**
+     * <code>repeated uint64 unit_tags = 1;</code>
+     */
+    public long getUnitTags(int index) {
+      return unitTags_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < unitTags_.size(); i++) {
+        output.writeUInt64(1, unitTags_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < unitTags_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt64SizeNoTag(unitTags_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getUnitTagsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits)) {
+        return super.equals(obj);
+      }
+      SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits other = (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) obj;
+
+      boolean result = true;
+      result = result && getUnitTagsList()
+          .equals(other.getUnitTagsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getUnitTagsCount() > 0) {
+        hash = (37 * hash) + UNIT_TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getUnitTagsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SC2APIProtocol.ActionObserverCameraFollowUnits}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.ActionObserverCameraFollowUnits)
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnitsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.class, SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.Builder.class);
+      }
+
+      // Construct using SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        unitTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_descriptor;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits getDefaultInstanceForType() {
+        return SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits build() {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits buildPartial() {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits result = new SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          unitTags_ = java.util.Collections.unmodifiableList(unitTags_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.unitTags_ = unitTags_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) {
+          return mergeFrom((SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits other) {
+        if (other == SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits.getDefaultInstance()) return this;
+        if (!other.unitTags_.isEmpty()) {
+          if (unitTags_.isEmpty()) {
+            unitTags_ = other.unitTags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUnitTagsIsMutable();
+            unitTags_.addAll(other.unitTags_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<java.lang.Long> unitTags_ = java.util.Collections.emptyList();
+      private void ensureUnitTagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          unitTags_ = new java.util.ArrayList<java.lang.Long>(unitTags_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getUnitTagsList() {
+        return java.util.Collections.unmodifiableList(unitTags_);
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public int getUnitTagsCount() {
+        return unitTags_.size();
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public long getUnitTags(int index) {
+        return unitTags_.get(index);
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public Builder setUnitTags(
+          int index, long value) {
+        ensureUnitTagsIsMutable();
+        unitTags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public Builder addUnitTags(long value) {
+        ensureUnitTagsIsMutable();
+        unitTags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public Builder addAllUnitTags(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureUnitTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, unitTags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 unit_tags = 1;</code>
+       */
+      public Builder clearUnitTags() {
+        unitTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.ActionObserverCameraFollowUnits)
+    }
+
+    // @@protoc_insertion_point(class_scope:SC2APIProtocol.ActionObserverCameraFollowUnits)
+    private static final SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits();
+    }
+
+    public static SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ActionObserverCameraFollowUnits>
+        PARSER = new com.google.protobuf.AbstractParser<ActionObserverCameraFollowUnits>() {
+      @java.lang.Override
+      public ActionObserverCameraFollowUnits parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ActionObserverCameraFollowUnits(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ActionObserverCameraFollowUnits> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActionObserverCameraFollowUnits> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public SC2APIProtocol.Sc2Api.ActionObserverCameraFollowUnits getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -56594,6 +66999,9 @@ public final class Sc2Api {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -56605,13 +67013,6 @@ public final class Sc2Api {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               playerId_ = input.readUInt32();
@@ -56619,12 +67020,20 @@ public final class Sc2Api {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Sc2Api.Result value = SC2APIProtocol.Sc2Api.Result.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
               } else {
                 bitField0_ |= 0x00000002;
                 result_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -56645,6 +67054,7 @@ public final class Sc2Api {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerResult_fieldAccessorTable
@@ -56680,11 +67090,13 @@ public final class Sc2Api {
      * <code>optional .SC2APIProtocol.Result result = 2;</code>
      */
     public SC2APIProtocol.Sc2Api.Result getResult() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Sc2Api.Result result = SC2APIProtocol.Sc2Api.Result.valueOf(result_);
       return result == null ? SC2APIProtocol.Sc2Api.Result.Victory : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -56694,6 +67106,7 @@ public final class Sc2Api {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -56705,6 +67118,7 @@ public final class Sc2Api {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -56837,6 +67251,7 @@ public final class Sc2Api {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -56844,6 +67259,7 @@ public final class Sc2Api {
     public static Builder newBuilder(SC2APIProtocol.Sc2Api.PlayerResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -56867,6 +67283,7 @@ public final class Sc2Api {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerResult_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerResult_fieldAccessorTable
@@ -56889,6 +67306,7 @@ public final class Sc2Api {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         playerId_ = 0;
@@ -56898,15 +67316,18 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Sc2Api.internal_static_SC2APIProtocol_PlayerResult_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerResult getDefaultInstanceForType() {
         return SC2APIProtocol.Sc2Api.PlayerResult.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerResult build() {
         SC2APIProtocol.Sc2Api.PlayerResult result = buildPartial();
         if (!result.isInitialized()) {
@@ -56915,6 +67336,7 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Sc2Api.PlayerResult buildPartial() {
         SC2APIProtocol.Sc2Api.PlayerResult result = new SC2APIProtocol.Sc2Api.PlayerResult(this);
         int from_bitField0_ = bitField0_;
@@ -56932,32 +67354,39 @@ public final class Sc2Api {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Sc2Api.PlayerResult) {
           return mergeFrom((SC2APIProtocol.Sc2Api.PlayerResult)other);
@@ -56980,10 +67409,12 @@ public final class Sc2Api {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -57046,6 +67477,7 @@ public final class Sc2Api {
        * <code>optional .SC2APIProtocol.Result result = 2;</code>
        */
       public SC2APIProtocol.Sc2Api.Result getResult() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Sc2Api.Result result = SC2APIProtocol.Sc2Api.Result.valueOf(result_);
         return result == null ? SC2APIProtocol.Sc2Api.Result.Victory : result;
       }
@@ -57070,11 +67502,13 @@ public final class Sc2Api {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -57096,11 +67530,12 @@ public final class Sc2Api {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PlayerResult>
         PARSER = new com.google.protobuf.AbstractParser<PlayerResult>() {
+      @java.lang.Override
       public PlayerResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerResult(input, extensionRegistry);
+        return new PlayerResult(input, extensionRegistry);
       }
     };
 
@@ -57113,6 +67548,7 @@ public final class Sc2Api {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Sc2Api.PlayerResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -57179,6 +67615,16 @@ public final class Sc2Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SC2APIProtocol_ResponseStartReplay_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_RequestMapCommand_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_RequestMapCommand_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ResponseMapCommand_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ResponseMapCommand_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SC2APIProtocol_RequestLeaveGame_descriptor;
   private static final 
@@ -57254,6 +67700,16 @@ public final class Sc2Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SC2APIProtocol_ResponseAction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_RequestObserverAction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_RequestObserverAction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ResponseObserverAction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ResponseObserverAction_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SC2APIProtocol_RequestStep_descriptor;
   private static final 
@@ -57385,6 +67841,31 @@ public final class Sc2Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SC2APIProtocol_ActionError_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ObserverAction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ObserverAction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ActionObserverCameraMove_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ActionObserverCameraMove_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SC2APIProtocol_PlayerResult_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -57405,9 +67886,9 @@ public final class Sc2Api {
       "r.proto\032\034s2clientprotocol/query.proto\032\032s" +
       "2clientprotocol/raw.proto\032\034s2clientproto" +
       "col/score.proto\032\036s2clientprotocol/spatia" +
-      "l.proto\032\031s2clientprotocol/ui.proto\"\300\010\n\007R" +
+      "l.proto\032\031s2clientprotocol/ui.proto\"\303\t\n\007R" +
       "equest\0228\n\013create_game\030\001 \001(\0132!.SC2APIProt" +
-      "ocol.RequestCreateGameH\000\0224\n\tjoin_game\030\002 ",
+      "ocol.RequestCreateGameH\000\0224\n\tjoin_game\030\002 " +
       "\001(\0132\037.SC2APIProtocol.RequestJoinGameH\000\022:" +
       "\n\014restart_game\030\003 \001(\0132\".SC2APIProtocol.Re" +
       "questRestartGameH\000\022:\n\014start_replay\030\004 \001(\013" +
@@ -57417,219 +67898,256 @@ public final class Sc2Api {
       "APIProtocol.RequestQuickSaveH\000\0226\n\nquick_" +
       "load\030\007 \001(\0132 .SC2APIProtocol.RequestQuick" +
       "LoadH\000\022+\n\004quit\030\010 \001(\0132\033.SC2APIProtocol.Re" +
-      "questQuitH\000\0224\n\tgame_info\030\t \001(\0132\037.SC2APIP",
+      "questQuitH\000\0224\n\tgame_info\030\t \001(\0132\037.SC2APIP" +
       "rotocol.RequestGameInfoH\000\0229\n\013observation" +
       "\030\n \001(\0132\".SC2APIProtocol.RequestObservati" +
       "onH\000\022/\n\006action\030\013 \001(\0132\035.SC2APIProtocol.Re" +
-      "questActionH\000\022+\n\004step\030\014 \001(\0132\033.SC2APIProt" +
-      "ocol.RequestStepH\000\022+\n\004data\030\r \001(\0132\033.SC2AP" +
-      "IProtocol.RequestDataH\000\022-\n\005query\030\016 \001(\0132\034" +
-      ".SC2APIProtocol.RequestQueryH\000\0228\n\013save_r" +
-      "eplay\030\017 \001(\0132!.SC2APIProtocol.RequestSave" +
-      "ReplayH\000\0228\n\013replay_info\030\020 \001(\0132!.SC2APIPr" +
-      "otocol.RequestReplayInfoH\000\022>\n\016available_",
-      "maps\030\021 \001(\0132$.SC2APIProtocol.RequestAvail" +
-      "ableMapsH\000\0222\n\010save_map\030\022 \001(\0132\036.SC2APIPro" +
-      "tocol.RequestSaveMapH\000\022+\n\004ping\030\023 \001(\0132\033.S" +
-      "C2APIProtocol.RequestPingH\000\022-\n\005debug\030\024 \001" +
-      "(\0132\034.SC2APIProtocol.RequestDebugH\000B\t\n\007re" +
-      "quest\"\215\t\n\010Response\0229\n\013create_game\030\001 \001(\0132" +
-      "\".SC2APIProtocol.ResponseCreateGameH\000\0225\n" +
-      "\tjoin_game\030\002 \001(\0132 .SC2APIProtocol.Respon" +
-      "seJoinGameH\000\022;\n\014restart_game\030\003 \001(\0132#.SC2" +
-      "APIProtocol.ResponseRestartGameH\000\022;\n\014sta",
-      "rt_replay\030\004 \001(\0132#.SC2APIProtocol.Respons" +
-      "eStartReplayH\000\0227\n\nleave_game\030\005 \001(\0132!.SC2" +
-      "APIProtocol.ResponseLeaveGameH\000\0227\n\nquick" +
-      "_save\030\006 \001(\0132!.SC2APIProtocol.ResponseQui" +
-      "ckSaveH\000\0227\n\nquick_load\030\007 \001(\0132!.SC2APIPro" +
-      "tocol.ResponseQuickLoadH\000\022,\n\004quit\030\010 \001(\0132" +
-      "\034.SC2APIProtocol.ResponseQuitH\000\0225\n\tgame_" +
-      "info\030\t \001(\0132 .SC2APIProtocol.ResponseGame" +
-      "InfoH\000\022:\n\013observation\030\n \001(\0132#.SC2APIProt" +
-      "ocol.ResponseObservationH\000\0220\n\006action\030\013 \001",
-      "(\0132\036.SC2APIProtocol.ResponseActionH\000\022,\n\004" +
-      "step\030\014 \001(\0132\034.SC2APIProtocol.ResponseStep" +
-      "H\000\022,\n\004data\030\r \001(\0132\034.SC2APIProtocol.Respon" +
-      "seDataH\000\022.\n\005query\030\016 \001(\0132\035.SC2APIProtocol" +
-      ".ResponseQueryH\000\0229\n\013save_replay\030\017 \001(\0132\"." +
-      "SC2APIProtocol.ResponseSaveReplayH\000\0229\n\013r" +
-      "eplay_info\030\020 \001(\0132\".SC2APIProtocol.Respon" +
-      "seReplayInfoH\000\022?\n\016available_maps\030\021 \001(\0132%" +
-      ".SC2APIProtocol.ResponseAvailableMapsH\000\022" +
-      "3\n\010save_map\030\022 \001(\0132\037.SC2APIProtocol.Respo",
-      "nseSaveMapH\000\022,\n\004ping\030\023 \001(\0132\034.SC2APIProto" +
-      "col.ResponsePingH\000\022.\n\005debug\030\024 \001(\0132\035.SC2A" +
-      "PIProtocol.ResponseDebugH\000\022\r\n\005error\030b \003(" +
-      "\t\022&\n\006status\030c \001(\0162\026.SC2APIProtocol.Statu" +
-      "sB\n\n\010response\"\326\001\n\021RequestCreateGame\022-\n\tl" +
-      "ocal_map\030\001 \001(\0132\030.SC2APIProtocol.LocalMap" +
-      "H\000\022\034\n\022battlenet_map_name\030\002 \001(\tH\000\0221\n\014play" +
-      "er_setup\030\003 \003(\0132\033.SC2APIProtocol.PlayerSe" +
-      "tup\022\023\n\013disable_fog\030\004 \001(\010\022\023\n\013random_seed\030" +
-      "\005 \001(\r\022\020\n\010realtime\030\006 \001(\010B\005\n\003Map\".\n\010LocalM",
-      "ap\022\020\n\010map_path\030\001 \001(\t\022\020\n\010map_data\030\007 \001(\014\"\234" +
-      "\002\n\022ResponseCreateGame\0227\n\005error\030\001 \001(\0162(.S" +
-      "C2APIProtocol.ResponseCreateGame.Error\022\025" +
-      "\n\rerror_details\030\002 \001(\t\"\265\001\n\005Error\022\016\n\nMissi" +
-      "ngMap\020\001\022\022\n\016InvalidMapPath\020\002\022\022\n\016InvalidMa" +
-      "pData\020\003\022\022\n\016InvalidMapName\020\004\022\024\n\020InvalidMa" +
-      "pHandle\020\005\022\026\n\022MissingPlayerSetup\020\006\022\026\n\022Inv" +
-      "alidPlayerSetup\020\007\022\032\n\026MultiplayerUnsuppor" +
-      "ted\020\010\"\214\002\n\017RequestJoinGame\022$\n\004race\030\001 \001(\0162" +
-      "\024.SC2APIProtocol.RaceH\000\022\034\n\022observed_play",
-      "er_id\030\002 \001(\rH\000\0221\n\007options\030\003 \001(\0132 .SC2APIP" +
-      "rotocol.InterfaceOptions\022-\n\014server_ports" +
-      "\030\004 \001(\0132\027.SC2APIProtocol.PortSet\022-\n\014clien" +
-      "t_ports\030\005 \003(\0132\027.SC2APIProtocol.PortSet\022\023" +
-      "\n\013shared_port\030\006 \001(\005B\017\n\rparticipation\"/\n\007" +
-      "PortSet\022\021\n\tgame_port\030\001 \001(\005\022\021\n\tbase_port\030" +
-      "\002 \001(\005\"\202\003\n\020ResponseJoinGame\022\021\n\tplayer_id\030" +
-      "\001 \001(\r\0225\n\005error\030\002 \001(\0162&.SC2APIProtocol.Re" +
-      "sponseJoinGame.Error\022\025\n\rerror_details\030\003 " +
-      "\001(\t\"\214\002\n\005Error\022\030\n\024MissingParticipation\020\001\022",
-      "\033\n\027InvalidObservedPlayerId\020\002\022\022\n\016MissingO" +
-      "ptions\020\003\022\020\n\014MissingPorts\020\004\022\014\n\010GameFull\020\005" +
-      "\022\017\n\013LaunchError\020\006\022\026\n\022FeatureUnsupported\020" +
-      "\007\022\022\n\016NoSpaceForUser\020\010\022\023\n\017MapDoesNotExist" +
-      "\020\t\022\021\n\rCannotOpenMap\020\n\022\021\n\rChecksumError\020\013" +
-      "\022\020\n\014NetworkError\020\014\022\016\n\nOtherError\020\r\"\024\n\022Re" +
-      "questRestartGame\"\200\001\n\023ResponseRestartGame" +
-      "\0228\n\005error\030\001 \001(\0162).SC2APIProtocol.Respons" +
-      "eRestartGame.Error\022\025\n\rerror_details\030\002 \001(" +
-      "\t\"\030\n\005Error\022\017\n\013LaunchError\020\001\"\302\001\n\022RequestS",
-      "tartReplay\022\025\n\013replay_path\030\001 \001(\tH\000\022\025\n\013rep" +
-      "lay_data\030\005 \001(\014H\000\022\020\n\010map_data\030\006 \001(\014\022\032\n\022ob" +
-      "served_player_id\030\002 \001(\005\0221\n\007options\030\003 \001(\0132" +
-      " .SC2APIProtocol.InterfaceOptions\022\023\n\013dis" +
-      "able_fog\030\004 \001(\010B\010\n\006replay\"\207\002\n\023ResponseSta" +
-      "rtReplay\0228\n\005error\030\001 \001(\0162).SC2APIProtocol" +
-      ".ResponseStartReplay.Error\022\025\n\rerror_deta" +
-      "ils\030\002 \001(\t\"\236\001\n\005Error\022\021\n\rMissingReplay\020\001\022\025" +
-      "\n\021InvalidReplayPath\020\002\022\025\n\021InvalidReplayDa" +
-      "ta\020\003\022\022\n\016InvalidMapData\020\004\022\033\n\027InvalidObser",
-      "vedPlayerId\020\005\022\022\n\016MissingOptions\020\006\022\017\n\013Lau" +
-      "nchError\020\007\"\022\n\020RequestLeaveGame\"\023\n\021Respon" +
-      "seLeaveGame\"\022\n\020RequestQuickSave\"\023\n\021Respo" +
-      "nseQuickSave\"\022\n\020RequestQuickLoad\"\023\n\021Resp" +
-      "onseQuickLoad\"\r\n\013RequestQuit\"\016\n\014Response" +
-      "Quit\"\021\n\017RequestGameInfo\"\340\001\n\020ResponseGame" +
-      "Info\022\020\n\010map_name\030\001 \001(\t\022\021\n\tmod_names\030\006 \003(" +
-      "\t\022\026\n\016local_map_path\030\002 \001(\t\022/\n\013player_info" +
-      "\030\003 \003(\0132\032.SC2APIProtocol.PlayerInfo\022+\n\tst" +
-      "art_raw\030\004 \001(\0132\030.SC2APIProtocol.StartRaw\022",
-      "1\n\007options\030\005 \001(\0132 .SC2APIProtocol.Interf" +
-      "aceOptions\")\n\022RequestObservation\022\023\n\013disa" +
-      "ble_fog\030\001 \001(\010\"\205\002\n\023ResponseObservation\022\'\n" +
-      "\007actions\030\001 \003(\0132\026.SC2APIProtocol.Action\0222" +
-      "\n\raction_errors\030\002 \003(\0132\033.SC2APIProtocol.A" +
-      "ctionError\0220\n\013observation\030\003 \001(\0132\033.SC2API" +
-      "Protocol.Observation\0223\n\rplayer_result\030\004 " +
-      "\003(\0132\034.SC2APIProtocol.PlayerResult\022*\n\004cha" +
-      "t\030\005 \003(\0132\034.SC2APIProtocol.ChatReceived\"2\n" +
-      "\014ChatReceived\022\021\n\tplayer_id\030\001 \001(\005\022\017\n\007mess",
-      "age\030\002 \001(\t\"8\n\rRequestAction\022\'\n\007actions\030\001 " +
-      "\003(\0132\026.SC2APIProtocol.Action\">\n\016ResponseA" +
-      "ction\022,\n\006result\030\001 \003(\0162\034.SC2APIProtocol.A" +
-      "ctionResult\"\034\n\013RequestStep\022\r\n\005count\030\001 \001(" +
-      "\r\"\016\n\014ResponseStep\"o\n\013RequestData\022\022\n\nabil" +
-      "ity_id\030\001 \001(\010\022\024\n\014unit_type_id\030\002 \001(\010\022\022\n\nup" +
-      "grade_id\030\003 \001(\010\022\017\n\007buff_id\030\004 \001(\010\022\021\n\teffec" +
-      "t_id\030\005 \001(\010\"\360\001\n\014ResponseData\022.\n\tabilities" +
-      "\030\001 \003(\0132\033.SC2APIProtocol.AbilityData\022+\n\005u" +
-      "nits\030\002 \003(\0132\034.SC2APIProtocol.UnitTypeData",
-      "\022-\n\010upgrades\030\003 \003(\0132\033.SC2APIProtocol.Upgr" +
-      "adeData\022\'\n\005buffs\030\004 \003(\0132\030.SC2APIProtocol." +
-      "BuffData\022+\n\007effects\030\005 \003(\0132\032.SC2APIProtoc" +
-      "ol.EffectData\"\023\n\021RequestSaveReplay\"\"\n\022Re" +
-      "sponseSaveReplay\022\014\n\004data\030\001 \001(\014\"b\n\021Reques" +
-      "tReplayInfo\022\025\n\013replay_path\030\001 \001(\tH\000\022\025\n\013re" +
-      "play_data\030\002 \001(\014H\000\022\025\n\rdownload_data\030\003 \001(\010" +
-      "B\010\n\006replay\"\237\001\n\017PlayerInfoExtra\022/\n\013player" +
-      "_info\030\001 \001(\0132\032.SC2APIProtocol.PlayerInfo\022" +
-      "3\n\rplayer_result\030\002 \001(\0132\034.SC2APIProtocol.",
-      "PlayerResult\022\022\n\nplayer_mmr\030\003 \001(\005\022\022\n\nplay" +
-      "er_apm\030\004 \001(\005\"\303\003\n\022ResponseReplayInfo\022\020\n\010m" +
-      "ap_name\030\001 \001(\t\022\026\n\016local_map_path\030\002 \001(\t\0224\n" +
-      "\013player_info\030\003 \003(\0132\037.SC2APIProtocol.Play" +
-      "erInfoExtra\022\033\n\023game_duration_loops\030\004 \001(\r" +
-      "\022\035\n\025game_duration_seconds\030\005 \001(\002\022\024\n\014game_" +
-      "version\030\006 \001(\t\022\024\n\014data_version\030\013 \001(\t\022\022\n\nd" +
-      "ata_build\030\007 \001(\r\022\022\n\nbase_build\030\010 \001(\r\0227\n\005e" +
-      "rror\030\t \001(\0162(.SC2APIProtocol.ResponseRepl" +
-      "ayInfo.Error\022\025\n\rerror_details\030\n \001(\t\"m\n\005E",
-      "rror\022\021\n\rMissingReplay\020\001\022\025\n\021InvalidReplay" +
-      "Path\020\002\022\025\n\021InvalidReplayData\020\003\022\020\n\014Parsing" +
-      "Error\020\004\022\021\n\rDownloadError\020\005\"\026\n\024RequestAva" +
-      "ilableMaps\"M\n\025ResponseAvailableMaps\022\027\n\017l" +
-      "ocal_map_paths\030\001 \003(\t\022\033\n\023battlenet_map_na" +
-      "mes\030\002 \003(\t\"4\n\016RequestSaveMap\022\020\n\010map_path\030" +
-      "\001 \001(\t\022\020\n\010map_data\030\002 \001(\014\"d\n\017ResponseSaveM" +
-      "ap\0224\n\005error\030\001 \001(\0162%.SC2APIProtocol.Respo" +
-      "nseSaveMap.Error\"\033\n\005Error\022\022\n\016InvalidMapD" +
-      "ata\020\001\"\r\n\013RequestPing\"b\n\014ResponsePing\022\024\n\014",
-      "game_version\030\001 \001(\t\022\024\n\014data_version\030\002 \001(\t" +
-      "\022\022\n\ndata_build\030\003 \001(\r\022\022\n\nbase_build\030\004 \001(\r" +
-      "\";\n\014RequestDebug\022+\n\005debug\030\001 \003(\0132\034.SC2API" +
-      "Protocol.DebugCommand\"\017\n\rResponseDebug\"\213" +
-      "\001\n\013PlayerSetup\022(\n\004type\030\001 \001(\0162\032.SC2APIPro" +
-      "tocol.PlayerType\022\"\n\004race\030\002 \001(\0162\024.SC2APIP" +
-      "rotocol.Race\022.\n\ndifficulty\030\003 \001(\0162\032.SC2AP" +
-      "IProtocol.Difficulty\"\205\001\n\022SpatialCameraSe" +
-      "tup\022\r\n\005width\030\001 \001(\002\022+\n\nresolution\030\002 \001(\0132\027" +
-      ".SC2APIProtocol.Size2DI\0223\n\022minimap_resol",
-      "ution\030\003 \001(\0132\027.SC2APIProtocol.Size2DI\"\235\001\n" +
-      "\020InterfaceOptions\022\013\n\003raw\030\001 \001(\010\022\r\n\005score\030" +
-      "\002 \001(\010\0229\n\rfeature_layer\030\003 \001(\0132\".SC2APIPro" +
-      "tocol.SpatialCameraSetup\0222\n\006render\030\004 \001(\013" +
-      "2\".SC2APIProtocol.SpatialCameraSetup\"\322\001\n" +
-      "\nPlayerInfo\022\021\n\tplayer_id\030\001 \001(\r\022(\n\004type\030\002" +
-      " \001(\0162\032.SC2APIProtocol.PlayerType\022,\n\016race" +
-      "_requested\030\003 \001(\0162\024.SC2APIProtocol.Race\022)" +
-      "\n\013race_actual\030\004 \001(\0162\024.SC2APIProtocol.Rac" +
-      "e\022.\n\ndifficulty\030\005 \001(\0162\032.SC2APIProtocol.D",
-      "ifficulty\"\357\001\n\014PlayerCommon\022\021\n\tplayer_id\030" +
-      "\001 \001(\r\022\020\n\010minerals\030\002 \001(\r\022\017\n\007vespene\030\003 \001(\r" +
-      "\022\020\n\010food_cap\030\004 \001(\r\022\021\n\tfood_used\030\005 \001(\r\022\021\n" +
-      "\tfood_army\030\006 \001(\r\022\024\n\014food_workers\030\007 \001(\r\022\031" +
-      "\n\021idle_worker_count\030\010 \001(\r\022\022\n\narmy_count\030" +
-      "\t \001(\r\022\027\n\017warp_gate_count\030\n \001(\r\022\023\n\013larva_" +
-      "count\030\013 \001(\r\"\266\003\n\013Observation\022\021\n\tgame_loop" +
-      "\030\t \001(\r\0223\n\rplayer_common\030\001 \001(\0132\034.SC2APIPr" +
-      "otocol.PlayerCommon\022%\n\006alerts\030\n \003(\0162\025.SC" +
-      "2APIProtocol.Alert\0223\n\tabilities\030\003 \003(\0132 .",
-      "SC2APIProtocol.AvailableAbility\022$\n\005score" +
-      "\030\004 \001(\0132\025.SC2APIProtocol.Score\0220\n\010raw_dat" +
-      "a\030\005 \001(\0132\036.SC2APIProtocol.ObservationRaw\022" +
-      "C\n\022feature_layer_data\030\006 \001(\0132\'.SC2APIProt" +
-      "ocol.ObservationFeatureLayer\0226\n\013render_d" +
-      "ata\030\007 \001(\0132!.SC2APIProtocol.ObservationRe" +
-      "nder\022.\n\007ui_data\030\010 \001(\0132\035.SC2APIProtocol.O" +
-      "bservationUI\"\201\002\n\006Action\022-\n\naction_raw\030\001 " +
-      "\001(\0132\031.SC2APIProtocol.ActionRaw\022;\n\024action" +
-      "_feature_layer\030\002 \001(\0132\035.SC2APIProtocol.Ac",
-      "tionSpatial\0224\n\raction_render\030\003 \001(\0132\035.SC2" +
-      "APIProtocol.ActionSpatial\022+\n\taction_ui\030\004" +
-      " \001(\0132\030.SC2APIProtocol.ActionUI\022(\n\004chat\030\005" +
-      " \003(\0132\032.SC2APIProtocol.ActionChat\"v\n\nActi" +
-      "onChat\0223\n\007channel\030\001 \001(\0162\".SC2APIProtocol" +
-      ".ActionChat.Channel\022\017\n\007message\030\002 \001(\t\"\"\n\007" +
-      "Channel\022\r\n\tBroadcast\020\001\022\010\n\004Team\020\002\"a\n\013Acti" +
-      "onError\022\020\n\010unit_tag\030\001 \001(\004\022\022\n\nability_id\030" +
-      "\002 \001(\004\022,\n\006result\030\003 \001(\0162\034.SC2APIProtocol.A" +
-      "ctionResult\"I\n\014PlayerResult\022\021\n\tplayer_id",
-      "\030\001 \001(\r\022&\n\006result\030\002 \001(\0162\026.SC2APIProtocol." +
-      "Result*c\n\006Status\022\014\n\010launched\020\001\022\r\n\tinit_g" +
-      "ame\020\002\022\013\n\007in_game\020\003\022\r\n\tin_replay\020\004\022\t\n\005end" +
-      "ed\020\005\022\010\n\004quit\020\006\022\013\n\007unknown\020c*\226\001\n\nDifficul" +
-      "ty\022\014\n\010VeryEasy\020\001\022\010\n\004Easy\020\002\022\n\n\006Medium\020\003\022\016" +
-      "\n\nMediumHard\020\004\022\010\n\004Hard\020\005\022\n\n\006Harder\020\006\022\014\n\010" +
-      "VeryHard\020\007\022\017\n\013CheatVision\020\010\022\016\n\nCheatMone" +
-      "y\020\t\022\017\n\013CheatInsane\020\n*9\n\nPlayerType\022\017\n\013Pa" +
-      "rticipant\020\001\022\014\n\010Computer\020\002\022\014\n\010Observer\020\003*" +
-      "9\n\005Alert\022\031\n\025NuclearLaunchDetected\020\001\022\025\n\021N",
-      "ydusWormDetected\020\002*9\n\006Result\022\013\n\007Victory\020" +
-      "\001\022\n\n\006Defeat\020\002\022\007\n\003Tie\020\003\022\r\n\tUndecided\020\004"
+      "questActionH\000\022;\n\nobs_action\030\025 \001(\0132%.SC2A" +
+      "PIProtocol.RequestObserverActionH\000\022+\n\004st" +
+      "ep\030\014 \001(\0132\033.SC2APIProtocol.RequestStepH\000\022" +
+      "+\n\004data\030\r \001(\0132\033.SC2APIProtocol.RequestDa" +
+      "taH\000\022-\n\005query\030\016 \001(\0132\034.SC2APIProtocol.Req" +
+      "uestQueryH\000\0228\n\013save_replay\030\017 \001(\0132!.SC2AP" +
+      "IProtocol.RequestSaveReplayH\000\0228\n\013map_com" +
+      "mand\030\026 \001(\0132!.SC2APIProtocol.RequestMapCo" +
+      "mmandH\000\0228\n\013replay_info\030\020 \001(\0132!.SC2APIPro" +
+      "tocol.RequestReplayInfoH\000\022>\n\016available_m" +
+      "aps\030\021 \001(\0132$.SC2APIProtocol.RequestAvaila" +
+      "bleMapsH\000\0222\n\010save_map\030\022 \001(\0132\036.SC2APIProt" +
+      "ocol.RequestSaveMapH\000\022+\n\004ping\030\023 \001(\0132\033.SC" +
+      "2APIProtocol.RequestPingH\000\022-\n\005debug\030\024 \001(" +
+      "\0132\034.SC2APIProtocol.RequestDebugH\000\022\n\n\002id\030" +
+      "a \001(\rB\t\n\007request\"\222\n\n\010Response\0229\n\013create_" +
+      "game\030\001 \001(\0132\".SC2APIProtocol.ResponseCrea" +
+      "teGameH\000\0225\n\tjoin_game\030\002 \001(\0132 .SC2APIProt" +
+      "ocol.ResponseJoinGameH\000\022;\n\014restart_game\030" +
+      "\003 \001(\0132#.SC2APIProtocol.ResponseRestartGa" +
+      "meH\000\022;\n\014start_replay\030\004 \001(\0132#.SC2APIProto" +
+      "col.ResponseStartReplayH\000\0227\n\nleave_game\030" +
+      "\005 \001(\0132!.SC2APIProtocol.ResponseLeaveGame" +
+      "H\000\0227\n\nquick_save\030\006 \001(\0132!.SC2APIProtocol." +
+      "ResponseQuickSaveH\000\0227\n\nquick_load\030\007 \001(\0132" +
+      "!.SC2APIProtocol.ResponseQuickLoadH\000\022,\n\004" +
+      "quit\030\010 \001(\0132\034.SC2APIProtocol.ResponseQuit" +
+      "H\000\0225\n\tgame_info\030\t \001(\0132 .SC2APIProtocol.R" +
+      "esponseGameInfoH\000\022:\n\013observation\030\n \001(\0132#" +
+      ".SC2APIProtocol.ResponseObservationH\000\0220\n" +
+      "\006action\030\013 \001(\0132\036.SC2APIProtocol.ResponseA" +
+      "ctionH\000\022<\n\nobs_action\030\025 \001(\0132&.SC2APIProt" +
+      "ocol.ResponseObserverActionH\000\022,\n\004step\030\014 " +
+      "\001(\0132\034.SC2APIProtocol.ResponseStepH\000\022,\n\004d" +
+      "ata\030\r \001(\0132\034.SC2APIProtocol.ResponseDataH" +
+      "\000\022.\n\005query\030\016 \001(\0132\035.SC2APIProtocol.Respon" +
+      "seQueryH\000\0229\n\013save_replay\030\017 \001(\0132\".SC2APIP" +
+      "rotocol.ResponseSaveReplayH\000\0229\n\013replay_i" +
+      "nfo\030\020 \001(\0132\".SC2APIProtocol.ResponseRepla" +
+      "yInfoH\000\022?\n\016available_maps\030\021 \001(\0132%.SC2API" +
+      "Protocol.ResponseAvailableMapsH\000\0223\n\010save" +
+      "_map\030\022 \001(\0132\037.SC2APIProtocol.ResponseSave" +
+      "MapH\000\0229\n\013map_command\030\026 \001(\0132\".SC2APIProto" +
+      "col.ResponseMapCommandH\000\022,\n\004ping\030\023 \001(\0132\034" +
+      ".SC2APIProtocol.ResponsePingH\000\022.\n\005debug\030" +
+      "\024 \001(\0132\035.SC2APIProtocol.ResponseDebugH\000\022\n" +
+      "\n\002id\030a \001(\r\022\r\n\005error\030b \003(\t\022&\n\006status\030c \001(" +
+      "\0162\026.SC2APIProtocol.StatusB\n\n\010response\"\326\001" +
+      "\n\021RequestCreateGame\022-\n\tlocal_map\030\001 \001(\0132\030" +
+      ".SC2APIProtocol.LocalMapH\000\022\034\n\022battlenet_" +
+      "map_name\030\002 \001(\tH\000\0221\n\014player_setup\030\003 \003(\0132\033" +
+      ".SC2APIProtocol.PlayerSetup\022\023\n\013disable_f" +
+      "og\030\004 \001(\010\022\023\n\013random_seed\030\005 \001(\r\022\020\n\010realtim" +
+      "e\030\006 \001(\010B\005\n\003Map\".\n\010LocalMap\022\020\n\010map_path\030\001" +
+      " \001(\t\022\020\n\010map_data\030\007 \001(\014\"\234\002\n\022ResponseCreat" +
+      "eGame\0227\n\005error\030\001 \001(\0162(.SC2APIProtocol.Re" +
+      "sponseCreateGame.Error\022\025\n\rerror_details\030" +
+      "\002 \001(\t\"\265\001\n\005Error\022\016\n\nMissingMap\020\001\022\022\n\016Inval" +
+      "idMapPath\020\002\022\022\n\016InvalidMapData\020\003\022\022\n\016Inval" +
+      "idMapName\020\004\022\024\n\020InvalidMapHandle\020\005\022\026\n\022Mis" +
+      "singPlayerSetup\020\006\022\026\n\022InvalidPlayerSetup\020" +
+      "\007\022\032\n\026MultiplayerUnsupported\020\010\"\241\002\n\017Reques" +
+      "tJoinGame\022$\n\004race\030\001 \001(\0162\024.SC2APIProtocol" +
+      ".RaceH\000\022\034\n\022observed_player_id\030\002 \001(\rH\000\0221\n" +
+      "\007options\030\003 \001(\0132 .SC2APIProtocol.Interfac" +
+      "eOptions\022-\n\014server_ports\030\004 \001(\0132\027.SC2APIP" +
+      "rotocol.PortSet\022-\n\014client_ports\030\005 \003(\0132\027." +
+      "SC2APIProtocol.PortSet\022\023\n\013shared_port\030\006 " +
+      "\001(\005\022\023\n\013player_name\030\007 \001(\tB\017\n\rparticipatio" +
+      "n\"/\n\007PortSet\022\021\n\tgame_port\030\001 \001(\005\022\021\n\tbase_" +
+      "port\030\002 \001(\005\"\202\003\n\020ResponseJoinGame\022\021\n\tplaye" +
+      "r_id\030\001 \001(\r\0225\n\005error\030\002 \001(\0162&.SC2APIProtoc" +
+      "ol.ResponseJoinGame.Error\022\025\n\rerror_detai" +
+      "ls\030\003 \001(\t\"\214\002\n\005Error\022\030\n\024MissingParticipati" +
+      "on\020\001\022\033\n\027InvalidObservedPlayerId\020\002\022\022\n\016Mis" +
+      "singOptions\020\003\022\020\n\014MissingPorts\020\004\022\014\n\010GameF" +
+      "ull\020\005\022\017\n\013LaunchError\020\006\022\026\n\022FeatureUnsuppo" +
+      "rted\020\007\022\022\n\016NoSpaceForUser\020\010\022\023\n\017MapDoesNot" +
+      "Exist\020\t\022\021\n\rCannotOpenMap\020\n\022\021\n\rChecksumEr" +
+      "ror\020\013\022\020\n\014NetworkError\020\014\022\016\n\nOtherError\020\r\"" +
+      "\024\n\022RequestRestartGame\"\231\001\n\023ResponseRestar" +
+      "tGame\0228\n\005error\030\001 \001(\0162).SC2APIProtocol.Re" +
+      "sponseRestartGame.Error\022\025\n\rerror_details" +
+      "\030\002 \001(\t\022\027\n\017need_hard_reset\030\003 \001(\010\"\030\n\005Error" +
+      "\022\017\n\013LaunchError\020\001\"\324\001\n\022RequestStartReplay" +
+      "\022\025\n\013replay_path\030\001 \001(\tH\000\022\025\n\013replay_data\030\005" +
+      " \001(\014H\000\022\020\n\010map_data\030\006 \001(\014\022\032\n\022observed_pla" +
+      "yer_id\030\002 \001(\005\0221\n\007options\030\003 \001(\0132 .SC2APIPr" +
+      "otocol.InterfaceOptions\022\023\n\013disable_fog\030\004" +
+      " \001(\010\022\020\n\010realtime\030\007 \001(\010B\010\n\006replay\"\207\002\n\023Res" +
+      "ponseStartReplay\0228\n\005error\030\001 \001(\0162).SC2API" +
+      "Protocol.ResponseStartReplay.Error\022\025\n\rer" +
+      "ror_details\030\002 \001(\t\"\236\001\n\005Error\022\021\n\rMissingRe" +
+      "play\020\001\022\025\n\021InvalidReplayPath\020\002\022\025\n\021Invalid" +
+      "ReplayData\020\003\022\022\n\016InvalidMapData\020\004\022\033\n\027Inva" +
+      "lidObservedPlayerId\020\005\022\022\n\016MissingOptions\020" +
+      "\006\022\017\n\013LaunchError\020\007\"(\n\021RequestMapCommand\022" +
+      "\023\n\013trigger_cmd\030\001 \001(\t\"\201\001\n\022ResponseMapComm" +
+      "and\0227\n\005error\030\001 \001(\0162(.SC2APIProtocol.Resp" +
+      "onseMapCommand.Error\022\025\n\rerror_details\030\002 " +
+      "\001(\t\"\033\n\005Error\022\022\n\016NoTriggerError\020\001\"\022\n\020Requ" +
+      "estLeaveGame\"\023\n\021ResponseLeaveGame\"\022\n\020Req" +
+      "uestQuickSave\"\023\n\021ResponseQuickSave\"\022\n\020Re" +
+      "questQuickLoad\"\023\n\021ResponseQuickLoad\"\r\n\013R" +
+      "equestQuit\"\016\n\014ResponseQuit\"\021\n\017RequestGam" +
+      "eInfo\"\340\001\n\020ResponseGameInfo\022\020\n\010map_name\030\001" +
+      " \001(\t\022\021\n\tmod_names\030\006 \003(\t\022\026\n\016local_map_pat" +
+      "h\030\002 \001(\t\022/\n\013player_info\030\003 \003(\0132\032.SC2APIPro" +
+      "tocol.PlayerInfo\022+\n\tstart_raw\030\004 \001(\0132\030.SC" +
+      "2APIProtocol.StartRaw\0221\n\007options\030\005 \001(\0132 " +
+      ".SC2APIProtocol.InterfaceOptions\"<\n\022Requ" +
+      "estObservation\022\023\n\013disable_fog\030\001 \001(\010\022\021\n\tg" +
+      "ame_loop\030\002 \001(\r\"\205\002\n\023ResponseObservation\022\'" +
+      "\n\007actions\030\001 \003(\0132\026.SC2APIProtocol.Action\022" +
+      "2\n\raction_errors\030\002 \003(\0132\033.SC2APIProtocol." +
+      "ActionError\0220\n\013observation\030\003 \001(\0132\033.SC2AP" +
+      "IProtocol.Observation\0223\n\rplayer_result\030\004" +
+      " \003(\0132\034.SC2APIProtocol.PlayerResult\022*\n\004ch" +
+      "at\030\005 \003(\0132\034.SC2APIProtocol.ChatReceived\"2" +
+      "\n\014ChatReceived\022\021\n\tplayer_id\030\001 \001(\r\022\017\n\007mes" +
+      "sage\030\002 \001(\t\"8\n\rRequestAction\022\'\n\007actions\030\001" +
+      " \003(\0132\026.SC2APIProtocol.Action\">\n\016Response" +
+      "Action\022,\n\006result\030\001 \003(\0162\034.SC2APIProtocol." +
+      "ActionResult\"H\n\025RequestObserverAction\022/\n" +
+      "\007actions\030\001 \003(\0132\036.SC2APIProtocol.Observer" +
+      "Action\"\030\n\026ResponseObserverAction\"\034\n\013Requ" +
+      "estStep\022\r\n\005count\030\001 \001(\r\"\'\n\014ResponseStep\022\027" +
+      "\n\017simulation_loop\030\001 \001(\r\"o\n\013RequestData\022\022" +
+      "\n\nability_id\030\001 \001(\010\022\024\n\014unit_type_id\030\002 \001(\010" +
+      "\022\022\n\nupgrade_id\030\003 \001(\010\022\017\n\007buff_id\030\004 \001(\010\022\021\n" +
+      "\teffect_id\030\005 \001(\010\"\360\001\n\014ResponseData\022.\n\tabi" +
+      "lities\030\001 \003(\0132\033.SC2APIProtocol.AbilityDat" +
+      "a\022+\n\005units\030\002 \003(\0132\034.SC2APIProtocol.UnitTy" +
+      "peData\022-\n\010upgrades\030\003 \003(\0132\033.SC2APIProtoco" +
+      "l.UpgradeData\022\'\n\005buffs\030\004 \003(\0132\030.SC2APIPro" +
+      "tocol.BuffData\022+\n\007effects\030\005 \003(\0132\032.SC2API" +
+      "Protocol.EffectData\"\023\n\021RequestSaveReplay" +
+      "\"\"\n\022ResponseSaveReplay\022\014\n\004data\030\001 \001(\014\"b\n\021" +
+      "RequestReplayInfo\022\025\n\013replay_path\030\001 \001(\tH\000" +
+      "\022\025\n\013replay_data\030\002 \001(\014H\000\022\025\n\rdownload_data" +
+      "\030\003 \001(\010B\010\n\006replay\"\237\001\n\017PlayerInfoExtra\022/\n\013" +
+      "player_info\030\001 \001(\0132\032.SC2APIProtocol.Playe" +
+      "rInfo\0223\n\rplayer_result\030\002 \001(\0132\034.SC2APIPro" +
+      "tocol.PlayerResult\022\022\n\nplayer_mmr\030\003 \001(\005\022\022" +
+      "\n\nplayer_apm\030\004 \001(\005\"\303\003\n\022ResponseReplayInf" +
+      "o\022\020\n\010map_name\030\001 \001(\t\022\026\n\016local_map_path\030\002 " +
+      "\001(\t\0224\n\013player_info\030\003 \003(\0132\037.SC2APIProtoco" +
+      "l.PlayerInfoExtra\022\033\n\023game_duration_loops" +
+      "\030\004 \001(\r\022\035\n\025game_duration_seconds\030\005 \001(\002\022\024\n" +
+      "\014game_version\030\006 \001(\t\022\024\n\014data_version\030\013 \001(" +
+      "\t\022\022\n\ndata_build\030\007 \001(\r\022\022\n\nbase_build\030\010 \001(" +
+      "\r\0227\n\005error\030\t \001(\0162(.SC2APIProtocol.Respon" +
+      "seReplayInfo.Error\022\025\n\rerror_details\030\n \001(" +
+      "\t\"m\n\005Error\022\021\n\rMissingReplay\020\001\022\025\n\021Invalid" +
+      "ReplayPath\020\002\022\025\n\021InvalidReplayData\020\003\022\020\n\014P" +
+      "arsingError\020\004\022\021\n\rDownloadError\020\005\"\026\n\024Requ" +
+      "estAvailableMaps\"M\n\025ResponseAvailableMap" +
+      "s\022\027\n\017local_map_paths\030\001 \003(\t\022\033\n\023battlenet_" +
+      "map_names\030\002 \003(\t\"4\n\016RequestSaveMap\022\020\n\010map" +
+      "_path\030\001 \001(\t\022\020\n\010map_data\030\002 \001(\014\"d\n\017Respons" +
+      "eSaveMap\0224\n\005error\030\001 \001(\0162%.SC2APIProtocol" +
+      ".ResponseSaveMap.Error\"\033\n\005Error\022\022\n\016Inval" +
+      "idMapData\020\001\"\r\n\013RequestPing\"b\n\014ResponsePi" +
+      "ng\022\024\n\014game_version\030\001 \001(\t\022\024\n\014data_version" +
+      "\030\002 \001(\t\022\022\n\ndata_build\030\003 \001(\r\022\022\n\nbase_build" +
+      "\030\004 \001(\r\";\n\014RequestDebug\022+\n\005debug\030\001 \003(\0132\034." +
+      "SC2APIProtocol.DebugCommand\"\017\n\rResponseD" +
+      "ebug\"\313\001\n\013PlayerSetup\022(\n\004type\030\001 \001(\0162\032.SC2" +
+      "APIProtocol.PlayerType\022\"\n\004race\030\002 \001(\0162\024.S" +
+      "C2APIProtocol.Race\022.\n\ndifficulty\030\003 \001(\0162\032" +
+      ".SC2APIProtocol.Difficulty\022\023\n\013player_nam" +
+      "e\030\004 \001(\t\022)\n\010ai_build\030\005 \001(\0162\027.SC2APIProtoc" +
+      "ol.AIBuild\"\205\001\n\022SpatialCameraSetup\022\r\n\005wid" +
+      "th\030\001 \001(\002\022+\n\nresolution\030\002 \001(\0132\027.SC2APIPro" +
+      "tocol.Size2DI\0223\n\022minimap_resolution\030\003 \001(" +
+      "\0132\027.SC2APIProtocol.Size2DI\"\263\001\n\020Interface" +
+      "Options\022\013\n\003raw\030\001 \001(\010\022\r\n\005score\030\002 \001(\010\0229\n\rf" +
+      "eature_layer\030\003 \001(\0132\".SC2APIProtocol.Spat" +
+      "ialCameraSetup\0222\n\006render\030\004 \001(\0132\".SC2APIP" +
+      "rotocol.SpatialCameraSetup\022\024\n\014show_cloak" +
+      "ed\030\005 \001(\010\"\347\001\n\nPlayerInfo\022\021\n\tplayer_id\030\001 \001" +
+      "(\r\022(\n\004type\030\002 \001(\0162\032.SC2APIProtocol.Player" +
+      "Type\022,\n\016race_requested\030\003 \001(\0162\024.SC2APIPro" +
+      "tocol.Race\022)\n\013race_actual\030\004 \001(\0162\024.SC2API" +
+      "Protocol.Race\022.\n\ndifficulty\030\005 \001(\0162\032.SC2A" +
+      "PIProtocol.Difficulty\022\023\n\013player_name\030\006 \001" +
+      "(\t\"\357\001\n\014PlayerCommon\022\021\n\tplayer_id\030\001 \001(\r\022\020" +
+      "\n\010minerals\030\002 \001(\r\022\017\n\007vespene\030\003 \001(\r\022\020\n\010foo" +
+      "d_cap\030\004 \001(\r\022\021\n\tfood_used\030\005 \001(\r\022\021\n\tfood_a" +
+      "rmy\030\006 \001(\r\022\024\n\014food_workers\030\007 \001(\r\022\031\n\021idle_" +
+      "worker_count\030\010 \001(\r\022\022\n\narmy_count\030\t \001(\r\022\027" +
+      "\n\017warp_gate_count\030\n \001(\r\022\023\n\013larva_count\030\013" +
+      " \001(\r\"\266\003\n\013Observation\022\021\n\tgame_loop\030\t \001(\r\022" +
+      "3\n\rplayer_common\030\001 \001(\0132\034.SC2APIProtocol." +
+      "PlayerCommon\022%\n\006alerts\030\n \003(\0162\025.SC2APIPro" +
+      "tocol.Alert\0223\n\tabilities\030\003 \003(\0132 .SC2APIP" +
+      "rotocol.AvailableAbility\022$\n\005score\030\004 \001(\0132" +
+      "\025.SC2APIProtocol.Score\0220\n\010raw_data\030\005 \001(\013" +
+      "2\036.SC2APIProtocol.ObservationRaw\022C\n\022feat" +
+      "ure_layer_data\030\006 \001(\0132\'.SC2APIProtocol.Ob" +
+      "servationFeatureLayer\0226\n\013render_data\030\007 \001" +
+      "(\0132!.SC2APIProtocol.ObservationRender\022.\n" +
+      "\007ui_data\030\010 \001(\0132\035.SC2APIProtocol.Observat" +
+      "ionUI\"\233\002\n\006Action\022-\n\naction_raw\030\001 \001(\0132\031.S" +
+      "C2APIProtocol.ActionRaw\022;\n\024action_featur" +
+      "e_layer\030\002 \001(\0132\035.SC2APIProtocol.ActionSpa" +
+      "tial\0224\n\raction_render\030\003 \001(\0132\035.SC2APIProt" +
+      "ocol.ActionSpatial\022+\n\taction_ui\030\004 \001(\0132\030." +
+      "SC2APIProtocol.ActionUI\022/\n\013action_chat\030\006" +
+      " \001(\0132\032.SC2APIProtocol.ActionChat\022\021\n\tgame" +
+      "_loop\030\007 \001(\r\"v\n\nActionChat\0223\n\007channel\030\001 \001" +
+      "(\0162\".SC2APIProtocol.ActionChat.Channel\022\017" +
+      "\n\007message\030\002 \001(\t\"\"\n\007Channel\022\r\n\tBroadcast\020" +
+      "\001\022\010\n\004Team\020\002\"a\n\013ActionError\022\020\n\010unit_tag\030\001" +
+      " \001(\004\022\022\n\nability_id\030\002 \001(\004\022,\n\006result\030\003 \001(\016" +
+      "2\034.SC2APIProtocol.ActionResult\"\314\002\n\016Obser" +
+      "verAction\022M\n\022player_perspective\030\001 \001(\0132/." +
+      "SC2APIProtocol.ActionObserverPlayerPersp" +
+      "ectiveH\000\022?\n\013camera_move\030\002 \001(\0132(.SC2APIPr" +
+      "otocol.ActionObserverCameraMoveH\000\022P\n\024cam" +
+      "era_follow_player\030\003 \001(\01320.SC2APIProtocol" +
+      ".ActionObserverCameraFollowPlayerH\000\022N\n\023c" +
+      "amera_follow_units\030\004 \001(\0132/.SC2APIProtoco" +
+      "l.ActionObserverCameraFollowUnitsH\000B\010\n\006a" +
+      "ction\"4\n\037ActionObserverPlayerPerspective" +
+      "\022\021\n\tplayer_id\030\001 \001(\r\"X\n\030ActionObserverCam" +
+      "eraMove\022*\n\tworld_pos\030\001 \001(\0132\027.SC2APIProto" +
+      "col.Point2D\022\020\n\010distance\030\002 \001(\002\"5\n ActionO" +
+      "bserverCameraFollowPlayer\022\021\n\tplayer_id\030\001" +
+      " \001(\r\"4\n\037ActionObserverCameraFollowUnits\022" +
+      "\021\n\tunit_tags\030\001 \003(\004\"I\n\014PlayerResult\022\021\n\tpl" +
+      "ayer_id\030\001 \001(\r\022&\n\006result\030\002 \001(\0162\026.SC2APIPr" +
+      "otocol.Result*c\n\006Status\022\014\n\010launched\020\001\022\r\n" +
+      "\tinit_game\020\002\022\013\n\007in_game\020\003\022\r\n\tin_replay\020\004" +
+      "\022\t\n\005ended\020\005\022\010\n\004quit\020\006\022\013\n\007unknown\020c*\226\001\n\nD" +
+      "ifficulty\022\014\n\010VeryEasy\020\001\022\010\n\004Easy\020\002\022\n\n\006Med" +
+      "ium\020\003\022\016\n\nMediumHard\020\004\022\010\n\004Hard\020\005\022\n\n\006Harde" +
+      "r\020\006\022\014\n\010VeryHard\020\007\022\017\n\013CheatVision\020\010\022\016\n\nCh" +
+      "eatMoney\020\t\022\017\n\013CheatInsane\020\n*9\n\nPlayerTyp" +
+      "e\022\017\n\013Participant\020\001\022\014\n\010Computer\020\002\022\014\n\010Obse" +
+      "rver\020\003*O\n\007AIBuild\022\017\n\013RandomBuild\020\001\022\010\n\004Ru" +
+      "sh\020\002\022\n\n\006Timing\020\003\022\t\n\005Power\020\004\022\t\n\005Macro\020\005\022\007" +
+      "\n\003Air\020\006*9\n\005Alert\022\031\n\025NuclearLaunchDetecte" +
+      "d\020\001\022\025\n\021NydusWormDetected\020\002*9\n\006Result\022\013\n\007" +
+      "Victory\020\001\022\n\n\006Defeat\020\002\022\007\n\003Tie\020\003\022\r\n\tUndeci" +
+      "ded\020\004"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -57657,13 +68175,13 @@ public final class Sc2Api {
     internal_static_SC2APIProtocol_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_Request_descriptor,
-        new java.lang.String[] { "CreateGame", "JoinGame", "RestartGame", "StartReplay", "LeaveGame", "QuickSave", "QuickLoad", "Quit", "GameInfo", "Observation", "Action", "Step", "Data", "Query", "SaveReplay", "ReplayInfo", "AvailableMaps", "SaveMap", "Ping", "Debug", "Request", });
+        new java.lang.String[] { "CreateGame", "JoinGame", "RestartGame", "StartReplay", "LeaveGame", "QuickSave", "QuickLoad", "Quit", "GameInfo", "Observation", "Action", "ObsAction", "Step", "Data", "Query", "SaveReplay", "MapCommand", "ReplayInfo", "AvailableMaps", "SaveMap", "Ping", "Debug", "Id", "Request", });
     internal_static_SC2APIProtocol_Response_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_SC2APIProtocol_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_Response_descriptor,
-        new java.lang.String[] { "CreateGame", "JoinGame", "RestartGame", "StartReplay", "LeaveGame", "QuickSave", "QuickLoad", "Quit", "GameInfo", "Observation", "Action", "Step", "Data", "Query", "SaveReplay", "ReplayInfo", "AvailableMaps", "SaveMap", "Ping", "Debug", "Error", "Status", "Response", });
+        new java.lang.String[] { "CreateGame", "JoinGame", "RestartGame", "StartReplay", "LeaveGame", "QuickSave", "QuickLoad", "Quit", "GameInfo", "Observation", "Action", "ObsAction", "Step", "Data", "Query", "SaveReplay", "ReplayInfo", "AvailableMaps", "SaveMap", "MapCommand", "Ping", "Debug", "Id", "Error", "Status", "Response", });
     internal_static_SC2APIProtocol_RequestCreateGame_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_SC2APIProtocol_RequestCreateGame_fieldAccessorTable = new
@@ -57687,7 +68205,7 @@ public final class Sc2Api {
     internal_static_SC2APIProtocol_RequestJoinGame_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestJoinGame_descriptor,
-        new java.lang.String[] { "Race", "ObservedPlayerId", "Options", "ServerPorts", "ClientPorts", "SharedPort", "Participation", });
+        new java.lang.String[] { "Race", "ObservedPlayerId", "Options", "ServerPorts", "ClientPorts", "SharedPort", "PlayerName", "Participation", });
     internal_static_SC2APIProtocol_PortSet_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_SC2APIProtocol_PortSet_fieldAccessorTable = new
@@ -57711,267 +68229,321 @@ public final class Sc2Api {
     internal_static_SC2APIProtocol_ResponseRestartGame_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseRestartGame_descriptor,
-        new java.lang.String[] { "Error", "ErrorDetails", });
+        new java.lang.String[] { "Error", "ErrorDetails", "NeedHardReset", });
     internal_static_SC2APIProtocol_RequestStartReplay_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_SC2APIProtocol_RequestStartReplay_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestStartReplay_descriptor,
-        new java.lang.String[] { "ReplayPath", "ReplayData", "MapData", "ObservedPlayerId", "Options", "DisableFog", "Replay", });
+        new java.lang.String[] { "ReplayPath", "ReplayData", "MapData", "ObservedPlayerId", "Options", "DisableFog", "Realtime", "Replay", });
     internal_static_SC2APIProtocol_ResponseStartReplay_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_SC2APIProtocol_ResponseStartReplay_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseStartReplay_descriptor,
         new java.lang.String[] { "Error", "ErrorDetails", });
-    internal_static_SC2APIProtocol_RequestLeaveGame_descriptor =
+    internal_static_SC2APIProtocol_RequestMapCommand_descriptor =
       getDescriptor().getMessageTypes().get(12);
+    internal_static_SC2APIProtocol_RequestMapCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_RequestMapCommand_descriptor,
+        new java.lang.String[] { "TriggerCmd", });
+    internal_static_SC2APIProtocol_ResponseMapCommand_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_SC2APIProtocol_ResponseMapCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ResponseMapCommand_descriptor,
+        new java.lang.String[] { "Error", "ErrorDetails", });
+    internal_static_SC2APIProtocol_RequestLeaveGame_descriptor =
+      getDescriptor().getMessageTypes().get(14);
     internal_static_SC2APIProtocol_RequestLeaveGame_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestLeaveGame_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseLeaveGame_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_SC2APIProtocol_ResponseLeaveGame_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseLeaveGame_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_RequestQuickSave_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_SC2APIProtocol_RequestQuickSave_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestQuickSave_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseQuickSave_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_SC2APIProtocol_ResponseQuickSave_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseQuickSave_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_RequestQuickLoad_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_SC2APIProtocol_RequestQuickLoad_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestQuickLoad_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseQuickLoad_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_SC2APIProtocol_ResponseQuickLoad_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseQuickLoad_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_RequestQuit_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_SC2APIProtocol_RequestQuit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestQuit_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseQuit_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_SC2APIProtocol_ResponseQuit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseQuit_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_RequestGameInfo_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_SC2APIProtocol_RequestGameInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestGameInfo_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseGameInfo_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_SC2APIProtocol_ResponseGameInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseGameInfo_descriptor,
         new java.lang.String[] { "MapName", "ModNames", "LocalMapPath", "PlayerInfo", "StartRaw", "Options", });
     internal_static_SC2APIProtocol_RequestObservation_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_SC2APIProtocol_RequestObservation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestObservation_descriptor,
-        new java.lang.String[] { "DisableFog", });
+        new java.lang.String[] { "DisableFog", "GameLoop", });
     internal_static_SC2APIProtocol_ResponseObservation_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_SC2APIProtocol_ResponseObservation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseObservation_descriptor,
         new java.lang.String[] { "Actions", "ActionErrors", "Observation", "PlayerResult", "Chat", });
     internal_static_SC2APIProtocol_ChatReceived_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_SC2APIProtocol_ChatReceived_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ChatReceived_descriptor,
         new java.lang.String[] { "PlayerId", "Message", });
     internal_static_SC2APIProtocol_RequestAction_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_SC2APIProtocol_RequestAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestAction_descriptor,
         new java.lang.String[] { "Actions", });
     internal_static_SC2APIProtocol_ResponseAction_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_SC2APIProtocol_ResponseAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseAction_descriptor,
         new java.lang.String[] { "Result", });
+    internal_static_SC2APIProtocol_RequestObserverAction_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_SC2APIProtocol_RequestObserverAction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_RequestObserverAction_descriptor,
+        new java.lang.String[] { "Actions", });
+    internal_static_SC2APIProtocol_ResponseObserverAction_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_SC2APIProtocol_ResponseObserverAction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ResponseObserverAction_descriptor,
+        new java.lang.String[] { });
     internal_static_SC2APIProtocol_RequestStep_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_SC2APIProtocol_RequestStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestStep_descriptor,
         new java.lang.String[] { "Count", });
     internal_static_SC2APIProtocol_ResponseStep_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_SC2APIProtocol_ResponseStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseStep_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "SimulationLoop", });
     internal_static_SC2APIProtocol_RequestData_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_SC2APIProtocol_RequestData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestData_descriptor,
         new java.lang.String[] { "AbilityId", "UnitTypeId", "UpgradeId", "BuffId", "EffectId", });
     internal_static_SC2APIProtocol_ResponseData_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_SC2APIProtocol_ResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseData_descriptor,
         new java.lang.String[] { "Abilities", "Units", "Upgrades", "Buffs", "Effects", });
     internal_static_SC2APIProtocol_RequestSaveReplay_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_SC2APIProtocol_RequestSaveReplay_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestSaveReplay_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseSaveReplay_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_SC2APIProtocol_ResponseSaveReplay_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseSaveReplay_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_SC2APIProtocol_RequestReplayInfo_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_SC2APIProtocol_RequestReplayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestReplayInfo_descriptor,
         new java.lang.String[] { "ReplayPath", "ReplayData", "DownloadData", "Replay", });
     internal_static_SC2APIProtocol_PlayerInfoExtra_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_SC2APIProtocol_PlayerInfoExtra_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_PlayerInfoExtra_descriptor,
         new java.lang.String[] { "PlayerInfo", "PlayerResult", "PlayerMmr", "PlayerApm", });
     internal_static_SC2APIProtocol_ResponseReplayInfo_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_SC2APIProtocol_ResponseReplayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseReplayInfo_descriptor,
         new java.lang.String[] { "MapName", "LocalMapPath", "PlayerInfo", "GameDurationLoops", "GameDurationSeconds", "GameVersion", "DataVersion", "DataBuild", "BaseBuild", "Error", "ErrorDetails", });
     internal_static_SC2APIProtocol_RequestAvailableMaps_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_SC2APIProtocol_RequestAvailableMaps_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestAvailableMaps_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponseAvailableMaps_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_SC2APIProtocol_ResponseAvailableMaps_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseAvailableMaps_descriptor,
         new java.lang.String[] { "LocalMapPaths", "BattlenetMapNames", });
     internal_static_SC2APIProtocol_RequestSaveMap_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_SC2APIProtocol_RequestSaveMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestSaveMap_descriptor,
         new java.lang.String[] { "MapPath", "MapData", });
     internal_static_SC2APIProtocol_ResponseSaveMap_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_SC2APIProtocol_ResponseSaveMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseSaveMap_descriptor,
         new java.lang.String[] { "Error", });
     internal_static_SC2APIProtocol_RequestPing_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_SC2APIProtocol_RequestPing_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestPing_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_ResponsePing_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_SC2APIProtocol_ResponsePing_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponsePing_descriptor,
         new java.lang.String[] { "GameVersion", "DataVersion", "DataBuild", "BaseBuild", });
     internal_static_SC2APIProtocol_RequestDebug_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_SC2APIProtocol_RequestDebug_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_RequestDebug_descriptor,
         new java.lang.String[] { "Debug", });
     internal_static_SC2APIProtocol_ResponseDebug_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_SC2APIProtocol_ResponseDebug_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ResponseDebug_descriptor,
         new java.lang.String[] { });
     internal_static_SC2APIProtocol_PlayerSetup_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_SC2APIProtocol_PlayerSetup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_PlayerSetup_descriptor,
-        new java.lang.String[] { "Type", "Race", "Difficulty", });
+        new java.lang.String[] { "Type", "Race", "Difficulty", "PlayerName", "AiBuild", });
     internal_static_SC2APIProtocol_SpatialCameraSetup_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_SC2APIProtocol_SpatialCameraSetup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_SpatialCameraSetup_descriptor,
         new java.lang.String[] { "Width", "Resolution", "MinimapResolution", });
     internal_static_SC2APIProtocol_InterfaceOptions_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_SC2APIProtocol_InterfaceOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_InterfaceOptions_descriptor,
-        new java.lang.String[] { "Raw", "Score", "FeatureLayer", "Render", });
+        new java.lang.String[] { "Raw", "Score", "FeatureLayer", "Render", "ShowCloaked", });
     internal_static_SC2APIProtocol_PlayerInfo_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_SC2APIProtocol_PlayerInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_PlayerInfo_descriptor,
-        new java.lang.String[] { "PlayerId", "Type", "RaceRequested", "RaceActual", "Difficulty", });
+        new java.lang.String[] { "PlayerId", "Type", "RaceRequested", "RaceActual", "Difficulty", "PlayerName", });
     internal_static_SC2APIProtocol_PlayerCommon_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_SC2APIProtocol_PlayerCommon_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_PlayerCommon_descriptor,
         new java.lang.String[] { "PlayerId", "Minerals", "Vespene", "FoodCap", "FoodUsed", "FoodArmy", "FoodWorkers", "IdleWorkerCount", "ArmyCount", "WarpGateCount", "LarvaCount", });
     internal_static_SC2APIProtocol_Observation_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_SC2APIProtocol_Observation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_Observation_descriptor,
         new java.lang.String[] { "GameLoop", "PlayerCommon", "Alerts", "Abilities", "Score", "RawData", "FeatureLayerData", "RenderData", "UiData", });
     internal_static_SC2APIProtocol_Action_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_SC2APIProtocol_Action_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_Action_descriptor,
-        new java.lang.String[] { "ActionRaw", "ActionFeatureLayer", "ActionRender", "ActionUi", "Chat", });
+        new java.lang.String[] { "ActionRaw", "ActionFeatureLayer", "ActionRender", "ActionUi", "ActionChat", "GameLoop", });
     internal_static_SC2APIProtocol_ActionChat_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_SC2APIProtocol_ActionChat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ActionChat_descriptor,
         new java.lang.String[] { "Channel", "Message", });
     internal_static_SC2APIProtocol_ActionError_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_SC2APIProtocol_ActionError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_ActionError_descriptor,
         new java.lang.String[] { "UnitTag", "AbilityId", "Result", });
+    internal_static_SC2APIProtocol_ObserverAction_descriptor =
+      getDescriptor().getMessageTypes().get(57);
+    internal_static_SC2APIProtocol_ObserverAction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ObserverAction_descriptor,
+        new java.lang.String[] { "PlayerPerspective", "CameraMove", "CameraFollowPlayer", "CameraFollowUnits", "Action", });
+    internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_descriptor =
+      getDescriptor().getMessageTypes().get(58);
+    internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ActionObserverPlayerPerspective_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_SC2APIProtocol_ActionObserverCameraMove_descriptor =
+      getDescriptor().getMessageTypes().get(59);
+    internal_static_SC2APIProtocol_ActionObserverCameraMove_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ActionObserverCameraMove_descriptor,
+        new java.lang.String[] { "WorldPos", "Distance", });
+    internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_descriptor =
+      getDescriptor().getMessageTypes().get(60);
+    internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ActionObserverCameraFollowPlayer_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_descriptor =
+      getDescriptor().getMessageTypes().get(61);
+    internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SC2APIProtocol_ActionObserverCameraFollowUnits_descriptor,
+        new java.lang.String[] { "UnitTags", });
     internal_static_SC2APIProtocol_PlayerResult_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_SC2APIProtocol_PlayerResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_PlayerResult_descriptor,

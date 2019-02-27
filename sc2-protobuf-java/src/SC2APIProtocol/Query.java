@@ -136,6 +136,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -147,13 +150,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 pathing_ = new java.util.ArrayList<SC2APIProtocol.Query.RequestQueryPathing>();
@@ -186,6 +182,13 @@ public final class Query {
               ignoreResourceRequirements_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -212,6 +215,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQuery_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQuery_fieldAccessorTable
@@ -349,6 +353,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -358,6 +363,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < pathing_.size(); i++) {
@@ -375,6 +381,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -526,6 +533,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -533,6 +541,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.RequestQuery prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -556,6 +565,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQuery_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQuery_fieldAccessorTable
@@ -581,6 +591,7 @@ public final class Query {
           getPlacementsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (pathingBuilder_ == null) {
@@ -606,15 +617,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQuery_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQuery getDefaultInstanceForType() {
         return SC2APIProtocol.Query.RequestQuery.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQuery build() {
         SC2APIProtocol.Query.RequestQuery result = buildPartial();
         if (!result.isInitialized()) {
@@ -623,6 +637,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQuery buildPartial() {
         SC2APIProtocol.Query.RequestQuery result = new SC2APIProtocol.Query.RequestQuery(this);
         int from_bitField0_ = bitField0_;
@@ -663,32 +678,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.RequestQuery) {
           return mergeFrom((SC2APIProtocol.Query.RequestQuery)other);
@@ -786,10 +808,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1576,11 +1600,13 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1602,11 +1628,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQuery>
         PARSER = new com.google.protobuf.AbstractParser<RequestQuery>() {
+      @java.lang.Override
       public RequestQuery parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQuery(input, extensionRegistry);
+        return new RequestQuery(input, extensionRegistry);
       }
     };
 
@@ -1619,6 +1646,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.RequestQuery getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1729,6 +1757,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1740,13 +1771,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 pathing_ = new java.util.ArrayList<SC2APIProtocol.Query.ResponseQueryPathing>();
@@ -1772,6 +1796,13 @@ public final class Query {
               }
               placements_.add(
                   input.readMessage(SC2APIProtocol.Query.ResponseQueryBuildingPlacement.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1800,6 +1831,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQuery_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQuery_fieldAccessorTable
@@ -1913,6 +1945,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1922,6 +1955,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < pathing_.size(); i++) {
@@ -1936,6 +1970,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2073,6 +2108,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2080,6 +2116,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.ResponseQuery prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2103,6 +2140,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQuery_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQuery_fieldAccessorTable
@@ -2128,6 +2166,7 @@ public final class Query {
           getPlacementsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (pathingBuilder_ == null) {
@@ -2151,15 +2190,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQuery_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQuery getDefaultInstanceForType() {
         return SC2APIProtocol.Query.ResponseQuery.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQuery build() {
         SC2APIProtocol.Query.ResponseQuery result = buildPartial();
         if (!result.isInitialized()) {
@@ -2168,6 +2210,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQuery buildPartial() {
         SC2APIProtocol.Query.ResponseQuery result = new SC2APIProtocol.Query.ResponseQuery(this);
         int from_bitField0_ = bitField0_;
@@ -2202,32 +2245,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.ResponseQuery) {
           return mergeFrom((SC2APIProtocol.Query.ResponseQuery)other);
@@ -2322,10 +2372,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3064,11 +3116,13 @@ public final class Query {
         }
         return placementsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3090,11 +3144,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQuery>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQuery>() {
+      @java.lang.Override
       public ResponseQuery parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQuery(input, extensionRegistry);
+        return new ResponseQuery(input, extensionRegistry);
       }
     };
 
@@ -3107,6 +3162,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.ResponseQuery getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3183,6 +3239,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3194,13 +3253,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.Point2D.Builder subBuilder = null;
               if (startCase_ == 1) {
@@ -3233,6 +3285,13 @@ public final class Query {
               bitField0_ |= 0x00000004;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3250,6 +3309,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryPathing_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryPathing_fieldAccessorTable
@@ -3361,6 +3421,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3370,6 +3431,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (startCase_ == 1) {
@@ -3385,6 +3447,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3542,6 +3605,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3549,6 +3613,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.RequestQueryPathing prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3576,6 +3641,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryPathing_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryPathing_fieldAccessorTable
@@ -3599,6 +3665,7 @@ public final class Query {
           getEndPosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (endPosBuilder_ == null) {
@@ -3612,15 +3679,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryPathing_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryPathing getDefaultInstanceForType() {
         return SC2APIProtocol.Query.RequestQueryPathing.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryPathing build() {
         SC2APIProtocol.Query.RequestQueryPathing result = buildPartial();
         if (!result.isInitialized()) {
@@ -3629,6 +3699,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryPathing buildPartial() {
         SC2APIProtocol.Query.RequestQueryPathing result = new SC2APIProtocol.Query.RequestQueryPathing(this);
         int from_bitField0_ = bitField0_;
@@ -3657,32 +3728,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.RequestQueryPathing) {
           return mergeFrom((SC2APIProtocol.Query.RequestQueryPathing)other);
@@ -3715,10 +3793,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4042,11 +4122,13 @@ public final class Query {
         }
         return endPosBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4068,11 +4150,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQueryPathing>
         PARSER = new com.google.protobuf.AbstractParser<RequestQueryPathing>() {
+      @java.lang.Override
       public RequestQueryPathing parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQueryPathing(input, extensionRegistry);
+        return new RequestQueryPathing(input, extensionRegistry);
       }
     };
 
@@ -4085,6 +4168,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.RequestQueryPathing getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4138,6 +4222,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4149,16 +4236,16 @@ public final class Query {
             case 0:
               done = true;
               break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              distance_ = input.readFloat();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 13: {
-              bitField0_ |= 0x00000001;
-              distance_ = input.readFloat();
               break;
             }
           }
@@ -4178,6 +4265,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryPathing_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryPathing_fieldAccessorTable
@@ -4210,6 +4298,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4219,6 +4308,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4227,6 +4317,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4350,6 +4441,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4357,6 +4449,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.ResponseQueryPathing prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4380,6 +4473,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryPathing_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryPathing_fieldAccessorTable
@@ -4402,6 +4496,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         distance_ = 0F;
@@ -4409,15 +4504,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryPathing_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryPathing getDefaultInstanceForType() {
         return SC2APIProtocol.Query.ResponseQueryPathing.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryPathing build() {
         SC2APIProtocol.Query.ResponseQueryPathing result = buildPartial();
         if (!result.isInitialized()) {
@@ -4426,6 +4524,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryPathing buildPartial() {
         SC2APIProtocol.Query.ResponseQueryPathing result = new SC2APIProtocol.Query.ResponseQueryPathing(this);
         int from_bitField0_ = bitField0_;
@@ -4439,32 +4538,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.ResponseQueryPathing) {
           return mergeFrom((SC2APIProtocol.Query.ResponseQueryPathing)other);
@@ -4484,10 +4590,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4554,11 +4662,13 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4580,11 +4690,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQueryPathing>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQueryPathing>() {
+      @java.lang.Override
       public ResponseQueryPathing parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQueryPathing(input, extensionRegistry);
+        return new ResponseQueryPathing(input, extensionRegistry);
       }
     };
 
@@ -4597,6 +4708,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.ResponseQueryPathing getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4646,6 +4758,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4657,16 +4772,16 @@ public final class Query {
             case 0:
               done = true;
               break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              unitTag_ = input.readUInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              unitTag_ = input.readUInt64();
               break;
             }
           }
@@ -4686,6 +4801,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryAvailableAbilities_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryAvailableAbilities_fieldAccessorTable
@@ -4710,6 +4826,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4719,6 +4836,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4727,6 +4845,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4848,6 +4967,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4855,6 +4975,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.RequestQueryAvailableAbilities prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4882,6 +5003,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryAvailableAbilities_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryAvailableAbilities_fieldAccessorTable
@@ -4904,6 +5026,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         unitTag_ = 0L;
@@ -4911,15 +5034,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryAvailableAbilities_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryAvailableAbilities getDefaultInstanceForType() {
         return SC2APIProtocol.Query.RequestQueryAvailableAbilities.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryAvailableAbilities build() {
         SC2APIProtocol.Query.RequestQueryAvailableAbilities result = buildPartial();
         if (!result.isInitialized()) {
@@ -4928,6 +5054,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryAvailableAbilities buildPartial() {
         SC2APIProtocol.Query.RequestQueryAvailableAbilities result = new SC2APIProtocol.Query.RequestQueryAvailableAbilities(this);
         int from_bitField0_ = bitField0_;
@@ -4941,32 +5068,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.RequestQueryAvailableAbilities) {
           return mergeFrom((SC2APIProtocol.Query.RequestQueryAvailableAbilities)other);
@@ -4986,10 +5120,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5040,11 +5176,13 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5066,11 +5204,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQueryAvailableAbilities>
         PARSER = new com.google.protobuf.AbstractParser<RequestQueryAvailableAbilities>() {
+      @java.lang.Override
       public RequestQueryAvailableAbilities parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQueryAvailableAbilities(input, extensionRegistry);
+        return new RequestQueryAvailableAbilities(input, extensionRegistry);
       }
     };
 
@@ -5083,6 +5222,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.RequestQueryAvailableAbilities getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5163,6 +5303,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5174,13 +5317,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 abilities_ = new java.util.ArrayList<SC2APIProtocol.Common.AvailableAbility>();
@@ -5198,6 +5334,13 @@ public final class Query {
             case 24: {
               bitField0_ |= 0x00000002;
               unitTypeId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5220,6 +5363,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryAvailableAbilities_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryAvailableAbilities_fieldAccessorTable
@@ -5294,6 +5438,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5303,6 +5448,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < abilities_.size(); i++) {
@@ -5317,6 +5463,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5461,6 +5608,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5468,6 +5616,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.ResponseQueryAvailableAbilities prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5491,6 +5640,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryAvailableAbilities_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryAvailableAbilities_fieldAccessorTable
@@ -5514,6 +5664,7 @@ public final class Query {
           getAbilitiesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (abilitiesBuilder_ == null) {
@@ -5529,15 +5680,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryAvailableAbilities_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryAvailableAbilities getDefaultInstanceForType() {
         return SC2APIProtocol.Query.ResponseQueryAvailableAbilities.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryAvailableAbilities build() {
         SC2APIProtocol.Query.ResponseQueryAvailableAbilities result = buildPartial();
         if (!result.isInitialized()) {
@@ -5546,6 +5700,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryAvailableAbilities buildPartial() {
         SC2APIProtocol.Query.ResponseQueryAvailableAbilities result = new SC2APIProtocol.Query.ResponseQueryAvailableAbilities(this);
         int from_bitField0_ = bitField0_;
@@ -5572,32 +5727,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.ResponseQueryAvailableAbilities) {
           return mergeFrom((SC2APIProtocol.Query.ResponseQueryAvailableAbilities)other);
@@ -5646,10 +5808,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5972,11 +6136,13 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5998,11 +6164,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQueryAvailableAbilities>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQueryAvailableAbilities>() {
+      @java.lang.Override
       public ResponseQueryAvailableAbilities parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQueryAvailableAbilities(input, extensionRegistry);
+        return new ResponseQueryAvailableAbilities(input, extensionRegistry);
       }
     };
 
@@ -6015,6 +6182,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.ResponseQueryAvailableAbilities getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6095,6 +6263,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6106,13 +6277,6 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readInt32();
@@ -6136,6 +6300,13 @@ public final class Query {
               placingUnitTag_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6153,6 +6324,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryBuildingPlacement_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryBuildingPlacement_fieldAccessorTable
@@ -6221,6 +6393,7 @@ public final class Query {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6230,6 +6403,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6244,6 +6418,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6391,6 +6566,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6398,6 +6574,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.RequestQueryBuildingPlacement prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6425,6 +6602,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryBuildingPlacement_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryBuildingPlacement_fieldAccessorTable
@@ -6448,6 +6626,7 @@ public final class Query {
           getTargetPosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = 0;
@@ -6463,15 +6642,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_RequestQueryBuildingPlacement_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryBuildingPlacement getDefaultInstanceForType() {
         return SC2APIProtocol.Query.RequestQueryBuildingPlacement.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryBuildingPlacement build() {
         SC2APIProtocol.Query.RequestQueryBuildingPlacement result = buildPartial();
         if (!result.isInitialized()) {
@@ -6480,6 +6662,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.RequestQueryBuildingPlacement buildPartial() {
         SC2APIProtocol.Query.RequestQueryBuildingPlacement result = new SC2APIProtocol.Query.RequestQueryBuildingPlacement(this);
         int from_bitField0_ = bitField0_;
@@ -6505,32 +6688,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.RequestQueryBuildingPlacement) {
           return mergeFrom((SC2APIProtocol.Query.RequestQueryBuildingPlacement)other);
@@ -6556,10 +6746,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6776,11 +6968,13 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6802,11 +6996,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RequestQueryBuildingPlacement>
         PARSER = new com.google.protobuf.AbstractParser<RequestQueryBuildingPlacement>() {
+      @java.lang.Override
       public RequestQueryBuildingPlacement parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestQueryBuildingPlacement(input, extensionRegistry);
+        return new RequestQueryBuildingPlacement(input, extensionRegistry);
       }
     };
 
@@ -6819,6 +7014,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.RequestQueryBuildingPlacement getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6864,6 +7060,9 @@ public final class Query {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6875,21 +7074,22 @@ public final class Query {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Error.ActionResult value = SC2APIProtocol.Error.ActionResult.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
                 result_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -6910,6 +7110,7 @@ public final class Query {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryBuildingPlacement_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryBuildingPlacement_fieldAccessorTable
@@ -6930,11 +7131,13 @@ public final class Query {
      * <code>optional .SC2APIProtocol.ActionResult result = 1;</code>
      */
     public SC2APIProtocol.Error.ActionResult getResult() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Error.ActionResult result = SC2APIProtocol.Error.ActionResult.valueOf(result_);
       return result == null ? SC2APIProtocol.Error.ActionResult.Success : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6944,6 +7147,7 @@ public final class Query {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6952,6 +7156,7 @@ public final class Query {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7071,6 +7276,7 @@ public final class Query {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7078,6 +7284,7 @@ public final class Query {
     public static Builder newBuilder(SC2APIProtocol.Query.ResponseQueryBuildingPlacement prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7101,6 +7308,7 @@ public final class Query {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryBuildingPlacement_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryBuildingPlacement_fieldAccessorTable
@@ -7123,6 +7331,7 @@ public final class Query {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         result_ = 1;
@@ -7130,15 +7339,18 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Query.internal_static_SC2APIProtocol_ResponseQueryBuildingPlacement_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryBuildingPlacement getDefaultInstanceForType() {
         return SC2APIProtocol.Query.ResponseQueryBuildingPlacement.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryBuildingPlacement build() {
         SC2APIProtocol.Query.ResponseQueryBuildingPlacement result = buildPartial();
         if (!result.isInitialized()) {
@@ -7147,6 +7359,7 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Query.ResponseQueryBuildingPlacement buildPartial() {
         SC2APIProtocol.Query.ResponseQueryBuildingPlacement result = new SC2APIProtocol.Query.ResponseQueryBuildingPlacement(this);
         int from_bitField0_ = bitField0_;
@@ -7160,32 +7373,39 @@ public final class Query {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Query.ResponseQueryBuildingPlacement) {
           return mergeFrom((SC2APIProtocol.Query.ResponseQueryBuildingPlacement)other);
@@ -7205,10 +7425,12 @@ public final class Query {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7239,6 +7461,7 @@ public final class Query {
        * <code>optional .SC2APIProtocol.ActionResult result = 1;</code>
        */
       public SC2APIProtocol.Error.ActionResult getResult() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Error.ActionResult result = SC2APIProtocol.Error.ActionResult.valueOf(result_);
         return result == null ? SC2APIProtocol.Error.ActionResult.Success : result;
       }
@@ -7263,11 +7486,13 @@ public final class Query {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7289,11 +7514,12 @@ public final class Query {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ResponseQueryBuildingPlacement>
         PARSER = new com.google.protobuf.AbstractParser<ResponseQueryBuildingPlacement>() {
+      @java.lang.Override
       public ResponseQueryBuildingPlacement parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseQueryBuildingPlacement(input, extensionRegistry);
+        return new ResponseQueryBuildingPlacement(input, extensionRegistry);
       }
     };
 
@@ -7306,6 +7532,7 @@ public final class Query {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Query.ResponseQueryBuildingPlacement getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7370,7 +7597,7 @@ public final class Query {
       "ities\022A\n\nplacements\030\003 \003(\0132-.SC2APIProtoc" +
       "ol.RequestQueryBuildingPlacement\022$\n\034igno" +
       "re_resource_requirements\030\004 \001(\010\"\316\001\n\rRespo" +
-      "nseQuery\0225\n\007pathing\030\001 \003(\0132$.SC2APIProtoc",
+      "nseQuery\0225\n\007pathing\030\001 \003(\0132$.SC2APIProtoc" +
       "ol.ResponseQueryPathing\022B\n\tabilities\030\002 \003" +
       "(\0132/.SC2APIProtocol.ResponseQueryAvailab" +
       "leAbilities\022B\n\nplacements\030\003 \003(\0132..SC2API" +
@@ -7380,7 +7607,7 @@ public final class Query {
       "g\030\002 \001(\004H\000\022(\n\007end_pos\030\003 \001(\0132\027.SC2APIProto" +
       "col.Point2DB\007\n\005start\"(\n\024ResponseQueryPat" +
       "hing\022\020\n\010distance\030\001 \001(\002\"2\n\036RequestQueryAv" +
-      "ailableAbilities\022\020\n\010unit_tag\030\001 \001(\004\"~\n\037Re",
+      "ailableAbilities\022\020\n\010unit_tag\030\001 \001(\004\"~\n\037Re" +
       "sponseQueryAvailableAbilities\0223\n\tabiliti" +
       "es\030\001 \003(\0132 .SC2APIProtocol.AvailableAbili" +
       "ty\022\020\n\010unit_tag\030\002 \001(\004\022\024\n\014unit_type_id\030\003 \001" +

@@ -2030,7 +2030,7 @@ public final class Error {
       "\n\022NotEnoughTerrazine\020\013\022\023\n\017NotEnoughCusto" +
       "m\020\014\022\021\n\rNotEnoughFood\020\r\022\027\n\023FoodUsageImpos" +
       "sible\020\016\022\021\n\rNotEnoughLife\020\017\022\024\n\020NotEnoughS" +
-      "hields\020\020\022\023\n\017NotEnoughEnergy\020\021\022\022\n\016LifeSup",
+      "hields\020\020\022\023\n\017NotEnoughEnergy\020\021\022\022\n\016LifeSup" +
       "pressed\020\022\022\025\n\021ShieldsSuppressed\020\023\022\024\n\020Ener" +
       "gySuppressed\020\024\022\024\n\020NotEnoughCharges\020\025\022\026\n\022" +
       "CantAddMoreCharges\020\026\022\023\n\017TooMuchMinerals\020" +
@@ -2040,7 +2040,7 @@ public final class Error {
       "TooMuchEnergy\020\036\022\032\n\026MustTargetUnitWithLif" +
       "e\020\037\022\035\n\031MustTargetUnitWithShields\020 \022\034\n\030Mu" +
       "stTargetUnitWithEnergy\020!\022\r\n\tCantTrade\020\"\022" +
-      "\r\n\tCantSpend\020#\022\026\n\022CantTargetThatUnit\020$\022\027",
+      "\r\n\tCantSpend\020#\022\026\n\022CantTargetThatUnit\020$\022\027" +
       "\n\023CouldntAllocateUnit\020%\022\020\n\014UnitCantMove\020" +
       "&\022\036\n\032TransportIsHoldingPosition\020\'\022\037\n\033Bui" +
       "ldTechRequirementsNotMet\020(\022\035\n\031CantFindPl" +
@@ -2050,7 +2050,7 @@ public final class Error {
       "tion\020-\022\"\n\036CantBuildTooCloseToCreepSource" +
       "\020.\022 \n\034CantBuildTooCloseToResources\020/\022\034\n\030" +
       "CantBuildTooFarFromWater\0200\022\"\n\036CantBuildT" +
-      "ooFarFromCreepSource\0201\022\'\n#CantBuildTooFa",
+      "ooFarFromCreepSource\0201\022\'\n#CantBuildTooFa" +
       "rFromBuildPowerSource\0202\022\033\n\027CantBuildOnDe" +
       "nseTerrain\0203\022\'\n#CantTrainTooFarFromTrain" +
       "PowerSource\0204\022\033\n\027CantLandLocationInvalid" +
@@ -2060,7 +2060,7 @@ public final class Error {
       "er\0209\022!\n\035CantLandTooFarFromCreepSource\020:\022" +
       "&\n\"CantLandTooFarFromBuildPowerSource\020;\022" +
       "&\n\"CantLandTooFarFromTrainPowerSource\020<\022" +
-      "\032\n\026CantLandOnDenseTerrain\020=\022\033\n\027AddOnTooF",
+      "\032\n\026CantLandOnDenseTerrain\020=\022\033\n\027AddOnTooF" +
       "arFromBuilding\020>\022\032\n\026MustBuildRefineryFir" +
       "st\020?\022\037\n\033BuildingIsUnderConstruction\020@\022\023\n" +
       "\017CantFindDropOff\020A\022\035\n\031CantLoadOtherPlaye" +
@@ -2070,7 +2070,7 @@ public final class Error {
       "\031CantRechargeImmobileUnits\020G\022&\n\"CantRech" +
       "argeUnderConstructionUnits\020H\022\024\n\020CantLoad" +
       "ThatUnit\020I\022\023\n\017NoCargoToUnload\020J\022\031\n\025LoadA" +
-      "llNoTargetsFound\020K\022\024\n\020NotWhileOccupied\020L",
+      "llNoTargetsFound\020K\022\024\n\020NotWhileOccupied\020L" +
       "\022\031\n\025CantAttackWithoutAmmo\020M\022\027\n\023CantHoldA" +
       "nyMoreAmmo\020N\022\032\n\026TechRequirementsNotMet\020O" +
       "\022\031\n\025MustLockdownUnitFirst\020P\022\022\n\016MustTarge" +
@@ -2080,7 +2080,7 @@ public final class Error {
       "\020U\022\032\n\026MustTargetPawnableUnit\020V\022\032\n\026YouCan" +
       "tControlThatUnit\020W\022\"\n\036YouCantIssueComman" +
       "dsToThatUnit\020X\022\027\n\023MustTargetResources\020Y\022" +
-      "\026\n\022RequiresHealTarget\020Z\022\030\n\024RequiresRepai",
+      "\026\n\022RequiresHealTarget\020Z\022\030\n\024RequiresRepai" +
       "rTarget\020[\022\021\n\rNoItemsToDrop\020\\\022\030\n\024CantHold" +
       "AnyMoreItems\020]\022\020\n\014CantHoldThat\020^\022\030\n\024Targ" +
       "etHasNoInventory\020_\022\024\n\020CantDropThisItem\020`" +
@@ -2090,7 +2090,7 @@ public final class Error {
       "getOuter\020f\022\032\n\026MustTargetYourOwnUnits\020g\022\032" +
       "\n\026CantTargetYourOwnUnits\020h\022\033\n\027MustTarget" +
       "FriendlyUnits\020i\022\033\n\027CantTargetFriendlyUni" +
-      "ts\020j\022\032\n\026MustTargetNeutralUnits\020k\022\032\n\026Cant",
+      "ts\020j\022\032\n\026MustTargetNeutralUnits\020k\022\032\n\026Cant" +
       "TargetNeutralUnits\020l\022\030\n\024MustTargetEnemyU" +
       "nits\020m\022\030\n\024CantTargetEnemyUnits\020n\022\026\n\022Must" +
       "TargetAirUnits\020o\022\026\n\022CantTargetAirUnits\020p" +
@@ -2100,7 +2100,7 @@ public final class Error {
       "LightUnits\020u\022\030\n\024CantTargetLightUnits\020v\022\032" +
       "\n\026MustTargetArmoredUnits\020w\022\032\n\026CantTarget" +
       "ArmoredUnits\020x\022\035\n\031MustTargetBiologicalUn" +
-      "its\020y\022\035\n\031CantTargetBiologicalUnits\020z\022\031\n\025",
+      "its\020y\022\035\n\031CantTargetBiologicalUnits\020z\022\031\n\025" +
       "MustTargetHeroicUnits\020{\022\031\n\025CantTargetHer" +
       "oicUnits\020|\022\032\n\026MustTargetRoboticUnits\020}\022\032" +
       "\n\026CantTargetRoboticUnits\020~\022\035\n\031MustTarget" +
@@ -2110,7 +2110,7 @@ public final class Error {
       "tMassiveUnits\020\203\001\022\033\n\026CantTargetMassiveUni" +
       "ts\020\204\001\022\026\n\021MustTargetMissile\020\205\001\022\026\n\021CantTar" +
       "getMissile\020\206\001\022\032\n\025MustTargetWorkerUnits\020\207" +
-      "\001\022\032\n\025CantTargetWorkerUnits\020\210\001\022!\n\034MustTar",
+      "\001\022\032\n\025CantTargetWorkerUnits\020\210\001\022!\n\034MustTar" +
       "getEnergyCapableUnits\020\211\001\022!\n\034CantTargetEn" +
       "ergyCapableUnits\020\212\001\022!\n\034MustTargetShieldC" +
       "apableUnits\020\213\001\022!\n\034CantTargetShieldCapabl" +
@@ -2120,7 +2120,7 @@ public final class Error {
       "argetCloakedUnits\020\221\001\022\033\n\026CantTargetCloake" +
       "dUnits\020\222\001\022\"\n\035MustTargetUnitsInAStasisFie" +
       "ld\020\223\001\022\"\n\035CantTargetUnitsInAStasisField\020\224" +
-      "\001\022%\n MustTargetUnderConstructionUnits\020\225\001",
+      "\001\022%\n MustTargetUnderConstructionUnits\020\225\001" +
       "\022%\n CantTargetUnderConstructionUnits\020\226\001\022" +
       "\030\n\023MustTargetDeadUnits\020\227\001\022\030\n\023CantTargetD" +
       "eadUnits\020\230\001\022\035\n\030MustTargetRevivableUnits\020" +
@@ -2130,7 +2130,7 @@ public final class Error {
       "ts\020\235\001\022\035\n\030MustTargetHallucinations\020\236\001\022\035\n\030" +
       "CantTargetHallucinations\020\237\001\022 \n\033MustTarge" +
       "tInvulnerableUnits\020\240\001\022 \n\033CantTargetInvul" +
-      "nerableUnits\020\241\001\022\034\n\027MustTargetDetectedUni",
+      "nerableUnits\020\241\001\022\034\n\027MustTargetDetectedUni" +
       "ts\020\242\001\022\034\n\027CantTargetDetectedUnits\020\243\001\022\035\n\030C" +
       "antTargetUnitWithEnergy\020\244\001\022\036\n\031CantTarget" +
       "UnitWithShields\020\245\001\022!\n\034MustTargetUncomman" +
@@ -2140,7 +2140,7 @@ public final class Error {
       "\n\034MustTargetPreventRevealUnits\020\252\001\022!\n\034Can" +
       "tTargetPreventRevealUnits\020\253\001\022\033\n\026MustTarg" +
       "etPassiveUnits\020\254\001\022\033\n\026CantTargetPassiveUn" +
-      "its\020\255\001\022\033\n\026MustTargetStunnedUnits\020\256\001\022\033\n\026C",
+      "its\020\255\001\022\033\n\026MustTargetStunnedUnits\020\256\001\022\033\n\026C" +
       "antTargetStunnedUnits\020\257\001\022\034\n\027MustTargetSu" +
       "mmonedUnits\020\260\001\022\034\n\027CantTargetSummonedUnit" +
       "s\020\261\001\022\024\n\017MustTargetUser1\020\262\001\022\024\n\017CantTarget" +
@@ -2150,7 +2150,7 @@ public final class Error {
       "esistantUnits\020\267\001\022\031\n\024MustTargetDazedUnits" +
       "\020\270\001\022\031\n\024CantTargetDazedUnits\020\271\001\022\021\n\014CantLo" +
       "ckdown\020\272\001\022\024\n\017CantMindControl\020\273\001\022\034\n\027MustT" +
-      "argetDestructibles\020\274\001\022\034\n\027CantTargetDestr",
+      "argetDestructibles\020\274\001\022\034\n\027CantTargetDestr" +
       "uctibles\020\275\001\022\024\n\017MustTargetItems\020\276\001\022\024\n\017Can" +
       "tTargetItems\020\277\001\022\030\n\023NoCalldownAvailable\020\300" +
       "\001\022\025\n\020WaypointListFull\020\301\001\022\023\n\016MustTargetRa" +
@@ -2160,7 +2160,7 @@ public final class Error {
       "adySpawningLarva\020\307\001\022!\n\034CantTargetExhaust" +
       "edResources\020\310\001\022\023\n\016CantUseMinimap\020\311\001\022\025\n\020C" +
       "antUseInfoPanel\020\312\001\022\025\n\020OrderQueueIsFull\020\313" +
-      "\001\022\034\n\027CantHarvestThatResource\020\314\001\022\032\n\025Harve",
+      "\001\022\034\n\027CantHarvestThatResource\020\314\001\022\032\n\025Harve" +
       "stersNotRequired\020\315\001\022\024\n\017AlreadyTargeted\020\316" +
       "\001\022\036\n\031CantAttackWeaponsDisabled\020\317\001\022\027\n\022Cou" +
       "ldntReachTarget\020\320\001\022\027\n\022TargetIsOutOfRange" +

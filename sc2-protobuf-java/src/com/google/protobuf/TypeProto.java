@@ -57,7 +57,7 @@ public final class TypeProto {
       "e_context\030\005 \001(\0132\036.google.protobuf.Source" +
       "Context\022\'\n\006syntax\030\006 \001(\0162\027.google.protobu" +
       "f.Syntax\"\325\005\n\005Field\022)\n\004kind\030\001 \001(\0162\033.googl" +
-      "e.protobuf.Field.Kind\0227\n\013cardinality\030\002 \001",
+      "e.protobuf.Field.Kind\0227\n\013cardinality\030\002 \001" +
       "(\0162\".google.protobuf.Field.Cardinality\022\016" +
       "\n\006number\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022\020\n\010type_url" +
       "\030\006 \001(\t\022\023\n\013oneof_index\030\007 \001(\005\022\016\n\006packed\030\010 " +
@@ -67,7 +67,7 @@ public final class TypeProto {
       "PE_DOUBLE\020\001\022\016\n\nTYPE_FLOAT\020\002\022\016\n\nTYPE_INT6" +
       "4\020\003\022\017\n\013TYPE_UINT64\020\004\022\016\n\nTYPE_INT32\020\005\022\020\n\014" +
       "TYPE_FIXED64\020\006\022\020\n\014TYPE_FIXED32\020\007\022\r\n\tTYPE" +
-      "_BOOL\020\010\022\017\n\013TYPE_STRING\020\t\022\016\n\nTYPE_GROUP\020\n",
+      "_BOOL\020\010\022\017\n\013TYPE_STRING\020\t\022\016\n\nTYPE_GROUP\020\n" +
       "\022\020\n\014TYPE_MESSAGE\020\013\022\016\n\nTYPE_BYTES\020\014\022\017\n\013TY" +
       "PE_UINT32\020\r\022\r\n\tTYPE_ENUM\020\016\022\021\n\rTYPE_SFIXE" +
       "D32\020\017\022\021\n\rTYPE_SFIXED64\020\020\022\017\n\013TYPE_SINT32\020" +
@@ -77,7 +77,7 @@ public final class TypeProto {
       "ALITY_REPEATED\020\003\"\316\001\n\004Enum\022\014\n\004name\030\001 \001(\t\022" +
       "-\n\tenumvalue\030\002 \003(\0132\032.google.protobuf.Enu" +
       "mValue\022(\n\007options\030\003 \003(\0132\027.google.protobu" +
-      "f.Option\0226\n\016source_context\030\004 \001(\0132\036.googl",
+      "f.Option\0226\n\016source_context\030\004 \001(\0132\036.googl" +
       "e.protobuf.SourceContext\022\'\n\006syntax\030\005 \001(\016" +
       "2\027.google.protobuf.Syntax\"S\n\tEnumValue\022\014" +
       "\n\004name\030\001 \001(\t\022\016\n\006number\030\002 \001(\005\022(\n\007options\030" +

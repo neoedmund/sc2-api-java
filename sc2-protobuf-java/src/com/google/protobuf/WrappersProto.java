@@ -77,7 +77,7 @@ public final class WrappersProto {
       "\r\n\005value\030\001 \001(\010\"\034\n\013StringValue\022\r\n\005value\030\001" +
       " \001(\t\"\033\n\nBytesValue\022\r\n\005value\030\001 \001(\014B|\n\023com" +
       ".google.protobufB\rWrappersProtoP\001Z*githu" +
-      "b.com/golang/protobuf/ptypes/wrappers\370\001\001",
+      "b.com/golang/protobuf/ptypes/wrappers\370\001\001" +
       "\242\002\003GPB\252\002\036Google.Protobuf.WellKnownTypesb" +
       "\006proto3"
     };

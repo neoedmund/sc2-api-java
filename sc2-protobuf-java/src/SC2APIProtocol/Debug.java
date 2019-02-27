@@ -310,31 +310,6 @@ public final class Debug {
      */
     SC2APIProtocol.Debug.DebugSetUnitValueOrBuilder getUnitValueOrBuilder();
 
-    /**
-     * <pre>
-     * TODO.
-     * </pre>
-     *
-     * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-     */
-    boolean hasChat();
-    /**
-     * <pre>
-     * TODO.
-     * </pre>
-     *
-     * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-     */
-    SC2APIProtocol.Debug.DebugChat getChat();
-    /**
-     * <pre>
-     * TODO.
-     * </pre>
-     *
-     * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-     */
-    SC2APIProtocol.Debug.DebugChatOrBuilder getChatOrBuilder();
-
     public SC2APIProtocol.Debug.DebugCommand.CommandCase getCommandCase();
   }
   /**
@@ -366,6 +341,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -377,13 +355,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Debug.DebugDraw.Builder subBuilder = null;
               if (commandCase_ == 1) {
@@ -400,6 +371,7 @@ public final class Debug {
             }
             case 16: {
               int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
               SC2APIProtocol.Debug.DebugGameState value = SC2APIProtocol.Debug.DebugGameState.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
@@ -493,18 +465,11 @@ public final class Debug {
               commandCase_ = 8;
               break;
             }
-            case 74: {
-              SC2APIProtocol.Debug.DebugChat.Builder subBuilder = null;
-              if (commandCase_ == 9) {
-                subBuilder = ((SC2APIProtocol.Debug.DebugChat) command_).toBuilder();
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
-              command_ =
-                  input.readMessage(SC2APIProtocol.Debug.DebugChat.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((SC2APIProtocol.Debug.DebugChat) command_);
-                command_ = subBuilder.buildPartial();
-              }
-              commandCase_ = 9;
               break;
             }
           }
@@ -524,6 +489,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCommand_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCommand_fieldAccessorTable
@@ -544,7 +510,6 @@ public final class Debug {
       SCORE(6),
       END_GAME(7),
       UNIT_VALUE(8),
-      CHAT(9),
       COMMAND_NOT_SET(0);
       private final int value;
       private CommandCase(int value) {
@@ -568,7 +533,6 @@ public final class Debug {
           case 6: return SCORE;
           case 7: return END_GAME;
           case 8: return UNIT_VALUE;
-          case 9: return CHAT;
           case 0: return COMMAND_NOT_SET;
           default: return null;
         }
@@ -622,6 +586,7 @@ public final class Debug {
      */
     public SC2APIProtocol.Debug.DebugGameState getGameState() {
       if (commandCase_ == 2) {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Debug.DebugGameState result = SC2APIProtocol.Debug.DebugGameState.valueOf(
             (java.lang.Integer) command_);
         return result == null ? SC2APIProtocol.Debug.DebugGameState.show_map : result;
@@ -797,45 +762,8 @@ public final class Debug {
       return SC2APIProtocol.Debug.DebugSetUnitValue.getDefaultInstance();
     }
 
-    public static final int CHAT_FIELD_NUMBER = 9;
-    /**
-     * <pre>
-     * TODO.
-     * </pre>
-     *
-     * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-     */
-    public boolean hasChat() {
-      return commandCase_ == 9;
-    }
-    /**
-     * <pre>
-     * TODO.
-     * </pre>
-     *
-     * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-     */
-    public SC2APIProtocol.Debug.DebugChat getChat() {
-      if (commandCase_ == 9) {
-         return (SC2APIProtocol.Debug.DebugChat) command_;
-      }
-      return SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-    }
-    /**
-     * <pre>
-     * TODO.
-     * </pre>
-     *
-     * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-     */
-    public SC2APIProtocol.Debug.DebugChatOrBuilder getChatOrBuilder() {
-      if (commandCase_ == 9) {
-         return (SC2APIProtocol.Debug.DebugChat) command_;
-      }
-      return SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-    }
-
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -845,6 +773,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (commandCase_ == 1) {
@@ -871,12 +800,10 @@ public final class Debug {
       if (commandCase_ == 8) {
         output.writeMessage(8, (SC2APIProtocol.Debug.DebugSetUnitValue) command_);
       }
-      if (commandCase_ == 9) {
-        output.writeMessage(9, (SC2APIProtocol.Debug.DebugChat) command_);
-      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -913,10 +840,6 @@ public final class Debug {
       if (commandCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, (SC2APIProtocol.Debug.DebugSetUnitValue) command_);
-      }
-      if (commandCase_ == 9) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, (SC2APIProtocol.Debug.DebugChat) command_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -970,10 +893,6 @@ public final class Debug {
           result = result && getUnitValue()
               .equals(other.getUnitValue());
           break;
-        case 9:
-          result = result && getChat()
-              .equals(other.getChat());
-          break;
         case 0:
         default:
       }
@@ -1020,10 +939,6 @@ public final class Debug {
         case 8:
           hash = (37 * hash) + UNIT_VALUE_FIELD_NUMBER;
           hash = (53 * hash) + getUnitValue().hashCode();
-          break;
-        case 9:
-          hash = (37 * hash) + CHAT_FIELD_NUMBER;
-          hash = (53 * hash) + getChat().hashCode();
           break;
         case 0:
         default:
@@ -1103,6 +1018,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1110,6 +1026,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugCommand prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1137,6 +1054,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCommand_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCommand_fieldAccessorTable
@@ -1159,6 +1077,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         commandCase_ = 0;
@@ -1166,15 +1085,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCommand_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugCommand getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugCommand.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugCommand build() {
         SC2APIProtocol.Debug.DebugCommand result = buildPartial();
         if (!result.isInitialized()) {
@@ -1183,6 +1105,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugCommand buildPartial() {
         SC2APIProtocol.Debug.DebugCommand result = new SC2APIProtocol.Debug.DebugCommand(this);
         int from_bitField0_ = bitField0_;
@@ -1239,45 +1162,45 @@ public final class Debug {
             result.command_ = unitValueBuilder_.build();
           }
         }
-        if (commandCase_ == 9) {
-          if (chatBuilder_ == null) {
-            result.command_ = command_;
-          } else {
-            result.command_ = chatBuilder_.build();
-          }
-        }
         result.bitField0_ = to_bitField0_;
         result.commandCase_ = commandCase_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugCommand) {
           return mergeFrom((SC2APIProtocol.Debug.DebugCommand)other);
@@ -1322,10 +1245,6 @@ public final class Debug {
             mergeUnitValue(other.getUnitValue());
             break;
           }
-          case CHAT: {
-            mergeChat(other.getChat());
-            break;
-          }
           case COMMAND_NOT_SET: {
             break;
           }
@@ -1335,10 +1254,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1520,6 +1441,7 @@ public final class Debug {
        */
       public SC2APIProtocol.Debug.DebugGameState getGameState() {
         if (commandCase_ == 2) {
+          @SuppressWarnings("deprecation")
           SC2APIProtocol.Debug.DebugGameState result = SC2APIProtocol.Debug.DebugGameState.valueOf(
               (java.lang.Integer) command_);
           return result == null ? SC2APIProtocol.Debug.DebugGameState.show_map : result;
@@ -2401,183 +2323,13 @@ public final class Debug {
         onChanged();;
         return unitValueBuilder_;
       }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          SC2APIProtocol.Debug.DebugChat, SC2APIProtocol.Debug.DebugChat.Builder, SC2APIProtocol.Debug.DebugChatOrBuilder> chatBuilder_;
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public boolean hasChat() {
-        return commandCase_ == 9;
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public SC2APIProtocol.Debug.DebugChat getChat() {
-        if (chatBuilder_ == null) {
-          if (commandCase_ == 9) {
-            return (SC2APIProtocol.Debug.DebugChat) command_;
-          }
-          return SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-        } else {
-          if (commandCase_ == 9) {
-            return chatBuilder_.getMessage();
-          }
-          return SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public Builder setChat(SC2APIProtocol.Debug.DebugChat value) {
-        if (chatBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          command_ = value;
-          onChanged();
-        } else {
-          chatBuilder_.setMessage(value);
-        }
-        commandCase_ = 9;
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public Builder setChat(
-          SC2APIProtocol.Debug.DebugChat.Builder builderForValue) {
-        if (chatBuilder_ == null) {
-          command_ = builderForValue.build();
-          onChanged();
-        } else {
-          chatBuilder_.setMessage(builderForValue.build());
-        }
-        commandCase_ = 9;
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public Builder mergeChat(SC2APIProtocol.Debug.DebugChat value) {
-        if (chatBuilder_ == null) {
-          if (commandCase_ == 9 &&
-              command_ != SC2APIProtocol.Debug.DebugChat.getDefaultInstance()) {
-            command_ = SC2APIProtocol.Debug.DebugChat.newBuilder((SC2APIProtocol.Debug.DebugChat) command_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            command_ = value;
-          }
-          onChanged();
-        } else {
-          if (commandCase_ == 9) {
-            chatBuilder_.mergeFrom(value);
-          }
-          chatBuilder_.setMessage(value);
-        }
-        commandCase_ = 9;
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public Builder clearChat() {
-        if (chatBuilder_ == null) {
-          if (commandCase_ == 9) {
-            commandCase_ = 0;
-            command_ = null;
-            onChanged();
-          }
-        } else {
-          if (commandCase_ == 9) {
-            commandCase_ = 0;
-            command_ = null;
-          }
-          chatBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public SC2APIProtocol.Debug.DebugChat.Builder getChatBuilder() {
-        return getChatFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      public SC2APIProtocol.Debug.DebugChatOrBuilder getChatOrBuilder() {
-        if ((commandCase_ == 9) && (chatBuilder_ != null)) {
-          return chatBuilder_.getMessageOrBuilder();
-        } else {
-          if (commandCase_ == 9) {
-            return (SC2APIProtocol.Debug.DebugChat) command_;
-          }
-          return SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * TODO.
-       * </pre>
-       *
-       * <code>optional .SC2APIProtocol.DebugChat chat = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          SC2APIProtocol.Debug.DebugChat, SC2APIProtocol.Debug.DebugChat.Builder, SC2APIProtocol.Debug.DebugChatOrBuilder> 
-          getChatFieldBuilder() {
-        if (chatBuilder_ == null) {
-          if (!(commandCase_ == 9)) {
-            command_ = SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-          }
-          chatBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              SC2APIProtocol.Debug.DebugChat, SC2APIProtocol.Debug.DebugChat.Builder, SC2APIProtocol.Debug.DebugChatOrBuilder>(
-                  (SC2APIProtocol.Debug.DebugChat) command_,
-                  getParentForChildren(),
-                  isClean());
-          command_ = null;
-        }
-        commandCase_ = 9;
-        onChanged();;
-        return chatBuilder_;
-      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2599,11 +2351,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugCommand>
         PARSER = new com.google.protobuf.AbstractParser<DebugCommand>() {
+      @java.lang.Override
       public DebugCommand parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugCommand(input, extensionRegistry);
+        return new DebugCommand(input, extensionRegistry);
       }
     };
 
@@ -2616,6 +2369,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugCommand getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2751,6 +2505,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2762,13 +2519,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 text_ = new java.util.ArrayList<SC2APIProtocol.Debug.DebugText>();
@@ -2805,6 +2555,13 @@ public final class Debug {
                   input.readMessage(SC2APIProtocol.Debug.DebugSphere.PARSER, extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2834,6 +2591,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugDraw_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugDraw_fieldAccessorTable
@@ -2982,6 +2740,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2991,6 +2750,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < text_.size(); i++) {
@@ -3008,6 +2768,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3155,6 +2916,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3162,6 +2924,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugDraw prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3185,6 +2948,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugDraw_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugDraw_fieldAccessorTable
@@ -3211,6 +2975,7 @@ public final class Debug {
           getSpheresFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (textBuilder_ == null) {
@@ -3240,15 +3005,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugDraw_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugDraw getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugDraw.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugDraw build() {
         SC2APIProtocol.Debug.DebugDraw result = buildPartial();
         if (!result.isInitialized()) {
@@ -3257,6 +3025,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugDraw buildPartial() {
         SC2APIProtocol.Debug.DebugDraw result = new SC2APIProtocol.Debug.DebugDraw(this);
         int from_bitField0_ = bitField0_;
@@ -3300,32 +3069,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugDraw) {
           return mergeFrom((SC2APIProtocol.Debug.DebugDraw)other);
@@ -3446,10 +3222,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4428,11 +4206,13 @@ public final class Debug {
         }
         return spheresBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4454,11 +4234,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugDraw>
         PARSER = new com.google.protobuf.AbstractParser<DebugDraw>() {
+      @java.lang.Override
       public DebugDraw parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugDraw(input, extensionRegistry);
+        return new DebugDraw(input, extensionRegistry);
       }
     };
 
@@ -4471,6 +4252,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugDraw getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4532,6 +4314,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4543,13 +4328,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.Point.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4576,6 +4354,13 @@ public final class Debug {
               bitField0_ |= 0x00000002;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4593,6 +4378,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Line_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Line_fieldAccessorTable
@@ -4644,6 +4430,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4653,6 +4440,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4664,6 +4452,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4797,6 +4586,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4804,6 +4594,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.Line prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4827,6 +4618,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Line_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Line_fieldAccessorTable
@@ -4851,6 +4643,7 @@ public final class Debug {
           getP1FieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (p0Builder_ == null) {
@@ -4868,15 +4661,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Line_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.Line getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.Line.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.Line build() {
         SC2APIProtocol.Debug.Line result = buildPartial();
         if (!result.isInitialized()) {
@@ -4885,6 +4681,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.Line buildPartial() {
         SC2APIProtocol.Debug.Line result = new SC2APIProtocol.Debug.Line(this);
         int from_bitField0_ = bitField0_;
@@ -4910,32 +4707,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.Line) {
           return mergeFrom((SC2APIProtocol.Debug.Line)other);
@@ -4958,10 +4762,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5216,11 +5022,13 @@ public final class Debug {
         }
         return p1Builder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5242,11 +5050,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Line>
         PARSER = new com.google.protobuf.AbstractParser<Line>() {
+      @java.lang.Override
       public Line parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Line(input, extensionRegistry);
+        return new Line(input, extensionRegistry);
       }
     };
 
@@ -5259,6 +5068,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.Line getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5324,6 +5134,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5335,13 +5148,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               r_ = input.readUInt32();
@@ -5355,6 +5161,13 @@ public final class Debug {
             case 24: {
               bitField0_ |= 0x00000004;
               b_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5374,6 +5187,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Color_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Color_fieldAccessorTable
@@ -5428,6 +5242,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5437,6 +5252,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5451,6 +5267,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5597,6 +5414,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5604,6 +5422,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.Color prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5627,6 +5446,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Color_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Color_fieldAccessorTable
@@ -5649,6 +5469,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         r_ = 0;
@@ -5660,15 +5481,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_Color_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.Color getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.Color.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.Color build() {
         SC2APIProtocol.Debug.Color result = buildPartial();
         if (!result.isInitialized()) {
@@ -5677,6 +5501,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.Color buildPartial() {
         SC2APIProtocol.Debug.Color result = new SC2APIProtocol.Debug.Color(this);
         int from_bitField0_ = bitField0_;
@@ -5698,32 +5523,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.Color) {
           return mergeFrom((SC2APIProtocol.Debug.Color)other);
@@ -5749,10 +5581,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5867,11 +5701,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5893,11 +5729,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Color>
         PARSER = new com.google.protobuf.AbstractParser<Color>() {
+      @java.lang.Override
       public Color parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Color(input, extensionRegistry);
+        return new Color(input, extensionRegistry);
       }
     };
 
@@ -5910,6 +5747,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.Color getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6008,6 +5846,23 @@ public final class Debug {
      * <code>optional .SC2APIProtocol.Point world_pos = 4;</code>
      */
     SC2APIProtocol.Common.PointOrBuilder getWorldPosOrBuilder();
+
+    /**
+     * <pre>
+     * Pixel height of the text. Defaults to 8px.
+     * </pre>
+     *
+     * <code>optional uint32 size = 5;</code>
+     */
+    boolean hasSize();
+    /**
+     * <pre>
+     * Pixel height of the text. Defaults to 8px.
+     * </pre>
+     *
+     * <code>optional uint32 size = 5;</code>
+     */
+    int getSize();
   }
   /**
    * <pre>
@@ -6027,6 +5882,7 @@ public final class Debug {
     }
     private DebugText() {
       text_ = "";
+      size_ = 0;
     }
 
     @java.lang.Override
@@ -6039,6 +5895,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6050,13 +5909,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Debug.Color.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6102,6 +5954,18 @@ public final class Debug {
               bitField0_ |= 0x00000008;
               break;
             }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              size_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6119,6 +5983,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugText_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugText_fieldAccessorTable
@@ -6268,7 +6133,31 @@ public final class Debug {
       return worldPos_ == null ? SC2APIProtocol.Common.Point.getDefaultInstance() : worldPos_;
     }
 
+    public static final int SIZE_FIELD_NUMBER = 5;
+    private int size_;
+    /**
+     * <pre>
+     * Pixel height of the text. Defaults to 8px.
+     * </pre>
+     *
+     * <code>optional uint32 size = 5;</code>
+     */
+    public boolean hasSize() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <pre>
+     * Pixel height of the text. Defaults to 8px.
+     * </pre>
+     *
+     * <code>optional uint32 size = 5;</code>
+     */
+    public int getSize() {
+      return size_;
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6278,6 +6167,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6292,9 +6182,13 @@ public final class Debug {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeMessage(4, getWorldPos());
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeUInt32(5, size_);
+      }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6314,6 +6208,10 @@ public final class Debug {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getWorldPos());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, size_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6351,6 +6249,11 @@ public final class Debug {
         result = result && getWorldPos()
             .equals(other.getWorldPos());
       }
+      result = result && (hasSize() == other.hasSize());
+      if (hasSize()) {
+        result = result && (getSize()
+            == other.getSize());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -6377,6 +6280,10 @@ public final class Debug {
       if (hasWorldPos()) {
         hash = (37 * hash) + WORLD_POS_FIELD_NUMBER;
         hash = (53 * hash) + getWorldPos().hashCode();
+      }
+      if (hasSize()) {
+        hash = (37 * hash) + SIZE_FIELD_NUMBER;
+        hash = (53 * hash) + getSize();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6453,6 +6360,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6460,6 +6368,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugText prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6487,6 +6396,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugText_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugText_fieldAccessorTable
@@ -6512,6 +6422,7 @@ public final class Debug {
           getWorldPosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (colorBuilder_ == null) {
@@ -6534,18 +6445,23 @@ public final class Debug {
           worldPosBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
+        size_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugText_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugText getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugText.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugText build() {
         SC2APIProtocol.Debug.DebugText result = buildPartial();
         if (!result.isInitialized()) {
@@ -6554,6 +6470,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugText buildPartial() {
         SC2APIProtocol.Debug.DebugText result = new SC2APIProtocol.Debug.DebugText(this);
         int from_bitField0_ = bitField0_;
@@ -6586,37 +6503,48 @@ public final class Debug {
         } else {
           result.worldPos_ = worldPosBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.size_ = size_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugText) {
           return mergeFrom((SC2APIProtocol.Debug.DebugText)other);
@@ -6642,15 +6570,20 @@ public final class Debug {
         if (other.hasWorldPos()) {
           mergeWorldPos(other.getWorldPos());
         }
+        if (other.hasSize()) {
+          setSize(other.getSize());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7195,11 +7128,61 @@ public final class Debug {
         }
         return worldPosBuilder_;
       }
+
+      private int size_ ;
+      /**
+       * <pre>
+       * Pixel height of the text. Defaults to 8px.
+       * </pre>
+       *
+       * <code>optional uint32 size = 5;</code>
+       */
+      public boolean hasSize() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <pre>
+       * Pixel height of the text. Defaults to 8px.
+       * </pre>
+       *
+       * <code>optional uint32 size = 5;</code>
+       */
+      public int getSize() {
+        return size_;
+      }
+      /**
+       * <pre>
+       * Pixel height of the text. Defaults to 8px.
+       * </pre>
+       *
+       * <code>optional uint32 size = 5;</code>
+       */
+      public Builder setSize(int value) {
+        bitField0_ |= 0x00000010;
+        size_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Pixel height of the text. Defaults to 8px.
+       * </pre>
+       *
+       * <code>optional uint32 size = 5;</code>
+       */
+      public Builder clearSize() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        size_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7221,11 +7204,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugText>
         PARSER = new com.google.protobuf.AbstractParser<DebugText>() {
+      @java.lang.Override
       public DebugText parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugText(input, extensionRegistry);
+        return new DebugText(input, extensionRegistry);
       }
     };
 
@@ -7238,6 +7222,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugText getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7315,6 +7300,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7326,13 +7314,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Debug.Color.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7359,6 +7340,13 @@ public final class Debug {
               bitField0_ |= 0x00000002;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7376,6 +7364,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugLine_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugLine_fieldAccessorTable
@@ -7439,6 +7428,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7448,6 +7438,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7459,6 +7450,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7592,6 +7584,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7599,6 +7592,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugLine prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7626,6 +7620,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugLine_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugLine_fieldAccessorTable
@@ -7650,6 +7645,7 @@ public final class Debug {
           getLineFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (colorBuilder_ == null) {
@@ -7667,15 +7663,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugLine_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugLine getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugLine.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugLine build() {
         SC2APIProtocol.Debug.DebugLine result = buildPartial();
         if (!result.isInitialized()) {
@@ -7684,6 +7683,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugLine buildPartial() {
         SC2APIProtocol.Debug.DebugLine result = new SC2APIProtocol.Debug.DebugLine(this);
         int from_bitField0_ = bitField0_;
@@ -7709,32 +7709,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugLine) {
           return mergeFrom((SC2APIProtocol.Debug.DebugLine)other);
@@ -7757,10 +7764,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8051,11 +8060,13 @@ public final class Debug {
         }
         return lineBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8077,11 +8088,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugLine>
         PARSER = new com.google.protobuf.AbstractParser<DebugLine>() {
+      @java.lang.Override
       public DebugLine parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugLine(input, extensionRegistry);
+        return new DebugLine(input, extensionRegistry);
       }
     };
 
@@ -8094,6 +8106,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugLine getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8172,6 +8185,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8183,13 +8199,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Debug.Color.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8229,6 +8238,13 @@ public final class Debug {
               bitField0_ |= 0x00000004;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8246,6 +8262,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugBox_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugBox_fieldAccessorTable
@@ -8318,6 +8335,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8327,6 +8345,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8341,6 +8360,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8487,6 +8507,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8494,6 +8515,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugBox prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8521,6 +8543,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugBox_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugBox_fieldAccessorTable
@@ -8546,6 +8569,7 @@ public final class Debug {
           getMaxFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (colorBuilder_ == null) {
@@ -8569,15 +8593,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugBox_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugBox getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugBox.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugBox build() {
         SC2APIProtocol.Debug.DebugBox result = buildPartial();
         if (!result.isInitialized()) {
@@ -8586,6 +8613,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugBox buildPartial() {
         SC2APIProtocol.Debug.DebugBox result = new SC2APIProtocol.Debug.DebugBox(this);
         int from_bitField0_ = bitField0_;
@@ -8619,32 +8647,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugBox) {
           return mergeFrom((SC2APIProtocol.Debug.DebugBox)other);
@@ -8670,10 +8705,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9046,11 +9083,13 @@ public final class Debug {
         }
         return maxBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9072,11 +9111,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugBox>
         PARSER = new com.google.protobuf.AbstractParser<DebugBox>() {
+      @java.lang.Override
       public DebugBox parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugBox(input, extensionRegistry);
+        return new DebugBox(input, extensionRegistry);
       }
     };
 
@@ -9089,6 +9129,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugBox getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9164,6 +9205,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9175,13 +9219,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Debug.Color.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9213,6 +9250,13 @@ public final class Debug {
               r_ = input.readFloat();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9230,6 +9274,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSphere_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSphere_fieldAccessorTable
@@ -9296,6 +9341,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9305,6 +9351,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9319,6 +9366,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9468,6 +9516,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9475,6 +9524,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugSphere prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9502,6 +9552,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSphere_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSphere_fieldAccessorTable
@@ -9526,6 +9577,7 @@ public final class Debug {
           getPFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (colorBuilder_ == null) {
@@ -9545,15 +9597,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSphere_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSphere getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugSphere.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSphere build() {
         SC2APIProtocol.Debug.DebugSphere result = buildPartial();
         if (!result.isInitialized()) {
@@ -9562,6 +9617,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSphere buildPartial() {
         SC2APIProtocol.Debug.DebugSphere result = new SC2APIProtocol.Debug.DebugSphere(this);
         int from_bitField0_ = bitField0_;
@@ -9591,32 +9647,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugSphere) {
           return mergeFrom((SC2APIProtocol.Debug.DebugSphere)other);
@@ -9642,10 +9705,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9932,11 +9997,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9958,11 +10025,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugSphere>
         PARSER = new com.google.protobuf.AbstractParser<DebugSphere>() {
+      @java.lang.Override
       public DebugSphere parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugSphere(input, extensionRegistry);
+        return new DebugSphere(input, extensionRegistry);
       }
     };
 
@@ -9975,6 +10043,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugSphere getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10053,6 +10122,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10064,13 +10136,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               unitType_ = input.readUInt32();
@@ -10099,6 +10164,13 @@ public final class Debug {
               quantity_ = input.readUInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10116,6 +10188,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCreateUnit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCreateUnit_fieldAccessorTable
@@ -10191,6 +10264,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10200,6 +10274,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10217,6 +10292,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10376,6 +10452,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10383,6 +10460,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugCreateUnit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10406,6 +10484,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCreateUnit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCreateUnit_fieldAccessorTable
@@ -10429,6 +10508,7 @@ public final class Debug {
           getPosFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         unitType_ = 0;
@@ -10446,15 +10526,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugCreateUnit_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugCreateUnit getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugCreateUnit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugCreateUnit build() {
         SC2APIProtocol.Debug.DebugCreateUnit result = buildPartial();
         if (!result.isInitialized()) {
@@ -10463,6 +10546,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugCreateUnit buildPartial() {
         SC2APIProtocol.Debug.DebugCreateUnit result = new SC2APIProtocol.Debug.DebugCreateUnit(this);
         int from_bitField0_ = bitField0_;
@@ -10492,32 +10576,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugCreateUnit) {
           return mergeFrom((SC2APIProtocol.Debug.DebugCreateUnit)other);
@@ -10546,10 +10637,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10782,11 +10875,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -10808,11 +10903,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugCreateUnit>
         PARSER = new com.google.protobuf.AbstractParser<DebugCreateUnit>() {
+      @java.lang.Override
       public DebugCreateUnit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugCreateUnit(input, extensionRegistry);
+        return new DebugCreateUnit(input, extensionRegistry);
       }
     };
 
@@ -10825,6 +10921,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugCreateUnit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10874,6 +10971,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10885,13 +10985,6 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 tag_ = new java.util.ArrayList<java.lang.Long>();
@@ -10911,6 +11004,13 @@ public final class Debug {
                 tag_.add(input.readUInt64());
               }
               input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -10933,6 +11033,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugKillUnit_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugKillUnit_fieldAccessorTable
@@ -10963,6 +11064,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10972,6 +11074,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < tag_.size(); i++) {
@@ -10980,6 +11083,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11102,6 +11206,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11109,6 +11214,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugKillUnit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11132,6 +11238,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugKillUnit_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugKillUnit_fieldAccessorTable
@@ -11154,6 +11261,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         tag_ = java.util.Collections.emptyList();
@@ -11161,15 +11269,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugKillUnit_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugKillUnit getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugKillUnit.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugKillUnit build() {
         SC2APIProtocol.Debug.DebugKillUnit result = buildPartial();
         if (!result.isInitialized()) {
@@ -11178,6 +11289,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugKillUnit buildPartial() {
         SC2APIProtocol.Debug.DebugKillUnit result = new SC2APIProtocol.Debug.DebugKillUnit(this);
         int from_bitField0_ = bitField0_;
@@ -11190,32 +11302,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugKillUnit) {
           return mergeFrom((SC2APIProtocol.Debug.DebugKillUnit)other);
@@ -11242,10 +11361,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11330,11 +11451,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -11356,11 +11479,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugKillUnit>
         PARSER = new com.google.protobuf.AbstractParser<DebugKillUnit>() {
+      @java.lang.Override
       public DebugKillUnit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugKillUnit(input, extensionRegistry);
+        return new DebugKillUnit(input, extensionRegistry);
       }
     };
 
@@ -11373,6 +11497,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugKillUnit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11428,6 +11553,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11439,15 +11567,9 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Debug.DebugTestProcess.Test value = SC2APIProtocol.Debug.DebugTestProcess.Test.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -11460,6 +11582,13 @@ public final class Debug {
             case 16: {
               bitField0_ |= 0x00000002;
               delayMs_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -11479,6 +11608,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugTestProcess_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugTestProcess_fieldAccessorTable
@@ -11598,6 +11728,7 @@ public final class Debug {
      * <code>optional .SC2APIProtocol.DebugTestProcess.Test test = 1;</code>
      */
     public SC2APIProtocol.Debug.DebugTestProcess.Test getTest() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Debug.DebugTestProcess.Test result = SC2APIProtocol.Debug.DebugTestProcess.Test.valueOf(test_);
       return result == null ? SC2APIProtocol.Debug.DebugTestProcess.Test.hang : result;
     }
@@ -11618,6 +11749,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11627,6 +11759,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11638,6 +11771,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11770,6 +11904,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11777,6 +11912,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugTestProcess prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11800,6 +11936,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugTestProcess_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugTestProcess_fieldAccessorTable
@@ -11822,6 +11959,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         test_ = 1;
@@ -11831,15 +11969,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugTestProcess_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugTestProcess getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugTestProcess.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugTestProcess build() {
         SC2APIProtocol.Debug.DebugTestProcess result = buildPartial();
         if (!result.isInitialized()) {
@@ -11848,6 +11989,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugTestProcess buildPartial() {
         SC2APIProtocol.Debug.DebugTestProcess result = new SC2APIProtocol.Debug.DebugTestProcess(this);
         int from_bitField0_ = bitField0_;
@@ -11865,32 +12007,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugTestProcess) {
           return mergeFrom((SC2APIProtocol.Debug.DebugTestProcess)other);
@@ -11913,10 +12062,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11947,6 +12098,7 @@ public final class Debug {
        * <code>optional .SC2APIProtocol.DebugTestProcess.Test test = 1;</code>
        */
       public SC2APIProtocol.Debug.DebugTestProcess.Test getTest() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Debug.DebugTestProcess.Test result = SC2APIProtocol.Debug.DebugTestProcess.Test.valueOf(test_);
         return result == null ? SC2APIProtocol.Debug.DebugTestProcess.Test.hang : result;
       }
@@ -12003,11 +12155,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12029,11 +12183,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugTestProcess>
         PARSER = new com.google.protobuf.AbstractParser<DebugTestProcess>() {
+      @java.lang.Override
       public DebugTestProcess parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugTestProcess(input, extensionRegistry);
+        return new DebugTestProcess(input, extensionRegistry);
       }
     };
 
@@ -12046,6 +12201,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugTestProcess getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12091,6 +12247,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12102,16 +12261,16 @@ public final class Debug {
             case 0:
               done = true;
               break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              score_ = input.readFloat();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
-            }
-            case 13: {
-              bitField0_ |= 0x00000001;
-              score_ = input.readFloat();
               break;
             }
           }
@@ -12131,6 +12290,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetScore_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetScore_fieldAccessorTable
@@ -12155,6 +12315,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12164,6 +12325,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12172,6 +12334,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12295,6 +12458,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12302,6 +12466,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugSetScore prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12325,6 +12490,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetScore_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetScore_fieldAccessorTable
@@ -12347,6 +12513,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         score_ = 0F;
@@ -12354,15 +12521,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetScore_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSetScore getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugSetScore.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSetScore build() {
         SC2APIProtocol.Debug.DebugSetScore result = buildPartial();
         if (!result.isInitialized()) {
@@ -12371,6 +12541,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSetScore buildPartial() {
         SC2APIProtocol.Debug.DebugSetScore result = new SC2APIProtocol.Debug.DebugSetScore(this);
         int from_bitField0_ = bitField0_;
@@ -12384,32 +12555,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugSetScore) {
           return mergeFrom((SC2APIProtocol.Debug.DebugSetScore)other);
@@ -12429,10 +12607,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12483,11 +12663,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12509,11 +12691,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugSetScore>
         PARSER = new com.google.protobuf.AbstractParser<DebugSetScore>() {
+      @java.lang.Override
       public DebugSetScore parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugSetScore(input, extensionRegistry);
+        return new DebugSetScore(input, extensionRegistry);
       }
     };
 
@@ -12526,6 +12709,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugSetScore getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12571,6 +12755,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12582,21 +12769,22 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Debug.DebugEndGame.EndResult value = SC2APIProtocol.Debug.DebugEndGame.EndResult.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
                 endResult_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -12617,6 +12805,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugEndGame_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugEndGame_fieldAccessorTable
@@ -12735,11 +12924,13 @@ public final class Debug {
      * <code>optional .SC2APIProtocol.DebugEndGame.EndResult end_result = 1;</code>
      */
     public SC2APIProtocol.Debug.DebugEndGame.EndResult getEndResult() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Debug.DebugEndGame.EndResult result = SC2APIProtocol.Debug.DebugEndGame.EndResult.valueOf(endResult_);
       return result == null ? SC2APIProtocol.Debug.DebugEndGame.EndResult.Surrender : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12749,6 +12940,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12757,6 +12949,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12876,6 +13069,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12883,6 +13077,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugEndGame prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12906,6 +13101,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugEndGame_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugEndGame_fieldAccessorTable
@@ -12928,6 +13124,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         endResult_ = 1;
@@ -12935,15 +13132,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugEndGame_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugEndGame getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugEndGame.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugEndGame build() {
         SC2APIProtocol.Debug.DebugEndGame result = buildPartial();
         if (!result.isInitialized()) {
@@ -12952,6 +13152,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugEndGame buildPartial() {
         SC2APIProtocol.Debug.DebugEndGame result = new SC2APIProtocol.Debug.DebugEndGame(this);
         int from_bitField0_ = bitField0_;
@@ -12965,32 +13166,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugEndGame) {
           return mergeFrom((SC2APIProtocol.Debug.DebugEndGame)other);
@@ -13010,10 +13218,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13044,6 +13254,7 @@ public final class Debug {
        * <code>optional .SC2APIProtocol.DebugEndGame.EndResult end_result = 1;</code>
        */
       public SC2APIProtocol.Debug.DebugEndGame.EndResult getEndResult() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Debug.DebugEndGame.EndResult result = SC2APIProtocol.Debug.DebugEndGame.EndResult.valueOf(endResult_);
         return result == null ? SC2APIProtocol.Debug.DebugEndGame.EndResult.Surrender : result;
       }
@@ -13068,11 +13279,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13094,11 +13307,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugEndGame>
         PARSER = new com.google.protobuf.AbstractParser<DebugEndGame>() {
+      @java.lang.Override
       public DebugEndGame parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugEndGame(input, extensionRegistry);
+        return new DebugEndGame(input, extensionRegistry);
       }
     };
 
@@ -13111,6 +13325,7 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugEndGame getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13176,6 +13391,9 @@ public final class Debug {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13187,15 +13405,9 @@ public final class Debug {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue value = SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -13215,6 +13427,13 @@ public final class Debug {
               unitTag_ = input.readUInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -13232,6 +13451,7 @@ public final class Debug {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetUnitValue_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetUnitValue_fieldAccessorTable
@@ -13351,6 +13571,7 @@ public final class Debug {
      * <code>optional .SC2APIProtocol.DebugSetUnitValue.UnitValue unit_value = 1;</code>
      */
     public SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue getUnitValue() {
+      @SuppressWarnings("deprecation")
       SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue result = SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue.valueOf(unitValue_);
       return result == null ? SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue.Energy : result;
     }
@@ -13386,6 +13607,7 @@ public final class Debug {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -13395,6 +13617,7 @@ public final class Debug {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13409,6 +13632,7 @@ public final class Debug {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13558,6 +13782,7 @@ public final class Debug {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13565,6 +13790,7 @@ public final class Debug {
     public static Builder newBuilder(SC2APIProtocol.Debug.DebugSetUnitValue prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13588,6 +13814,7 @@ public final class Debug {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetUnitValue_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetUnitValue_fieldAccessorTable
@@ -13610,6 +13837,7 @@ public final class Debug {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         unitValue_ = 1;
@@ -13621,15 +13849,18 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugSetUnitValue_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSetUnitValue getDefaultInstanceForType() {
         return SC2APIProtocol.Debug.DebugSetUnitValue.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSetUnitValue build() {
         SC2APIProtocol.Debug.DebugSetUnitValue result = buildPartial();
         if (!result.isInitialized()) {
@@ -13638,6 +13869,7 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Debug.DebugSetUnitValue buildPartial() {
         SC2APIProtocol.Debug.DebugSetUnitValue result = new SC2APIProtocol.Debug.DebugSetUnitValue(this);
         int from_bitField0_ = bitField0_;
@@ -13659,32 +13891,39 @@ public final class Debug {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Debug.DebugSetUnitValue) {
           return mergeFrom((SC2APIProtocol.Debug.DebugSetUnitValue)other);
@@ -13710,10 +13949,12 @@ public final class Debug {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13744,6 +13985,7 @@ public final class Debug {
        * <code>optional .SC2APIProtocol.DebugSetUnitValue.UnitValue unit_value = 1;</code>
        */
       public SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue getUnitValue() {
+        @SuppressWarnings("deprecation")
         SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue result = SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue.valueOf(unitValue_);
         return result == null ? SC2APIProtocol.Debug.DebugSetUnitValue.UnitValue.Energy : result;
       }
@@ -13832,11 +14074,13 @@ public final class Debug {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13858,11 +14102,12 @@ public final class Debug {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugSetUnitValue>
         PARSER = new com.google.protobuf.AbstractParser<DebugSetUnitValue>() {
+      @java.lang.Override
       public DebugSetUnitValue parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugSetUnitValue(input, extensionRegistry);
+        return new DebugSetUnitValue(input, extensionRegistry);
       }
     };
 
@@ -13875,562 +14120,8 @@ public final class Debug {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Debug.DebugSetUnitValue getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DebugChatOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SC2APIProtocol.DebugChat)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string message = 1;</code>
-     */
-    boolean hasMessage();
-    /**
-     * <code>optional string message = 1;</code>
-     */
-    java.lang.String getMessage();
-    /**
-     * <code>optional string message = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-  }
-  /**
-   * Protobuf type {@code SC2APIProtocol.DebugChat}
-   */
-  public  static final class DebugChat extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SC2APIProtocol.DebugChat)
-      DebugChatOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DebugChat.newBuilder() to construct.
-    private DebugChat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DebugChat() {
-      message_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DebugChat(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              message_ = bs;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugChat_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugChat_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              SC2APIProtocol.Debug.DebugChat.class, SC2APIProtocol.Debug.DebugChat.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int MESSAGE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object message_;
-    /**
-     * <code>optional string message = 1;</code>
-     */
-    public boolean hasMessage() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional string message = 1;</code>
-     */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          message_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string message = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof SC2APIProtocol.Debug.DebugChat)) {
-        return super.equals(obj);
-      }
-      SC2APIProtocol.Debug.DebugChat other = (SC2APIProtocol.Debug.DebugChat) obj;
-
-      boolean result = true;
-      result = result && (hasMessage() == other.hasMessage());
-      if (hasMessage()) {
-        result = result && getMessage()
-            .equals(other.getMessage());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasMessage()) {
-        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getMessage().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SC2APIProtocol.Debug.DebugChat parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(SC2APIProtocol.Debug.DebugChat prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code SC2APIProtocol.DebugChat}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SC2APIProtocol.DebugChat)
-        SC2APIProtocol.Debug.DebugChatOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugChat_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugChat_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                SC2APIProtocol.Debug.DebugChat.class, SC2APIProtocol.Debug.DebugChat.Builder.class);
-      }
-
-      // Construct using SC2APIProtocol.Debug.DebugChat.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        message_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return SC2APIProtocol.Debug.internal_static_SC2APIProtocol_DebugChat_descriptor;
-      }
-
-      public SC2APIProtocol.Debug.DebugChat getDefaultInstanceForType() {
-        return SC2APIProtocol.Debug.DebugChat.getDefaultInstance();
-      }
-
-      public SC2APIProtocol.Debug.DebugChat build() {
-        SC2APIProtocol.Debug.DebugChat result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public SC2APIProtocol.Debug.DebugChat buildPartial() {
-        SC2APIProtocol.Debug.DebugChat result = new SC2APIProtocol.Debug.DebugChat(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.message_ = message_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SC2APIProtocol.Debug.DebugChat) {
-          return mergeFrom((SC2APIProtocol.Debug.DebugChat)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(SC2APIProtocol.Debug.DebugChat other) {
-        if (other == SC2APIProtocol.Debug.DebugChat.getDefaultInstance()) return this;
-        if (other.hasMessage()) {
-          bitField0_ |= 0x00000001;
-          message_ = other.message_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        SC2APIProtocol.Debug.DebugChat parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SC2APIProtocol.Debug.DebugChat) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object message_ = "";
-      /**
-       * <code>optional string message = 1;</code>
-       */
-      public boolean hasMessage() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional string message = 1;</code>
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            message_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string message = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string message = 1;</code>
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string message = 1;</code>
-       */
-      public Builder clearMessage() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        message_ = getDefaultInstance().getMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string message = 1;</code>
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        message_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:SC2APIProtocol.DebugChat)
-    }
-
-    // @@protoc_insertion_point(class_scope:SC2APIProtocol.DebugChat)
-    private static final SC2APIProtocol.Debug.DebugChat DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new SC2APIProtocol.Debug.DebugChat();
-    }
-
-    public static SC2APIProtocol.Debug.DebugChat getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DebugChat>
-        PARSER = new com.google.protobuf.AbstractParser<DebugChat>() {
-      public DebugChat parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DebugChat(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DebugChat> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DebugChat> getParserForType() {
-      return PARSER;
-    }
-
-    public SC2APIProtocol.Debug.DebugChat getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14506,11 +14197,6 @@ public final class Debug {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SC2APIProtocol_DebugSetUnitValue_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SC2APIProtocol_DebugChat_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SC2APIProtocol_DebugChat_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -14521,7 +14207,7 @@ public final class Debug {
   static {
     java.lang.String[] descriptorData = {
       "\n\034s2clientprotocol/debug.proto\022\016SC2APIPr" +
-      "otocol\032\035s2clientprotocol/common.proto\"\346\003" +
+      "otocol\032\035s2clientprotocol/common.proto\"\273\003" +
       "\n\014DebugCommand\022)\n\004draw\030\001 \001(\0132\031.SC2APIPro" +
       "tocol.DebugDrawH\000\0224\n\ngame_state\030\002 \001(\0162\036." +
       "SC2APIProtocol.DebugGameStateH\000\0226\n\013creat" +
@@ -14529,51 +14215,49 @@ public final class Debug {
       "eUnitH\000\0222\n\tkill_unit\030\004 \001(\0132\035.SC2APIProto" +
       "col.DebugKillUnitH\000\0228\n\014test_process\030\005 \001(" +
       "\0132 .SC2APIProtocol.DebugTestProcessH\000\022.\n" +
-      "\005score\030\006 \001(\0132\035.SC2APIProtocol.DebugSetSc",
+      "\005score\030\006 \001(\0132\035.SC2APIProtocol.DebugSetSc" +
       "oreH\000\0220\n\010end_game\030\007 \001(\0132\034.SC2APIProtocol" +
       ".DebugEndGameH\000\0227\n\nunit_value\030\010 \001(\0132!.SC" +
-      "2APIProtocol.DebugSetUnitValueH\000\022)\n\004chat" +
-      "\030\t \001(\0132\031.SC2APIProtocol.DebugChatH\000B\t\n\007c" +
-      "ommand\"\265\001\n\tDebugDraw\022\'\n\004text\030\001 \003(\0132\031.SC2" +
-      "APIProtocol.DebugText\022(\n\005lines\030\002 \003(\0132\031.S" +
-      "C2APIProtocol.DebugLine\022\'\n\005boxes\030\003 \003(\0132\030" +
-      ".SC2APIProtocol.DebugBox\022,\n\007spheres\030\004 \003(" +
-      "\0132\033.SC2APIProtocol.DebugSphere\"L\n\004Line\022!" +
-      "\n\002p0\030\001 \001(\0132\025.SC2APIProtocol.Point\022!\n\002p1\030",
-      "\002 \001(\0132\025.SC2APIProtocol.Point\"(\n\005Color\022\t\n" +
-      "\001r\030\001 \001(\r\022\t\n\001g\030\002 \001(\r\022\t\n\001b\030\003 \001(\r\"\225\001\n\tDebug" +
-      "Text\022$\n\005color\030\001 \001(\0132\025.SC2APIProtocol.Col" +
-      "or\022\014\n\004text\030\002 \001(\t\022*\n\013virtual_pos\030\003 \001(\0132\025." +
-      "SC2APIProtocol.Point\022(\n\tworld_pos\030\004 \001(\0132" +
-      "\025.SC2APIProtocol.Point\"U\n\tDebugLine\022$\n\005c" +
-      "olor\030\001 \001(\0132\025.SC2APIProtocol.Color\022\"\n\004lin" +
-      "e\030\002 \001(\0132\024.SC2APIProtocol.Line\"x\n\010DebugBo" +
-      "x\022$\n\005color\030\001 \001(\0132\025.SC2APIProtocol.Color\022" +
-      "\"\n\003min\030\002 \001(\0132\025.SC2APIProtocol.Point\022\"\n\003m",
-      "ax\030\003 \001(\0132\025.SC2APIProtocol.Point\"`\n\013Debug" +
-      "Sphere\022$\n\005color\030\001 \001(\0132\025.SC2APIProtocol.C" +
-      "olor\022 \n\001p\030\002 \001(\0132\025.SC2APIProtocol.Point\022\t" +
-      "\n\001r\030\003 \001(\002\"k\n\017DebugCreateUnit\022\021\n\tunit_typ" +
-      "e\030\001 \001(\r\022\r\n\005owner\030\002 \001(\005\022$\n\003pos\030\003 \001(\0132\027.SC" +
-      "2APIProtocol.Point2D\022\020\n\010quantity\030\004 \001(\r\"\034" +
-      "\n\rDebugKillUnit\022\013\n\003tag\030\001 \003(\004\"\200\001\n\020DebugTe" +
-      "stProcess\0223\n\004test\030\001 \001(\0162%.SC2APIProtocol" +
-      ".DebugTestProcess.Test\022\020\n\010delay_ms\030\002 \001(\005" +
-      "\"%\n\004Test\022\010\n\004hang\020\001\022\t\n\005crash\020\002\022\010\n\004exit\020\003\"",
-      "\036\n\rDebugSetScore\022\r\n\005score\030\001 \001(\002\"z\n\014Debug" +
-      "EndGame\022:\n\nend_result\030\001 \001(\0162&.SC2APIProt" +
-      "ocol.DebugEndGame.EndResult\".\n\tEndResult" +
-      "\022\r\n\tSurrender\020\001\022\022\n\016DeclareVictory\020\002\"\245\001\n\021" +
-      "DebugSetUnitValue\022?\n\nunit_value\030\001 \001(\0162+." +
-      "SC2APIProtocol.DebugSetUnitValue.UnitVal" +
-      "ue\022\r\n\005value\030\002 \001(\002\022\020\n\010unit_tag\030\003 \001(\004\".\n\tU" +
-      "nitValue\022\n\n\006Energy\020\001\022\010\n\004Life\020\002\022\013\n\007Shield" +
-      "s\020\003\"\034\n\tDebugChat\022\017\n\007message\030\001 \001(\t*\262\001\n\016De" +
-      "bugGameState\022\014\n\010show_map\020\001\022\021\n\rcontrol_en",
-      "emy\020\002\022\010\n\004food\020\003\022\010\n\004free\020\004\022\021\n\rall_resourc" +
-      "es\020\005\022\007\n\003god\020\006\022\014\n\010minerals\020\007\022\007\n\003gas\020\010\022\014\n\010" +
-      "cooldown\020\t\022\r\n\ttech_tree\020\n\022\013\n\007upgrade\020\013\022\016" +
-      "\n\nfast_build\020\014"
+      "2APIProtocol.DebugSetUnitValueH\000B\t\n\007comm" +
+      "and\"\265\001\n\tDebugDraw\022\'\n\004text\030\001 \003(\0132\031.SC2API" +
+      "Protocol.DebugText\022(\n\005lines\030\002 \003(\0132\031.SC2A" +
+      "PIProtocol.DebugLine\022\'\n\005boxes\030\003 \003(\0132\030.SC" +
+      "2APIProtocol.DebugBox\022,\n\007spheres\030\004 \003(\0132\033" +
+      ".SC2APIProtocol.DebugSphere\"L\n\004Line\022!\n\002p" +
+      "0\030\001 \001(\0132\025.SC2APIProtocol.Point\022!\n\002p1\030\002 \001" +
+      "(\0132\025.SC2APIProtocol.Point\"(\n\005Color\022\t\n\001r\030" +
+      "\001 \001(\r\022\t\n\001g\030\002 \001(\r\022\t\n\001b\030\003 \001(\r\"\243\001\n\tDebugTex" +
+      "t\022$\n\005color\030\001 \001(\0132\025.SC2APIProtocol.Color\022" +
+      "\014\n\004text\030\002 \001(\t\022*\n\013virtual_pos\030\003 \001(\0132\025.SC2" +
+      "APIProtocol.Point\022(\n\tworld_pos\030\004 \001(\0132\025.S" +
+      "C2APIProtocol.Point\022\014\n\004size\030\005 \001(\r\"U\n\tDeb" +
+      "ugLine\022$\n\005color\030\001 \001(\0132\025.SC2APIProtocol.C" +
+      "olor\022\"\n\004line\030\002 \001(\0132\024.SC2APIProtocol.Line" +
+      "\"x\n\010DebugBox\022$\n\005color\030\001 \001(\0132\025.SC2APIProt" +
+      "ocol.Color\022\"\n\003min\030\002 \001(\0132\025.SC2APIProtocol" +
+      ".Point\022\"\n\003max\030\003 \001(\0132\025.SC2APIProtocol.Poi" +
+      "nt\"`\n\013DebugSphere\022$\n\005color\030\001 \001(\0132\025.SC2AP" +
+      "IProtocol.Color\022 \n\001p\030\002 \001(\0132\025.SC2APIProto" +
+      "col.Point\022\t\n\001r\030\003 \001(\002\"k\n\017DebugCreateUnit\022" +
+      "\021\n\tunit_type\030\001 \001(\r\022\r\n\005owner\030\002 \001(\005\022$\n\003pos" +
+      "\030\003 \001(\0132\027.SC2APIProtocol.Point2D\022\020\n\010quant" +
+      "ity\030\004 \001(\r\"\034\n\rDebugKillUnit\022\013\n\003tag\030\001 \003(\004\"" +
+      "\200\001\n\020DebugTestProcess\0223\n\004test\030\001 \001(\0162%.SC2" +
+      "APIProtocol.DebugTestProcess.Test\022\020\n\010del" +
+      "ay_ms\030\002 \001(\005\"%\n\004Test\022\010\n\004hang\020\001\022\t\n\005crash\020\002" +
+      "\022\010\n\004exit\020\003\"\036\n\rDebugSetScore\022\r\n\005score\030\001 \001" +
+      "(\002\"z\n\014DebugEndGame\022:\n\nend_result\030\001 \001(\0162&" +
+      ".SC2APIProtocol.DebugEndGame.EndResult\"." +
+      "\n\tEndResult\022\r\n\tSurrender\020\001\022\022\n\016DeclareVic" +
+      "tory\020\002\"\245\001\n\021DebugSetUnitValue\022?\n\nunit_val" +
+      "ue\030\001 \001(\0162+.SC2APIProtocol.DebugSetUnitVa" +
+      "lue.UnitValue\022\r\n\005value\030\002 \001(\002\022\020\n\010unit_tag" +
+      "\030\003 \001(\004\".\n\tUnitValue\022\n\n\006Energy\020\001\022\010\n\004Life\020" +
+      "\002\022\013\n\007Shields\020\003*\262\001\n\016DebugGameState\022\014\n\010sho" +
+      "w_map\020\001\022\021\n\rcontrol_enemy\020\002\022\010\n\004food\020\003\022\010\n\004" +
+      "free\020\004\022\021\n\rall_resources\020\005\022\007\n\003god\020\006\022\014\n\010mi" +
+      "nerals\020\007\022\007\n\003gas\020\010\022\014\n\010cooldown\020\t\022\r\n\ttech_" +
+      "tree\020\n\022\013\n\007upgrade\020\013\022\016\n\nfast_build\020\014"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14593,7 +14277,7 @@ public final class Debug {
     internal_static_SC2APIProtocol_DebugCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_DebugCommand_descriptor,
-        new java.lang.String[] { "Draw", "GameState", "CreateUnit", "KillUnit", "TestProcess", "Score", "EndGame", "UnitValue", "Chat", "Command", });
+        new java.lang.String[] { "Draw", "GameState", "CreateUnit", "KillUnit", "TestProcess", "Score", "EndGame", "UnitValue", "Command", });
     internal_static_SC2APIProtocol_DebugDraw_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_SC2APIProtocol_DebugDraw_fieldAccessorTable = new
@@ -14617,7 +14301,7 @@ public final class Debug {
     internal_static_SC2APIProtocol_DebugText_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_DebugText_descriptor,
-        new java.lang.String[] { "Color", "Text", "VirtualPos", "WorldPos", });
+        new java.lang.String[] { "Color", "Text", "VirtualPos", "WorldPos", "Size", });
     internal_static_SC2APIProtocol_DebugLine_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_SC2APIProtocol_DebugLine_fieldAccessorTable = new
@@ -14672,12 +14356,6 @@ public final class Debug {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SC2APIProtocol_DebugSetUnitValue_descriptor,
         new java.lang.String[] { "UnitValue", "Value", "UnitTag", });
-    internal_static_SC2APIProtocol_DebugChat_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_SC2APIProtocol_DebugChat_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SC2APIProtocol_DebugChat_descriptor,
-        new java.lang.String[] { "Message", });
     SC2APIProtocol.Common.getDescriptor();
   }
 

@@ -180,6 +180,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -191,13 +194,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               abilityId_ = input.readInt32();
@@ -206,6 +202,13 @@ public final class Common {
             case 16: {
               bitField0_ |= 0x00000002;
               requiresPoint_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -225,6 +228,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_AvailableAbility_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_AvailableAbility_fieldAccessorTable
@@ -264,6 +268,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -273,6 +278,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -284,6 +290,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -418,6 +425,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -425,6 +433,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.AvailableAbility prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -448,6 +457,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_AvailableAbility_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_AvailableAbility_fieldAccessorTable
@@ -470,6 +480,7 @@ public final class Common {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         abilityId_ = 0;
@@ -479,15 +490,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_AvailableAbility_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.AvailableAbility getDefaultInstanceForType() {
         return SC2APIProtocol.Common.AvailableAbility.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.AvailableAbility build() {
         SC2APIProtocol.Common.AvailableAbility result = buildPartial();
         if (!result.isInitialized()) {
@@ -496,6 +510,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.AvailableAbility buildPartial() {
         SC2APIProtocol.Common.AvailableAbility result = new SC2APIProtocol.Common.AvailableAbility(this);
         int from_bitField0_ = bitField0_;
@@ -513,32 +528,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.AvailableAbility) {
           return mergeFrom((SC2APIProtocol.Common.AvailableAbility)other);
@@ -561,10 +583,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -647,11 +671,13 @@ public final class Common {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -673,11 +699,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<AvailableAbility>
         PARSER = new com.google.protobuf.AbstractParser<AvailableAbility>() {
+      @java.lang.Override
       public AvailableAbility parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AvailableAbility(input, extensionRegistry);
+        return new AvailableAbility(input, extensionRegistry);
       }
     };
 
@@ -690,6 +717,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.AvailableAbility getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -786,6 +814,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -797,13 +828,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               bitsPerPixel_ = input.readInt32();
@@ -827,6 +851,13 @@ public final class Common {
               data_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -844,6 +875,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_ImageData_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_ImageData_fieldAccessorTable
@@ -932,6 +964,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -941,6 +974,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -955,6 +989,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1101,6 +1136,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1108,6 +1144,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.ImageData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1131,6 +1168,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_ImageData_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_ImageData_fieldAccessorTable
@@ -1154,6 +1192,7 @@ public final class Common {
           getSizeFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitsPerPixel_ = 0;
@@ -1169,15 +1208,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_ImageData_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.ImageData getDefaultInstanceForType() {
         return SC2APIProtocol.Common.ImageData.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.ImageData build() {
         SC2APIProtocol.Common.ImageData result = buildPartial();
         if (!result.isInitialized()) {
@@ -1186,6 +1228,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.ImageData buildPartial() {
         SC2APIProtocol.Common.ImageData result = new SC2APIProtocol.Common.ImageData(this);
         int from_bitField0_ = bitField0_;
@@ -1211,32 +1254,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.ImageData) {
           return mergeFrom((SC2APIProtocol.Common.ImageData)other);
@@ -1262,10 +1312,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1537,11 +1589,13 @@ public final class Common {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1563,11 +1617,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ImageData>
         PARSER = new com.google.protobuf.AbstractParser<ImageData>() {
+      @java.lang.Override
       public ImageData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ImageData(input, extensionRegistry);
+        return new ImageData(input, extensionRegistry);
       }
     };
 
@@ -1580,6 +1635,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.ImageData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1640,6 +1696,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1651,13 +1710,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               x_ = input.readInt32();
@@ -1666,6 +1718,13 @@ public final class Common {
             case 16: {
               bitField0_ |= 0x00000002;
               y_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1685,6 +1744,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_PointI_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_PointI_fieldAccessorTable
@@ -1724,6 +1784,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1733,6 +1794,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1744,6 +1806,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1877,6 +1940,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1884,6 +1948,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.PointI prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1912,6 +1977,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_PointI_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_PointI_fieldAccessorTable
@@ -1934,6 +2000,7 @@ public final class Common {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         x_ = 0;
@@ -1943,15 +2010,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_PointI_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.PointI getDefaultInstanceForType() {
         return SC2APIProtocol.Common.PointI.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.PointI build() {
         SC2APIProtocol.Common.PointI result = buildPartial();
         if (!result.isInitialized()) {
@@ -1960,6 +2030,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.PointI buildPartial() {
         SC2APIProtocol.Common.PointI result = new SC2APIProtocol.Common.PointI(this);
         int from_bitField0_ = bitField0_;
@@ -1977,32 +2048,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.PointI) {
           return mergeFrom((SC2APIProtocol.Common.PointI)other);
@@ -2025,10 +2103,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2111,11 +2191,13 @@ public final class Common {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2137,11 +2219,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<PointI>
         PARSER = new com.google.protobuf.AbstractParser<PointI>() {
+      @java.lang.Override
       public PointI parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PointI(input, extensionRegistry);
+        return new PointI(input, extensionRegistry);
       }
     };
 
@@ -2154,6 +2237,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.PointI getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2219,6 +2303,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2230,13 +2317,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               SC2APIProtocol.Common.PointI.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2263,6 +2343,13 @@ public final class Common {
               bitField0_ |= 0x00000002;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2280,6 +2367,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_RectangleI_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_RectangleI_fieldAccessorTable
@@ -2331,6 +2419,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2340,6 +2429,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2351,6 +2441,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2484,6 +2575,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2491,6 +2583,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.RectangleI prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2518,6 +2611,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_RectangleI_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_RectangleI_fieldAccessorTable
@@ -2542,6 +2636,7 @@ public final class Common {
           getP1FieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (p0Builder_ == null) {
@@ -2559,15 +2654,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_RectangleI_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.RectangleI getDefaultInstanceForType() {
         return SC2APIProtocol.Common.RectangleI.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.RectangleI build() {
         SC2APIProtocol.Common.RectangleI result = buildPartial();
         if (!result.isInitialized()) {
@@ -2576,6 +2674,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.RectangleI buildPartial() {
         SC2APIProtocol.Common.RectangleI result = new SC2APIProtocol.Common.RectangleI(this);
         int from_bitField0_ = bitField0_;
@@ -2601,32 +2700,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.RectangleI) {
           return mergeFrom((SC2APIProtocol.Common.RectangleI)other);
@@ -2649,10 +2755,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2907,11 +3015,13 @@ public final class Common {
         }
         return p1Builder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2933,11 +3043,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<RectangleI>
         PARSER = new com.google.protobuf.AbstractParser<RectangleI>() {
+      @java.lang.Override
       public RectangleI parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RectangleI(input, extensionRegistry);
+        return new RectangleI(input, extensionRegistry);
       }
     };
 
@@ -2950,6 +3061,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.RectangleI getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3010,6 +3122,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3021,13 +3136,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
               bitField0_ |= 0x00000001;
               x_ = input.readFloat();
@@ -3036,6 +3144,13 @@ public final class Common {
             case 21: {
               bitField0_ |= 0x00000002;
               y_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3055,6 +3170,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point2D_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point2D_fieldAccessorTable
@@ -3094,6 +3210,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3103,6 +3220,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3114,6 +3232,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3253,6 +3372,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3260,6 +3380,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.Point2D prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3288,6 +3409,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point2D_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point2D_fieldAccessorTable
@@ -3310,6 +3432,7 @@ public final class Common {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         x_ = 0F;
@@ -3319,15 +3442,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point2D_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Point2D getDefaultInstanceForType() {
         return SC2APIProtocol.Common.Point2D.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Point2D build() {
         SC2APIProtocol.Common.Point2D result = buildPartial();
         if (!result.isInitialized()) {
@@ -3336,6 +3462,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Point2D buildPartial() {
         SC2APIProtocol.Common.Point2D result = new SC2APIProtocol.Common.Point2D(this);
         int from_bitField0_ = bitField0_;
@@ -3353,32 +3480,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.Point2D) {
           return mergeFrom((SC2APIProtocol.Common.Point2D)other);
@@ -3401,10 +3535,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3487,11 +3623,13 @@ public final class Common {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3513,11 +3651,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Point2D>
         PARSER = new com.google.protobuf.AbstractParser<Point2D>() {
+      @java.lang.Override
       public Point2D parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Point2D(input, extensionRegistry);
+        return new Point2D(input, extensionRegistry);
       }
     };
 
@@ -3530,6 +3669,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.Point2D getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3600,6 +3740,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3611,13 +3754,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
               bitField0_ |= 0x00000001;
               x_ = input.readFloat();
@@ -3631,6 +3767,13 @@ public final class Common {
             case 29: {
               bitField0_ |= 0x00000004;
               z_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3650,6 +3793,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point_fieldAccessorTable
@@ -3704,6 +3848,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3713,6 +3858,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3727,6 +3873,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3882,6 +4029,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3889,6 +4037,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.Point prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3917,6 +4066,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point_fieldAccessorTable
@@ -3939,6 +4089,7 @@ public final class Common {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         x_ = 0F;
@@ -3950,15 +4101,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Point_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Point getDefaultInstanceForType() {
         return SC2APIProtocol.Common.Point.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Point build() {
         SC2APIProtocol.Common.Point result = buildPartial();
         if (!result.isInitialized()) {
@@ -3967,6 +4121,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Point buildPartial() {
         SC2APIProtocol.Common.Point result = new SC2APIProtocol.Common.Point(this);
         int from_bitField0_ = bitField0_;
@@ -3988,32 +4143,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.Point) {
           return mergeFrom((SC2APIProtocol.Common.Point)other);
@@ -4039,10 +4201,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4157,11 +4321,13 @@ public final class Common {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4183,11 +4349,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Point>
         PARSER = new com.google.protobuf.AbstractParser<Point>() {
+      @java.lang.Override
       public Point parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Point(input, extensionRegistry);
+        return new Point(input, extensionRegistry);
       }
     };
 
@@ -4200,6 +4367,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.Point getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4259,6 +4427,9 @@ public final class Common {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4270,13 +4441,6 @@ public final class Common {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               x_ = input.readInt32();
@@ -4285,6 +4449,13 @@ public final class Common {
             case 16: {
               bitField0_ |= 0x00000002;
               y_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -4304,6 +4475,7 @@ public final class Common {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Size2DI_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Size2DI_fieldAccessorTable
@@ -4343,6 +4515,7 @@ public final class Common {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4352,6 +4525,7 @@ public final class Common {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4363,6 +4537,7 @@ public final class Common {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4496,6 +4671,7 @@ public final class Common {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4503,6 +4679,7 @@ public final class Common {
     public static Builder newBuilder(SC2APIProtocol.Common.Size2DI prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4530,6 +4707,7 @@ public final class Common {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Size2DI_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Size2DI_fieldAccessorTable
@@ -4552,6 +4730,7 @@ public final class Common {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         x_ = 0;
@@ -4561,15 +4740,18 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return SC2APIProtocol.Common.internal_static_SC2APIProtocol_Size2DI_descriptor;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Size2DI getDefaultInstanceForType() {
         return SC2APIProtocol.Common.Size2DI.getDefaultInstance();
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Size2DI build() {
         SC2APIProtocol.Common.Size2DI result = buildPartial();
         if (!result.isInitialized()) {
@@ -4578,6 +4760,7 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public SC2APIProtocol.Common.Size2DI buildPartial() {
         SC2APIProtocol.Common.Size2DI result = new SC2APIProtocol.Common.Size2DI(this);
         int from_bitField0_ = bitField0_;
@@ -4595,32 +4778,39 @@ public final class Common {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof SC2APIProtocol.Common.Size2DI) {
           return mergeFrom((SC2APIProtocol.Common.Size2DI)other);
@@ -4643,10 +4833,12 @@ public final class Common {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4729,11 +4921,13 @@ public final class Common {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4755,11 +4949,12 @@ public final class Common {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Size2DI>
         PARSER = new com.google.protobuf.AbstractParser<Size2DI>() {
+      @java.lang.Override
       public Size2DI parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Size2DI(input, extensionRegistry);
+        return new Size2DI(input, extensionRegistry);
       }
     };
 
@@ -4772,6 +4967,7 @@ public final class Common {
       return PARSER;
     }
 
+    @java.lang.Override
     public SC2APIProtocol.Common.Size2DI getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4831,7 +5027,7 @@ public final class Common {
       "tangleI\022\"\n\002p0\030\001 \001(\0132\026.SC2APIProtocol.Poi" +
       "ntI\022\"\n\002p1\030\002 \001(\0132\026.SC2APIProtocol.PointI\"" +
       "\037\n\007Point2D\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"(\n\005Poin" +
-      "t\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"\037\n\007Si",
+      "t\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"\037\n\007Si" +
       "ze2DI\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005*A\n\004Race\022\n\n\006N" +
       "oRace\020\000\022\n\n\006Terran\020\001\022\010\n\004Zerg\020\002\022\013\n\007Protoss" +
       "\020\003\022\n\n\006Random\020\004"
