@@ -2,10 +2,7 @@ package neoe.sc2.bot;
 
 import java.util.Collection;
 
-import SC2APIProtocol.Debug.DebugChat;
-import SC2APIProtocol.Debug.DebugCommand;
 import SC2APIProtocol.Sc2Api.Request;
-import SC2APIProtocol.Sc2Api.RequestDebug;
 import SC2APIProtocol.Sc2Api.RequestStep;
 import SC2APIProtocol.Sc2Api.ResponseObservation;
 import neoe.sc2.link.IBot;
@@ -43,11 +40,7 @@ public class MyZergBot implements IBot {
 	public void onObservation(ResponseObservation rob, Collection<Request> output) throws Exception {
 		// DO things
 		frame++;
-		output.add(Request.newBuilder()
-				.setDebug(RequestDebug.newBuilder().addDebug(
-						DebugCommand.newBuilder().setChat(DebugChat.newBuilder().setMessage("frame:" + frame))))
-				.build());
-		if (!setting.isReplay) {
+			if (!setting.isReplay) {
 			new Commander(rob, output).run();
 		} else {
 			learn(rob);

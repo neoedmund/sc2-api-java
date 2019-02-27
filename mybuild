@@ -7,6 +7,4 @@ prjs:[
  /* other projects */
 ]
 destDir:"dist"
-target:8
-source:8
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sc2-link"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sc2-protobuf-java"/>
+	<classpathentry kind="lib" path="/sc2-link/lib/neoeutils.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
