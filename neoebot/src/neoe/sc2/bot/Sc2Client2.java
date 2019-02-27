@@ -11,7 +11,15 @@ import java.util.concurrent.LinkedBlockingQueue;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 
+import SC2APIProtocol.Common.Race;
+import SC2APIProtocol.Sc2Api.Difficulty;
+import SC2APIProtocol.Sc2Api.InterfaceOptions;
+import SC2APIProtocol.Sc2Api.LocalMap;
+import SC2APIProtocol.Sc2Api.PlayerSetup;
+import SC2APIProtocol.Sc2Api.PlayerType;
 import SC2APIProtocol.Sc2Api.Request;
+import SC2APIProtocol.Sc2Api.RequestCreateGame;
+import SC2APIProtocol.Sc2Api.RequestJoinGame;
 import SC2APIProtocol.Sc2Api.RequestObservation;
 import SC2APIProtocol.Sc2Api.RequestPing;
 import SC2APIProtocol.Sc2Api.Response;
@@ -45,7 +53,7 @@ public class Sc2Client2 {
 
 		while (true) {
 			Sc2Client2 client = new Sc2Client2(setting);
-			client.firstBot = new MyZergBot("brood", setting);
+
 			while (true) {
 				client.websocketConnect();
 				client.waitFinish();
@@ -54,7 +62,7 @@ public class Sc2Client2 {
 				}
 			}
 			Log.log("match end.");
-			
+
 			client.gameThread.interrupt();
 			client.wsc.close();
 			client.wsc = null;
@@ -62,9 +70,38 @@ public class Sc2Client2 {
 		}
 	}
 
+	private void startGame(String mapName) throws Exception {
+		SC2APIProtocol.Sc2Api.RequestCreateGame.Builder requestCreateGame = RequestCreateGame.newBuilder();
+		requestCreateGame.setRealtime(true);
+		requestCreateGame.setLocalMap(LocalMap.newBuilder().setMapPath(mapName + ".SC2Map").build());
+
+		SC2APIProtocol.Sc2Api.RequestJoinGame.Builder joinGame = RequestJoinGame.newBuilder();
+
+		{
+			SC2APIProtocol.Sc2Api.PlayerSetup.Builder ps = PlayerSetup.newBuilder();
+			ps.setType(PlayerType.Participant).setRace(Race.Zerg);// .setDifficulty(Difficulty.Medium);
+			requestCreateGame.addPlayerSetup(ps.build());
+			firstBot = new MyZergBot("brood", setting);
+		}
+		{
+			SC2APIProtocol.Sc2Api.PlayerSetup.Builder ps = PlayerSetup.newBuilder();
+			ps.setType(PlayerType.Computer).setRace(Race.Random).setDifficulty(Difficulty.Medium);
+			requestCreateGame.addPlayerSetup(ps.build());
+		}
+
+		//
+		joinGame.setRace(Race.Zerg).setOptions(InterfaceOptions.newBuilder().setRaw(true)/* .setScore(true) */.build());
+
+		//
+		sendReq(Request.newBuilder().setCreateGame(requestCreateGame).build());
+		sendReq(Request.newBuilder().setJoinGame(joinGame).build());
+
+	}
+
 	private static String getLatestVer(String gameDir) {
 		File versions = new File(gameDir, "Versions");
-		U.err("cannot find exec versions in " + gameDir);
+		if (!versions.exists())
+			U.err("cannot find versions path in " + gameDir);
 		String[] subs = versions.list();
 		int max = 0;
 		// like Base58400
@@ -105,7 +142,6 @@ public class Sc2Client2 {
 
 			case OBSERVATION: {
 				ResponseObservation rob = resp.getObservation();
-				Log.log("OB:" + resp.getStatus() + ":" + (++cnt));
 				if (resp.getStatus().equals(Status.ended)) {
 					break;
 				}
@@ -157,7 +193,7 @@ public class Sc2Client2 {
 		ex.setCmd(exe);
 		ex.addArg("-listen", setting.host);
 		ex.addArg("-port", "" + setting.port);
-		// ex.addArg("-displayMode", "0");
+		ex.addArg("-displayMode", "0");
 		if (setting.dataVersion != null) {
 			ex.addArg("-dataVersion", setting.dataVersion);
 		}
@@ -319,6 +355,9 @@ public class Sc2Client2 {
 				Log.log("gameThread start.");
 				try {
 					cmd_pingTest();
+
+					startGame("CyberForestLE");
+
 					// listenThread.start();
 					while (true) {
 						Thread.sleep(200);// relax

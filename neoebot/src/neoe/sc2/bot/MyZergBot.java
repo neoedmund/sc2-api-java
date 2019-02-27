@@ -87,7 +87,7 @@ public class MyZergBot implements IBot {
 		}
 		{
 			Observation tob = ob.getObservation();
-			if (tob != null) {
+			if (tob != null && tob.getGameLoop() < 20) {
 				Log.log(String.format("[obs]gameloop:%s, PlayerCommon:%s, alerts:%s, all:%s, ", tob.getGameLoop(),
 						tob.getPlayerCommon(), tob.getAlertsCount(), tob));
 			}

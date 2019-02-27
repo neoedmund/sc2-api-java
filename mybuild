@@ -3,7 +3,7 @@ baseDir:"."
 prjs:[
  ["sc2_protobuf_java", "sc2-protobuf-java" , { dep:[ ]  cp:[ "sc2-protobuf-java/lib/gson-2.8.2.jar" "sc2-protobuf-java/lib/guava-23.0.jar" ] }]
  ["sc2_link", "sc2-link" , { dep:[sc2_protobuf_java ]  cp:[ "sc2-link/lib/Java-WebSocket-1.3.5.jar"  "sc2-link/lib/neoeutils.jar"] }]
- [neoebot, neoebot , { dep:[sc2_protobuf_java sc2_link ]  cp:[ "sc2-link/lib/neoeutils.jar"] }]
+ [neoebot, neoebot , { dep:[sc2_protobuf_java sc2_link ]  cp:[ "sc2-link/lib/Java-WebSocket-1.3.5.jar"  "sc2-link/lib/neoeutils.jar"] }]
  /* other projects */
 ]
 destDir:"dist"
