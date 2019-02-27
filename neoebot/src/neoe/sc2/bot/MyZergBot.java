@@ -1,6 +1,7 @@
 package neoe.sc2.bot;
 
 import java.util.Collection;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import SC2APIProtocol.Sc2Api.Action;
 import SC2APIProtocol.Sc2Api.ChatReceived;
@@ -23,18 +24,15 @@ public class MyZergBot implements IBot {
 		this.setting = setting;
 	}
 
-	int frame;
-	private Collection<Request> output;
 	private Response resp;
 	private Status lastStatus;
+	private LinkedBlockingQueue<Request> output = new LinkedBlockingQueue<Request>();
 
 	@Override
-	public void onObservation(Response rob, Collection<Request> output) throws Exception {
+	public void onObservation(Response rob) throws Exception {
 		// DO things
 
 		this.resp = rob;
-		this.output = output;
-		frame++;
 
 		Status st = resp.getStatus();
 		if (!st.equals(lastStatus)) {
@@ -93,6 +91,11 @@ public class MyZergBot implements IBot {
 			}
 		}
 
+	}
+
+	@Override
+	public void getRequsts(Collection<Request> to) throws Exception {
+		output.drainTo(to);
 	}
 
 }

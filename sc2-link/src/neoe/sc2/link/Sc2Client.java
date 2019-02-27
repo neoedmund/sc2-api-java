@@ -88,7 +88,8 @@ public class Sc2Client {
 				} else {
 					try {
 						List<Request> reqs = new ArrayList<>();
-						firstBot.onObservation(resp, reqs);
+						// firstBot.onObservation(resp, reqs);
+						U.err("FIXME if needed"); // 
 						botReq = reqs;
 					} catch (Exception e) {
 						e.printStackTrace();

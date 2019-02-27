@@ -7,6 +7,7 @@ import SC2APIProtocol.Sc2Api.Response;
 
 public interface IBot {
 
-	void onObservation(Response rob, Collection<Request> output) throws Exception;
+	void onObservation(Response rob) throws Exception;
+	void getRequsts(Collection<Request> to) throws Exception;
 
 }

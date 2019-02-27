@@ -43,31 +43,23 @@ public class Sc2Client2 {
 		} else {
 			setting.gameVer = getLatestVer(setting.gameDir);
 		}
-		new Sc2Client2(setting).run();
+		Sc2Client2 client = new Sc2Client2(setting);
+		client.run(setting);
 
 	}
 
-	private void run() throws Exception {
-		startSC2Windows(setting);
-		waitSC2Ready(setting);
+	private void run(Setting setting) throws Exception {
 
-		while (true) {
-			Sc2Client2 client = new Sc2Client2(setting);
+		startSC2();
+		waitSC2Ready();
 
-			while (true) {
-				client.websocketConnect();
-				client.waitFinish();
-				if (client.realEnd) {
-					break;
-				}
-			}
-			Log.log("match end.");
+		websocketConnect();
 
-			client.gameThread.interrupt();
-			client.wsc.close();
-			client.wsc = null;
-			// next match
-		}
+		waitFinish();
+
+		gameThread.interrupt();
+		wsc.close();
+		wsc = null;
 	}
 
 	private void startGame(String mapName) throws Exception {
@@ -90,7 +82,7 @@ public class Sc2Client2 {
 		}
 
 		//
-		joinGame.setRace(Race.Zerg).setOptions(InterfaceOptions.newBuilder().setRaw(true)/* .setScore(true) */.build());
+		joinGame.setRace(Race.Zerg).setOptions(InterfaceOptions.newBuilder().setRaw(true).setScore(true).build());
 
 		//
 		sendReq(Request.newBuilder().setCreateGame(requestCreateGame).build());
@@ -142,33 +134,29 @@ public class Sc2Client2 {
 
 			case OBSERVATION: {
 				ResponseObservation rob = resp.getObservation();
-				if (resp.getStatus().equals(Status.ended)) {
-					break;
-				}
+
 				if (!rob.getPlayerResultList().isEmpty()) {
 					Log.log("someone win:" + rob.getPlayerResultList());
 					gameEnd = true;
 				} else {
 					try {
 						if (firstBot != null) {
-							List<Request> reqs = new ArrayList<>();
-							firstBot.onObservation(resp, reqs);
-							botReq = reqs;
+							firstBot.onObservation(resp);
 						} else {
-							Log.log("[OB]" + rob);
+							Log.log("[DEF OB]" + rob);
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
-				// synchronized (obsSync) { obsSync.notifyAll(); }
 				break;
 			}
 
 			default: {
-				Log.log("Not handle:" + resp.getResponseCase());
 				if (resp.toByteArray().length < 1000) {
-					Log.log("dump:" + resp.toString());
+					Log.log("Not handle:" + resp.toString());
+				} else {
+					Log.log("Not handle:" + resp.getResponseCase());
 				}
 			}
 			}
@@ -176,9 +164,7 @@ public class Sc2Client2 {
 		}
 	}
 
-	private static final String urlPath = "/sc2api";
-
-	private static void startSC2Windows(Setting setting) throws Exception {
+	private void startSC2() throws Exception {
 		try {
 			Socket so = new Socket(setting.host, setting.port);
 			so.getInputStream();
@@ -202,7 +188,7 @@ public class Sc2Client2 {
 		// U.sleep(3000);
 	}
 
-	public static void waitSC2Ready(Setting setting) {
+	public void waitSC2Ready() {
 		int retry = 99;
 		for (int i = 0; i < retry; i++) {
 			try {
@@ -224,11 +210,6 @@ public class Sc2Client2 {
 
 	}
 
-	private List<Request> botReq;
-
-	private int cnt;
-
-	private boolean debugOut = false;
 	private IBot firstBot;
 
 	// private Thread listenThread;
@@ -237,7 +218,7 @@ public class Sc2Client2 {
 
 	private LinkedBlockingQueue<Response> input = new LinkedBlockingQueue<Response>(5000);
 	private Status lastStatus;
-	private boolean realEnd;
+//	private boolean realEnd;
 
 	ResponseHandle rh = new ResponseHandle();
 
@@ -251,12 +232,20 @@ public class Sc2Client2 {
 
 	private void cmd_Ob() throws Exception {
 		sendReq(Request.newBuilder().setObservation(RequestObservation.newBuilder()).build());
-		if (botReq != null) {
-			Log.log("[w]send botReq=" + botReq.size());
-			for (Request req : botReq) {
+	}
+
+	private void sendBotReq() throws Exception {
+		if (firstBot == null)
+			return;
+		List<Request> reqs = new ArrayList<>();
+		firstBot.getRequsts(reqs);
+		if (!reqs.isEmpty()) {
+			Log.log("[w]send botReq cnt:" + reqs.size());
+			for (Request req : reqs) {
 				sendReq(req);
 			}
 		}
+
 	}
 
 	private void cmd_pingTest() throws Exception {
@@ -264,7 +253,7 @@ public class Sc2Client2 {
 	}
 
 	private void sendReq(Request msg) throws Exception {
-		Log.log("[O]" + msg.getRequestCase() + (debugOut ? ("<" + msg + ">") : ""));
+		Log.log("[O]" + msg.getRequestCase() + (C.debugOut ? ("<" + msg + ">") : ""));
 		wsc.send(msg.toByteArray());
 		waitResp();
 	}
@@ -299,12 +288,9 @@ public class Sc2Client2 {
 	}
 
 	public void websocketConnect() throws Exception {
-		String host = setting.host;
-		int port = setting.port;
-		String uri = "ws://" + host + ":" + port + urlPath;
+		String uri = "ws://" + setting.host + ":" + setting.port + C.urlPath;
 		Log.log(uri);
 		gameEnd = false;
-		realEnd = false;
 		Log.log("input queue clear:" + input.size());
 		input.clear();
 		wsc = new WebSocketClient(new URI(uri)) {
@@ -312,6 +298,7 @@ public class Sc2Client2 {
 			@Override
 			public void onClose(int code, String reason, boolean remote) {
 				U.d("onClose:" + reason + "," + code + "," + remote);
+				gameEnd = true;
 			}
 
 			@Override
@@ -356,12 +343,14 @@ public class Sc2Client2 {
 				try {
 					cmd_pingTest();
 
-					startGame("CyberForestLE");
-
+					startGame(C.MAP);
+					Delay delay = new Delay();
 					// listenThread.start();
 					while (true) {
-						Thread.sleep(200);// relax
 						cmd_Ob();
+						delay.waitMax(100);
+						sendBotReq();
+						delay.waitMax(100);
 						if (gameEnd)
 							break;
 					}
