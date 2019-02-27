@@ -4,7 +4,7 @@ import SC2APIProtocol.Common.Race;
 import SC2APIProtocol.Sc2Api.Difficulty;
 import SC2APIProtocol.Sc2Api.PlayerType;
 import neoe.sc2.link.Sc2Client;
-import neoe.sc2.link.Sc2Client.Setting;
+import neoe.sc2.link.Setting;
 import neoe.util.Log;
 
 public class MainPlay {

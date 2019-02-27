@@ -88,7 +88,7 @@ public class Sc2Client {
 				} else {
 					try {
 						List<Request> reqs = new ArrayList<>();
-						firstBot.onObservation(rob, reqs);
+						firstBot.onObservation(resp, reqs);
 						botReq = reqs;
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -118,18 +118,6 @@ public class Sc2Client {
 			}
 
 		}
-	}
-
-	public static class Setting {
-		public String dataVersion;
-		public boolean fog;
-		public String gameDir;
-		public String gameVer = "Base58400";
-		public String host;
-		public boolean isReplay;
-		public String map;
-		public int port;
-		public boolean realtime = true;
 	}
 
 	private static final String urlPath = "/sc2api";

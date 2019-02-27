@@ -1,4 +1,4 @@
-package neoe.sc2.link;
+package neoe.sc2.bot;
 
 import java.io.File;
 import java.net.Socket;
@@ -17,6 +17,10 @@ import SC2APIProtocol.Sc2Api.RequestPing;
 import SC2APIProtocol.Sc2Api.Response;
 import SC2APIProtocol.Sc2Api.ResponseObservation;
 import SC2APIProtocol.Sc2Api.Status;
+import neoe.sc2.link.Exec;
+import neoe.sc2.link.IBot;
+import neoe.sc2.link.Setting;
+import neoe.sc2.link.U;
 import neoe.util.Log;
 
 /** test on Tool assisted human play */
@@ -41,6 +45,7 @@ public class Sc2Client2 {
 
 		while (true) {
 			Sc2Client2 client = new Sc2Client2(setting);
+			client.firstBot = new MyZergBot("brood", setting);
 			while (true) {
 				client.websocketConnect();
 				client.waitFinish();
@@ -111,7 +116,7 @@ public class Sc2Client2 {
 					try {
 						if (firstBot != null) {
 							List<Request> reqs = new ArrayList<>();
-							firstBot.onObservation(rob, reqs);
+							firstBot.onObservation(resp, reqs);
 							botReq = reqs;
 						} else {
 							Log.log("[OB]" + rob);
@@ -133,18 +138,6 @@ public class Sc2Client2 {
 			}
 
 		}
-	}
-
-	public static class Setting {
-		public String dataVersion;// for replay
-		public boolean fog;
-		public String gameDir;
-		public String gameVer;// = "Base58400";
-		public String host = "127.0.0.1";
-		public boolean isReplay;
-		public String map;
-		public int port = 5000;
-		public boolean realtime = true;
 	}
 
 	private static final String urlPath = "/sc2api";
