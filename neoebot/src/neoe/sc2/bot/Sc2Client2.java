@@ -19,6 +19,8 @@ import SC2APIProtocol.Sc2Api.PlayerSetup;
 import SC2APIProtocol.Sc2Api.PlayerType;
 import SC2APIProtocol.Sc2Api.Request;
 import SC2APIProtocol.Sc2Api.RequestCreateGame;
+import SC2APIProtocol.Sc2Api.RequestData;
+import SC2APIProtocol.Sc2Api.RequestGameInfo;
 import SC2APIProtocol.Sc2Api.RequestJoinGame;
 import SC2APIProtocol.Sc2Api.RequestObservation;
 import SC2APIProtocol.Sc2Api.RequestPing;
@@ -329,13 +331,20 @@ public class Sc2Client2 {
 		}
 		gameThread = new Thread() {
 			public void run() {
+				if (firstBot == null) {
+					Log.log("no bot found, exiting");
+					return;
+				}
 				Log.log("gameThread start.");
 				try {
 					cmd_pingTest();
-
 					startGame(C.MAP);
-					Delay delay = new Delay();
+					
+					sendReq(Request.newBuilder().setData(RequestData.newBuilder()).build());
+					sendReq(Request.newBuilder().setGameInfo(RequestGameInfo.newBuilder()).build());
+					
 					// listenThread.start();
+					Delay delay = new Delay();
 					while (true) {
 						cmd_Ob();
 						delay.waitMax(100);
