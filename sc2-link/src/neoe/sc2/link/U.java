@@ -1,5 +1,9 @@
 package neoe.sc2.link;
 
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.MessageOrBuilder;
+import com.google.protobuf.util.JsonFormat;
+
 import neoe.util.Log;
 
 public class U {
@@ -20,4 +24,7 @@ public class U {
 		}
 	}
 
+	public static String toJson(MessageOrBuilder m) throws InvalidProtocolBufferException {
+		return JsonFormat.printer().print(m);
+	}
 }

@@ -132,31 +132,21 @@ public class Sc2Client2 {
 				break;
 			}
 
-			case OBSERVATION: {
+			default: {
 				ResponseObservation rob = resp.getObservation();
-
-				if (!rob.getPlayerResultList().isEmpty()) {
+				if (rob != null && !rob.getPlayerResultList().isEmpty()) {
 					Log.log("someone win:" + rob.getPlayerResultList());
 					gameEnd = true;
-				} else {
-					try {
-						if (firstBot != null) {
-							firstBot.onObservation(resp);
-						} else {
-							Log.log("[DEF OB]" + rob);
-						}
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
 				}
-				break;
-			}
 
-			default: {
-				if (resp.toByteArray().length < 1000) {
-					Log.log("Not handle:" + resp.toString());
-				} else {
-					Log.log("Not handle:" + resp.getResponseCase());
+				try {
+					if (firstBot != null) {
+						firstBot.onResponse(resp);
+					} else {
+						Log.log("[DEF-resp]" + U.toJson(resp));
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
 			}
 			}
@@ -238,7 +228,7 @@ public class Sc2Client2 {
 		if (firstBot == null)
 			return;
 		List<Request> reqs = new ArrayList<>();
-		firstBot.getRequsts(reqs);
+		firstBot.pullRequsts(reqs);
 		if (!reqs.isEmpty()) {
 			Log.log("[w]send botReq cnt:" + reqs.size());
 			for (Request req : reqs) {

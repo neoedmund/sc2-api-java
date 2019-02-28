@@ -4,24 +4,32 @@ import java.util.Collection;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import SC2APIProtocol.Sc2Api.Action;
+import SC2APIProtocol.Sc2Api.ActionChat;
+import SC2APIProtocol.Sc2Api.ActionChat.Channel;
 import SC2APIProtocol.Sc2Api.ChatReceived;
 import SC2APIProtocol.Sc2Api.Observation;
 import SC2APIProtocol.Sc2Api.Request;
+import SC2APIProtocol.Sc2Api.RequestAction;
+import SC2APIProtocol.Sc2Api.RequestData;
+import SC2APIProtocol.Sc2Api.RequestGameInfo;
 import SC2APIProtocol.Sc2Api.Response;
 import SC2APIProtocol.Sc2Api.ResponseObservation;
 import SC2APIProtocol.Sc2Api.Status;
 import neoe.sc2.link.IBot;
 import neoe.sc2.link.Setting;
+import neoe.sc2.link.U;
 import neoe.util.Log;
 
 public class MyZergBot implements IBot {
 
 	private String name;
 	private Setting setting;
+	private boolean inited;
 
 	public MyZergBot(String name, Setting setting) {
 		this.name = name;
 		this.setting = setting;
+		inited = false;
 	}
 
 	private Response resp;
@@ -29,7 +37,7 @@ public class MyZergBot implements IBot {
 	private LinkedBlockingQueue<Request> output = new LinkedBlockingQueue<Request>();
 
 	@Override
-	public void onObservation(Response rob) throws Exception {
+	public void onResponse(Response rob) throws Exception {
 		// DO things
 
 		this.resp = rob;
@@ -58,7 +66,12 @@ public class MyZergBot implements IBot {
 
 	}
 
-	private void run() {
+	private void run() throws Exception {
+
+		if (!inited) {
+			doInit();
+		}
+
 		ResponseObservation ob = resp.getObservation();
 		if (ob.getPlayerResultCount() > 0) {
 			Log.log("Game over, someone win");
@@ -87,14 +100,27 @@ public class MyZergBot implements IBot {
 			Observation tob = ob.getObservation();
 			if (tob != null && tob.getGameLoop() < 20) {
 				Log.log(String.format("[obs]gameloop:%s, PlayerCommon:%s, alerts:%s, all:%s, ", tob.getGameLoop(),
-						tob.getPlayerCommon(), tob.getAlertsCount(), tob));
+						U.toJson(tob.getPlayerCommon()), tob.getAlertsCount(), U.toJson(tob)));
 			}
 		}
 
 	}
 
+	private void doInit() {
+		if (inited)
+			return;
+		inited = true;
+		output.add(Request.newBuilder().setGameInfo(RequestGameInfo.newBuilder()).build());
+		output.add(Request.newBuilder().setData(RequestData.newBuilder()).build());
+		output.add(Request.newBuilder()
+				.setAction(RequestAction.newBuilder()
+						.addActions(Action.newBuilder().setActionChat(ActionChat.newBuilder()
+								.setChannel(Channel.Broadcast).setMessage(String.format("I'm '%s', glhf!", name)))))
+				.build());
+	}
+
 	@Override
-	public void getRequsts(Collection<Request> to) throws Exception {
+	public void pullRequsts(Collection<Request> to) throws Exception {
 		output.drainTo(to);
 	}
 
