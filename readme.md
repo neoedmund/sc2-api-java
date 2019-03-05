@@ -5,18 +5,17 @@ It implements bot vs pc, bot viewing replay. but bot vs bot is not yet.
 
 There are 2 parts here:
 * `sc2-protobuf-java`
-	to deal with [s2client-proto] (https://github.com/Blizzard/s2client-proto)
+	is a java [s2client-proto] (https://github.com/Blizzard/s2client-proto)
 	This is almost stable, need change until s2client-proto changes.
 
 * `neoebot`
 	It starts SC2 game instance with bot api enabled, listening on a tcp port.
 	Bot use websocket and sc2 protobuf to send request to game and get response. 
 	MyZergBot demonstrate the usage. It now used as 'tool assisted human play'. 
-	Play zerg, it make drones and queens, auto queen spawn larva(which should but not a auto cast skill).
+	Play zerg, it make drones and queens, auto queen spawn larva(which should, but not an auto cast skill).
 	
 If you are going to use java to play sc2 AI, you can make use of this.
 
-There is no dependency hell, maven hell. Just simple jar to be included into your project. 
-Jars are pre-built in `dist/`
+There is no dependency hell, maven hell. Just simple jar to be included into your project.
 
 
