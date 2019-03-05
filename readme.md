@@ -11,6 +11,7 @@ There are 2 parts here:
 * `neoebot`
 	It starts SC2 game instance with bot api enabled, listening on a tcp port.
 	Bot use websocket and sc2 protobuf to send request to game and get response. 
+	with Bot class, you can write AI in plain multithread manner, and not worry about sync problems in underlaying IO. 
 	MyZergBot demonstrate the usage. It now used as 'tool assisted human play'. 
 	Play zerg, it make drones and queens, auto queen spawn larva(which should, but not an auto cast skill).
 	
