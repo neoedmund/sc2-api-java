@@ -11,17 +11,37 @@ import java.util.List;
 
 public class Exec {
 
-	private String workDir;
+	private class StreamGobbler extends Thread {
+		InputStream is;
+		private PrintWriter out;
+		String type;
 
-	public Exec(String workDir) {
-		this.workDir = workDir;
+		private StreamGobbler(InputStream is, String type) {
+			this.is = is;
+			this.type = type;
+			this.out = new PrintWriter(System.out);
+		}
+
+		@Override
+		public void run() {
+			try {
+				InputStreamReader isr = new InputStreamReader(is);
+				BufferedReader br = new BufferedReader(isr);
+				String line = null;
+				while ((line = br.readLine()) != null)
+					out.println(type + "> " + line);
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
+		}
 	}
 
 	List<String> sb;
 
-	public void setCmd(String executable) {
-		sb = new ArrayList<>();
-		sb.add(executable);
+	private String workDir;
+
+	public Exec(String workDir) {
+		this.workDir = workDir;
 	}
 
 	public void addArg(String s) {
@@ -42,29 +62,9 @@ public class Exec {
 		return p;
 	}
 
-	private class StreamGobbler extends Thread {
-		InputStream is;
-		String type;
-		private PrintWriter out;
-
-		private StreamGobbler(InputStream is, String type) {
-			this.is = is;
-			this.type = type;
-			this.out = new PrintWriter(System.out);
-		}
-
-		@Override
-		public void run() {
-			try {
-				InputStreamReader isr = new InputStreamReader(is);
-				BufferedReader br = new BufferedReader(isr);
-				String line = null;
-				while ((line = br.readLine()) != null)
-					out.println(type + "> " + line);
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			}
-		}
+	public void setCmd(String executable) {
+		sb = new ArrayList<>();
+		sb.add(executable);
 	}
 
 }

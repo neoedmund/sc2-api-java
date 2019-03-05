@@ -3,15 +3,16 @@
 this repo is a demo showing how to use s2client to develop AI bots in Java.
 It implements bot vs pc, bot viewing replay. but bot vs bot is not yet.
 
-There are 3 parts here:
+There are 2 parts here:
 * `sc2-protobuf-java`
 	to deal with [s2client-proto] (https://github.com/Blizzard/s2client-proto)
-	This is stable, need change until s2client-proto changes.
-	
-* `sc2-link`
-	to start a game, bot vs PC or play a replay, using Websocket.
+	This is almost stable, need change until s2client-proto changes.
+
 * `neoebot`
-	Some bot logic can write here, currently no any smart AI here.
+	It starts SC2 game instance with bot api enabled, listening on a tcp port.
+	Bot use websocket and sc2 protobuf to send request to game and get response. 
+	MyZergBot demonstrate the usage. It now used as 'tool assisted human play'. 
+	Play zerg, it make drones and queens, auto queen spawn larva(which should but not a auto cast skill).
 	
 If you are going to use java to play sc2 AI, you can make use of this.
 

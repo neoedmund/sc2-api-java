@@ -1,7 +1,6 @@
 package neoe.sc2.bot;
 
-import neoe.sc2.link.U;
-
+/** not work as expected? */
 public class Delay {
 	private static final int SAFE = 1000;
 	long t;
@@ -18,10 +17,11 @@ public class Delay {
 	public void waitMax(int i) {
 		long t2 = System.currentTimeMillis();
 		long t1 = t2 - t;
-		if (t1 < i) {
-			U.sleep(Math.min(SAFE, (int) (i - t1)));
+		int x = (int) (i - t1);
+		if (x > 0) {
+			U.sleep(Math.min(SAFE, x));
 		}
-		t = t2;
+		t = System.currentTimeMillis();
 	}
 
 }

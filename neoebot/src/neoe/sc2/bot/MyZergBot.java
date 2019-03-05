@@ -1,38 +1,68 @@
 package neoe.sc2.bot;
 
-import java.util.Collection;
-import java.util.concurrent.LinkedBlockingQueue;
-
 import SC2APIProtocol.Sc2Api.Action;
-import SC2APIProtocol.Sc2Api.ActionChat;
-import SC2APIProtocol.Sc2Api.ActionChat.Channel;
 import SC2APIProtocol.Sc2Api.ChatReceived;
 import SC2APIProtocol.Sc2Api.Observation;
-import SC2APIProtocol.Sc2Api.Request;
-import SC2APIProtocol.Sc2Api.RequestAction;
 import SC2APIProtocol.Sc2Api.Response;
 import SC2APIProtocol.Sc2Api.ResponseObservation;
 import SC2APIProtocol.Sc2Api.Status;
-import neoe.sc2.link.IBot;
+import neoe.sc2.bot.task.BalanceDrones;
+import neoe.sc2.bot.task.CreepTumorBurrowed;
+import neoe.sc2.bot.task.DebugStat;
+import neoe.sc2.bot.task.QueenSpawnLarvaTask;
+import neoe.sc2.bot.task.SpawningPoolTask;
+import neoe.sc2.bot.task.Task;
+import neoe.sc2.link.Link;
 import neoe.sc2.link.Setting;
-import neoe.sc2.link.U;
 import neoe.util.Log;
 
-public class MyZergBot implements IBot {
+public class MyZergBot extends Bot {
+
+	private boolean inited;
+	private Status lastStatus;
 
 	private String name;
-	private Setting setting;
-	private boolean inited;
 
-	public MyZergBot(String name, Setting setting) {
+	boolean obPrinted = false;
+
+	private Setting setting;
+
+	public MyZergBot(String name, Setting setting, Link link) {
 		this.name = name;
 		this.setting = setting;
+		this.link = link;
 		inited = false;
 	}
 
-	private Response resp;
-	private Status lastStatus;
-	private LinkedBlockingQueue<Request> output = new LinkedBlockingQueue<Request>();
+	private void doInit() throws Exception {
+		if (inited)
+			return;
+		inited = true;
+
+		say(String.format("This is '%s', glhf!", name));
+
+		SpawningPoolTask t1 = new SpawningPoolTask(this);
+		t1.start();
+		{// make drones
+			Task t2 = new BalanceDrones(this, t1);
+			t2.start();
+		}
+		{
+			Task t3 = new QueenSpawnLarvaTask(this);
+			t3.start();
+		}
+		{
+
+			new CreepTumorBurrowed(this).start();
+
+		}
+		{
+
+			new DebugStat(this).start();
+
+		}
+
+	}
 
 	@Override
 	public void onResponse(Response rob) throws Exception {
@@ -43,9 +73,6 @@ public class MyZergBot implements IBot {
 		Status st = resp.getStatus();
 		if (!st.equals(lastStatus)) {
 			Log.log(String.format("game status changed from %s to %s", lastStatus, st));
-			if (Status.in_game.equals(lastStatus)) {
-				rebootGame();
-			}
 			lastStatus = resp.getStatus();
 		}
 		boolean ingame = false;
@@ -53,21 +80,24 @@ public class MyZergBot implements IBot {
 			ingame = st.equals(Status.in_game);
 		}
 
-		if (ingame) {
-			run();
-		} else {
-			// learn(rob);
+		switch (resp.getResponseCase()) {
+		case GAME_INFO: {
+			readGameInfo();
+			return;
+		}
+		case DATA: {
+			readDATA();
+			return;
+		}
 		}
 
-		// output.add(Request.newBuilder().setStep(RequestStep.newBuilder().setCount(1)).build());
+		if (ingame) {
+			turn();
+		}
 
 	}
 
-	private void rebootGame() {
-		inited = false;
-	}
-
-	private void run() throws Exception {
+	private void turn() throws Exception {
 
 		if (!inited) {
 			doInit();
@@ -76,9 +106,24 @@ public class MyZergBot implements IBot {
 		case OBSERVATION: {
 			ResponseObservation ob = resp.getObservation();
 			if (ob.getPlayerResultCount() > 0) {
-				Log.log("Game over, someone win");
-				rebootGame();
+				say("Game over, someone win");
+				saveReplay();
+				U.sleep(2000);
+				link.gameEnd = true;
 				return;
+			}
+			if (ob.hasObservation()) {
+				this.ob = ob;
+//				Log.log("[new OB]");
+
+				if (!obPrinted) {
+					Observation tob = ob.getObservation();
+					obPrinted = true;
+					Log.log(String.format("[obs]gameloop:%s, all:%s, ", tob.getGameLoop(), U.json(tob)));
+					U.dumpMap("ob", "vis", tob.getRawData().getMapState().getVisibility());
+					U.dumpMap("ob", "creep", tob.getRawData().getMapState().getCreep());
+				}
+				debugSelected();
 			}
 
 			{
@@ -86,7 +131,11 @@ public class MyZergBot implements IBot {
 				if (cnt > 0) {
 					for (int i = 0; i < cnt; i++) {
 						ChatReceived chat = ob.getChat(i);
-						Log.log(String.format("[chat][%s]:%s", chat.getPlayerId(), chat.getMessage()));
+						Log.log(String.format("[ob-chat]%s", U.json(chat)));
+						if (chat.getMessage().equalsIgnoreCase("gg")) {
+							saveReplay();
+
+						}
 					}
 				}
 			}
@@ -95,44 +144,24 @@ public class MyZergBot implements IBot {
 				if (cnt > 0) {
 					for (int i = 0; i < cnt; i++) {
 						Action act = ob.getActions(i);
-						Log.log(String.format("[act]%s", act));
+						if (act.getActionRaw().hasCameraMove()) {
+							// no log
+						} else {
+							Log.log(String.format("[ob-act]%s", U.json(act)));
+						}
 					}
 				}
 			}
-			{
-				Observation tob = ob.getObservation();
-				if (tob != null && !obPrinted) {
-					obPrinted = true;
-					Log.log(String.format("[obs]gameloop:%s, all:%s, ", tob.getGameLoop(), U.toJson(tob)));
-				}
-			}
+
 			break;
 		}
-		case DATA:
-		case GAME_INFO:
-		default: {
-			Log.log("[NotHandled]" + U.toJson(resp));
+
+		default:
+
+		{
+			Log.log("[NotHandled]" + U.json(resp));
 		}
 		}
-	}
-
-	boolean obPrinted = false;
-
-	private void doInit() {
-		if (inited)
-			return;
-		inited = true;
-
-		output.add(Request.newBuilder()
-				.setAction(RequestAction.newBuilder()
-						.addActions(Action.newBuilder().setActionChat(ActionChat.newBuilder()
-								.setChannel(Channel.Broadcast).setMessage(String.format("This is '%s', glhf!", name)))))
-				.build());
-	}
-
-	@Override
-	public void pullRequsts(Collection<Request> to) throws Exception {
-		output.drainTo(to);
 	}
 
 }
