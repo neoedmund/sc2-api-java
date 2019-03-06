@@ -1,27 +1,33 @@
-package neoe.sc2.link;
+package neoe.sc2.main;
 
 import java.io.File;
 import java.util.Random;
 
+import SC2APIProtocol.Common.Race;
 import SC2APIProtocol.Sc2Api.InterfaceOptions;
+import SC2APIProtocol.Sc2Api.LocalMap;
+import SC2APIProtocol.Sc2Api.PlayerSetup;
+import SC2APIProtocol.Sc2Api.PlayerType;
 import SC2APIProtocol.Sc2Api.Request;
+import SC2APIProtocol.Sc2Api.RequestCreateGame;
 import SC2APIProtocol.Sc2Api.RequestData;
 import SC2APIProtocol.Sc2Api.RequestGameInfo;
+import SC2APIProtocol.Sc2Api.RequestJoinGame;
 import SC2APIProtocol.Sc2Api.RequestObservation;
 import SC2APIProtocol.Sc2Api.RequestPing;
-import SC2APIProtocol.Sc2Api.RequestStartReplay;
-import SC2APIProtocol.Sc2Api.RequestStep;
 import SC2APIProtocol.Sc2Api.Response;
 import neoe.sc2.bot.Bot;
-import neoe.sc2.bot.MyReplayViewer;
+import neoe.sc2.bot.C;
+import neoe.sc2.bot.MyZergBot;
 import neoe.sc2.bot.U;
+import neoe.sc2.link.Handle;
+import neoe.sc2.link.Link;
+import neoe.sc2.link.Setting;
 import neoe.util.FileUtil;
 import neoe.util.Log;
 
 /** test on Tool assisted human play */
-public class Sc2Replay {
-
-	static boolean realtime = false;
+public class Sc2Play {
 
 	private static String getLatestVer(String gameDir) {
 		File versions = new File(gameDir, "Versions");
@@ -52,19 +58,15 @@ public class Sc2Replay {
 
 	public static void main(String[] args) throws Exception {
 		FileUtil.save("".getBytes(), "log-neoe.log");
-
 		Setting setting = new Setting();
-		setting.isReplay = true;
 		setting.gameDir = args[0];
-		String replayName = args[1];
-		if (args.length > 2) {
-			setting.gameVer = args[2];
+		if (args.length > 1) {
+			setting.gameVer = args[1];
 		} else {
 			setting.gameVer = getLatestVer(setting.gameDir);
 		}
-
-		Sc2Replay client = new Sc2Replay(setting);
-		client.run(setting, replayName);
+		Sc2Play client = new Sc2Play(setting);
+		client.run(setting);
 
 	}
 
@@ -76,11 +78,11 @@ public class Sc2Replay {
 
 	private Setting setting;
 
-	public Sc2Replay(Setting setting) {
+	public Sc2Play(Setting setting) {
 		this.setting = setting;
 	}
 
-	private void run(Setting setting, String replayName) throws Exception {
+	private void run(Setting setting) throws Exception {
 
 		U.startSC2(setting);
 		U.waitSC2Ready(setting.host, setting.port);
@@ -88,42 +90,50 @@ public class Sc2Replay {
 		link.websocketConnect(setting, new Thread() {
 			@Override
 			public void run() {
-				startReplayThread(replayName);
+				startGameThread();
 			}
 		});
 
 	}
 
-	private void startReplayThread(String replayName) {
+	private void startGame(String mapName) throws Exception {
+		SC2APIProtocol.Sc2Api.RequestCreateGame.Builder requestCreateGame = RequestCreateGame.newBuilder();
+		requestCreateGame.setRealtime(true);
+		requestCreateGame.setLocalMap(LocalMap.newBuilder().setMapPath(mapName + ".SC2Map").build());
 
-		Log.log("replayThread start.");
+		SC2APIProtocol.Sc2Api.RequestJoinGame.Builder joinGame = RequestJoinGame.newBuilder();
+
+		{
+			SC2APIProtocol.Sc2Api.PlayerSetup.Builder ps = PlayerSetup.newBuilder();
+			ps.setType(PlayerType.Participant).setRace(Race.Zerg);// .setDifficulty(Difficulty.Medium);
+			requestCreateGame.addPlayerSetup(ps.build());
+
+		}
+		{
+			SC2APIProtocol.Sc2Api.PlayerSetup.Builder ps = PlayerSetup.newBuilder();
+			ps.setType(PlayerType.Computer).setRace(Race.Random).setDifficulty(C.DIFFICULTY);
+			requestCreateGame.addPlayerSetup(ps.build());
+		}
+
+		//
+		joinGame.setRace(Race.Zerg).setOptions(InterfaceOptions.newBuilder().setRaw(true).setScore(true).build());
+
+		//
+		link.sendReq(Request.newBuilder().setCreateGame(requestCreateGame).build(), null, null);
+		link.sendReq(Request.newBuilder().setJoinGame(joinGame).build(), null, null);
+
+	}
+
+	private void startGameThread() {
+
+		Log.log("gameThread start.");
 		try {
 			link.sendReq(Request.newBuilder().setPing(RequestPing.newBuilder()).build(), null, null);
-			bot1 = new MyReplayViewer("viewer", setting, link);
-
-			{// start replay
-				SC2APIProtocol.Sc2Api.InterfaceOptions.Builder opt = InterfaceOptions.newBuilder().setRaw(true)
-						.setScore(true);
-				link.sendReq(Request.newBuilder()
-						.setStartReplay(RequestStartReplay.newBuilder().setReplayPath(replayName).setRealtime(realtime)
-								.setOptions(opt).setDisableFog(true).setObservedPlayerId(1))
-						.build(), null, new Handle() {
-							@Override
-							public void run(Response resp) {
-								System.out.println(U.json(resp));
-								link.gameEnd = true;
-								synchronized (link) {
-									link.notify();
-								}
-							}
-						});
-
-			}
-			synchronized (link) {
-				link.wait();
-			}
-			if (link.gameEnd)
-				return;
+			bot1 = new MyZergBot("brood", setting, link);
+			String map = C._MAPS[rand.nextInt(C._MAPS.length)];
+			System.out.println("map:" + map);
+			Log.getLog("long").log0("map:" + map);
+			startGame(map);
 			Handle toBot = new Handle() {
 				@Override
 				public void run(Response resp) {
@@ -140,39 +150,20 @@ public class Sc2Replay {
 
 			// listenThread.start();
 //			Delay delay = new Delay();
-			final Object sth = new Object();
 			while (true) {
-				link.sendReq(Request.newBuilder().setStep(RequestStep.newBuilder()).build(), new Handle() {
-					@Override
-					public void run(Response resp) {
-						synchronized (sth) {
-							sth.notify();
-						}
-					}
-				}, new Handle() {
-					@Override
-					public void run(Response resp) {
-						synchronized (sth) {
-							sth.notify();
-						}
-					}
-				});
-				synchronized (sth) {
-					sth.wait();
-				}
 				link.sendReq(Request.newBuilder().setObservation(RequestObservation.newBuilder()).build(), toBot, null);
+				U.sleep(90);
 				if (link.gameEnd)
 					break;
-
 			}
-			Log.log("replayThread cleanup");
+			Log.log("gameThread cleanup");
 			for (Object o : bot1.th) {
 				((Thread) o).interrupt();
 			}
 		} catch (Throwable e) {
 			Log.log("[gameBad]", e);
 		}
-		Log.log("replayThread end.");
+		Log.log("gameThread end.");
 
 	}
 

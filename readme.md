@@ -14,6 +14,7 @@ There are 2 parts here:
 	with Bot class, you can write AI in plain multithread manner, and not worry about sync problems in underlaying IO. 
 	MyZergBot demonstrate the usage. It now used as 'tool assisted human play'. 
 	Play zerg, it make drones and queens, auto queen spawn larva(which should, but not an auto cast skill).
+	I beat VeryHard inner AI of SC2 easyly with help with this tool, see `neoebot/20190305224805.SC2Replay`
 	
 If you are going to use java to play sc2 AI, you can make use of this.
 
