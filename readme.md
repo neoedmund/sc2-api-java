@@ -6,7 +6,7 @@ It implements bot vs pc, bot viewing replay. but bot vs bot is not yet.
 There are 2 parts here:
 * `sc2-protobuf-java`
     is a java [s2client-proto] (https://github.com/Blizzard/s2client-proto)
-    This is almost stable, need change until s2client-proto changes.
+    This is almost stable, need no change until s2client-proto changes.
 
 * `neoebot`
     It starts SC2 game instance with bot API enabled, listening on a TCP port.
